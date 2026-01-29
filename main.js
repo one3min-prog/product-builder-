@@ -1,6 +1,13 @@
 
 const generateBtn = document.getElementById('generate-btn');
 const numberSpans = document.querySelectorAll('.lotto-numbers .number');
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+const body = document.body;
+
+// Load saved theme from localStorage
+const currentTheme = localStorage.getItem('theme') || 'dark-mode';
+body.classList.add(currentTheme);
+
 
 generateBtn.addEventListener('click', () => {
     const numbers = new Set();
@@ -32,4 +39,13 @@ generateBtn.addEventListener('click', () => {
     setTimeout(() => {
         numberSpans.forEach(span => span.classList.remove('generated'));
     }, 500);
+});
+
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+
+    // Save the new theme to localStorage
+    const newTheme = body.classList.contains('light-mode') ? 'light-mode' : 'dark-mode';
+    localStorage.setItem('theme', newTheme);
 });
