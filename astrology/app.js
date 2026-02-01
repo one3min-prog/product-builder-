@@ -1,72 +1,58 @@
+
 // ====== App State ======
 let currentLang = 'en';
-let currentSection = 'horoscope';
+let currentSection = 'name';
 
-// ====== Zodiac Data ======
-const zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo',
-                     'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+// ====== Language Data ======
+const availableLangs = ['en', 'ko', 'ja', 'zh', 'es', 'fr', 'de', 'ru', 'pt'];
 
-const zodiacSymbols = {
-    aries: '♈', taurus: '♉', gemini: '♊', cancer: '♋',
-    leo: '♌', virgo: '♍', libra: '♎', scorpio: '♏',
-    sagittarius: '♐', capricorn: '♑', aquarius: '♒', pisces: '♓'
+// ====== Compatibility Data ======
+const bloodTypeCompatibility = {
+    'A': {
+        'A': 'Good friends, but romance can be slow to develop.',
+        'B': 'A passionate and exciting combination, but can lead to conflict.',
+        'O': 'A stable and comfortable relationship, built on trust.',
+        'AB': 'A mysterious attraction, but communication is key.'
+    },
+    'B': {
+        'A': 'A passionate and exciting combination, but can lead to conflict.',
+        'B': 'A fun and adventurous pair, but can lack a deep connection.',
+        'O': 'A supportive and understanding relationship.',
+        'AB': 'A unique and fascinating match, full of surprises.'
+    },
+    'O': {
+        'A': 'A stable and comfortable relationship, built on trust.',
+        'B': 'A supportive and understanding relationship.',
+        'O': 'A powerful and harmonious couple, a true power couple.',
+        'AB': 'A challenging but rewarding relationship that requires patience.'
+    },
+    'AB': {
+        'A': 'A mysterious attraction, but communication is key.',
+        'B': 'A unique and fascinating match, full of surprises.',
+        'O': 'A challenging but rewarding relationship that requires patience.',
+        'AB': 'A highly intellectual and spiritual connection, but can be detached.'
+    }
 };
 
-const zodiacDates = [
-    { sign: 'capricorn', start: [1, 1], end: [1, 19] },
-    { sign: 'aquarius', start: [1, 20], end: [2, 18] },
-    { sign: 'pisces', start: [2, 19], end: [3, 20] },
-    { sign: 'aries', start: [3, 21], end: [4, 19] },
-    { sign: 'taurus', start: [4, 20], end: [5, 20] },
-    { sign: 'gemini', start: [5, 21], end: [6, 20] },
-    { sign: 'cancer', start: [6, 21], end: [7, 22] },
-    { sign: 'leo', start: [7, 23], end: [8, 22] },
-    { sign: 'virgo', start: [8, 23], end: [9, 22] },
-    { sign: 'libra', start: [9, 23], end: [10, 22] },
-    { sign: 'scorpio', start: [10, 23], end: [11, 21] },
-    { sign: 'sagittarius', start: [11, 22], end: [12, 21] },
-    { sign: 'capricorn', start: [12, 22], end: [12, 31] }
-];
-
-const zodiacElements = {
-    aries: 'fire', leo: 'fire', sagittarius: 'fire',
-    taurus: 'earth', virgo: 'earth', capricorn: 'earth',
-    gemini: 'air', libra: 'air', aquarius: 'air',
-    cancer: 'water', scorpio: 'water', pisces: 'water'
+const mbtiCompatibility = {
+    'ISTJ': { 'ESFP': 'Ideal Match', 'ISFJ': 'Good Match', 'ESTJ': 'Good Match'},
+    'ISFJ': { 'ESTP': 'Ideal Match', 'ISTJ': 'Good Match', 'ESFJ': 'Good Match'},
+    'INFJ': { 'ENTP': 'Ideal Match', 'INFP': 'Good Match', 'ENFJ': 'Good Match'},
+    'INTJ': { 'ENFP': 'Ideal Match', 'INTP': 'Good Match', 'ENTJ': 'Good Match'},
+    'ISTP': { 'ESFJ': 'Ideal Match', 'ISFP': 'Good Match', 'ESTP': 'Good Match'},
+    'ISFP': { 'ENFJ': 'Ideal Match', 'ISTP': 'Good Match', 'ESFP': 'Good Match'},
+    'INFP': { 'ENTJ': 'Ideal Match', 'INFJ': 'Good Match', 'ENFP': 'Good Match'},
+    'INTP': { 'ENFJ': 'Ideal Match', 'INTJ': 'Good Match', 'ENTP': 'Good Match'},
+    'ESTP': { 'ISFJ': 'Ideal Match', 'ISTP': 'Good Match', 'ESFP': 'Good Match'},
+    'ESFP': { 'ISTJ': 'Ideal Match', 'ISFP': 'Good Match', 'ESTP': 'Good Match'},
+    'ENFP': { 'INTJ': 'Ideal Match', 'INFP': 'Good Match', 'ENTP': 'Good Match'},
+    'ENTP': { 'INFJ': 'Ideal Match', 'INTP': 'Good Match', 'ENFP': 'Good Match'},
+    'ESTJ': { 'ISFP': 'Ideal Match', 'ISTJ': 'Good Match', 'ESFJ': 'Good Match'},
+    'ESFJ': { 'ISTP': 'Ideal Match', 'ISFJ': 'Good Match', 'ESTJ': 'Good Match'},
+    'ENFJ': { 'ISFP': 'Ideal Match', 'INFP': 'Good Match', 'ENFP': 'Good Match'},
+    'ENTJ': { 'INFP': 'Ideal Match', 'INTJ': 'Good Match', 'ENTP': 'Good Match'}
 };
 
-const colors = ['red', 'blue', 'green', 'gold', 'silver', 'purple', 'white', 'black', 'orange', 'pink'];
-
-const tarotCardKeys = ['fool', 'magician', 'priestess', 'empress', 'emperor', 'hierophant',
-                       'lovers', 'chariot', 'strength', 'hermit', 'wheel', 'justice',
-                       'hanged', 'death', 'temperance', 'devil', 'tower', 'star',
-                       'moon', 'sun', 'judgement', 'world'];
-
-const tarotSymbols = {
-    fool: '🌟', magician: '✨', priestess: '🌙', empress: '🌸',
-    emperor: '👑', hierophant: '📿', lovers: '💕', chariot: '⚡',
-    strength: '🦁', hermit: '🏔️', wheel: '☯️', justice: '⚖️',
-    hanged: '🔮', death: '🦋', temperance: '🌊', devil: '🔥',
-    tower: '⛈️', star: '⭐', moon: '🌑', sun: '☀️',
-    judgement: '🎺', world: '🌍'
-};
-
-const tarotNumerals = {
-    fool: '0', magician: 'I', priestess: 'II', empress: 'III',
-    emperor: 'IV', hierophant: 'V', lovers: 'VI', chariot: 'VII',
-    strength: 'VIII', hermit: 'IX', wheel: 'X', justice: 'XI',
-    hanged: 'XII', death: 'XIII', temperance: 'XIV', devil: 'XV',
-    tower: 'XVI', star: 'XVII', moon: 'XVIII', sun: 'XIX',
-    judgement: 'XX', world: 'XXI'
-};
-
-// Compatibility matrix (simplified)
-const compatibilityMatrix = {
-    fire: { fire: 85, earth: 50, air: 90, water: 45 },
-    earth: { fire: 50, earth: 80, air: 55, water: 85 },
-    air: { fire: 90, earth: 55, air: 75, water: 60 },
-    water: { fire: 45, earth: 85, air: 60, water: 90 }
-};
 
 // ====== Translation Functions ======
 function t(key) {
@@ -76,7 +62,6 @@ function t(key) {
         if (value && value[k]) {
             value = value[k];
         } else {
-            // Fallback to English
             value = translations['en'];
             for (const k2 of keys) {
                 value = value[k2];
@@ -92,11 +77,9 @@ function updateTranslations() {
         const key = el.getAttribute('data-i18n');
         el.textContent = t(key);
     });
-
-    // Update select options
-    document.querySelectorAll('select option[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.textContent = t(key);
+    document.querySelectorAll('[placeholder]').forEach(el => {
+        const key = el.getAttribute('placeholder');
+        el.setAttribute('placeholder', t(key));
     });
 }
 
@@ -140,220 +123,130 @@ function setLanguage(lang) {
     updateTranslations();
 }
 
-// ====== Daily Horoscope ======
-function initHoroscope() {
-    document.querySelectorAll('.zodiac-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const sign = card.getAttribute('data-sign');
-            showHoroscope(sign);
+// ====== Name Compatibility ======
+function initNameCompatibility() {
+    document.getElementById('calculate-name-compatibility').addEventListener('click', calculateNameCompatibility);
+}
 
-            document.querySelectorAll('.zodiac-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
+function calculateNameCompatibility() {
+    const name1 = document.getElementById('your-name').value;
+    const name2 = document.getElementById('partner-name').value;
+
+    if (!name1 || !name2) {
+        alert(t('name.alert'));
+        return;
+    }
+
+    const strokes = [3, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1];
+    const charCodeA = 'A'.charCodeAt(0);
+
+    function getStrokes(name) {
+        return name.toUpperCase().split('').map(char => {
+            const charCode = char.charCodeAt(0);
+            if (charCode >= charCodeA && charCode <= 'Z'.charCodeAt(0)) {
+                return strokes[charCode - charCodeA];
+            }
+            return 0;
         });
-    });
-}
-
-function showHoroscope(sign) {
-    const result = document.getElementById('horoscope-result');
-    result.classList.remove('hidden');
-
-    document.getElementById('result-symbol').textContent = zodiacSymbols[sign];
-    document.getElementById('result-sign').textContent = t(`zodiac.${sign}`);
-
-    // Generate pseudo-random stats based on date and sign
-    const today = new Date();
-    const seed = today.getDate() + zodiacSigns.indexOf(sign);
-
-    const love = 50 + seededRandom(seed * 1) * 50;
-    const career = 50 + seededRandom(seed * 2) * 50;
-    const health = 50 + seededRandom(seed * 3) * 50;
-    const luck = 50 + seededRandom(seed * 4) * 50;
-
-    animateStat('love-stat', love);
-    animateStat('career-stat', career);
-    animateStat('health-stat', health);
-    animateStat('luck-stat', luck);
-
-    // Get horoscope text
-    document.getElementById('horoscope-text').textContent = t(`horoscopes.${sign}`);
-
-    // Lucky items
-    const luckyNum = Math.floor(seededRandom(seed * 5) * 99) + 1;
-    const luckyColorKey = colors[Math.floor(seededRandom(seed * 6) * colors.length)];
-
-    document.getElementById('lucky-number').textContent = luckyNum;
-    document.getElementById('lucky-color').textContent = t(`colors.${luckyColorKey}`);
-
-    // Scroll to result
-    result.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function animateStat(elementId, value) {
-    const el = document.getElementById(elementId);
-    el.style.width = '0%';
-    setTimeout(() => {
-        el.style.width = value + '%';
-    }, 100);
-}
-
-function seededRandom(seed) {
-    const x = Math.sin(seed) * 10000;
-    return x - Math.floor(x);
-}
-
-// ====== Birth Chart ======
-function initBirthChart() {
-    document.getElementById('generate-chart').addEventListener('click', generateBirthChart);
-}
-
-function generateBirthChart() {
-    const dateInput = document.getElementById('birth-date').value;
-    if (!dateInput) {
-        alert('Please enter your birth date');
-        return;
     }
 
-    const date = new Date(dateInput);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
+    const strokes1 = getStrokes(name1);
+    const strokes2 = getStrokes(name2);
 
-    // Calculate sun sign
-    const sunSign = getZodiacSign(month, day);
-    const element = zodiacElements[sunSign];
+    let combinedStrokes = [];
+    const maxLength = Math.max(strokes1.length, strokes2.length);
 
-    // Pseudo moon and rising (simplified)
-    const seed = date.getTime();
-    const moonIndex = Math.floor(seededRandom(seed) * 12);
-    const risingIndex = Math.floor(seededRandom(seed * 2) * 12);
+    for (let i = 0; i < maxLength; i++) {
+        if (strokes1[i]) combinedStrokes.push(strokes1[i]);
+        if (strokes2[i]) combinedStrokes.push(strokes2[i]);
+    }
 
-    const moonSign = zodiacSigns[moonIndex];
-    const risingSign = zodiacSigns[risingIndex];
-
-    // Display result
-    const result = document.getElementById('birthchart-result');
-    result.classList.remove('hidden');
-
-    document.getElementById('sun-sign-symbol').textContent = zodiacSymbols[sunSign];
-    document.getElementById('sun-sign').textContent = t(`zodiac.${sunSign}`);
-    document.getElementById('moon-sign').textContent = t(`zodiac.${moonSign}`);
-    document.getElementById('rising-sign').textContent = t(`zodiac.${risingSign}`);
-    document.getElementById('element').textContent = t(`elements.${element}`);
-
-    document.getElementById('chart-reading').textContent = t(`chartReadings.${element}`);
-
-    result.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function getZodiacSign(month, day) {
-    for (const { sign, start, end } of zodiacDates) {
-        if ((month === start[0] && day >= start[1]) ||
-            (month === end[0] && day <= end[1])) {
-            return sign;
+    while (combinedStrokes.length > 2) {
+        let nextStrokes = [];
+        for (let i = 0; i < combinedStrokes.length - 1; i++) {
+            nextStrokes.push((combinedStrokes[i] + combinedStrokes[i + 1]) % 10);
         }
-    }
-    return 'capricorn';
-}
-
-// ====== Compatibility ======
-function initCompatibility() {
-    document.getElementById('check-compatibility').addEventListener('click', checkCompatibility);
-}
-
-function checkCompatibility() {
-    const sign1 = document.getElementById('sign1').value;
-    const sign2 = document.getElementById('sign2').value;
-
-    if (!sign1 || !sign2) {
-        alert('Please select both signs');
-        return;
+        combinedStrokes = nextStrokes;
     }
 
-    const element1 = zodiacElements[sign1];
-    const element2 = zodiacElements[sign2];
+    const score = parseInt(combinedStrokes.join(''));
 
-    const baseScore = compatibilityMatrix[element1][element2];
-
-    // Add some variance
-    const variance = Math.floor(seededRandom(sign1.length + sign2.length) * 15);
-    const score = Math.min(100, baseScore + variance);
-
-    const result = document.getElementById('compatibility-result');
+    const result = document.getElementById('name-result');
     result.classList.remove('hidden');
 
-    document.getElementById('compat-sign1').textContent = zodiacSymbols[sign1];
-    document.getElementById('compat-sign2').textContent = zodiacSymbols[sign2];
-    document.getElementById('compat-score').textContent = score + '%';
+    document.getElementById('name-compat-score').textContent = score + '%';
 
-    // Bar animations
-    const romance = score + Math.floor(seededRandom(score * 1) * 20) - 10;
-    const friendship = score + Math.floor(seededRandom(score * 2) * 20) - 10;
-    const communication = score + Math.floor(seededRandom(score * 3) * 20) - 10;
-
-    setTimeout(() => {
-        document.getElementById('romance-bar').style.width = Math.min(100, Math.max(20, romance)) + '%';
-        document.getElementById('friendship-bar').style.width = Math.min(100, Math.max(20, friendship)) + '%';
-        document.getElementById('communication-bar').style.width = Math.min(100, Math.max(20, communication)) + '%';
-    }, 100);
-
-    // Reading text
     let readingKey;
-    if (score >= 85) readingKey = 'excellent';
-    else if (score >= 70) readingKey = 'good';
-    else if (score >= 55) readingKey = 'moderate';
-    else readingKey = 'challenging';
+    if (score >= 90) readingKey = 'excellent';
+    else if (score >= 75) readingKey = 'good';
+    else if (score >= 60) readingKey = 'average';
+    else if (score >= 40) readingKey = 'challenging';
+    else readingKey = 'difficult';
 
-    document.getElementById('compat-reading').textContent = t(`compatibilityReadings.${readingKey}`);
+    document.getElementById('name-compat-reading').textContent = t(`name.readings.${readingKey}`);
 
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// ====== Tarot ======
-function initTarot() {
-    const deck = document.getElementById('tarot-deck');
-    const drawBtn = document.getElementById('draw-tarot');
-
-    deck.addEventListener('click', drawTarotCard);
-    drawBtn.addEventListener('click', drawTarotCard);
+// ====== Blood Type Compatibility ======
+function initBloodTypeCompatibility() {
+    document.getElementById('calculate-blood-type-compatibility').addEventListener('click', calculateBloodTypeCompatibility);
 }
 
-function drawTarotCard() {
-    const result = document.getElementById('tarot-result');
+function calculateBloodTypeCompatibility() {
+    const type1 = document.getElementById('your-blood-type').value;
+    const type2 = document.getElementById('partner-blood-type').value;
 
-    // Animation
-    const deck = document.getElementById('tarot-deck');
-    deck.style.transform = 'rotateY(180deg)';
+    if (!type1 || !type2) {
+        alert(t('bloodType.alert'));
+        return;
+    }
 
-    setTimeout(() => {
-        // Random card
-        const cardKey = tarotCardKeys[Math.floor(Math.random() * tarotCardKeys.length)];
-        const card = t(`tarotCards.${cardKey}`);
+    const reading = bloodTypeCompatibility[type1][type2];
 
-        document.getElementById('tarot-numeral').textContent = tarotNumerals[cardKey];
-        document.getElementById('tarot-symbol').textContent = tarotSymbols[cardKey];
-        document.getElementById('tarot-name').textContent = card.name;
-        document.getElementById('tarot-title').textContent = card.name;
-        document.getElementById('tarot-reading').textContent = card.meaning;
-        document.getElementById('tarot-keywords').textContent = card.keywords;
+    const result = document.getElementById('blood-type-result');
+    result.classList.remove('hidden');
 
-        result.classList.remove('hidden');
-        deck.style.transform = 'rotateY(0deg)';
+    document.getElementById('blood-type-compat-reading').textContent = reading;
 
-        result.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
+    result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
+
+// ====== MBTI Compatibility ======
+function initMbtiCompatibility() {
+    document.getElementById('calculate-mbti-compatibility').addEventListener('click', calculateMbtiCompatibility);
+}
+
+function calculateMbtiCompatibility() {
+    const mbti1 = document.getElementById('your-mbti').value;
+    const mbti2 = document.getElementById('partner-mbti').value;
+
+    if (!mbti1 || !mbti2) {
+        alert(t('mbti.alert'));
+        return;
+    }
+
+    const reading = mbtiCompatibility[mbti1][mbti2] || 'An interesting combination. Explore your dynamic!';
+
+    const result = document.getElementById('mbti-result');
+    result.classList.remove('hidden');
+
+    document.getElementById('mbti-compat-reading').textContent = reading;
+
+    result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 
 // ====== Initialize App ======
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initLanguageSelector();
-    initHoroscope();
-    initBirthChart();
-    initCompatibility();
-    initTarot();
+    initNameCompatibility();
+    initBloodTypeCompatibility();
+    initMbtiCompatibility();
 
-    // Set initial language based on browser
     const browserLang = navigator.language.split('-')[0];
-    if (translations[browserLang]) {
+    if (availableLangs.includes(browserLang)) {
         setLanguage(browserLang);
     } else {
         setLanguage('en');

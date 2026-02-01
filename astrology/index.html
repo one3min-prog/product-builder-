@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celestial Oracle - Astrology</title>
+    <title>Love & Fate - Compatibility Oracle</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -22,423 +23,157 @@
         <button class="lang-btn" data-lang="ja">日本語</button>
         <button class="lang-btn" data-lang="zh">中文</button>
         <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
     </div>
 
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <div class="moon-icon">☽</div>
-            <h1 data-i18n="title">Celestial Oracle</h1>
+            <div class="moon-icon">💖</div>
+            <h1 data-i18n="title">Love & Fate</h1>
         </div>
-        <p class="tagline" data-i18n="tagline">Discover the secrets written in the stars</p>
+        <p class="tagline" data-i18n="tagline">Discover your romantic destiny</p>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="badge free-badge">
+                <span class="badge-icon">✨</span>
+                <span data-i18n="badges.free">100% Free</span>
+            </div>
+            <div class="badge privacy-badge">
+                <span class="badge-icon">🔒</span>
+                <span data-i18n="badges.privacy">Privacy Protected</span>
+            </div>
+        </div>
     </header>
 
     <!-- Navigation -->
     <nav class="nav">
-        <button class="nav-btn active" data-section="horoscope" data-i18n="nav.horoscope">Daily Horoscope</button>
-        <button class="nav-btn" data-section="birthchart" data-i18n="nav.birthchart">Birth Chart</button>
-        <button class="nav-btn" data-section="compatibility" data-i18n="nav.compatibility">Compatibility</button>
-        <button class="nav-btn" data-section="tarot" data-i18n="nav.tarot">Tarot Reading</button>
+        <button class="nav-btn active" data-section="name" data-i18n="nav.name">Name Compatibility</button>
+        <button class="nav-btn" data-section="bloodType" data-i18n="nav.bloodType">Blood Type</button>
+        <button class="nav-btn" data-section="mbti" data-i18n="nav.mbti">MBTI</button>
         <button class="nav-btn" data-section="about" data-i18n="nav.about">About</button>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Daily Horoscope Section -->
-        <section id="horoscope" class="section active">
-            <h2 class="section-title" data-i18n="horoscope.title">Select Your Zodiac Sign</h2>
-            <div class="zodiac-grid">
-                <div class="zodiac-card" data-sign="aries">
-                    <span class="zodiac-symbol">♈</span>
-                    <span class="zodiac-name" data-i18n="zodiac.aries">Aries</span>
-                    <span class="zodiac-date">Mar 21 - Apr 19</span>
-                </div>
-                <div class="zodiac-card" data-sign="taurus">
-                    <span class="zodiac-symbol">♉</span>
-                    <span class="zodiac-name" data-i18n="zodiac.taurus">Taurus</span>
-                    <span class="zodiac-date">Apr 20 - May 20</span>
-                </div>
-                <div class="zodiac-card" data-sign="gemini">
-                    <span class="zodiac-symbol">♊</span>
-                    <span class="zodiac-name" data-i18n="zodiac.gemini">Gemini</span>
-                    <span class="zodiac-date">May 21 - Jun 20</span>
-                </div>
-                <div class="zodiac-card" data-sign="cancer">
-                    <span class="zodiac-symbol">♋</span>
-                    <span class="zodiac-name" data-i18n="zodiac.cancer">Cancer</span>
-                    <span class="zodiac-date">Jun 21 - Jul 22</span>
-                </div>
-                <div class="zodiac-card" data-sign="leo">
-                    <span class="zodiac-symbol">♌</span>
-                    <span class="zodiac-name" data-i18n="zodiac.leo">Leo</span>
-                    <span class="zodiac-date">Jul 23 - Aug 22</span>
-                </div>
-                <div class="zodiac-card" data-sign="virgo">
-                    <span class="zodiac-symbol">♍</span>
-                    <span class="zodiac-name" data-i18n="zodiac.virgo">Virgo</span>
-                    <span class="zodiac-date">Aug 23 - Sep 22</span>
-                </div>
-                <div class="zodiac-card" data-sign="libra">
-                    <span class="zodiac-symbol">♎</span>
-                    <span class="zodiac-name" data-i18n="zodiac.libra">Libra</span>
-                    <span class="zodiac-date">Sep 23 - Oct 22</span>
-                </div>
-                <div class="zodiac-card" data-sign="scorpio">
-                    <span class="zodiac-symbol">♏</span>
-                    <span class="zodiac-name" data-i18n="zodiac.scorpio">Scorpio</span>
-                    <span class="zodiac-date">Oct 23 - Nov 21</span>
-                </div>
-                <div class="zodiac-card" data-sign="sagittarius">
-                    <span class="zodiac-symbol">♐</span>
-                    <span class="zodiac-name" data-i18n="zodiac.sagittarius">Sagittarius</span>
-                    <span class="zodiac-date">Nov 22 - Dec 21</span>
-                </div>
-                <div class="zodiac-card" data-sign="capricorn">
-                    <span class="zodiac-symbol">♑</span>
-                    <span class="zodiac-name" data-i18n="zodiac.capricorn">Capricorn</span>
-                    <span class="zodiac-date">Dec 22 - Jan 19</span>
-                </div>
-                <div class="zodiac-card" data-sign="aquarius">
-                    <span class="zodiac-symbol">♒</span>
-                    <span class="zodiac-name" data-i18n="zodiac.aquarius">Aquarius</span>
-                    <span class="zodiac-date">Jan 20 - Feb 18</span>
-                </div>
-                <div class="zodiac-card" data-sign="pisces">
-                    <span class="zodiac-symbol">♓</span>
-                    <span class="zodiac-name" data-i18n="zodiac.pisces">Pisces</span>
-                    <span class="zodiac-date">Feb 19 - Mar 20</span>
-                </div>
-            </div>
-
-            <!-- Horoscope Result -->
-            <div id="horoscope-result" class="result-card hidden">
-                <div class="result-header">
-                    <span id="result-symbol" class="result-symbol"></span>
-                    <h3 id="result-sign" class="result-sign"></h3>
-                </div>
-                <div class="horoscope-content">
-                    <div class="horoscope-stats">
-                        <div class="stat">
-                            <span class="stat-label" data-i18n="horoscope.love">Love</span>
-                            <div class="stat-bar"><div class="stat-fill" id="love-stat"></div></div>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label" data-i18n="horoscope.career">Career</span>
-                            <div class="stat-bar"><div class="stat-fill" id="career-stat"></div></div>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label" data-i18n="horoscope.health">Health</span>
-                            <div class="stat-bar"><div class="stat-fill" id="health-stat"></div></div>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label" data-i18n="horoscope.luck">Luck</span>
-                            <div class="stat-bar"><div class="stat-fill" id="luck-stat"></div></div>
-                        </div>
-                    </div>
-                    <p id="horoscope-text" class="horoscope-text"></p>
-                    <div class="lucky-items">
-                        <div class="lucky-item">
-                            <span class="lucky-label" data-i18n="horoscope.luckyNumber">Lucky Number</span>
-                            <span id="lucky-number" class="lucky-value"></span>
-                        </div>
-                        <div class="lucky-item">
-                            <span class="lucky-label" data-i18n="horoscope.luckyColor">Lucky Color</span>
-                            <span id="lucky-color" class="lucky-value"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Birth Chart Section -->
-        <section id="birthchart" class="section">
-            <h2 class="section-title" data-i18n="birthchart.title">Generate Your Birth Chart</h2>
+        <!-- Name Compatibility Section -->
+        <section id="name" class="section active">
+            <h2 class="section-title" data-i18n="name.title">Love Compatibility by Name</h2>
             <div class="form-container">
                 <div class="form-group">
-                    <label data-i18n="birthchart.birthdate">Birth Date</label>
-                    <input type="date" id="birth-date" class="mystical-input">
+                    <label data-i18n="name.yourName">Your Name</label>
+                    <input type="text" id="your-name" class="mystical-input" placeholder="e.g., Maria">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="birthchart.birthtime">Birth Time (optional)</label>
-                    <input type="time" id="birth-time" class="mystical-input">
+                    <label data-i18n="name.partnerName">Partner's Name</label>
+                    <input type="text" id="partner-name" class="mystical-input" placeholder="e.g., David">
                 </div>
-                <button id="generate-chart" class="mystical-btn" data-i18n="birthchart.generate">Reveal My Chart</button>
+                <button id="calculate-name-compatibility" class="mystical-btn" data-i18n="name.calculate">See Compatibility</button>
             </div>
-
-            <div id="birthchart-result" class="result-card hidden">
-                <div class="chart-visual">
-                    <div class="chart-wheel" id="chart-wheel">
-                        <div class="chart-center">
-                            <span class="sun-sign-symbol" id="sun-sign-symbol"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="chart-details">
-                    <div class="chart-item">
-                        <span class="chart-label" data-i18n="birthchart.sunSign">Sun Sign</span>
-                        <span id="sun-sign" class="chart-value"></span>
-                    </div>
-                    <div class="chart-item">
-                        <span class="chart-label" data-i18n="birthchart.moonSign">Moon Sign</span>
-                        <span id="moon-sign" class="chart-value"></span>
-                    </div>
-                    <div class="chart-item">
-                        <span class="chart-label" data-i18n="birthchart.risingSign">Rising Sign</span>
-                        <span id="rising-sign" class="chart-value"></span>
-                    </div>
-                    <div class="chart-item">
-                        <span class="chart-label" data-i18n="birthchart.element">Element</span>
-                        <span id="element" class="chart-value"></span>
-                    </div>
-                </div>
-                <p id="chart-reading" class="chart-reading"></p>
-            </div>
-        </section>
-
-        <!-- Compatibility Section -->
-        <section id="compatibility" class="section">
-            <h2 class="section-title" data-i18n="compatibility.title">Zodiac Compatibility</h2>
-            <div class="compatibility-form">
-                <div class="sign-selector">
-                    <label data-i18n="compatibility.yourSign">Your Sign</label>
-                    <select id="sign1" class="mystical-select">
-                        <option value="">-- Select --</option>
-                        <option value="aries" data-i18n="zodiac.aries">Aries</option>
-                        <option value="taurus" data-i18n="zodiac.taurus">Taurus</option>
-                        <option value="gemini" data-i18n="zodiac.gemini">Gemini</option>
-                        <option value="cancer" data-i18n="zodiac.cancer">Cancer</option>
-                        <option value="leo" data-i18n="zodiac.leo">Leo</option>
-                        <option value="virgo" data-i18n="zodiac.virgo">Virgo</option>
-                        <option value="libra" data-i18n="zodiac.libra">Libra</option>
-                        <option value="scorpio" data-i18n="zodiac.scorpio">Scorpio</option>
-                        <option value="sagittarius" data-i18n="zodiac.sagittarius">Sagittarius</option>
-                        <option value="capricorn" data-i18n="zodiac.capricorn">Capricorn</option>
-                        <option value="aquarius" data-i18n="zodiac.aquarius">Aquarius</option>
-                        <option value="pisces" data-i18n="zodiac.pisces">Pisces</option>
-                    </select>
-                </div>
-                <div class="heart-divider">♡</div>
-                <div class="sign-selector">
-                    <label data-i18n="compatibility.partnerSign">Partner's Sign</label>
-                    <select id="sign2" class="mystical-select">
-                        <option value="">-- Select --</option>
-                        <option value="aries" data-i18n="zodiac.aries">Aries</option>
-                        <option value="taurus" data-i18n="zodiac.taurus">Taurus</option>
-                        <option value="gemini" data-i18n="zodiac.gemini">Gemini</option>
-                        <option value="cancer" data-i18n="zodiac.cancer">Cancer</option>
-                        <option value="leo" data-i18n="zodiac.leo">Leo</option>
-                        <option value="virgo" data-i18n="zodiac.virgo">Virgo</option>
-                        <option value="libra" data-i18n="zodiac.libra">Libra</option>
-                        <option value="scorpio" data-i18n="zodiac.scorpio">Scorpio</option>
-                        <option value="sagittarius" data-i18n="zodiac.sagittarius">Sagittarius</option>
-                        <option value="capricorn" data-i18n="zodiac.capricorn">Capricorn</option>
-                        <option value="aquarius" data-i18n="zodiac.aquarius">Aquarius</option>
-                        <option value="pisces" data-i18n="zodiac.pisces">Pisces</option>
-                    </select>
-                </div>
-            </div>
-            <button id="check-compatibility" class="mystical-btn" data-i18n="compatibility.check">Check Compatibility</button>
-
-            <div id="compatibility-result" class="result-card hidden">
+            <div id="name-result" class="result-card hidden">
                 <div class="compatibility-visual">
-                    <span id="compat-sign1" class="compat-sign"></span>
                     <div class="compat-heart">
-                        <span id="compat-score" class="compat-score"></span>
-                    </div>
-                    <span id="compat-sign2" class="compat-sign"></span>
-                </div>
-                <div class="compat-bars">
-                    <div class="compat-bar-item">
-                        <span data-i18n="compatibility.romance">Romance</span>
-                        <div class="compat-bar"><div class="compat-fill" id="romance-bar"></div></div>
-                    </div>
-                    <div class="compat-bar-item">
-                        <span data-i18n="compatibility.friendship">Friendship</span>
-                        <div class="compat-bar"><div class="compat-fill" id="friendship-bar"></div></div>
-                    </div>
-                    <div class="compat-bar-item">
-                        <span data-i18n="compatibility.communication">Communication</span>
-                        <div class="compat-bar"><div class="compat-fill" id="communication-bar"></div></div>
+                        <span id="name-compat-score" class="compat-score"></span>
                     </div>
                 </div>
-                <p id="compat-reading" class="compat-reading"></p>
+                <p id="name-compat-reading" class="compat-reading"></p>
             </div>
         </section>
 
-        <!-- Tarot Section -->
-        <section id="tarot" class="section">
-            <h2 class="section-title" data-i18n="tarot.title">Daily Tarot Card</h2>
-            <p class="tarot-intro" data-i18n="tarot.intro">Focus on your question and draw a card to receive guidance from the universe.</p>
-
-            <div class="tarot-area">
-                <div class="tarot-deck" id="tarot-deck">
-                    <div class="tarot-card-back">
-                        <div class="card-pattern">✦</div>
-                    </div>
+        <!-- Blood Type Compatibility Section -->
+        <section id="bloodType" class="section">
+            <h2 class="section-title" data-i18n="bloodType.title">Love & Marriage Luck by Blood Type</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label data-i18n="bloodType.yourBloodType">Your Blood Type</label>
+                    <select id="your-blood-type" class="mystical-select">
+                        <option value="">-- Select --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                        <option value="AB">AB</option>
+                    </select>
                 </div>
-                <button id="draw-tarot" class="mystical-btn" data-i18n="tarot.draw">Draw a Card</button>
+                <div class="form-group">
+                    <label data-i18n="bloodType.partnerBloodType">Partner's Blood Type</label>
+                    <select id="partner-blood-type" class="mystical-select">
+                        <option value="">-- Select --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </div>
+                <button id="calculate-blood-type-compatibility" class="mystical-btn" data-i18n="bloodType.calculate">Reveal Luck</button>
             </div>
+            <div id="blood-type-result" class="result-card hidden">
+                 <p id="blood-type-compat-reading" class="compat-reading"></p>
+            </div>
+        </section>
 
-            <div id="tarot-result" class="result-card hidden">
-                <div class="tarot-reveal">
-                    <div class="tarot-card-front" id="tarot-card">
-                        <span class="tarot-numeral" id="tarot-numeral"></span>
-                        <span class="tarot-symbol" id="tarot-symbol"></span>
-                        <span class="tarot-name" id="tarot-name"></span>
-                    </div>
+        <!-- MBTI Compatibility Section -->
+        <section id="mbti" class="section">
+            <h2 class="section-title" data-i18n="mbti.title">Love & Marriage Luck by MBTI</h2>
+            <div class="form-container">
+                 <div class="form-group">
+                    <label data-i18n="mbti.yourMbti">Your MBTI</label>
+                    <select id="your-mbti" class="mystical-select">
+                         <option value="">-- Select --</option>
+                         <option value="ISTJ">ISTJ</option><option value="ISFJ">ISFJ</option><option value="INFJ">INFJ</option><option value="INTJ">INTJ</option>
+                         <option value="ISTP">ISTP</option><option value="ISFP">ISFP</option><option value="INFP">INFP</option><option value="INTP">INTP</option>
+                         <option value="ESTP">ESTP</option><option value="ESFP">ESFP</option><option value="ENFP">ENFP</option><option value="ENTP">ENTP</option>
+                         <option value="ESTJ">ESTJ</option><option value="ESFJ">ESFJ</option><option value="ENFJ">ENFJ</option><option value="ENTJ">ENTJ</option>
+                    </select>
                 </div>
-                <div class="tarot-meaning">
-                    <h4 id="tarot-title" class="tarot-card-title"></h4>
-                    <p id="tarot-reading" class="tarot-reading-text"></p>
-                    <div class="tarot-keywords">
-                        <span class="keyword-label" data-i18n="tarot.keywords">Keywords:</span>
-                        <span id="tarot-keywords" class="keywords"></span>
-                    </div>
+                <div class="form-group">
+                    <label data-i18n="mbti.partnerMbti">Partner's MBTI</label>
+                    <select id="partner-mbti" class="mystical-select">
+                        <option value="">-- Select --</option>
+                        <option value="ISTJ">ISTJ</option><option value="ISFJ">ISFJ</option><option value="INFJ">INFJ</option><option value="INTJ">INTJ</option>
+                        <option value="ISTP">ISTP</option><option value="ISFP">ISFP</option><option value="INFP">INFP</option><option value="INTP">INTP</option>
+                        <option value="ESTP">ESTP</option><option value="ESFP">ESFP</option><option value="ENFP">ENFP</option><option value="ENTP">ENTP</option>
+                        <option value="ESTJ">ESTJ</option><option value="ESFJ">ESFJ</option><option value="ENFJ">ENFJ</option><option value="ENTJ">ENTJ</option>
+                    </select>
                 </div>
+                <button id="calculate-mbti-compatibility" class="mystical-btn" data-i18n="mbti.calculate">Discover Potential</button>
+            </div>
+            <div id="mbti-result" class="result-card hidden">
+                 <p id="mbti-compat-reading" class="compat-reading"></p>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="section">
-            <h2 class="section-title" data-i18n="about.title">About Celestial Oracle</h2>
-
+            <h2 class="section-title" data-i18n="about.title">About Love & Fate</h2>
             <div class="about-container">
-                <!-- Introduction -->
                 <div class="about-card">
-                    <div class="about-icon">✨</div>
-                    <h3 data-i18n="about.introTitle">What is Celestial Oracle?</h3>
-                    <p data-i18n="about.introText">Celestial Oracle is a modern astrology platform that combines ancient wisdom with contemporary insights. Our service helps you explore the cosmic influences on your life through personalized horoscopes, birth chart analysis, compatibility readings, and tarot guidance.</p>
+                    <div class="about-icon">💖</div>
+                    <h3 data-i18n="about.introTitle">What is Love & Fate?</h3>
+                    <p data-i18n="about.introText">Love & Fate is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.</p>
                 </div>
-
-                <!-- History & Background -->
                 <div class="about-card">
-                    <div class="about-icon">📜</div>
-                    <h3 data-i18n="about.historyTitle">The Ancient Art of Astrology</h3>
-                    <p data-i18n="about.historyText">Astrology has been practiced for over 4,000 years across civilizations including Babylon, Egypt, Greece, and China. The zodiac system we use today originated from Hellenistic astrology, which mapped the positions of celestial bodies to human affairs and natural phenomena.</p>
+                    <div class="about-icon">🛡️</div>
+                    <h3 data-i18n="about.privacyTitle">Our Commitment to Privacy</h3>
+                    <p data-i18n="about.privacyText">Your privacy is our top priority. We do not store any personal information you enter. All calculations are performed in your browser and are never sent to our servers. Your secrets are safe with you.</p>
                 </div>
-
-                <!-- Features -->
                 <div class="about-card">
-                    <div class="about-icon">🌟</div>
+                    <div class="about-icon">💌</div>
                     <h3 data-i18n="about.featuresTitle">Our Features</h3>
                     <ul class="feature-list">
-                        <li data-i18n="about.feature1">Daily Horoscope - Personalized readings for all 12 zodiac signs</li>
-                        <li data-i18n="about.feature2">Birth Chart - Discover your Sun, Moon, and Rising signs</li>
-                        <li data-i18n="about.feature3">Compatibility - Check romantic and friendship compatibility</li>
-                        <li data-i18n="about.feature4">Tarot Reading - Draw cards for daily guidance and reflection</li>
+                        <li data-i18n="about.feature1">Name Compatibility - Discover the hidden energies between two names.</li>
+                        <li data-i18n="about.feature2">Blood Type Compatibility - Explore the secrets of love and marriage luck based on blood types.</li>
+                        <li data-i18n="about.feature3">MBTI Compatibility - Uncover the potential of your relationship based on personality types.</li>
                     </ul>
                 </div>
-
-                <!-- The 12 Zodiac Signs -->
-                <div class="about-card wide">
-                    <div class="about-icon">♈</div>
-                    <h3 data-i18n="about.zodiacTitle">The 12 Zodiac Signs</h3>
-                    <div class="zodiac-info-grid">
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♈</span>
-                            <div>
-                                <strong data-i18n="zodiac.aries">Aries</strong>
-                                <span class="element-tag fire" data-i18n="elements.fire">Fire</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♉</span>
-                            <div>
-                                <strong data-i18n="zodiac.taurus">Taurus</strong>
-                                <span class="element-tag earth" data-i18n="elements.earth">Earth</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♊</span>
-                            <div>
-                                <strong data-i18n="zodiac.gemini">Gemini</strong>
-                                <span class="element-tag air" data-i18n="elements.air">Air</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♋</span>
-                            <div>
-                                <strong data-i18n="zodiac.cancer">Cancer</strong>
-                                <span class="element-tag water" data-i18n="elements.water">Water</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♌</span>
-                            <div>
-                                <strong data-i18n="zodiac.leo">Leo</strong>
-                                <span class="element-tag fire" data-i18n="elements.fire">Fire</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♍</span>
-                            <div>
-                                <strong data-i18n="zodiac.virgo">Virgo</strong>
-                                <span class="element-tag earth" data-i18n="elements.earth">Earth</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♎</span>
-                            <div>
-                                <strong data-i18n="zodiac.libra">Libra</strong>
-                                <span class="element-tag air" data-i18n="elements.air">Air</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♏</span>
-                            <div>
-                                <strong data-i18n="zodiac.scorpio">Scorpio</strong>
-                                <span class="element-tag water" data-i18n="elements.water">Water</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♐</span>
-                            <div>
-                                <strong data-i18n="zodiac.sagittarius">Sagittarius</strong>
-                                <span class="element-tag fire" data-i18n="elements.fire">Fire</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♑</span>
-                            <div>
-                                <strong data-i18n="zodiac.capricorn">Capricorn</strong>
-                                <span class="element-tag earth" data-i18n="elements.earth">Earth</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♒</span>
-                            <div>
-                                <strong data-i18n="zodiac.aquarius">Aquarius</strong>
-                                <span class="element-tag air" data-i18n="elements.air">Air</span>
-                            </div>
-                        </div>
-                        <div class="zodiac-info">
-                            <span class="info-symbol">♓</span>
-                            <div>
-                                <strong data-i18n="zodiac.pisces">Pisces</strong>
-                                <span class="element-tag water" data-i18n="elements.water">Water</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- How to Use -->
-                <div class="about-card">
-                    <div class="about-icon">📖</div>
-                    <h3 data-i18n="about.howToTitle">How to Use</h3>
-                    <ol class="how-to-list">
-                        <li data-i18n="about.step1">Select your zodiac sign to view your daily horoscope</li>
-                        <li data-i18n="about.step2">Enter your birth date to generate your personal birth chart</li>
-                        <li data-i18n="about.step3">Compare two signs to check compatibility</li>
-                        <li data-i18n="about.step4">Draw a tarot card for daily guidance</li>
-                    </ol>
-                </div>
-
-                <!-- Disclaimer -->
-                <div class="about-card">
+                 <div class="about-card">
                     <div class="about-icon">⚠️</div>
                     <h3 data-i18n="about.disclaimerTitle">Disclaimer</h3>
-                    <p data-i18n="about.disclaimerText">Celestial Oracle is designed for entertainment and self-reflection purposes only. Astrology readings should not be used as a substitute for professional advice in medical, legal, financial, or psychological matters. The stars may guide, but you always have the power to shape your own destiny.</p>
+                    <p data-i18n="about.disclaimerText">This site is for entertainment purposes only. Compatibility scores are not scientifically proven and should not be used to make life decisions. Enjoy the journey of discovery!</p>
                 </div>
             </div>
         </section>
@@ -446,8 +181,8 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p data-i18n="footer.disclaimer">For entertainment purposes only. The stars guide, but you decide your path.</p>
-        <p class="copyright">© 2025 Celestial Oracle</p>
+        <p data-i18n="footer.disclaimer">For entertainment purposes only.</p>
+        <p class="copyright">© 2024 Love & Fate</p>
     </footer>
 
     <script src="translations.js"></script>
