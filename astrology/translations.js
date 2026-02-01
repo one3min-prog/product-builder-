@@ -26,6 +26,11 @@ const translations = {
                 challenging: "A challenging match. Communication and understanding are key.",
                 difficult: "A difficult match. This relationship will require a lot of patience and work.",
             },
+            animation: {
+                step1: "Converting names to strokes...",
+                step2: "Combining strokes...",
+                step3: "Calculating the harmony...",
+            }
         },
         bloodType: {
             title: "Love & Marriage Luck by Blood Type",
@@ -84,6 +89,11 @@ const translations = {
                 challenging: "도전적인 궁합입니다. 소통과 이해가 핵심입니다.",
                 difficult: "어려운 궁합입니다. 이 관계는 많은 인내와 노력이 필요합니다.",
             },
+            animation: {
+                step1: "이름을 획수로 변환 중...",
+                step2: "획수 조합 중...",
+                step3: "조화도 계산 중...",
+            }
         },
         bloodType: {
             title: "혈액형으로 보는 연애 및 결혼 운",
@@ -142,6 +152,11 @@ const translations = {
                 challenging: "挑戦的な組み合わせです。コミュニケーションと理解が鍵となります。",
                 difficult: "難しい組み合わせです。この関係には多くの忍耐と努力が必要です。",
             },
+            animation: {
+                step1: "名前を画数に変換しています...",
+                step2: "画数を組み合わせています...",
+                step3: "調和を計算しています...",
+            }
         },
         bloodType: {
             title: "血液型による愛と結婚の運",
@@ -200,6 +215,11 @@ const translations = {
                 challenging: "具有挑战性的配对。沟通和理解是关键。",
                 difficult: "困难的配对。这段关系需要大量的耐心和努力。",
             },
+            animation: {
+                step1: "正在将姓名转换为笔划...",
+                step2: "正在组合笔划...",
+                step3: "正在计算和谐度...",
+            }
         },
         bloodType: {
             title: "按血型看恋爱婚姻运",
@@ -258,6 +278,11 @@ const translations = {
                 challenging: "Una pareja desafiante. La comunicación y la comprensión son clave.",
                 difficult: "Una pareja difícil. Esta relación requerirá mucha paciencia y trabajo.",
             },
+            animation: {
+                step1: "Convirtiendo nombres a trazos...",
+                step2: "Combinando trazos...",
+                step3: "Calculando la armonía...",
+            }
         },
         bloodType: {
             title: "Suerte en el Amor y el Matrimonio por Tipo de Sangre",
@@ -316,6 +341,11 @@ const translations = {
                 challenging: "Une correspondance difficile. La communication et la compréhension sont essentielles.",
                 difficult: "Une correspondance difficile. Cette relation nécessitera beaucoup de patience et de travail.",
             },
+            animation: {
+                step1: "Conversion des noms en traits...",
+                step2: "Combinaison des traits...",
+                step3: "Calcul de l'harmonie...",
+            }
         },
         bloodType: {
             title: "Chance en Amour et Mariage par Groupe Sanguin",
@@ -374,6 +404,11 @@ const translations = {
                 challenging: "Eine herausfordernde Übereinstimmung. Kommunikation und Verständnis sind der Schlüssel.",
                 difficult: "Eine schwierige Übereinstimmung. Diese Beziehung erfordert viel Geduld und Arbeit.",
             },
+            animation: {
+                step1: "Namen in Striche umwandeln...",
+                step2: "Striche kombinieren...",
+                step3: "Harmonie berechnen...",
+            }
         },
         bloodType: {
             title: "Liebes- und Heiratsglück nach Blutgruppe",
@@ -432,6 +467,11 @@ const translations = {
                 challenging: "Сложное совпадение. Общение и понимание являются ключевыми.",
                 difficult: "Трудное совпадение. Эти отношения потребуют много терпения и работы.",
             },
+            animation: {
+                step1: "Преобразование имен в штрихи...",
+                step2: "Объединение штрихов...",
+                step3: "Расчет гармонии...",
+            }
         },
         bloodType: {
             title: "Удача в Любви и Браке по Группе Крови",
@@ -490,6 +530,11 @@ const translations = {
                 challenging: "Uma combinação desafiadora. Comunicação e compreensão são fundamentais.",
                 difficult: "Uma combinação difícil. Este relacionamento exigirá muita paciência e trabalho.",
             },
+            animation: {
+                step1: "Convertendo nomes em traços...",
+                step2: "Combinando os traços...",
+                step3: "Calculando a harmonia...",
+            }
         },
         bloodType: {
             title: "Sorte no Amor e Casamento por Tipo Sanguíneo",
