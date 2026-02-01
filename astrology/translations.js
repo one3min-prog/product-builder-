@@ -19,6 +19,7 @@ const translations = {
             partnerName: "Partner's Name",
             calculate: "See Compatibility",
             alert: "Please enter both names.",
+            calculating: "Calculating your destiny...",
             readings: {
                 excellent: "An excellent match! You share a deep and harmonious connection.",
                 good: "A very good match. You have a strong and supportive bond.",
@@ -77,6 +78,7 @@ const translations = {
             partnerName: "상대방 이름",
             calculate: "궁합 보기",
             alert: "두 사람의 이름을 모두 입력해주세요.",
+            calculating: "운명을 계산하는 중...",
             readings: {
                 excellent: "최고의 궁합! 깊고 조화로운 관계를 공유합니다.",
                 good: "아주 좋은 궁합입니다. 강하고 지지적인 유대감을 가지고 있습니다.",
@@ -135,6 +137,7 @@ const translations = {
             partnerName: "パートナーの名前",
             calculate: "互換性を確認する",
             alert: "両方の名前を入力してください。",
+            calculating: "運命を計算中...",
             readings: {
                 excellent: "素晴らしい組み合わせ！深く調和のとれたつながりを共有しています。",
                 good: "非常に良い組み合わせです。強くて支えとなる絆があります。",
@@ -193,6 +196,7 @@ const translations = {
             partnerName: "伴侣的名字",
             calculate: "查看配对",
             alert: "请输入双方姓名。",
+            calculating: "正在计算你的缘分...",
             readings: {
                 excellent: "天作之合！你们有着深刻而和谐的联系。",
                 good: "非常好的配对。你们有牢固和支持的纽带。",
@@ -251,6 +255,7 @@ const translations = {
             partnerName: "Nombre de la Pareja",
             calculate: "Ver Compatibilidad",
             alert: "Por favor, ingrese ambos nombres.",
+            calculating: "Calculando tu destino...",
             readings: {
                 excellent: "¡Una pareja excelente! Comparten una conexión profunda y armoniosa.",
                 good: "Una muy buena pareja. Tienen un vínculo fuerte y de apoyo.",
@@ -309,6 +314,7 @@ const translations = {
             partnerName: "Nom du Partenaire",
             calculate: "Voir la Compatibilité",
             alert: "Veuillez saisir les deux noms.",
+            calculating: "Calcul de votre destin...",
             readings: {
                 excellent: "Une excellente correspondance ! Vous partagez une connexion profonde et harmonieuse.",
                 good: "Une très bonne correspondance. Vous avez un lien fort et solidaire.",
@@ -367,6 +373,7 @@ const translations = {
             partnerName: "Name des Partners",
             calculate: "Kompatibilität ansehen",
             alert: "Bitte geben Sie beide Namen ein.",
+            calculating: "Berechne dein Schicksal...",
             readings: {
                 excellent: "Eine ausgezeichnete Übereinstimmung! Sie teilen eine tiefe und harmonische Verbindung.",
                 good: "Eine sehr gute Übereinstimmung. Sie haben eine starke und unterstützende Bindung.",
@@ -425,6 +432,7 @@ const translations = {
             partnerName: "Имя Партнера",
             calculate: "Посмотреть Совместимость",
             alert: "Пожалуйста, введите оба имени.",
+            calculating: "Рассчитываем вашу судьбу...",
             readings: {
                 excellent: "Отличное совпадение! У вас глубокая и гармоничная связь.",
                 good: "Очень хорошее совпадение. У вас прочная и поддерживающая связь.",
@@ -483,6 +491,7 @@ const translations = {
             partnerName: "Nome do Parceiro",
             calculate: "Ver Compatibilidade",
             alert: "Por favor, insira os dois nomes.",
+            calculating: "Calculando seu destino...",
             readings: {
                 excellent: "Uma combinação excelente! Vocês compartilham uma conexão profunda e harmoniosa.",
                 good: "Uma combinação muito boa. Vocês têm um vínculo forte e de apoio.",

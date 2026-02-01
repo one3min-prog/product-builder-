@@ -629,6 +629,135 @@ body {
     line-height: 1.8;
 }
 
+/* ====== Name Calculation Animation ====== */
+.calculation-animation {
+    text-align: center;
+    padding: 20px;
+}
+
+.calc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.calc-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.calc-step-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.calc-step-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.calc-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    padding: 8px;
+    background: rgba(201, 162, 39, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.calc-cell:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.calc-char {
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.calc-stroke {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.calc-number {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Pulse animation for final result */
+.pulse-animation {
+    animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px var(--primary-glow);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px var(--primary-glow), 0 0 60px rgba(123, 104, 238, 0.3);
+    }
+}
+
+/* Responsive for calculation animation */
+@media (max-width: 768px) {
+    .calc-cell {
+        min-width: 35px;
+        padding: 6px;
+    }
+
+    .calc-char {
+        font-size: 1rem;
+    }
+
+    .calc-stroke,
+    .calc-number {
+        font-size: 0.9rem;
+    }
+
+    .calc-steps {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calc-cell {
+        min-width: 28px;
+        padding: 4px;
+    }
+
+    .calc-char {
+        font-size: 0.85rem;
+    }
+
+    .calc-stroke,
+    .calc-number {
+        font-size: 0.8rem;
+    }
+}
+
 /* ====== Tarot ====== */
 .tarot-intro {
     text-align: center;
