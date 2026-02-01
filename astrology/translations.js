@@ -6,7 +6,8 @@ const translations = {
             horoscope: "Daily Horoscope",
             birthchart: "Birth Chart",
             compatibility: "Compatibility",
-            tarot: "Tarot Reading"
+            tarot: "Tarot Reading",
+            about: "About"
         },
         zodiac: {
             aries: "Aries",
@@ -58,6 +59,26 @@ const translations = {
         },
         footer: {
             disclaimer: "For entertainment purposes only. The stars guide, but you decide your path."
+        },
+        about: {
+            title: "About Celestial Oracle",
+            introTitle: "What is Celestial Oracle?",
+            introText: "Celestial Oracle is a modern astrology platform that combines ancient wisdom with contemporary insights. Our service helps you explore the cosmic influences on your life through personalized horoscopes, birth chart analysis, compatibility readings, and tarot guidance.",
+            historyTitle: "The Ancient Art of Astrology",
+            historyText: "Astrology has been practiced for over 4,000 years across civilizations including Babylon, Egypt, Greece, and China. The zodiac system we use today originated from Hellenistic astrology, which mapped the positions of celestial bodies to human affairs and natural phenomena.",
+            featuresTitle: "Our Features",
+            feature1: "Daily Horoscope - Personalized readings for all 12 zodiac signs",
+            feature2: "Birth Chart - Discover your Sun, Moon, and Rising signs",
+            feature3: "Compatibility - Check romantic and friendship compatibility",
+            feature4: "Tarot Reading - Draw cards for daily guidance and reflection",
+            zodiacTitle: "The 12 Zodiac Signs",
+            howToTitle: "How to Use",
+            step1: "Select your zodiac sign to view your daily horoscope",
+            step2: "Enter your birth date to generate your personal birth chart",
+            step3: "Compare two signs to check compatibility",
+            step4: "Draw a tarot card for daily guidance",
+            disclaimerTitle: "Disclaimer",
+            disclaimerText: "Celestial Oracle is designed for entertainment and self-reflection purposes only. Astrology readings should not be used as a substitute for professional advice in medical, legal, financial, or psychological matters. The stars may guide, but you always have the power to shape your own destiny."
         },
         colors: {
             red: "Red",
@@ -135,7 +156,8 @@ const translations = {
             horoscope: "오늘의 운세",
             birthchart: "출생 차트",
             compatibility: "궁합 보기",
-            tarot: "타로 카드"
+            tarot: "타로 카드",
+            about: "소개"
         },
         zodiac: {
             aries: "양자리",
@@ -187,6 +209,26 @@ const translations = {
         },
         footer: {
             disclaimer: "오락 목적으로만 제공됩니다. 별이 인도하지만, 길은 당신이 정합니다."
+        },
+        about: {
+            title: "천상의 신탁 소개",
+            introTitle: "천상의 신탁이란?",
+            introText: "천상의 신탁은 고대의 지혜와 현대적 통찰을 결합한 점성술 플랫폼입니다. 맞춤형 운세, 출생 차트 분석, 궁합 리딩, 타로 가이드를 통해 우주의 영향력을 탐구할 수 있도록 도와드립니다.",
+            historyTitle: "점성술의 고대 역사",
+            historyText: "점성술은 바빌론, 이집트, 그리스, 중국 등 여러 문명에서 4,000년 이상 행해져 왔습니다. 오늘날 우리가 사용하는 황도대 시스템은 천체의 위치를 인간사와 자연 현상에 매핑한 헬레니즘 점성술에서 유래했습니다.",
+            featuresTitle: "주요 기능",
+            feature1: "오늘의 운세 - 12개 별자리별 맞춤 리딩",
+            feature2: "출생 차트 - 태양, 달, 상승 별자리 발견",
+            feature3: "궁합 - 연애 및 우정 궁합 확인",
+            feature4: "타로 리딩 - 일일 가이드와 성찰을 위한 카드 뽑기",
+            zodiacTitle: "12개의 별자리",
+            howToTitle: "사용 방법",
+            step1: "별자리를 선택하여 오늘의 운세를 확인하세요",
+            step2: "생년월일을 입력하여 개인 출생 차트를 생성하세요",
+            step3: "두 별자리를 비교하여 궁합을 확인하세요",
+            step4: "일일 가이드를 위해 타로 카드를 뽑으세요",
+            disclaimerTitle: "면책 조항",
+            disclaimerText: "천상의 신탁은 오락 및 자기 성찰 목적으로만 설계되었습니다. 점성술 리딩은 의료, 법률, 재정 또는 심리적 문제에 대한 전문적인 조언을 대체하는 데 사용되어서는 안 됩니다. 별이 인도할 수 있지만, 자신의 운명을 만들어가는 힘은 항상 당신에게 있습니다."
         },
         colors: {
             red: "빨강",
@@ -264,7 +306,8 @@ const translations = {
             horoscope: "今日の運勢",
             birthchart: "出生図",
             compatibility: "相性占い",
-            tarot: "タロット占い"
+            tarot: "タロット占い",
+            about: "紹介"
         },
         zodiac: {
             aries: "牡羊座",
@@ -316,6 +359,26 @@ const translations = {
         },
         footer: {
             disclaimer: "娯楽目的でのみ提供されます。星が導きますが、道を決めるのはあなたです。"
+        },
+        about: {
+            title: "天のオラクルについて",
+            introTitle: "天のオラクルとは？",
+            introText: "天のオラクルは、古代の知恵と現代的な洞察を組み合わせた占星術プラットフォームです。パーソナライズされた星占い、出生図分析、相性リーディング、タロットガイダンスを通じて、宇宙の影響を探求するお手伝いをします。",
+            historyTitle: "占星術の古代の芸術",
+            historyText: "占星術は、バビロン、エジプト、ギリシャ、中国など、4,000年以上にわたって様々な文明で実践されてきました。今日使用されている黄道帯システムは、天体の位置を人間の事柄や自然現象にマッピングしたヘレニズム占星術に由来しています。",
+            featuresTitle: "機能紹介",
+            feature1: "今日の運勢 - 12星座すべてのパーソナライズされたリーディング",
+            feature2: "出生図 - 太陽、月、上昇星座を発見",
+            feature3: "相性 - 恋愛と友情の相性をチェック",
+            feature4: "タロットリーディング - 毎日のガイダンスと内省のためにカードを引く",
+            zodiacTitle: "12の星座",
+            howToTitle: "使い方",
+            step1: "星座を選んで今日の運勢を見る",
+            step2: "生年月日を入力して個人の出生図を作成",
+            step3: "2つの星座を比較して相性をチェック",
+            step4: "毎日のガイダンスのためにタロットカードを引く",
+            disclaimerTitle: "免責事項",
+            disclaimerText: "天のオラクルは、娯楽と自己内省の目的でのみ設計されています。占星術のリーディングは、医療、法律、財務、または心理的な問題における専門家のアドバイスの代わりとして使用すべきではありません。星は導くかもしれませんが、自分の運命を形作る力は常にあなたにあります。"
         },
         colors: {
             red: "赤",
@@ -393,7 +456,8 @@ const translations = {
             horoscope: "今日运势",
             birthchart: "出生星盘",
             compatibility: "星座配对",
-            tarot: "塔罗占卜"
+            tarot: "塔罗占卜",
+            about: "关于"
         },
         zodiac: {
             aries: "白羊座",
@@ -445,6 +509,26 @@ const translations = {
         },
         footer: {
             disclaimer: "仅供娱乐目的。星辰指引方向，但道路由你决定。"
+        },
+        about: {
+            title: "关于天象神谕",
+            introTitle: "什么是天象神谕？",
+            introText: "天象神谕是一个结合古代智慧与现代洞察的占星平台。我们的服务通过个性化星座运势、出生星盘分析、配对解读和塔罗指引，帮助您探索宇宙对生活的影响。",
+            historyTitle: "占星术的古老艺术",
+            historyText: "占星术已经在包括巴比伦、埃及、希腊和中国在内的各个文明中实践了4000多年。我们今天使用的黄道带系统起源于希腊化时期的占星术，它将天体位置与人类事务和自然现象联系起来。",
+            featuresTitle: "功能介绍",
+            feature1: "每日运势 - 为所有12个星座提供个性化解读",
+            feature2: "出生星盘 - 发现您的太阳、月亮和上升星座",
+            feature3: "配对分析 - 检查爱情和友情的兼容性",
+            feature4: "塔罗占卜 - 抽取卡牌获得每日指引和反思",
+            zodiacTitle: "十二星座",
+            howToTitle: "使用方法",
+            step1: "选择您的星座查看今日运势",
+            step2: "输入出生日期生成个人星盘",
+            step3: "比较两个星座检查配对",
+            step4: "抽取塔罗牌获得每日指引",
+            disclaimerTitle: "免责声明",
+            disclaimerText: "天象神谕仅供娱乐和自我反思之用。占星解读不应用作医疗、法律、财务或心理问题专业建议的替代品。星辰可能会指引，但塑造自己命运的力量始终在您手中。"
         },
         colors: {
             red: "红色",
@@ -522,7 +606,8 @@ const translations = {
             horoscope: "Horóscopo Diario",
             birthchart: "Carta Natal",
             compatibility: "Compatibilidad",
-            tarot: "Lectura de Tarot"
+            tarot: "Lectura de Tarot",
+            about: "Acerca de"
         },
         zodiac: {
             aries: "Aries",
@@ -574,6 +659,26 @@ const translations = {
         },
         footer: {
             disclaimer: "Solo para fines de entretenimiento. Las estrellas guían, pero tú decides tu camino."
+        },
+        about: {
+            title: "Acerca de Oráculo Celestial",
+            introTitle: "¿Qué es Oráculo Celestial?",
+            introText: "Oráculo Celestial es una plataforma de astrología moderna que combina la sabiduría antigua con perspectivas contemporáneas. Nuestro servicio te ayuda a explorar las influencias cósmicas en tu vida a través de horóscopos personalizados, análisis de carta natal, lecturas de compatibilidad y guía del tarot.",
+            historyTitle: "El Arte Antiguo de la Astrología",
+            historyText: "La astrología se ha practicado durante más de 4,000 años en civilizaciones como Babilonia, Egipto, Grecia y China. El sistema zodiacal que usamos hoy se originó de la astrología helenística, que mapeaba las posiciones de los cuerpos celestes a los asuntos humanos y fenómenos naturales.",
+            featuresTitle: "Nuestras Características",
+            feature1: "Horóscopo Diario - Lecturas personalizadas para los 12 signos del zodiaco",
+            feature2: "Carta Natal - Descubre tus signos Solar, Lunar y Ascendente",
+            feature3: "Compatibilidad - Verifica la compatibilidad romántica y de amistad",
+            feature4: "Lectura de Tarot - Saca cartas para guía y reflexión diaria",
+            zodiacTitle: "Los 12 Signos del Zodiaco",
+            howToTitle: "Cómo Usar",
+            step1: "Selecciona tu signo zodiacal para ver tu horóscopo diario",
+            step2: "Ingresa tu fecha de nacimiento para generar tu carta natal personal",
+            step3: "Compara dos signos para verificar la compatibilidad",
+            step4: "Saca una carta del tarot para guía diaria",
+            disclaimerTitle: "Aviso Legal",
+            disclaimerText: "Oráculo Celestial está diseñado solo para fines de entretenimiento y autorreflexión. Las lecturas astrológicas no deben usarse como sustituto del consejo profesional en asuntos médicos, legales, financieros o psicológicos. Las estrellas pueden guiar, pero siempre tienes el poder de moldear tu propio destino."
         },
         colors: {
             red: "Rojo",
