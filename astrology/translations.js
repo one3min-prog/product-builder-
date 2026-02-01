@@ -2,533 +2,443 @@
 const translations = {
     en: {
         title: "Love & Fate",
-        tagline: "Discover your romantic destiny",
-        badges: {
-            free: "100% Free",
-            privacy: "Privacy Protected",
-        },
+        tagline: "your love story written in the stars",
         nav: {
-            name: "Name Compatibility",
+            name: "Name Match",
             bloodType: "Blood Type",
             mbti: "MBTI",
-            about: "About",
+            daily: "Daily Love",
+            about: "About"
         },
         name: {
-            title: "Love Compatibility by Name",
+            title: "Name Compatibility",
+            subtitle: "discover the magic between your names",
             yourName: "Your Name",
-            partnerName: "Partner's Name",
-            calculate: "See Compatibility",
-            alert: "Please enter both names.",
-            calculating: "Calculating your destiny...",
-            readings: {
-                excellent: "An excellent match! You share a deep and harmonious connection.",
-                good: "A very good match. You have a strong and supportive bond.",
-                average: "A promising match. With effort, you can build a beautiful relationship.",
-                challenging: "A challenging match. Communication and understanding are key.",
-                difficult: "A difficult match. This relationship will require a lot of patience and work.",
-            },
+            partnerName: "Their Name",
+            calculate: "Check Our Fate",
+            alert: "Please enter both names",
+            calculating: "Calculating your destiny..."
         },
         bloodType: {
-            title: "Love & Marriage Luck by Blood Type",
-            yourBloodType: "Your Blood Type",
-            partnerBloodType: "Partner's Blood Type",
-            calculate: "Reveal Luck",
-            alert: "Please select both blood types.",
+            title: "Blood Type Love",
+            subtitle: "what does your blood say about love?",
+            yourBloodType: "Your Type",
+            partnerBloodType: "Their Type",
+            calculate: "Analyze Chemistry",
+            alert: "Please select both blood types"
         },
         mbti: {
-            title: "Love & Marriage Luck by MBTI",
+            title: "MBTI Compatibility",
+            subtitle: "how do your personalities dance together?",
             yourMbti: "Your MBTI",
-            partnerMbti: "Partner's MBTI",
-            calculate: "Discover Potential",
-            alert: "Please select both MBTI types.",
+            partnerMbti: "Their MBTI",
+            calculate: "Match Personalities",
+            alert: "Please select both MBTI types"
         },
-        about: {
-            title: "About Love & Fate",
-            introTitle: "What is Love & Fate?",
-            introText: "Love & Fate is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.",
-            privacyTitle: "Our Commitment to Privacy",
-            privacyText: "Your privacy is our top priority. We do not store any personal information you enter. All calculations are performed in your browser and are never sent to our servers. Your secrets are safe with you.",
-            featuresTitle: "Our Features",
-            feature1: "Name Compatibility - Discover the hidden energies between two names.",
-            feature2: "Blood Type Compatibility - Explore the secrets of love and marriage luck based on blood types.",
-            feature3: "MBTI Compatibility - Uncover the potential of your relationship based on personality types.",
-            disclaimerTitle: "Disclaimer",
-            disclaimerText: "This site is for entertainment purposes only. Compatibility scores are not scientifically proven and should not be used to make life decisions. Enjoy the journey of discovery!",
+        daily: {
+            title: "Daily Love Fortune",
+            subtitle: "what does the universe have planned for your heart?",
+            intro: "Enter your name to receive your personalized love fortune for today",
+            calculate: "Reveal My Fortune",
+            alert: "Please enter your name"
+        },
+        result: {
+            advice: "Love Tip"
         },
         footer: {
-            disclaimer: "For entertainment purposes only.",
-        },
+            disclaimer: "for entertainment purposes only"
+        }
     },
     ko: {
         title: "사랑과 운명",
-        tagline: "당신의 로맨틱한 운명을 발견하세요",
-        badges: {
-            free: "100% 무료",
-            privacy: "개인정보 보호",
-        },
+        tagline: "별들이 쓴 당신의 러브 스토리",
         nav: {
             name: "이름 궁합",
             bloodType: "혈액형",
             mbti: "MBTI",
-            about: "소개",
+            daily: "오늘의 운세",
+            about: "소개"
         },
         name: {
-            title: "이름으로 보는 사랑 궁합",
+            title: "이름 궁합",
+            subtitle: "두 이름 사이의 마법을 발견하세요",
             yourName: "내 이름",
-            partnerName: "상대방 이름",
-            calculate: "궁합 보기",
-            alert: "두 사람의 이름을 모두 입력해주세요.",
-            calculating: "운명을 계산하는 중...",
-            readings: {
-                excellent: "최고의 궁합! 깊고 조화로운 관계를 공유합니다.",
-                good: "아주 좋은 궁합입니다. 강하고 지지적인 유대감을 가지고 있습니다.",
-                average: "유망한 궁합입니다. 노력으로 아름다운 관계를 만들 수 있습니다.",
-                challenging: "도전적인 궁합입니다. 소통과 이해가 핵심입니다.",
-                difficult: "어려운 궁합입니다. 이 관계는 많은 인내와 노력이 필요합니다.",
-            },
+            partnerName: "상대 이름",
+            calculate: "운명 확인하기",
+            alert: "두 이름을 모두 입력해주세요",
+            calculating: "운명을 계산하는 중..."
         },
         bloodType: {
-            title: "혈액형으로 보는 연애 및 결혼 운",
+            title: "혈액형 궁합",
+            subtitle: "당신의 피는 사랑에 대해 뭐라고 할까요?",
             yourBloodType: "내 혈액형",
-            partnerBloodType: "상대방 혈액형",
-            calculate: "운세 확인",
-            alert: "두 사람의 혈액형을 모두 선택해주세요.",
+            partnerBloodType: "상대 혈액형",
+            calculate: "케미 분석하기",
+            alert: "두 혈액형을 모두 선택해주세요"
         },
         mbti: {
-            title: "MBTI로 보는 연애 및 결혼 운",
+            title: "MBTI 궁합",
+            subtitle: "두 성격은 어떻게 춤출까요?",
             yourMbti: "내 MBTI",
-            partnerMbti: "상대방 MBTI",
-            calculate: "잠재력 확인",
-            alert: "두 사람의 MBTI를 모두 선택해주세요.",
+            partnerMbti: "상대 MBTI",
+            calculate: "성격 매칭하기",
+            alert: "두 MBTI를 모두 선택해주세요"
         },
-        about: {
-            title: "사랑과 운명 소개",
-            introTitle: "사랑과 운명이란?",
-            introText: "사랑과 운명은 관계의 역학을 이해하기 위한 개인 가이드입니다. 이름, 혈액형, MBTI 성격 유형을 기반으로 한 궁합 풀이를 제공하여 더 깊은 관계를 발견할 수 있도록 돕습니다.",
-            privacyTitle: "개인정보 보호 약속",
-            privacyText: "고객의 개인정보는 우리의 최우선 과제입니다. 입력하신 어떠한 개인정보도 저장하지 않습니다. 모든 계산은 브라우저에서 수행되며 서버로 전송되지 않습니다. 당신의 비밀은 안전합니다.",
-            featuresTitle: "우리의 기능",
-            feature1: "이름 궁합 - 두 이름 사이에 숨겨진 에너지를 발견하세요.",
-            feature2: "혈액형 궁합 - 혈액형에 따른 사랑과 결혼 운의 비밀을 탐험하세요.",
-            feature3: "MBTI 궁합 - 성격 유형에 따른 관계의 잠재력을 발견하세요.",
-            disclaimerTitle: "면책 조항",
-            disclaimerText: "이 사이트는 오락용으로만 제공됩니다. 궁합 점수는 과학적으로 입증되지 않았으며 인생의 결정을 내리는 데 사용되어서는 안 됩니다. 발견의 여정을 즐기십시오!",
+        daily: {
+            title: "오늘의 연애운",
+            subtitle: "우주는 당신의 마음을 위해 무엇을 계획했을까요?",
+            intro: "오늘의 맞춤형 연애 운세를 받으려면 이름을 입력하세요",
+            calculate: "운세 보기",
+            alert: "이름을 입력해주세요"
+        },
+        result: {
+            advice: "연애 팁"
         },
         footer: {
-            disclaimer: "오락용으로만 사용하세요.",
-        },
+            disclaimer: "오락용으로만 사용하세요"
+        }
     },
     ja: {
         title: "愛と運命",
-        tagline: "あなたのロマンチックな運命を発見してください",
-        badges: {
-            free: "100% 無料",
-            privacy: "プライバシー保護",
-        },
+        tagline: "星に書かれたあなたのラブストーリー",
         nav: {
-            name: "名前の互換性",
+            name: "名前相性",
             bloodType: "血液型",
             mbti: "MBTI",
-            about: "約",
+            daily: "今日の運勢",
+            about: "について"
         },
         name: {
-            title: "名前による愛の互換性",
+            title: "名前の相性",
+            subtitle: "二人の名前の間の魔法を発見",
             yourName: "あなたの名前",
-            partnerName: "パートナーの名前",
-            calculate: "互換性を確認する",
-            alert: "両方の名前を入力してください。",
-            calculating: "運命を計算中...",
-            readings: {
-                excellent: "素晴らしい組み合わせ！深く調和のとれたつながりを共有しています。",
-                good: "非常に良い組み合わせです。強くて支えとなる絆があります。",
-                average: "有望な組み合わせです。努力すれば、美しい関係を築くことができます。",
-                challenging: "挑戦的な組み合わせです。コミュニケーションと理解が鍵となります。",
-                difficult: "難しい組み合わせです。この関係には多くの忍耐と努力が必要です。",
-            },
+            partnerName: "相手の名前",
+            calculate: "運命を確認",
+            alert: "両方の名前を入力してください",
+            calculating: "運命を計算中..."
         },
         bloodType: {
-            title: "血液型による愛と結婚の運",
+            title: "血液型の相性",
+            subtitle: "あなたの血液型は愛について何を語る？",
             yourBloodType: "あなたの血液型",
-            partnerBloodType: "パートナーの血液型",
-            calculate: "運を明らかにする",
-            alert: "両方の血液型を選択してください。",
+            partnerBloodType: "相手の血液型",
+            calculate: "相性を分析",
+            alert: "両方の血液型を選択してください"
         },
         mbti: {
-            title: "MBTIによる愛と結婚の運",
+            title: "MBTI相性",
+            subtitle: "二人の性格はどう踊る？",
             yourMbti: "あなたのMBTI",
-            partnerMbti: "パートナーのMBTI",
-            calculate: "可能性を発見する",
-            alert: "両方のMBTIタイプを選択してください。",
+            partnerMbti: "相手のMBTI",
+            calculate: "性格をマッチ",
+            alert: "両方のMBTIを選択してください"
         },
-        about: {
-            title: "愛と運命について",
-            introTitle: "愛と運命とは？",
-            introText: "愛と運命は、人間関係のダイナミクスを理解するためのあなたの個人的なガイドです。名前、血液型、MBTIの性格タイプに基づいた互換性の読み物を提供し、より深いつながりを発見するのに役立ちます。",
-            privacyTitle: "プライバシーへの取り組み",
-            privacyText: "あなたのプライバシーは私たちの最優先事項です。入力された個人情報は一切保存されません。すべての計算はブラウザで実行され、サーバーに送信されることはありません。あなたの秘密はあなたと一緒に安全です。",
-            featuresTitle: "私たちの特徴",
-            feature1: "名前の互換性 - 2つの名前の間に隠されたエネルギーを発見します。",
-            feature2: "血液型占い - 血液型に基づいた愛と結婚の運の秘密を探ります。",
-            feature3: "MBTIの互換性 - 性格タイプに基づいてあなたの関係の可能性を明らかにします。",
-            disclaimerTitle: "免責事項",
-            disclaimerText: "このサイトは娯楽目的のみのものです。互換性スコアは科学的に証明されておらず、人生の決定を下すために使用するべきではありません。発見の旅をお楽しみください！",
+        daily: {
+            title: "今日の恋愛運",
+            subtitle: "宇宙はあなたの心に何を計画している？",
+            intro: "今日のパーソナライズされた恋愛運を受け取るには名前を入力",
+            calculate: "運勢を見る",
+            alert: "名前を入力してください"
+        },
+        result: {
+            advice: "恋愛アドバイス"
         },
         footer: {
-            disclaimer: "娯楽目的のみ。",
-        },
+            disclaimer: "娯楽目的のみ"
+        }
     },
     zh: {
         title: "爱与命运",
-        tagline: "发现你的浪漫命运",
-        badges: {
-            free: "100% 免费",
-            privacy: "隐私保护",
-        },
+        tagline: "星星写下的你的爱情故事",
         nav: {
             name: "姓名配对",
             bloodType: "血型",
             mbti: "MBTI",
-            about: "关于",
+            daily: "今日运势",
+            about: "关于"
         },
         name: {
-            title: "按姓名看爱情配对",
+            title: "姓名配对",
+            subtitle: "发现两个名字之间的魔力",
             yourName: "你的名字",
-            partnerName: "伴侣的名字",
-            calculate: "查看配对",
-            alert: "请输入双方姓名。",
-            calculating: "正在计算你的缘分...",
-            readings: {
-                excellent: "天作之合！你们有着深刻而和谐的联系。",
-                good: "非常好的配对。你们有牢固和支持的纽带。",
-                average: "很有希望的配对。通过努力，你们可以建立美好的关系。",
-                challenging: "具有挑战性的配对。沟通和理解是关键。",
-                difficult: "困难的配对。这段关系需要大量的耐心和努力。",
-            },
+            partnerName: "对方的名字",
+            calculate: "查看缘分",
+            alert: "请输入两个名字",
+            calculating: "正在计算你的缘分..."
         },
         bloodType: {
-            title: "按血型看恋爱婚姻运",
+            title: "血型配对",
+            subtitle: "你的血型对爱情说了什么？",
             yourBloodType: "你的血型",
-            partnerBloodType: "伴侣的血型",
-            calculate: "揭示运气",
-            alert: "请选择两种血型。",
+            partnerBloodType: "对方的血型",
+            calculate: "分析化学反应",
+            alert: "请选择两个血型"
         },
         mbti: {
-            title: "按MBTI看恋爱婚姻运",
+            title: "MBTI配对",
+            subtitle: "两个性格如何共舞？",
             yourMbti: "你的MBTI",
-            partnerMbti: "伴侣的MBTI",
-            calculate: "发现潜力",
-            alert: "请选择两种MBTI类型。",
+            partnerMbti: "对方的MBTI",
+            calculate: "匹配性格",
+            alert: "请选择两个MBTI"
         },
-        about: {
-            title: "关于爱与命运",
-            introTitle: "什么是爱与命运？",
-            introText: "爱与命运是你了解人际关系动态的个人指南。我们根据姓名、血型和MBTI性格类型提供配对解读，帮助你发现更深层次的联系。",
-            privacyTitle: "我们的隐私承诺",
-            privacyText: "你的隐私是我们的首要任务。我们不存储你输入的任何个人信息。所有计算都在你的浏览器中执行，绝不会发送到我们的服务器。你的秘密与你同在。",
-            featuresTitle: "我们的功能",
-            feature1: "姓名配对 - 发现两个名字之间隐藏的能量。",
-            feature2: "血型配对 - 探索基于血型的爱情和婚姻运的秘密。",
-            feature3: "MBTI配对 - 根据性格类型揭示你关系的潜力。",
-            disclaimerTitle: "免责声明",
-            disclaimerText: "本网站仅供娱乐。配对分数未经科学证明，不应用于做出生活决定。享受发现之旅吧！",
+        daily: {
+            title: "今日爱情运势",
+            subtitle: "宇宙为你的心计划了什么？",
+            intro: "输入你的名字，获取今天的个性化爱情运势",
+            calculate: "揭示运势",
+            alert: "请输入你的名字"
+        },
+        result: {
+            advice: "爱情贴士"
         },
         footer: {
-            disclaimer: "仅供娱乐。",
-        },
+            disclaimer: "仅供娱乐"
+        }
     },
     es: {
         title: "Amor y Destino",
-        tagline: "Descubre tu destino romántico",
-        badges: {
-            free: "100% Gratis",
-            privacy: "Privacidad Protegida",
-        },
+        tagline: "tu historia de amor escrita en las estrellas",
         nav: {
-            name: "Compatibilidad de Nombres",
-            bloodType: "Tipo de Sangre",
+            name: "Nombres",
+            bloodType: "Sangre",
             mbti: "MBTI",
-            about: "Acerca de",
+            daily: "Diario",
+            about: "Acerca"
         },
         name: {
-            title: "Compatibilidad Amorosa por Nombre",
+            title: "Compatibilidad de Nombres",
+            subtitle: "descubre la magia entre vuestros nombres",
             yourName: "Tu Nombre",
-            partnerName: "Nombre de la Pareja",
-            calculate: "Ver Compatibilidad",
-            alert: "Por favor, ingrese ambos nombres.",
-            calculating: "Calculando tu destino...",
-            readings: {
-                excellent: "¡Una pareja excelente! Comparten una conexión profunda y armoniosa.",
-                good: "Una muy buena pareja. Tienen un vínculo fuerte y de apoyo.",
-                average: "Una pareja prometedora. Con esfuerzo, pueden construir una hermosa relación.",
-                challenging: "Una pareja desafiante. La comunicación y la comprensión son clave.",
-                difficult: "Una pareja difícil. Esta relación requerirá mucha paciencia y trabajo.",
-            },
+            partnerName: "Su Nombre",
+            calculate: "Ver Destino",
+            alert: "Por favor ingresa ambos nombres",
+            calculating: "Calculando tu destino..."
         },
         bloodType: {
-            title: "Suerte en el Amor y el Matrimonio por Tipo de Sangre",
-            yourBloodType: "Tu Tipo de Sangre",
-            partnerBloodType: "Tipo de Sangre de la Pareja",
-            calculate: "Revelar Suerte",
-            alert: "Por favor, seleccione ambos tipos de sangre.",
+            title: "Amor por Tipo de Sangre",
+            subtitle: "¿qué dice tu sangre sobre el amor?",
+            yourBloodType: "Tu Tipo",
+            partnerBloodType: "Su Tipo",
+            calculate: "Analizar Química",
+            alert: "Por favor selecciona ambos tipos"
         },
         mbti: {
-            title: "Suerte en el Amor y el Matrimonio por MBTI",
+            title: "Compatibilidad MBTI",
+            subtitle: "¿cómo bailan juntas vuestras personalidades?",
             yourMbti: "Tu MBTI",
-            partnerMbti: "MBTI de la Pareja",
-            calculate: "Descubrir Potencial",
-            alert: "Por favor, seleccione ambos tipos de MBTI.",
+            partnerMbti: "Su MBTI",
+            calculate: "Emparejar",
+            alert: "Por favor selecciona ambos MBTI"
         },
-        about: {
-            title: "Acerca de Amor y Destino",
-            introTitle: "¿Qué es Amor y Destino?",
-            introText: "Amor y Destino es tu guía personal para comprender la dinámica de las relaciones. Ofrecemos lecturas de compatibilidad basadas en nombres, tipos de sangre y tipos de personalidad MBTI para ayudarte a descubrir conexiones más profundas.",
-            privacyTitle: "Nuestro Compromiso con la Privacidad",
-            privacyText: "Tu privacidad es nuestra máxima prioridad. No almacenamos ninguna información personal que ingreses. Todos los cálculos se realizan en tu navegador y nunca se envían a nuestros servidores. Tus secretos están a salvo contigo.",
-            featuresTitle: "Nuestras Características",
-            feature1: "Compatibilidad de Nombres: descubre las energías ocultas entre dos nombres.",
-            feature2: "Compatibilidad de Tipos de Sangre: explora los secretos de la suerte en el amor y el matrimonio según los tipos de sangre.",
-            feature3: "Compatibilidad de MBTI: descubre el potencial de tu relación según los tipos de personalidad.",
-            disclaimerTitle: "Descargo de Responsabilidad",
-            disclaimerText: "Este sitio es solo para fines de entretenimiento. Los puntajes de compatibilidad no están científicamente probados y no deben usarse para tomar decisiones de vida. ¡Disfruta el viaje del descubrimiento!",
+        daily: {
+            title: "Fortuna del Amor Diaria",
+            subtitle: "¿qué tiene planeado el universo para tu corazón?",
+            intro: "Ingresa tu nombre para recibir tu fortuna de amor personalizada",
+            calculate: "Revelar Fortuna",
+            alert: "Por favor ingresa tu nombre"
+        },
+        result: {
+            advice: "Consejo de Amor"
         },
         footer: {
-            disclaimer: "Solo para fines de entretenimiento.",
-        },
+            disclaimer: "solo para entretenimiento"
+        }
     },
     fr: {
         title: "Amour & Destin",
-        tagline: "Découvrez votre destin romantique",
-        badges: {
-            free: "100% Gratuit",
-            privacy: "Confidentialité Protégée",
-        },
+        tagline: "votre histoire d'amour écrite dans les étoiles",
         nav: {
-            name: "Compatibilité des Noms",
-            bloodType: "Groupe Sanguin",
+            name: "Prénoms",
+            bloodType: "Sang",
             mbti: "MBTI",
-            about: "À propos",
+            daily: "Quotidien",
+            about: "À propos"
         },
         name: {
-            title: "Compatibilité Amoureuse par Nom",
-            yourName: "Votre Nom",
-            partnerName: "Nom du Partenaire",
-            calculate: "Voir la Compatibilité",
-            alert: "Veuillez saisir les deux noms.",
-            calculating: "Calcul de votre destin...",
-            readings: {
-                excellent: "Une excellente correspondance ! Vous partagez une connexion profonde et harmonieuse.",
-                good: "Une très bonne correspondance. Vous avez un lien fort et solidaire.",
-                average: "Une correspondance prometteuse. Avec des efforts, vous pouvez construire une belle relation.",
-                challenging: "Une correspondance difficile. La communication et la compréhension sont essentielles.",
-                difficult: "Une correspondance difficile. Cette relation nécessitera beaucoup de patience et de travail.",
-            },
+            title: "Compatibilité des Prénoms",
+            subtitle: "découvrez la magie entre vos prénoms",
+            yourName: "Votre Prénom",
+            partnerName: "Son Prénom",
+            calculate: "Voir le Destin",
+            alert: "Veuillez entrer les deux prénoms",
+            calculating: "Calcul de votre destin..."
         },
         bloodType: {
-            title: "Chance en Amour et Mariage par Groupe Sanguin",
-            yourBloodType: "Votre Groupe Sanguin",
-            partnerBloodType: "Groupe Sanguin du Partenaire",
-            calculate: "Révéler la Chance",
-            alert: "Veuillez sélectionner les deux groupes sanguins.",
+            title: "Amour par Groupe Sanguin",
+            subtitle: "que dit votre sang sur l'amour?",
+            yourBloodType: "Votre Type",
+            partnerBloodType: "Son Type",
+            calculate: "Analyser la Chimie",
+            alert: "Veuillez sélectionner les deux types"
         },
         mbti: {
-            title: "Chance en Amour et Mariage par MBTI",
+            title: "Compatibilité MBTI",
+            subtitle: "comment vos personnalités dansent-elles ensemble?",
             yourMbti: "Votre MBTI",
-            partnerMbti: "MBTI du Partenaire",
-            calculate: "Découvrir le Potentiel",
-            alert: "Veuillez sélectionner les deux types MBTI.",
+            partnerMbti: "Son MBTI",
+            calculate: "Matcher",
+            alert: "Veuillez sélectionner les deux MBTI"
         },
-        about: {
-            title: "À propos d'Amour & Destin",
-            introTitle: "Qu'est-ce qu'Amour & Destin ?",
-            introText: "Amour & Destin est votre guide personnel pour comprendre la dynamique des relations. Nous proposons des lectures de compatibilité basées sur les noms, les groupes sanguins et les types de personnalité MBTI pour vous aider à découvrir des liens plus profonds.",
-            privacyTitle: "Notre Engagement de Confidentialité",
-            privacyText: "Votre vie privée est notre priorité absolue. Nous ne stockons aucune information personnelle que vous saisissez. Tous les calculs sont effectués dans votre navigateur et ne sont jamais envoyés à nos serveurs. Vos secrets sont en sécurité avec vous.",
-            featuresTitle: "Nos Fonctionnalités",
-            feature1: "Compatibilité des Noms - Découvrez les énergies cachées entre deux noms.",
-            feature2: "Compatibilité des Groupes Sanguins - Explorez les secrets de la chance en amour et en mariage basés sur les groupes sanguins.",
-            feature3: "Compatibilité MBTI - Découvrez le potentiel de votre relation en fonction des types de personnalité.",
-            disclaimerTitle: "Avis de Non-responsabilité",
-            disclaimerText: "Ce site est uniquement à des fins de divertissement. Les scores de compatibilité ne sont pas scientifiquement prouvés et ne doivent pas être utilisés pour prendre des décisions de vie. Profitez du voyage de découverte !",
+        daily: {
+            title: "Fortune d'Amour Quotidienne",
+            subtitle: "que prévoit l'univers pour votre cœur?",
+            intro: "Entrez votre prénom pour recevoir votre fortune d'amour personnalisée",
+            calculate: "Révéler ma Fortune",
+            alert: "Veuillez entrer votre prénom"
+        },
+        result: {
+            advice: "Conseil d'Amour"
         },
         footer: {
-            disclaimer: "À des fins de divertissement uniquement.",
-        },
+            disclaimer: "à des fins de divertissement uniquement"
+        }
     },
     de: {
         title: "Liebe & Schicksal",
-        tagline: "Entdecke dein romantisches Schicksal",
-        badges: {
-            free: "100% Kostenlos",
-            privacy: "Datenschutz Garantiert",
-        },
+        tagline: "deine Liebesgeschichte in den Sternen geschrieben",
         nav: {
-            name: "Namenskompatibilität",
+            name: "Namen",
             bloodType: "Blutgruppe",
             mbti: "MBTI",
-            about: "Über",
+            daily: "Täglich",
+            about: "Über"
         },
         name: {
-            title: "Liebeskompatibilität nach Namen",
+            title: "Namenskompatibilität",
+            subtitle: "entdecke die Magie zwischen euren Namen",
             yourName: "Dein Name",
-            partnerName: "Name des Partners",
-            calculate: "Kompatibilität ansehen",
-            alert: "Bitte geben Sie beide Namen ein.",
-            calculating: "Berechne dein Schicksal...",
-            readings: {
-                excellent: "Eine ausgezeichnete Übereinstimmung! Sie teilen eine tiefe und harmonische Verbindung.",
-                good: "Eine sehr gute Übereinstimmung. Sie haben eine starke und unterstützende Bindung.",
-                average: "Eine vielversprechende Übereinstimmung. Mit Anstrengung können Sie eine schöne Beziehung aufbauen.",
-                challenging: "Eine herausfordernde Übereinstimmung. Kommunikation und Verständnis sind der Schlüssel.",
-                difficult: "Eine schwierige Übereinstimmung. Diese Beziehung erfordert viel Geduld und Arbeit.",
-            },
+            partnerName: "Sein/Ihr Name",
+            calculate: "Schicksal prüfen",
+            alert: "Bitte beide Namen eingeben",
+            calculating: "Berechne dein Schicksal..."
         },
         bloodType: {
-            title: "Liebes- und Heiratsglück nach Blutgruppe",
-            yourBloodType: "Deine Blutgruppe",
-            partnerBloodType: "Blutgruppe des Partners",
-            calculate: "Glück enthüllen",
-            alert: "Bitte wählen Sie beide Blutgruppen aus.",
+            title: "Liebe nach Blutgruppe",
+            subtitle: "was sagt dein Blut über die Liebe?",
+            yourBloodType: "Dein Typ",
+            partnerBloodType: "Sein/Ihr Typ",
+            calculate: "Chemie analysieren",
+            alert: "Bitte beide Typen auswählen"
         },
         mbti: {
-            title: "Liebes- und Heiratsglück nach MBTI",
+            title: "MBTI-Kompatibilität",
+            subtitle: "wie tanzen eure Persönlichkeiten zusammen?",
             yourMbti: "Dein MBTI",
-            partnerMbti: "MBTI des Partners",
-            calculate: "Potenzial entdecken",
-            alert: "Bitte wählen Sie beide MBTI-Typen aus.",
+            partnerMbti: "Sein/Ihr MBTI",
+            calculate: "Matchen",
+            alert: "Bitte beide MBTI auswählen"
         },
-        about: {
-            title: "Über Liebe & Schicksal",
-            introTitle: "Was ist Liebe & Schicksal?",
-            introText: "Liebe & Schicksal ist Ihr persönlicher Leitfaden zum Verständnis von Beziehungsdynamiken. Wir bieten Kompatibilitätslesungen basierend auf Namen, Blutgruppen und MBTI-Persönlichkeitstypen, um Ihnen zu helfen, tiefere Verbindungen zu entdecken.",
-            privacyTitle: "Unser Datenschutzversprechen",
-            privacyText: "Ihre Privatsphäre hat für uns oberste Priorität. Wir speichern keine von Ihnen eingegebenen persönlichen Informationen. Alle Berechnungen werden in Ihrem Browser durchgeführt und niemals an unsere Server gesendet. Ihre Geheimnisse sind bei Ihnen sicher.",
-            featuresTitle: "Unsere Funktionen",
-            feature1: "Namenskompatibilität - Entdecken Sie die verborgenen Energien zwischen zwei Namen.",
-            feature2: "Blutgruppen-Kompatibilität - Erforschen Sie die Geheimnisse des Liebes- und Eheglücks basierend auf Blutgruppen.",
-            feature3: "MBTI-Kompatibilität - Entdecken Sie das Potenzial Ihrer Beziehung basierend auf Persönlichkeitstypen.",
-            disclaimerTitle: "Haftungsausschluss",
-            disclaimerText: "Diese Website dient nur zu Unterhaltungszwecken. Kompatibilitätswerte sind nicht wissenschaftlich belegt und sollten nicht zur Entscheidungsfindung im Leben herangezogen werden. Genießen Sie die Entdeckungsreise!",
+        daily: {
+            title: "Tägliches Liebeshoroskop",
+            subtitle: "was hat das Universum für dein Herz geplant?",
+            intro: "Gib deinen Namen ein, um dein persönliches Liebeshoroskop zu erhalten",
+            calculate: "Horoskop enthüllen",
+            alert: "Bitte gib deinen Namen ein"
+        },
+        result: {
+            advice: "Liebestipp"
         },
         footer: {
-            disclaimer: "Nur zu Unterhaltungszwecken.",
-        },
+            disclaimer: "nur zur Unterhaltung"
+        }
     },
     ru: {
         title: "Любовь и Судьба",
-        tagline: "Откройте свою романтическую судьбу",
-        badges: {
-            free: "100% Бесплатно",
-            privacy: "Конфиденциальность Защищена",
-        },
+        tagline: "твоя история любви, написанная в звёздах",
         nav: {
-            name: "Совместимость Имен",
-            bloodType: "Группа Крови",
+            name: "Имена",
+            bloodType: "Кровь",
             mbti: "MBTI",
-            about: "О нас",
+            daily: "Ежедневно",
+            about: "О нас"
         },
         name: {
-            title: "Любовная Совместимость по Имени",
-            yourName: "Ваше Имя",
-            partnerName: "Имя Партнера",
-            calculate: "Посмотреть Совместимость",
-            alert: "Пожалуйста, введите оба имени.",
-            calculating: "Рассчитываем вашу судьбу...",
-            readings: {
-                excellent: "Отличное совпадение! У вас глубокая и гармоничная связь.",
-                good: "Очень хорошее совпадение. У вас прочная и поддерживающая связь.",
-                average: "Многообещающее совпадение. С усилиями вы можете построить прекрасные отношения.",
-                challenging: "Сложное совпадение. Общение и понимание являются ключевыми.",
-                difficult: "Трудное совпадение. Эти отношения потребуют много терпения и работы.",
-            },
+            title: "Совместимость Имён",
+            subtitle: "открой магию между вашими именами",
+            yourName: "Твоё Имя",
+            partnerName: "Его/Её Имя",
+            calculate: "Проверить Судьбу",
+            alert: "Пожалуйста, введите оба имени",
+            calculating: "Рассчитываем вашу судьбу..."
         },
         bloodType: {
-            title: "Удача в Любви и Браке по Группе Крови",
-            yourBloodType: "Ваша Группа Крови",
-            partnerBloodType: "Группа Крови Партнера",
-            calculate: "Узнать Удачу",
-            alert: "Пожалуйста, выберите обе группы крови.",
+            title: "Любовь по Группе Крови",
+            subtitle: "что говорит твоя кровь о любви?",
+            yourBloodType: "Твой Тип",
+            partnerBloodType: "Его/Её Тип",
+            calculate: "Анализировать Химию",
+            alert: "Пожалуйста, выберите оба типа"
         },
         mbti: {
-            title: "Удача в Любви и Браке по MBTI",
-            yourMbti: "Ваш MBTI",
-            partnerMbti: "MBTI Партнера",
-            calculate: "Раскрыть Потенциал",
-            alert: "Пожалуйста, выберите оба типа MBTI.",
+            title: "Совместимость MBTI",
+            subtitle: "как танцуют вместе ваши личности?",
+            yourMbti: "Твой MBTI",
+            partnerMbti: "Его/Её MBTI",
+            calculate: "Сопоставить",
+            alert: "Пожалуйста, выберите оба MBTI"
         },
-        about: {
-            title: "О Любви и Судьбе",
-            introTitle: "Что такое Любовь и Судьба?",
-            introText: "Любовь и Судьба - ваш личный гид по пониманию динамики отношений. Мы предлагаем показания совместимости на основе имен, групп крови и типов личности MBTI, чтобы помочь вам открыть более глубокие связи.",
-            privacyTitle: "Наши Обязательства по Конфиденциальности",
-            privacyText: "Ваша конфиденциальность - наш главный приоритет. Мы не храним никакой личной информации, которую вы вводите. Все расчеты выполняются в вашем браузере и никогда не отправляются на наши серверы. Ваши секреты в безопасности с вами.",
-            featuresTitle: "Наши Особенности",
-            feature1: "Совместимость Имен - Откройте скрытые энергии между двумя именами.",
-            feature2: "Совместимость по Группе Крови - Исследуйте секреты удачи в любви и браке на основе групп крови.",
-            feature3: "Совместимость по MBTI - Раскройте потенциал ваших отношений на основе типов личности.",
-            disclaimerTitle: "Отказ от Ответственности",
-            disclaimerText: "Этот сайт предназначен только для развлекательных целей. Оценки совместимости не имеют научного подтверждения и не должны использоваться для принятия жизненных решений. Наслаждайтесь путешествием открытий!",
+        daily: {
+            title: "Ежедневный Любовный Гороскоп",
+            subtitle: "что вселенная запланировала для твоего сердца?",
+            intro: "Введи своё имя, чтобы получить персональный любовный гороскоп",
+            calculate: "Раскрыть Гороскоп",
+            alert: "Пожалуйста, введите ваше имя"
+        },
+        result: {
+            advice: "Совет о Любви"
         },
         footer: {
-            disclaimer: "Только для развлекательных целей.",
-        },
+            disclaimer: "только для развлечения"
+        }
     },
     pt: {
         title: "Amor e Destino",
-        tagline: "Descubra o seu destino romântico",
-        badges: {
-            free: "100% Grátis",
-            privacy: "Privacidade Protegida",
-        },
+        tagline: "sua história de amor escrita nas estrelas",
         nav: {
-            name: "Compatibilidade de Nomes",
-            bloodType: "Tipo Sanguíneo",
+            name: "Nomes",
+            bloodType: "Sangue",
             mbti: "MBTI",
-            about: "Sobre",
+            daily: "Diário",
+            about: "Sobre"
         },
         name: {
-            title: "Compatibilidade Amorosa por Nome",
+            title: "Compatibilidade de Nomes",
+            subtitle: "descubra a magia entre os nomes",
             yourName: "Seu Nome",
-            partnerName: "Nome do Parceiro",
-            calculate: "Ver Compatibilidade",
-            alert: "Por favor, insira os dois nomes.",
-            calculating: "Calculando seu destino...",
-            readings: {
-                excellent: "Uma combinação excelente! Vocês compartilham uma conexão profunda e harmoniosa.",
-                good: "Uma combinação muito boa. Vocês têm um vínculo forte e de apoio.",
-                average: "Uma combinação promissora. Com esforço, vocês podem construir um belo relacionamento.",
-                challenging: "Uma combinação desafiadora. Comunicação e compreensão são fundamentais.",
-                difficult: "Uma combinação difícil. Este relacionamento exigirá muita paciência e trabalho.",
-            },
+            partnerName: "Nome Dele(a)",
+            calculate: "Ver Destino",
+            alert: "Por favor, insira os dois nomes",
+            calculating: "Calculando seu destino..."
         },
         bloodType: {
-            title: "Sorte no Amor e Casamento por Tipo Sanguíneo",
-            yourBloodType: "Seu Tipo Sanguíneo",
-            partnerBloodType: "Tipo Sanguíneo do Parceiro",
-            calculate: "Revelar Sorte",
-            alert: "Por favor, selecione os dois tipos sanguíneos.",
+            title: "Amor por Tipo Sanguíneo",
+            subtitle: "o que seu sangue diz sobre o amor?",
+            yourBloodType: "Seu Tipo",
+            partnerBloodType: "Tipo Dele(a)",
+            calculate: "Analisar Química",
+            alert: "Por favor, selecione os dois tipos"
         },
         mbti: {
-            title: "Sorte no Amor e Casamento por MBTI",
+            title: "Compatibilidade MBTI",
+            subtitle: "como suas personalidades dançam juntas?",
             yourMbti: "Seu MBTI",
-            partnerMbti: "MBTI do Parceiro",
-            calculate: "Descobrir Potencial",
-            alert: "Por favor, selecione os dois tipos de MBTI.",
+            partnerMbti: "MBTI Dele(a)",
+            calculate: "Combinar",
+            alert: "Por favor, selecione os dois MBTI"
         },
-        about: {
-            title: "Sobre Amor e Destino",
-            introTitle: "O que é Amor e Destino?",
-            introText: "Amor e Destino é o seu guia pessoal para entender a dinâmica dos relacionamentos. Oferecemos leituras de compatibilidade com base em nomes, tipos sanguíneos e tipos de personalidade MBTI para ajudá-lo a descobrir conexões mais profundas.",
-            privacyTitle: "Nosso Compromisso com a Privacidade",
-            privacyText: "Sua privacidade é nossa principal prioridade. Não armazenamos nenhuma informação pessoal que você insere. Todos os cálculos são realizados no seu navegador e nunca são enviados para nossos servidores. Seus segredos estão seguros com você.",
-            featuresTitle: "Nossos Recursos",
-            feature1: "Compatibilidade de Nomes - Descubra as energias ocultas entre dois nomes.",
-            feature2: "Compatibilidade de Tipo Sanguíneo - Explore os segredos da sorte no amor e no casamento com base nos tipos sanguíneos.",
-            feature3: "Compatibilidade MBTI - Descubra o potencial do seu relacionamento com base nos tipos de personalidade.",
-            disclaimerTitle: "Aviso Legal",
-            disclaimerText: "Este site é apenas para fins de entretenimento. As pontuações de compatibilidade não são cientificamente comprovadas e não devem ser usadas para tomar decisões de vida. Aproveite a jornada de descoberta!",
+        daily: {
+            title: "Fortuna do Amor Diária",
+            subtitle: "o que o universo planejou para seu coração?",
+            intro: "Digite seu nome para receber sua fortuna do amor personalizada",
+            calculate: "Revelar Fortuna",
+            alert: "Por favor, insira seu nome"
+        },
+        result: {
+            advice: "Dica de Amor"
         },
         footer: {
-            disclaimer: "Apenas para fins de entretenimento.",
-        },
-    },
+            disclaimer: "apenas para entretenimento"
+        }
+    }
 };
