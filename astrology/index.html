@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Oracle - Astrology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ko">한국어</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="moon-icon">☽</div>
+            <h1 data-i18n="title">Celestial Oracle</h1>
+        </div>
+        <p class="tagline" data-i18n="tagline">Discover the secrets written in the stars</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <button class="nav-btn active" data-section="horoscope" data-i18n="nav.horoscope">Daily Horoscope</button>
+        <button class="nav-btn" data-section="birthchart" data-i18n="nav.birthchart">Birth Chart</button>
+        <button class="nav-btn" data-section="compatibility" data-i18n="nav.compatibility">Compatibility</button>
+        <button class="nav-btn" data-section="tarot" data-i18n="nav.tarot">Tarot Reading</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Daily Horoscope Section -->
+        <section id="horoscope" class="section active">
+            <h2 class="section-title" data-i18n="horoscope.title">Select Your Zodiac Sign</h2>
+            <div class="zodiac-grid">
+                <div class="zodiac-card" data-sign="aries">
+                    <span class="zodiac-symbol">♈</span>
+                    <span class="zodiac-name" data-i18n="zodiac.aries">Aries</span>
+                    <span class="zodiac-date">Mar 21 - Apr 19</span>
+                </div>
+                <div class="zodiac-card" data-sign="taurus">
+                    <span class="zodiac-symbol">♉</span>
+                    <span class="zodiac-name" data-i18n="zodiac.taurus">Taurus</span>
+                    <span class="zodiac-date">Apr 20 - May 20</span>
+                </div>
+                <div class="zodiac-card" data-sign="gemini">
+                    <span class="zodiac-symbol">♊</span>
+                    <span class="zodiac-name" data-i18n="zodiac.gemini">Gemini</span>
+                    <span class="zodiac-date">May 21 - Jun 20</span>
+                </div>
+                <div class="zodiac-card" data-sign="cancer">
+                    <span class="zodiac-symbol">♋</span>
+                    <span class="zodiac-name" data-i18n="zodiac.cancer">Cancer</span>
+                    <span class="zodiac-date">Jun 21 - Jul 22</span>
+                </div>
+                <div class="zodiac-card" data-sign="leo">
+                    <span class="zodiac-symbol">♌</span>
+                    <span class="zodiac-name" data-i18n="zodiac.leo">Leo</span>
+                    <span class="zodiac-date">Jul 23 - Aug 22</span>
+                </div>
+                <div class="zodiac-card" data-sign="virgo">
+                    <span class="zodiac-symbol">♍</span>
+                    <span class="zodiac-name" data-i18n="zodiac.virgo">Virgo</span>
+                    <span class="zodiac-date">Aug 23 - Sep 22</span>
+                </div>
+                <div class="zodiac-card" data-sign="libra">
+                    <span class="zodiac-symbol">♎</span>
+                    <span class="zodiac-name" data-i18n="zodiac.libra">Libra</span>
+                    <span class="zodiac-date">Sep 23 - Oct 22</span>
+                </div>
+                <div class="zodiac-card" data-sign="scorpio">
+                    <span class="zodiac-symbol">♏</span>
+                    <span class="zodiac-name" data-i18n="zodiac.scorpio">Scorpio</span>
+                    <span class="zodiac-date">Oct 23 - Nov 21</span>
+                </div>
+                <div class="zodiac-card" data-sign="sagittarius">
+                    <span class="zodiac-symbol">♐</span>
+                    <span class="zodiac-name" data-i18n="zodiac.sagittarius">Sagittarius</span>
+                    <span class="zodiac-date">Nov 22 - Dec 21</span>
+                </div>
+                <div class="zodiac-card" data-sign="capricorn">
+                    <span class="zodiac-symbol">♑</span>
+                    <span class="zodiac-name" data-i18n="zodiac.capricorn">Capricorn</span>
+                    <span class="zodiac-date">Dec 22 - Jan 19</span>
+                </div>
+                <div class="zodiac-card" data-sign="aquarius">
+                    <span class="zodiac-symbol">♒</span>
+                    <span class="zodiac-name" data-i18n="zodiac.aquarius">Aquarius</span>
+                    <span class="zodiac-date">Jan 20 - Feb 18</span>
+                </div>
+                <div class="zodiac-card" data-sign="pisces">
+                    <span class="zodiac-symbol">♓</span>
+                    <span class="zodiac-name" data-i18n="zodiac.pisces">Pisces</span>
+                    <span class="zodiac-date">Feb 19 - Mar 20</span>
+                </div>
+            </div>
+
+            <!-- Horoscope Result -->
+            <div id="horoscope-result" class="result-card hidden">
+                <div class="result-header">
+                    <span id="result-symbol" class="result-symbol"></span>
+                    <h3 id="result-sign" class="result-sign"></h3>
+                </div>
+                <div class="horoscope-content">
+                    <div class="horoscope-stats">
+                        <div class="stat">
+                            <span class="stat-label" data-i18n="horoscope.love">Love</span>
+                            <div class="stat-bar"><div class="stat-fill" id="love-stat"></div></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label" data-i18n="horoscope.career">Career</span>
+                            <div class="stat-bar"><div class="stat-fill" id="career-stat"></div></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label" data-i18n="horoscope.health">Health</span>
+                            <div class="stat-bar"><div class="stat-fill" id="health-stat"></div></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label" data-i18n="horoscope.luck">Luck</span>
+                            <div class="stat-bar"><div class="stat-fill" id="luck-stat"></div></div>
+                        </div>
+                    </div>
+                    <p id="horoscope-text" class="horoscope-text"></p>
+                    <div class="lucky-items">
+                        <div class="lucky-item">
+                            <span class="lucky-label" data-i18n="horoscope.luckyNumber">Lucky Number</span>
+                            <span id="lucky-number" class="lucky-value"></span>
+                        </div>
+                        <div class="lucky-item">
+                            <span class="lucky-label" data-i18n="horoscope.luckyColor">Lucky Color</span>
+                            <span id="lucky-color" class="lucky-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birth Chart Section -->
+        <section id="birthchart" class="section">
+            <h2 class="section-title" data-i18n="birthchart.title">Generate Your Birth Chart</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label data-i18n="birthchart.birthdate">Birth Date</label>
+                    <input type="date" id="birth-date" class="mystical-input">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="birthchart.birthtime">Birth Time (optional)</label>
+                    <input type="time" id="birth-time" class="mystical-input">
+                </div>
+                <button id="generate-chart" class="mystical-btn" data-i18n="birthchart.generate">Reveal My Chart</button>
+            </div>
+
+            <div id="birthchart-result" class="result-card hidden">
+                <div class="chart-visual">
+                    <div class="chart-wheel" id="chart-wheel">
+                        <div class="chart-center">
+                            <span class="sun-sign-symbol" id="sun-sign-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-details">
+                    <div class="chart-item">
+                        <span class="chart-label" data-i18n="birthchart.sunSign">Sun Sign</span>
+                        <span id="sun-sign" class="chart-value"></span>
+                    </div>
+                    <div class="chart-item">
+                        <span class="chart-label" data-i18n="birthchart.moonSign">Moon Sign</span>
+                        <span id="moon-sign" class="chart-value"></span>
+                    </div>
+                    <div class="chart-item">
+                        <span class="chart-label" data-i18n="birthchart.risingSign">Rising Sign</span>
+                        <span id="rising-sign" class="chart-value"></span>
+                    </div>
+                    <div class="chart-item">
+                        <span class="chart-label" data-i18n="birthchart.element">Element</span>
+                        <span id="element" class="chart-value"></span>
+                    </div>
+                </div>
+                <p id="chart-reading" class="chart-reading"></p>
+            </div>
+        </section>
+
+        <!-- Compatibility Section -->
+        <section id="compatibility" class="section">
+            <h2 class="section-title" data-i18n="compatibility.title">Zodiac Compatibility</h2>
+            <div class="compatibility-form">
+                <div class="sign-selector">
+                    <label data-i18n="compatibility.yourSign">Your Sign</label>
+                    <select id="sign1" class="mystical-select">
+                        <option value="">-- Select --</option>
+                        <option value="aries" data-i18n="zodiac.aries">Aries</option>
+                        <option value="taurus" data-i18n="zodiac.taurus">Taurus</option>
+                        <option value="gemini" data-i18n="zodiac.gemini">Gemini</option>
+                        <option value="cancer" data-i18n="zodiac.cancer">Cancer</option>
+                        <option value="leo" data-i18n="zodiac.leo">Leo</option>
+                        <option value="virgo" data-i18n="zodiac.virgo">Virgo</option>
+                        <option value="libra" data-i18n="zodiac.libra">Libra</option>
+                        <option value="scorpio" data-i18n="zodiac.scorpio">Scorpio</option>
+                        <option value="sagittarius" data-i18n="zodiac.sagittarius">Sagittarius</option>
+                        <option value="capricorn" data-i18n="zodiac.capricorn">Capricorn</option>
+                        <option value="aquarius" data-i18n="zodiac.aquarius">Aquarius</option>
+                        <option value="pisces" data-i18n="zodiac.pisces">Pisces</option>
+                    </select>
+                </div>
+                <div class="heart-divider">♡</div>
+                <div class="sign-selector">
+                    <label data-i18n="compatibility.partnerSign">Partner's Sign</label>
+                    <select id="sign2" class="mystical-select">
+                        <option value="">-- Select --</option>
+                        <option value="aries" data-i18n="zodiac.aries">Aries</option>
+                        <option value="taurus" data-i18n="zodiac.taurus">Taurus</option>
+                        <option value="gemini" data-i18n="zodiac.gemini">Gemini</option>
+                        <option value="cancer" data-i18n="zodiac.cancer">Cancer</option>
+                        <option value="leo" data-i18n="zodiac.leo">Leo</option>
+                        <option value="virgo" data-i18n="zodiac.virgo">Virgo</option>
+                        <option value="libra" data-i18n="zodiac.libra">Libra</option>
+                        <option value="scorpio" data-i18n="zodiac.scorpio">Scorpio</option>
+                        <option value="sagittarius" data-i18n="zodiac.sagittarius">Sagittarius</option>
+                        <option value="capricorn" data-i18n="zodiac.capricorn">Capricorn</option>
+                        <option value="aquarius" data-i18n="zodiac.aquarius">Aquarius</option>
+                        <option value="pisces" data-i18n="zodiac.pisces">Pisces</option>
+                    </select>
+                </div>
+            </div>
+            <button id="check-compatibility" class="mystical-btn" data-i18n="compatibility.check">Check Compatibility</button>
+
+            <div id="compatibility-result" class="result-card hidden">
+                <div class="compatibility-visual">
+                    <span id="compat-sign1" class="compat-sign"></span>
+                    <div class="compat-heart">
+                        <span id="compat-score" class="compat-score"></span>
+                    </div>
+                    <span id="compat-sign2" class="compat-sign"></span>
+                </div>
+                <div class="compat-bars">
+                    <div class="compat-bar-item">
+                        <span data-i18n="compatibility.romance">Romance</span>
+                        <div class="compat-bar"><div class="compat-fill" id="romance-bar"></div></div>
+                    </div>
+                    <div class="compat-bar-item">
+                        <span data-i18n="compatibility.friendship">Friendship</span>
+                        <div class="compat-bar"><div class="compat-fill" id="friendship-bar"></div></div>
+                    </div>
+                    <div class="compat-bar-item">
+                        <span data-i18n="compatibility.communication">Communication</span>
+                        <div class="compat-bar"><div class="compat-fill" id="communication-bar"></div></div>
+                    </div>
+                </div>
+                <p id="compat-reading" class="compat-reading"></p>
+            </div>
+        </section>
+
+        <!-- Tarot Section -->
+        <section id="tarot" class="section">
+            <h2 class="section-title" data-i18n="tarot.title">Daily Tarot Card</h2>
+            <p class="tarot-intro" data-i18n="tarot.intro">Focus on your question and draw a card to receive guidance from the universe.</p>
+
+            <div class="tarot-area">
+                <div class="tarot-deck" id="tarot-deck">
+                    <div class="tarot-card-back">
+                        <div class="card-pattern">✦</div>
+                    </div>
+                </div>
+                <button id="draw-tarot" class="mystical-btn" data-i18n="tarot.draw">Draw a Card</button>
+            </div>
+
+            <div id="tarot-result" class="result-card hidden">
+                <div class="tarot-reveal">
+                    <div class="tarot-card-front" id="tarot-card">
+                        <span class="tarot-numeral" id="tarot-numeral"></span>
+                        <span class="tarot-symbol" id="tarot-symbol"></span>
+                        <span class="tarot-name" id="tarot-name"></span>
+                    </div>
+                </div>
+                <div class="tarot-meaning">
+                    <h4 id="tarot-title" class="tarot-card-title"></h4>
+                    <p id="tarot-reading" class="tarot-reading-text"></p>
+                    <div class="tarot-keywords">
+                        <span class="keyword-label" data-i18n="tarot.keywords">Keywords:</span>
+                        <span id="tarot-keywords" class="keywords"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-i18n="footer.disclaimer">For entertainment purposes only. The stars guide, but you decide your path.</p>
+        <p class="copyright">© 2025 Celestial Oracle</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
