@@ -1,0 +1,5 @@
+name = "love"
+compatibility_date = "2024-05-15"
+
+[assets]
+directory = "./astrology"
