@@ -1,0 +1,8 @@
+name = "love-tier"
+compatibility_date = "2024-02-02"
+
+# 여기가 핵심입니다! 
+# 사이트 파일들이 들어있는 폴더 이름("astrology")을 지정해줍니다.
+[assets]
+directory = "./astrology"
+binding = "ASSETS"
