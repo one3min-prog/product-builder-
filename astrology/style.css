@@ -308,13 +308,13 @@ body {
     box-shadow: 0 0 30px rgba(255, 107, 157, 0.1), inset 0 0 60px rgba(255, 255, 255, 0.1);
 }
 
-#bloodType {
-    background: linear-gradient(135deg, rgba(220, 38, 127, 0.08) 0%, rgba(255, 182, 193, 0.12) 100%);
+#dateRec {
+    background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%);
     border-radius: 40px;
     padding: 30px 20px;
     margin-bottom: 20px;
-    border: 1px solid rgba(220, 38, 127, 0.15);
-    box-shadow: 0 0 30px rgba(220, 38, 127, 0.08), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(250, 112, 154, 0.2);
+    box-shadow: 0 0 30px rgba(250, 112, 154, 0.1), inset 0 0 60px rgba(255, 255, 255, 0.1);
 }
 
 #mbti {
@@ -1176,6 +1176,217 @@ body {
     border-radius: 20px;
     padding: 20px;
     border: 2px solid var(--card-border);
+}
+
+/* ====== Past Life Card ====== */
+.past-life-card {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(210, 180, 140, 0.2) 100%);
+    border: 2px solid rgba(139, 69, 19, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.past-life-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.past-life-icon {
+    font-size: 1.5rem;
+}
+
+.past-life-label {
+    font-weight: 700;
+    color: #8B4513;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.past-life-relation {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5D3A1A;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.past-life-detail {
+    font-size: 0.9rem;
+    color: #8B6914;
+    line-height: 1.5;
+}
+
+/* ====== Solution Card ====== */
+.solution-card {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+    border: 2px dashed #FFA500;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.solution-card h4 {
+    font-size: 1.1rem;
+    color: #E65100;
+    margin-bottom: 15px;
+}
+
+.solution-item {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.solution-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #E65100;
+    margin-bottom: 8px;
+}
+
+.solution-desc {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* ====== Date Planner CTA ====== */
+.date-planner-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gradient-sunset);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    margin: 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(250, 112, 154, 0.3);
+}
+
+.date-planner-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(250, 112, 154, 0.4);
+}
+
+.cta-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.date-planner-cta:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* ====== Menu Recommendation Card ====== */
+.menu-rec-card {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+}
+
+.menu-item:first-child {
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.menu-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ====== Date Rec Intro ====== */
+.date-rec-intro {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.date-rec-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.date-rec-intro p {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.date-rec-hint {
+    font-size: 0.85rem !important;
+    color: var(--primary) !important;
+    background: rgba(255, 107, 157, 0.1);
+    padding: 10px 15px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* ====== Score Input ====== */
+.score-input-wrapper {
+    position: relative;
+}
+
+.score-suffix {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.score-input-wrapper .cute-input {
+    padding-right: 45px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ====== Date Result Card ====== */
+.date-result-card .past-life-card {
+    margin-top: 25px;
 }
 
 /* ====== MBTI Keyword Badge ====== */

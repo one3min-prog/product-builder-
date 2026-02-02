@@ -68,31 +68,143 @@ const storyMessages = {
     }
 };
 
-// ====== Blood Type Stories ======
-const bloodTypeStories = {
-    en: {
-        'A-A': { emoji: '🎭', verdict: 'Mirror Souls', message: "Two perfectionists who totally get each other's need for order. You'll have the most organized home and the deepest conversations, but remember - sometimes chaos is fun too!", advice: "Schedule spontaneous date nights. Yes, schedule being spontaneous. You'll both appreciate the irony." },
-        'A-B': { emoji: '🎪', verdict: 'Exciting Opposites', message: "It's like pairing a detailed planner with a free spirit! Type A's stability grounds B's wild ideas, while B helps A loosen up. Sparks will fly - the good kind!", advice: "A, let B surprise you sometimes. B, appreciate A's thoughtfulness. Together, you're unstoppable." },
-        'A-O': { emoji: '🏠', verdict: 'Home Sweet Home', message: "This is comfort food as a relationship. A's attention to detail meets O's generous heart. You'll build something beautiful and lasting together.", advice: "O, slow down for A's pace. A, trust O's big-picture thinking. You balance each other perfectly." },
-        'A-AB': { emoji: '🎨', verdict: 'Artistic Connection', message: "Both of you see the world in complex, beautiful ways. Your conversations could last for hours, exploring every nuance of life, love, and everything in between.", advice: "Don't let overthinking paralyze you. Sometimes the heart knows what the mind is still figuring out." },
-        'B-A': { emoji: '🎪', verdict: 'Exciting Opposites', message: "Your carefree spirit meets their careful nature. You'll teach them to dance in the rain while they'll remember to bring the umbrella. Perfect balance!", advice: "Appreciate their planning - it comes from love. And they should embrace your spontaneity - it's contagious!" },
-        'B-B': { emoji: '🎸', verdict: 'Double Trouble (The Fun Kind!)', message: "Two free spirits together? Get ready for adventures, last-minute road trips, and a life that's never boring. Just make sure someone remembers to pay the bills!", advice: "Designate one person as the 'responsible one' each week. Take turns, make it fun!" },
-        'B-O': { emoji: '🌟', verdict: 'Dream Team', message: "B's creativity meets O's determination. You dream it, you'll achieve it together. This is a power couple in the making!", advice: "O, give B room to explore. B, follow through on those brilliant ideas. Sky's the limit!" },
-        'B-AB': { emoji: '🎭', verdict: 'Fascinating Duo', message: "AB gets B in ways others don't. This is a meeting of unique minds who don't play by conventional rules. Intriguing doesn't begin to describe it.", advice: "Embrace your shared weirdness. The world needs more couples who color outside the lines." },
-        'O-A': { emoji: '🏠', verdict: 'Home Sweet Home', message: "Your big heart and their attention to detail create something really special. You provide the warmth, they provide the thoughtful touches.", advice: "Communicate your needs clearly. A might not always pick up on hints, but they'll move mountains once they understand." },
-        'O-B': { emoji: '🌟', verdict: 'Dream Team', message: "You're the anchor that lets B fly without floating away. Your steadiness and their creativity make magic happen.", advice: "Don't try to tame them - support them. And let them bring some unpredictability into your life!" },
-        'O-O': { emoji: '👑', verdict: 'Power Couple Alert!', message: "Two natural leaders together! You'll either rule the world or drive each other crazy. Probably both. The passion here is REAL.", advice: "Take turns leading. Your combined power is immense - make sure it's pointed in the same direction." },
-        'O-AB': { emoji: '🧩', verdict: 'Beautiful Puzzle', message: "O's straightforward nature meets AB's complexity. It's not always easy to understand each other, but when you click, it's magical.", advice: "Patience is key. AB needs time to process, O needs direct communication. Meet in the middle." },
-        'AB-A': { emoji: '🎨', verdict: 'Artistic Connection', message: "You both appreciate life's subtle beauties. A helps ground your swirling thoughts, while you help A see beyond the rules.", advice: "Create together - art, music, a business, anything. Your combined vision is extraordinary." },
-        'AB-B': { emoji: '🎭', verdict: 'Fascinating Duo', message: "You get each other's unconventional ways. B's energy matches your multifaceted nature. Never a dull moment!", advice: "Don't let outside opinions affect you. What you have is special, even if others don't get it." },
-        'AB-O': { emoji: '🧩', verdict: 'Beautiful Puzzle', message: "O's directness cuts through your complexity in the best way. They'll be your rock while you expand their horizons.", advice: "Be patient with each other's differences. The contrast is what makes this work beautifully." },
-        'AB-AB': { emoji: '🌌', verdict: 'Rare & Extraordinary', message: "Two of the rarest blood types together! You understand each other's dual nature like no one else could. This is rare and special.", advice: "Embrace your shared complexity. You don't need to explain yourselves to each other - that's the gift." }
-    },
-    ko: {
-        'A-A': { emoji: '🎭', verdict: '거울 같은 영혼', message: "서로의 정리정돈 욕구를 완벽히 이해하는 두 완벽주의자예요. 가장 정돈된 집과 가장 깊은 대화를 나누게 될 거예요. 하지만 기억하세요 - 가끔은 혼란도 재미있어요!", advice: "즉흥적인 데이트 밤을 계획하세요. 네, 즉흥적인 걸 계획하는 거예요. 둘 다 그 아이러니를 좋아할 거예요." },
-        'A-B': { emoji: '🎪', verdict: '흥미진진한 반대', message: "꼼꼼한 계획가와 자유로운 영혼의 만남! A형의 안정감이 B형의 기발한 아이디어를 잡아주고, B형은 A형이 긴장을 풀도록 도와줘요. 좋은 의미의 불꽃이 튈 거예요!", advice: "A형, 가끔은 B형이 놀라게 해줘도 돼요. B형, A형의 세심함을 감사히 여기세요. 함께라면 무적이에요." },
-        'A-O': { emoji: '🏠', verdict: '달콤한 우리 집', message: "이건 관계의 컴포트 푸드예요. A형의 세심함과 O형의 넓은 마음이 만나요. 함께 아름답고 오래가는 무언가를 만들 거예요.", advice: "O형, A형의 속도에 맞춰 천천히 가세요. A형, O형의 큰 그림을 믿으세요. 서로를 완벽하게 균형 맞춰요." }
-    }
+// ====== Date Recommendations Data ======
+const dateMenus = {
+    excellent: [ // 85-100
+        { menu: '한우 오마카세', spot: '루프탑 파인다이닝', reason: '축하할 일이 있잖아요! 최고의 궁합엔 최고의 음식을' },
+        { menu: '랍스터 파스타', spot: '오션뷰 레스토랑', reason: '바다처럼 깊은 사랑에는 바다가 보이는 곳에서' },
+        { menu: '트러플 리조또', spot: '캔들라잇 이탈리안', reason: '이미 로맨틱한 두 사람, 분위기만 더해주면 완벽' },
+        { menu: '와규 스테이크', spot: '프라이빗 다이닝룸', reason: '남들 눈치 볼 필요 없이 둘만의 시간을' }
+    ],
+    good: [ // 70-84
+        { menu: '숯불 삼겹살', spot: '을지로 감성 골목', reason: '맛있는 고기 앞에서 더 솔직해지는 대화를' },
+        { menu: '수제 버거 세트', spot: '빈티지 펍', reason: '캐주얼하지만 특별한, 딱 좋은 밸런스' },
+        { menu: '해물 파전 + 막걸리', spot: '한옥 술집', reason: '전통적인 분위기에서 미래를 이야기해봐요' },
+        { menu: '치킨 + 맥주', spot: '야경 보이는 테라스', reason: '편하면서도 로맨틱한 조합이에요' }
+    ],
+    average: [ // 50-69
+        { menu: '마라탕', spot: '핫플 중식당', reason: '얼얼한 맛처럼 자극적인 대화가 필요할 때' },
+        { menu: '돈카츠 정식', spot: '아기자기한 일식집', reason: '바삭한 첫인상처럼 새로운 시작을' },
+        { menu: '베트남 쌀국수', spot: '이국적인 동남아 카페', reason: '여행 이야기로 거리감을 좁혀보세요' },
+        { menu: '타코 + 나쵸', spot: '멕시칸 펍', reason: '신나는 음악과 함께 분위기 업!' }
+    ],
+    challenging: [ // 30-49
+        { menu: '삼겹살 사주기', spot: '동네 고깃집', reason: '🔥 삼겹살 사주기 권법으로 불운 막기!' },
+        { menu: '떡볶이 + 순대', spot: '시장 분식집', reason: '맛있는 건 같이 먹으면 친해져요' },
+        { menu: '소주 + 치킨', spot: '포장마차', reason: '솔직한 대화엔 소주 한 잔이 약이에요' },
+        { menu: '라멘', spot: '골목 라멘집', reason: '따뜻한 국물이 마음도 녹여줄 거예요' }
+    ],
+    difficult: [ // 1-29
+        { menu: '삼겹살 무한리필', spot: '가성비 고깃집', reason: '🥓 삼겹살 10인분 사주기로 운명 바꾸기!' },
+        { menu: '곱창 + 소주', spot: '노포 곱창집', reason: '막창처럼 쫄깃하게 버텨봅시다' },
+        { menu: '해장국', spot: '24시 해장국집', reason: '새로운 시작엔 해장이 필요해요' },
+        { menu: '불닭볶음면', spot: '집', reason: '매운 걸 같이 먹으면 전우애가 생겨요' }
+    ]
+};
+
+const dateMenusEn = {
+    excellent: [
+        { menu: 'Wagyu Omakase', spot: 'Rooftop Fine Dining', reason: 'Something to celebrate! The best match deserves the best food' },
+        { menu: 'Lobster Pasta', spot: 'Ocean View Restaurant', reason: 'Deep love like the ocean deserves ocean views' },
+        { menu: 'Truffle Risotto', spot: 'Candlelit Italian', reason: 'Already romantic, just add ambiance' },
+        { menu: 'Premium Steak', spot: 'Private Dining Room', reason: 'Just the two of you, no distractions' }
+    ],
+    good: [
+        { menu: 'BBQ Ribs', spot: 'Vintage Smokehouse', reason: 'Good food makes good conversations' },
+        { menu: 'Craft Burger Set', spot: 'Trendy Pub', reason: 'Casual but special, perfect balance' },
+        { menu: 'Seafood Platter', spot: 'Cozy Wine Bar', reason: 'Share plates, share stories' },
+        { menu: 'Pizza & Beer', spot: 'Rooftop Terrace', reason: 'Relaxed yet romantic combo' }
+    ],
+    average: [
+        { menu: 'Spicy Hot Pot', spot: 'Trendy Asian Fusion', reason: 'Spicy food for spicy conversations' },
+        { menu: 'Ramen Bowl', spot: 'Cozy Noodle Shop', reason: 'Warm bowls warm hearts' },
+        { menu: 'Pho & Spring Rolls', spot: 'Exotic Cafe', reason: 'Travel talk brings you closer' },
+        { menu: 'Tacos & Nachos', spot: 'Mexican Cantina', reason: 'Fun music, fun vibes!' }
+    ],
+    challenging: [
+        { menu: 'Buy Them BBQ!', spot: 'Local Grill', reason: '🔥 BBQ Gift Attack to block bad luck!' },
+        { menu: 'Street Food Tour', spot: 'Night Market', reason: 'Sharing food = making friends' },
+        { menu: 'Fried Chicken & Beer', spot: 'Casual Bar', reason: 'Honest talks need good drinks' },
+        { menu: 'Comfort Ramen', spot: 'Hidden Gem Shop', reason: 'Warm soup melts cold hearts' }
+    ],
+    difficult: [
+        { menu: 'All-You-Can-Eat BBQ', spot: 'Value Grill House', reason: '🥓 Change destiny with unlimited meat!' },
+        { menu: 'Late Night Noodles', spot: '24h Diner', reason: 'New beginnings need comfort food' },
+        { menu: 'Spicy Wings Challenge', spot: 'Sports Bar', reason: 'Shared suffering builds bonds' },
+        { menu: 'Instant Noodles', spot: 'Your Place', reason: 'Eating spicy together = battle buddies' }
+    ]
+};
+
+// ====== Past Life Stories ======
+const pastLifeStories = {
+    ko: [
+        { relation: '조선시대 주막 주인과 떠돌이 보부상', detail: '매번 외상이었지만 결국 같이 장사했던 사이' },
+        { relation: '서로 검을 겨누던 검투사', detail: '매번 무승부로 끝나 결국 친구가 됐던 사이' },
+        { relation: '궁중 나인과 몰래 사랑한 내관', detail: '달빛 아래 손만 잡았던 애틋한 사이' },
+        { relation: '해적선 선장과 포로가 된 귀족', detail: '스톡홀름 신드롬인지 사랑인지 모를 사이' },
+        { relation: '산적 두목과 산적에게 구출된 공주', detail: '공주가 산적단을 경영하게 된 사이' },
+        { relation: '도깨비와 도깨비에 홀린 서생', detail: '밤새 바둑 두다 첫사랑이 된 사이' },
+        { relation: '기생과 그녀를 사랑한 선비', detail: '시 한 수로 마음을 훔친 사이' },
+        { relation: '양반댁 도련님과 부엌데기', detail: '몰래 만나다 들켜서 도망친 사이' },
+        { relation: '전쟁터에서 서로를 구한 병사들', detail: '목숨을 나눈 전우에서 연인이 된 사이' },
+        { relation: '과거시험에서 만난 라이벌 선비', detail: '장원급제는 못해도 사랑은 급제한 사이' },
+        { relation: '무당과 그녀의 굿에 감동받은 원님', detail: '신내림 대신 사랑이 내려온 사이' },
+        { relation: '떠돌이 광대와 광대를 숨겨준 농민', detail: '웃음을 팔다가 사랑을 얻은 사이' },
+        { relation: '유배된 학자와 섬마을 어부의 딸', detail: '책 대신 바다를, 바다 대신 사랑을 배운 사이' },
+        { relation: '도적을 잡으러 온 포졸과 도적', detail: '쫓고 쫓기다 사랑에 빠진 사이' },
+        { relation: '스님과 절에 숨어든 도망자', detail: '번뇌를 버려야 했는데 사랑을 주운 사이' },
+        { relation: '역관과 외국 상인', detail: '언어는 통역했는데 마음은 통역 안 해도 된 사이' },
+        { relation: '마을 의원과 환자', detail: '병은 나았는데 상사병에 걸린 사이' },
+        { relation: '절벽 끝에서 만난 두 영혼', detail: '죽으려다 살고 싶어진 사이' },
+        { relation: '왕과 왕을 암살하러 온 자객', detail: '칼을 들었다가 사랑에 찔린 사이' },
+        { relation: '천문학자와 밤하늘을 같이 본 시녀', detail: '별을 보다가 서로만 보게 된 사이' }
+    ],
+    en: [
+        { relation: 'Tavern owner and wandering merchant', detail: 'Always on credit, ended up as business partners' },
+        { relation: 'Gladiators who crossed swords', detail: 'Every match a draw, eventually became friends' },
+        { relation: 'Palace maid and secret admirer eunuch', detail: 'Only held hands under moonlight' },
+        { relation: 'Pirate captain and noble prisoner', detail: 'Stockholm syndrome or love? Who knows' },
+        { relation: 'Bandit leader and rescued princess', detail: 'The princess ended up running the gang' },
+        { relation: 'Goblin and enchanted scholar', detail: 'Fell in love over all-night chess games' },
+        { relation: 'Courtesan and smitten poet', detail: 'Stole hearts with a single poem' },
+        { relation: 'Nobleman\'s son and kitchen maid', detail: 'Secret meetings discovered, ran away together' },
+        { relation: 'Soldiers who saved each other in battle', detail: 'From comrades to lovers' },
+        { relation: 'Rival scholars at the exam', detail: 'Failed the test, passed in love' },
+        { relation: 'Shaman and impressed magistrate', detail: 'Love descended instead of spirits' },
+        { relation: 'Traveling performer and hiding farmer', detail: 'Sold laughs, gained love' },
+        { relation: 'Exiled scholar and fisherman\'s daughter', detail: 'Learned sea instead of books, love instead of sea' },
+        { relation: 'Constable and the thief', detail: 'Chased and chased, fell in love' },
+        { relation: 'Monk and hidden fugitive', detail: 'Should have abandoned worldly desires, found love instead' },
+        { relation: 'Interpreter and foreign merchant', detail: 'Translated words, hearts needed no translation' },
+        { relation: 'Village doctor and patient', detail: 'Cured the disease, caught lovesickness' },
+        { relation: 'Two souls meeting at cliff\'s edge', detail: 'Came to die, found reason to live' },
+        { relation: 'King and the assassin sent to kill him', detail: 'Raised the blade, struck by love' },
+        { relation: 'Astronomer and maid watching stars together', detail: 'Watched stars, only saw each other' }
+    ]
+};
+
+// ====== Bad Luck Solutions ======
+const badLuckSolutions = {
+    ko: [
+        { title: '삼겹살 사주기 권법 🥓', desc: '상대에게 삼겹살 5인분을 사주면 운명이 바뀝니다. 과학적으로 증명됨(뇌피셜)' },
+        { title: '편의점 아이스크림 데이트 🍦', desc: '1,500원으로 시작하는 진심 어택. 저렴하지만 효과는 최고!' },
+        { title: '밤새 러브송 플레이리스트 만들기 🎵', desc: '상대를 생각하며 만든 플리는 운명을 움직입니다' },
+        { title: '손편지 쓰기 ✉️', desc: '디지털 시대의 아날로그 고백은 심장을 두드립니다' },
+        { title: '같이 공포영화 보기 👻', desc: '무서우면 붙잡을 핑계가 생기잖아요' },
+        { title: '새벽 한강 치맥 🍗', desc: '서울의 야경 앞에서 솔직해지세요' },
+        { title: '함께 라면 끓여먹기 🍜', desc: '같이 라면 먹을 사이면 이미 반은 성공' },
+        { title: '점프 사진 100번 찍기 📸', desc: '웃다 보면 어색함이 사라져요' }
+    ],
+    en: [
+        { title: 'BBQ Gift Attack 🥓', desc: 'Buy them 5 servings of BBQ and destiny will change. Scientifically proven (trust me)' },
+        { title: 'Convenience Store Ice Cream Date 🍦', desc: 'Sincerity attack starting at $2. Cheap but maximum effect!' },
+        { title: 'All-Night Love Song Playlist 🎵', desc: 'A playlist made thinking of them can move destiny' },
+        { title: 'Write a Handwritten Letter ✉️', desc: 'Analog confession in digital age hits different' },
+        { title: 'Watch Horror Movies Together 👻', desc: 'When scared, you have an excuse to hold on' },
+        { title: 'Late Night Riverside Chicken 🍗', desc: 'Be honest under the city lights' },
+        { title: 'Cook Instant Noodles Together 🍜', desc: 'If you can share noodles, you\'re halfway there' },
+        { title: 'Take 100 Jump Photos 📸', desc: 'Laugh away the awkwardness' }
+    ]
 };
 
 // ====== MBTI Detailed Compatibility ======
@@ -721,6 +833,8 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
     const result = document.getElementById('name-result');
     const lang = currentLang === 'ko' || currentLang === 'ja' || currentLang === 'zh' ? currentLang : 'en';
     const messages = storyMessages[lang] || storyMessages.en;
+    const pastLife = pastLifeStories[lang === 'ko' ? 'ko' : 'en'];
+    const solutions = badLuckSolutions[lang === 'ko' ? 'ko' : 'en'];
 
     let level, heartEffect, heartEmojis;
     if (score >= 90) {
@@ -748,10 +862,34 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
     const story = messages[level];
     const today = new Date().toLocaleDateString(currentLang, { month: 'long', day: 'numeric', year: 'numeric' });
 
+    // Generate past life story
+    const pastLifeSeed = (name1.charCodeAt(0) + name2.charCodeAt(0) + score) % pastLife.length;
+    const pastLifeStory = pastLife[pastLifeSeed];
+
+    // Get solution if score is low
+    const solutionSeed = (name1.length * name2.length + score) % solutions.length;
+    const solution = solutions[solutionSeed];
+
     if (score >= 80) triggerConfetti();
 
     const calcStepsHTML = generateCalcStepsHTML(chars, strokes, allSteps);
-    const toggleLabel = currentLang === 'ko' ? '계산 과정 보기' : 'View Calculation';
+    const toggleLabel = lang === 'ko' ? '계산 과정 보기' : 'View Calculation';
+    const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
+    const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
+    const datePlanLabel = lang === 'ko' ? '🍽️ 데이트 플래너에서 오늘의 메뉴 추천받기' : '🍽️ Get menu recommendation at Date Planner';
+
+    let solutionHTML = '';
+    if (score < 50) {
+        solutionHTML = `
+            <div class="solution-card">
+                <h4>${unlockLabel}</h4>
+                <div class="solution-item">
+                    <span class="solution-title">${solution.title}</span>
+                    <p class="solution-desc">${solution.desc}</p>
+                </div>
+            </div>
+        `;
+    }
 
     result.innerHTML = `
         <div class="story-card">
@@ -772,11 +910,30 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
             <div class="heart-effect ${heartEffect}">${heartEmojis}</div>
 
             <h3 class="story-verdict">${story.verdict}</h3>
+
+            <!-- Past Life Story -->
+            <div class="past-life-card">
+                <div class="past-life-header">
+                    <span class="past-life-icon">🏮</span>
+                    <span class="past-life-label">${pastLifeLabel}</span>
+                </div>
+                <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                <p class="past-life-detail">${pastLifeStory.detail}</p>
+            </div>
+
             <p class="story-message">${story.message}</p>
 
             <div class="story-advice">
                 <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
                 <p class="advice-text">${story.advice}</p>
+            </div>
+
+            ${solutionHTML}
+
+            <!-- Date Planner CTA -->
+            <div class="date-planner-cta" onclick="goToDatePlanner(${score}, '${name1}', '${name2}')">
+                <span>${datePlanLabel}</span>
+                <span class="cta-arrow">→</span>
             </div>
 
             <!-- Calculation Process Toggle -->
@@ -798,7 +955,7 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
             </div>
 
             <div class="share-section">
-                <button class="share-btn" onclick="shareResult('${name1}', '${name2}', ${score})">
+                <button class="share-btn" onclick="shareNameResult('${name1}', '${name2}', ${score}, '${pastLifeStory.relation.replace(/'/g, "\\'")}')">
                     <span>📱</span> Share Result
                 </button>
             </div>
@@ -808,52 +965,191 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// ====== Blood Type Compatibility ======
-function initBloodTypeCompatibility() {
-    document.getElementById('calculate-blood-type-compatibility').addEventListener('click', calculateBloodTypeCompatibility);
+function goToDatePlanner(score, name1, name2) {
+    showSection('dateRec');
+    document.getElementById('date-your-name').value = name1;
+    document.getElementById('date-partner-name').value = name2;
+    document.getElementById('date-score').value = score;
+    document.getElementById('dateRec').scrollIntoView({ behavior: 'smooth' });
 }
 
-function calculateBloodTypeCompatibility() {
-    const type1 = document.getElementById('your-blood-type').value;
-    const type2 = document.getElementById('partner-blood-type').value;
+function shareNameResult(name1, name2, score, pastLife) {
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    let text;
+    if (lang === 'ko') {
+        text = `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLife}"\n\nLove & Fate에서 확인하세요!`;
+    } else {
+        text = `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLife}"\n\nCheck at Love & Fate!`;
+    }
+    shareContent(text);
+}
 
-    if (!type1 || !type2) {
-        showToast(t('bloodType.alert') || 'Please select both blood types 🩸');
+// ====== Date Recommendation ======
+function initDateRecommendation() {
+    document.getElementById('get-date-recommendation').addEventListener('click', getDateRecommendation);
+}
+
+function getDateRecommendation() {
+    const name1 = document.getElementById('date-your-name').value.trim();
+    const name2 = document.getElementById('date-partner-name').value.trim();
+    const scoreInput = document.getElementById('date-score').value;
+
+    if (!name1 || !name2) {
+        showToast(t('dateRec.alertNames') || 'Please enter both names 💕');
         return;
     }
 
-    const key = `${type1}-${type2}`;
-    const lang = currentLang === 'ko' ? 'ko' : 'en';
-    const stories = bloodTypeStories[lang] || bloodTypeStories.en;
-    const story = stories[key] || stories['O-O'];
+    if (!scoreInput) {
+        showToast(t('dateRec.alertScore') || 'Please enter your compatibility score! 💯');
+        return;
+    }
 
-    const result = document.getElementById('blood-type-result');
+    const score = parseInt(scoreInput);
+    if (score < 1 || score > 100 || isNaN(score)) {
+        showToast(t('dateRec.alertRange') || 'Score must be between 1-100 💯');
+        return;
+    }
+
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const menus = lang === 'ko' ? dateMenus : dateMenusEn;
+    const pastLife = pastLifeStories[lang] || pastLifeStories.en;
+    const solutions = badLuckSolutions[lang] || badLuckSolutions.en;
+
+    // Determine category based on score
+    let category, emoji, verdict;
+    if (score >= 85) {
+        category = 'excellent';
+        emoji = '🔥💕🔥';
+        verdict = lang === 'ko' ? '최고의 궁합! 축하 파티가 필요해요' : 'Perfect Match! Time to celebrate';
+    } else if (score >= 70) {
+        category = 'good';
+        emoji = '✨💖✨';
+        verdict = lang === 'ko' ? '좋은 궁합! 맛있는 거 먹으러 가요' : 'Great Match! Let\'s eat something good';
+    } else if (score >= 50) {
+        category = 'average';
+        emoji = '💫🌟💫';
+        verdict = lang === 'ko' ? '발전 가능성 있음! 새로운 경험을 함께' : 'Has Potential! Try new experiences together';
+    } else if (score >= 30) {
+        category = 'challenging';
+        emoji = '💪❤️💪';
+        verdict = lang === 'ko' ? '노력이 필요해요! 음식의 힘을 빌려봐요' : 'Needs Work! Let food work its magic';
+    } else {
+        category = 'difficult';
+        emoji = '🆘💕🆘';
+        verdict = lang === 'ko' ? '긴급 처방 필요! 삼겹살의 힘을 믿으세요' : 'Emergency! Trust the power of BBQ';
+    }
+
+    // Get random recommendation
+    const menuList = menus[category];
+    const seed = (name1.length + name2.length + score) % menuList.length;
+    const recommendation = menuList[seed];
+
+    // Generate past life story
+    const pastLifeSeed = (name1.charCodeAt(0) + name2.charCodeAt(0) + score) % pastLife.length;
+    const pastLifeStory = pastLife[pastLifeSeed];
+
+    // Get solution if score is low
+    const solutionSeed = (name1.length * name2.length) % solutions.length;
+    const solution = solutions[solutionSeed];
+
+    const result = document.getElementById('date-rec-result');
     result.classList.remove('hidden');
+
+    const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
+    const todayMenuLabel = lang === 'ko' ? '오늘의 추천 메뉴' : 'Today\'s Menu';
+    const dateSpotLabel = lang === 'ko' ? '추천 장소' : 'Date Spot';
+    const whyLabel = lang === 'ko' ? '왜 이 조합인가?' : 'Why This Combo?';
+    const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
+
+    let solutionHTML = '';
+    if (score < 50) {
+        solutionHTML = `
+            <div class="solution-card">
+                <h4>${unlockLabel}</h4>
+                <div class="solution-item">
+                    <span class="solution-title">${solution.title}</span>
+                    <p class="solution-desc">${solution.desc}</p>
+                </div>
+            </div>
+        `;
+    }
+
     result.innerHTML = `
-        <div class="story-card">
+        <div class="story-card date-result-card">
             <div class="story-header">
-                <p class="story-names">Type ${type1} 💉 Type ${type2}</p>
+                <p class="story-names">${name1} & ${name2}</p>
+                <p class="story-date">${lang === 'ko' ? '오늘의 데이트 플랜' : 'Today\'s Date Plan'}</p>
             </div>
 
-            <div class="heart-effect sparkling-hearts" style="font-size: 3rem;">${story.emoji}</div>
+            <div class="score-container">
+                <div class="score-ring">
+                    <div class="score-inner">
+                        <span class="score-number">${score}</span>
+                        <span class="score-label">%</span>
+                    </div>
+                </div>
+            </div>
 
-            <h3 class="story-verdict">${story.verdict}</h3>
-            <p class="story-message">${story.message}</p>
+            <div class="heart-effect sparkling-hearts">${emoji}</div>
+
+            <h3 class="story-verdict">${verdict}</h3>
+
+            <!-- Past Life Story -->
+            <div class="past-life-card">
+                <div class="past-life-header">
+                    <span class="past-life-icon">🏮</span>
+                    <span class="past-life-label">${pastLifeLabel}</span>
+                </div>
+                <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                <p class="past-life-detail">${pastLifeStory.detail}</p>
+            </div>
+
+            <!-- Menu Recommendation -->
+            <div class="menu-rec-card">
+                <div class="menu-item">
+                    <span class="menu-icon">🍽️</span>
+                    <div class="menu-content">
+                        <span class="menu-label">${todayMenuLabel}</span>
+                        <span class="menu-value">${recommendation.menu}</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-icon">📍</span>
+                    <div class="menu-content">
+                        <span class="menu-label">${dateSpotLabel}</span>
+                        <span class="menu-value">${recommendation.spot}</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="story-advice">
-                <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
-                <p class="advice-text">${story.advice}</p>
+                <p class="advice-title">💡 ${whyLabel}</p>
+                <p class="advice-text">${recommendation.reason}</p>
             </div>
 
+            ${solutionHTML}
+
             <div class="share-section">
-                <button class="share-btn" onclick="shareBloodResult('${type1}', '${type2}')">
-                    <span>📱</span> Share Result
+                <button class="share-btn" onclick="shareDateResult('${name1}', '${name2}', ${score}, '${recommendation.menu.replace(/'/g, "\\'")}', '${pastLifeStory.relation.replace(/'/g, "\\'")}')">
+                    <span>📱</span> ${lang === 'ko' ? '공유하기' : 'Share'}
                 </button>
             </div>
         </div>
     `;
 
+    if (score >= 80) triggerConfetti();
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function shareDateResult(name1, name2, score, menu, pastLife) {
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    let text;
+    if (lang === 'ko') {
+        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 전생: "${pastLife}"\n🍽️ 오늘의 데이트: ${menu}\n\nLove & Fate에서 확인하세요!`;
+    } else {
+        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 Past Life: "${pastLife}"\n🍽️ Today's Date: ${menu}\n\nCheck at Love & Fate!`;
+    }
+    shareContent(text);
 }
 
 // ====== MBTI Compatibility ======
@@ -909,9 +1205,19 @@ function calculateMbtiCompatibility() {
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     const stories = mbtiStories[lang] || mbtiStories.en;
     const story = stories[compatData.type] || stories.moderate || stories.good;
+    const pastLife = pastLifeStories[lang] || pastLifeStories.en;
+    const solutions = badLuckSolutions[lang] || badLuckSolutions.en;
 
     const keyword = lang === 'ko' ? compatData.keyword : compatData.en_keyword;
     const score = compatData.score;
+
+    // Generate past life based on MBTI
+    const pastLifeSeed = (mbti1.charCodeAt(0) + mbti2.charCodeAt(2) + score) % pastLife.length;
+    const pastLifeStory = pastLife[pastLifeSeed];
+
+    // Get solution if score is low
+    const solutionSeed = (mbti1.length * mbti2.length + score) % solutions.length;
+    const solution = solutions[solutionSeed];
 
     const emojis = {
         soulmate: '🔥💕🔥', great: '⚡💖⚡', good: '✨💖✨',
@@ -931,6 +1237,23 @@ function calculateMbtiCompatibility() {
         heartClass = 'sparkling-hearts';
     } else if (score < 45) {
         heartClass = 'broken-hearts';
+    }
+
+    const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
+    const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
+    const datePlanLabel = lang === 'ko' ? '🍽️ 데이트 플래너에서 오늘의 메뉴 추천받기' : '🍽️ Get menu recommendation at Date Planner';
+
+    let solutionHTML = '';
+    if (score < 50) {
+        solutionHTML = `
+            <div class="solution-card">
+                <h4>${unlockLabel}</h4>
+                <div class="solution-item">
+                    <span class="solution-title">${solution.title}</span>
+                    <p class="solution-desc">${solution.desc}</p>
+                </div>
+            </div>
+        `;
     }
 
     const result = document.getElementById('mbti-result');
@@ -957,12 +1280,25 @@ function calculateMbtiCompatibility() {
             </div>
 
             <h3 class="story-verdict">${story.verdict}</h3>
+
+            <!-- Past Life Story -->
+            <div class="past-life-card">
+                <div class="past-life-header">
+                    <span class="past-life-icon">🏮</span>
+                    <span class="past-life-label">${pastLifeLabel}</span>
+                </div>
+                <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                <p class="past-life-detail">${pastLifeStory.detail}</p>
+            </div>
+
             <p class="story-message">${story.message}</p>
 
             <div class="story-advice">
                 <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
                 <p class="advice-text">${story.advice}</p>
             </div>
+
+            ${solutionHTML}
 
             <div class="mbti-traits">
                 <div class="trait-comparison">
@@ -978,8 +1314,14 @@ function calculateMbtiCompatibility() {
                 </div>
             </div>
 
+            <!-- Date Planner CTA -->
+            <div class="date-planner-cta" onclick="goToDatePlannerMbti(${score})">
+                <span>${datePlanLabel}</span>
+                <span class="cta-arrow">→</span>
+            </div>
+
             <div class="share-section">
-                <button class="share-btn" onclick="shareMbtiResult('${mbti1}', '${mbti2}', ${score}, '${keyword.replace(/'/g, "\\'")}')">
+                <button class="share-btn" onclick="shareMbtiResultFull('${mbti1}', '${mbti2}', ${score}, '${keyword.replace(/'/g, "\\'")}', '${pastLifeStory.relation.replace(/'/g, "\\'")}')">
                     <span>📱</span> Share Result
                 </button>
             </div>
@@ -987,6 +1329,23 @@ function calculateMbtiCompatibility() {
     `;
 
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function goToDatePlannerMbti(score) {
+    showSection('dateRec');
+    document.getElementById('date-score').value = score;
+    document.getElementById('dateRec').scrollIntoView({ behavior: 'smooth' });
+}
+
+function shareMbtiResultFull(mbti1, mbti2, score, keyword, pastLife) {
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    let text;
+    if (lang === 'ko') {
+        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLife}"\n\nLove & Fate에서 확인하세요!`;
+    } else {
+        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 Past Life: "${pastLife}"\n\nCheck at Love & Fate!`;
+    }
+    shareContent(text);
 }
 
 function getMbtiNickname(mbti, lang) {
@@ -1153,7 +1512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initLanguageSelector();
     initNameCompatibility();
-    initBloodTypeCompatibility();
+    initDateRecommendation();
     initMbtiCompatibility();
     initDailyFortune();
     createFloatingHearts();
