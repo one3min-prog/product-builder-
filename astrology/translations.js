@@ -9,23 +9,10 @@ const translations = {
         },
         nav: {
             name: "Name Match",
-            dateRec: "Date Planner",
             mbti: "MBTI",
             daily: "Daily Love",
-            about: "About"
-        },
-        dateRec: {
-            title: "Date Planner",
-            subtitle: "perfect menu & spot for your love score",
-            intro: "Enter your compatibility score to get personalized date recommendations!",
-            hint: "Don't know your score? Check Name Match or MBTI first!",
-            yourName: "Your Name",
-            partnerName: "Their Name",
-            score: "Compatibility Score (1-100)",
-            calculate: "Get Date Plan",
-            alertNames: "Please enter both names",
-            alertScore: "Please enter your compatibility score!",
-            alertRange: "Score must be between 1-100"
+            about: "About",
+            faq: "FAQ"
         },
         name: {
             title: "Name Compatibility",
@@ -94,23 +81,10 @@ const translations = {
         },
         nav: {
             name: "이름 궁합",
-            dateRec: "데이트 플래너",
             mbti: "MBTI",
             daily: "오늘의 운세",
-            about: "소개"
-        },
-        dateRec: {
-            title: "데이트 플래너",
-            subtitle: "궁합 점수에 맞는 완벽한 메뉴 & 장소",
-            intro: "궁합 점수를 입력하면 맞춤형 데이트를 추천해드려요!",
-            hint: "점수를 모르시나요? 이름 궁합이나 MBTI를 먼저 확인하세요!",
-            yourName: "내 이름",
-            partnerName: "상대 이름",
-            score: "궁합 점수 (1-100)",
-            calculate: "데이트 플랜 받기",
-            alertNames: "두 이름을 모두 입력해주세요",
-            alertScore: "궁합 점수를 입력해주세요!",
-            alertRange: "점수는 1-100 사이여야 해요"
+            about: "소개",
+            faq: "FAQ"
         },
         name: {
             title: "이름 궁합",
