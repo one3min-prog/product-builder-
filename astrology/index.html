@@ -16,12 +16,14 @@
     <div class="language-dropdown">
         <button class="lang-toggle" id="lang-toggle">
             <i class="ri-global-line"></i>
-            <span id="current-lang">English</span>
+            <span id="current-lang">한국어</span>
             <i class="ri-arrow-down-s-line arrow"></i>
         </button>
         <div class="lang-menu hidden" id="lang-menu">
-            <button class="lang-option" data-lang="en">🇺🇸 English</button>
             <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+            <button class="lang-option" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" data-lang="cn">🇨🇳 中文</button>
         </div>
     </div>
 
@@ -29,14 +31,31 @@
         <div class="logo">
             <i class="ri-heart-pulse-line main-icon"></i>
         </div>
-        <h1 data-i18n="title">Love Tier</h1>
-        <p class="tagline" data-i18n="tagline">Check your love tier instantly</p>
+        <h1 class="main-title">Love Tier</h1>
+        <p class="tagline" data-i18n="tagline">우리 사이는 몇 티어일까?</p>
     </header>
+
+    <section class="features-section">
+        <div class="feature-item">
+            <i class="ri-shield-check-line"></i>
+            <div>
+                <h3 data-i18n="feat.privacy_title">개인정보 100% 보호</h3>
+                <p data-i18n="feat.privacy_desc">서버에 저장되지 않아요.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="ri-price-tag-3-line"></i>
+            <div>
+                <h3 data-i18n="feat.free_title">평생 무료</h3>
+                <p data-i18n="feat.free_desc">결제 없이 모든 기능 이용.</p>
+            </div>
+        </div>
+    </section>
 
     <nav class="nav-container">
         <button class="nav-btn active" data-section="name">
             <i class="ri-user-heart-line"></i>
-            <span data-i18n="nav.name">Name Match</span>
+            <span data-i18n="nav.name">이름 궁합</span>
         </button>
         <button class="nav-btn" data-section="mbti">
             <i class="ri-puzzle-line"></i>
@@ -44,7 +63,7 @@
         </button>
         <button class="nav-btn" data-section="daily">
             <i class="ri-calendar-check-line"></i>
-            <span data-i18n="nav.daily">Daily Fortune</span>
+            <span data-i18n="nav.daily">오늘의 운세</span>
         </button>
     </nav>
 
@@ -52,53 +71,51 @@
         
         <section id="name-section" class="active-section">
             <div class="card input-card">
-                <h2 data-i18n="name.title">Name Compatibility</h2>
+                <h2 data-i18n="name.title">이름 궁합 테스트</h2>
                 <div class="input-group">
-                    <label data-i18n="name.yourName">Your Name</label>
+                    <label data-i18n="name.yourName">내 이름</label>
                     <input type="text" id="your-name" placeholder="Name">
                 </div>
                 <div class="input-group">
-                    <label data-i18n="name.partnerName">Partner's Name</label>
+                    <label data-i18n="name.partnerName">상대방 이름</label>
                     <input type="text" id="partner-name" placeholder="Name">
                 </div>
                 <button class="action-btn primary-btn" id="calc-name-btn">
-                    <i class="ri-magic-line"></i> <span data-i18n="name.calculate">Check Tier</span>
+                    <i class="ri-magic-line"></i> <span data-i18n="name.calculate">티어 확인하기</span>
                 </button>
             </div>
         </section>
 
         <section id="mbti-section" class="hidden-section">
             <div class="card input-card">
-                <h2 data-i18n="mbti.title">MBTI Match</h2>
+                <h2 data-i18n="mbti.title">MBTI 궁합</h2>
                 <div class="input-group">
-                    <label data-i18n="mbti.yourMbti">Your MBTI</label>
-                    <select id="your-mbti">
-                        </select>
+                    <label data-i18n="mbti.yourMbti">내 MBTI</label>
+                    <select id="your-mbti"></select>
                 </div>
                 <div class="input-group">
-                    <label data-i18n="mbti.partnerMbti">Partner's MBTI</label>
-                    <select id="partner-mbti">
-                        </select>
+                    <label data-i18n="mbti.partnerMbti">상대방 MBTI</label>
+                    <select id="partner-mbti"></select>
                 </div>
                 <button class="action-btn primary-btn" id="calc-mbti-btn">
-                    <i class="ri-search-eye-line"></i> <span data-i18n="mbti.calculate">Check Compatibility</span>
+                    <i class="ri-search-eye-line"></i> <span data-i18n="mbti.calculate">궁합 분석하기</span>
                 </button>
             </div>
         </section>
 
         <section id="daily-section" class="hidden-section">
             <div class="card input-card">
-                <h2 data-i18n="daily.title">Daily Love Fortune</h2>
+                <h2 data-i18n="daily.title">오늘의 연애운</h2>
                 <div class="input-group">
-                    <label data-i18n="daily.intro">Your Name</label>
+                    <label data-i18n="daily.intro">이름</label>
                     <input type="text" id="daily-name" placeholder="Name">
                 </div>
                 <div class="input-group">
-                    <label data-i18n="daily.birthday">Birthday</label>
+                    <label data-i18n="daily.birthday">생년월일</label>
                     <input type="date" id="daily-birth">
                 </div>
                 <button class="action-btn primary-btn" id="calc-daily-btn">
-                    <i class="ri-star-smile-line"></i> <span data-i18n="daily.calculate">Reveal Fortune</span>
+                    <i class="ri-star-smile-line"></i> <span data-i18n="daily.calculate">운세 카드 뽑기</span>
                 </button>
             </div>
         </section>
@@ -122,8 +139,8 @@
                         <div class="tier-badge" id="res-tier">TIER ?</div>
                     </div>
 
-                    <p class="verdict-text" id="res-verdict">Waiting for data...</p>
-                    <p class="detail-text" id="res-text">Detailed analysis text goes here.</p>
+                    <p class="verdict-text" id="res-verdict">Waiting...</p>
+                    <p class="detail-text" id="res-text">Analysis result...</p>
 
                     <div id="date-rec-area" class="date-rec-box hidden">
                         <h4 class="rec-title"><i class="ri-map-pin-heart-line"></i> Recommended Date</h4>
@@ -143,17 +160,17 @@
 
             <div class="result-actions">
                 <button class="action-btn secondary-btn" id="show-date-btn">
-                    <i class="ri-restaurant-2-line"></i> <span data-i18n="result.showDate">Date Course</span>
+                    <i class="ri-restaurant-2-line"></i> <span data-i18n="result.showDate">💘 이 점수 추천 데이트 코스</span>
                 </button>
                 <div class="share-row">
                     <button class="action-btn share-btn" id="capture-btn">
-                        <i class="ri-download-line"></i> <span data-i18n="result.save">Save Card</span>
+                        <i class="ri-download-line"></i> <span data-i18n="result.save">이미지 저장</span>
                     </button>
                     <button class="action-btn share-btn highlight" id="share-btn">
-                        <i class="ri-share-forward-line"></i> <span data-i18n="result.share">Share</span>
+                        <i class="ri-share-forward-line"></i> <span data-i18n="result.share">공유하기</span>
                     </button>
                 </div>
-                <button class="close-btn" id="close-result"><i class="ri-close-circle-line"></i> Close</button>
+                <button class="close-btn" id="close-result"><i class="ri-close-circle-line"></i> 닫기</button>
             </div>
         </div>
 
