@@ -3,6 +3,10 @@ const translations = {
     en: {
         title: "Love & Fate",
         tagline: "your love story written in the stars",
+        badges: {
+            free: "100% Free",
+            privacy: "Privacy Protected"
+        },
         nav: {
             name: "Name Match",
             bloodType: "Blood Type",
@@ -45,6 +49,25 @@ const translations = {
         result: {
             advice: "Love Tip"
         },
+        about: {
+            title: "About Love & Fate",
+            subtitle: "learn more about us",
+            introTitle: "What is Love & Fate?",
+            introText: "Love & Fate is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.",
+            privacyTitle: "Privacy First",
+            privacyText: "Your privacy is our top priority. We do not store any personal information you enter. All calculations are performed in your browser and are never sent to our servers. Your secrets are safe with you.",
+            featuresTitle: "Our Features",
+            feature1: "Name Compatibility - Discover the hidden energies between two names",
+            feature2: "Blood Type Love - Explore love secrets based on blood types",
+            feature3: "MBTI Match - Uncover relationship potential based on personalities",
+            feature4: "Daily Fortune - Get your personalized love horoscope",
+            disclaimerTitle: "Disclaimer",
+            disclaimerText: "This site is for entertainment purposes only. Compatibility scores are not scientifically proven and should not be used to make life decisions. Enjoy the journey of discovery!"
+        },
+        calc: {
+            viewProcess: "View Calculation Process",
+            hideProcess: "Hide Calculation"
+        },
         footer: {
             disclaimer: "for entertainment purposes only"
         }
@@ -52,6 +75,10 @@ const translations = {
     ko: {
         title: "사랑과 운명",
         tagline: "별들이 쓴 당신의 러브 스토리",
+        badges: {
+            free: "100% 무료",
+            privacy: "개인정보 보호"
+        },
         nav: {
             name: "이름 궁합",
             bloodType: "혈액형",
@@ -94,6 +121,25 @@ const translations = {
         result: {
             advice: "연애 팁"
         },
+        about: {
+            title: "사랑과 운명 소개",
+            subtitle: "우리에 대해 알아보세요",
+            introTitle: "사랑과 운명이란?",
+            introText: "사랑과 운명은 관계 역학을 이해하기 위한 당신의 개인 가이드입니다. 이름, 혈액형, MBTI 성격 유형에 기반한 궁합 분석을 통해 더 깊은 연결을 발견하도록 도와드립니다.",
+            privacyTitle: "개인정보 보호",
+            privacyText: "당신의 개인정보 보호가 우리의 최우선 과제입니다. 입력하신 개인정보는 저장하지 않습니다. 모든 계산은 브라우저에서 수행되며 서버로 전송되지 않습니다. 비밀은 안전합니다.",
+            featuresTitle: "주요 기능",
+            feature1: "이름 궁합 - 두 이름 사이의 숨겨진 에너지를 발견하세요",
+            feature2: "혈액형 사랑 - 혈액형에 따른 사랑의 비밀을 탐험하세요",
+            feature3: "MBTI 매칭 - 성격에 기반한 관계 잠재력을 알아보세요",
+            feature4: "일일 운세 - 맞춤형 연애 운세를 받아보세요",
+            disclaimerTitle: "면책 조항",
+            disclaimerText: "이 사이트는 오락 목적으로만 사용됩니다. 궁합 점수는 과학적으로 입증되지 않았으며 인생 결정에 사용해서는 안 됩니다. 발견의 여정을 즐기세요!"
+        },
+        calc: {
+            viewProcess: "계산 과정 보기",
+            hideProcess: "계산 숨기기"
+        },
         footer: {
             disclaimer: "오락용으로만 사용하세요"
         }
@@ -101,6 +147,10 @@ const translations = {
     ja: {
         title: "愛と運命",
         tagline: "星に書かれたあなたのラブストーリー",
+        badges: {
+            free: "100%無料",
+            privacy: "プライバシー保護"
+        },
         nav: {
             name: "名前相性",
             bloodType: "血液型",
@@ -150,6 +200,10 @@ const translations = {
     zh: {
         title: "爱与命运",
         tagline: "星星写下的你的爱情故事",
+        badges: {
+            free: "100%免费",
+            privacy: "隐私保护"
+        },
         nav: {
             name: "姓名配对",
             bloodType: "血型",
@@ -199,6 +253,10 @@ const translations = {
     es: {
         title: "Amor y Destino",
         tagline: "tu historia de amor escrita en las estrellas",
+        badges: {
+            free: "100% Gratis",
+            privacy: "Privacidad Protegida"
+        },
         nav: {
             name: "Nombres",
             bloodType: "Sangre",
@@ -248,6 +306,10 @@ const translations = {
     fr: {
         title: "Amour & Destin",
         tagline: "votre histoire d'amour écrite dans les étoiles",
+        badges: {
+            free: "100% Gratuit",
+            privacy: "Vie Privée Protégée"
+        },
         nav: {
             name: "Prénoms",
             bloodType: "Sang",
@@ -297,6 +359,10 @@ const translations = {
     de: {
         title: "Liebe & Schicksal",
         tagline: "deine Liebesgeschichte in den Sternen geschrieben",
+        badges: {
+            free: "100% Kostenlos",
+            privacy: "Datenschutz Gesichert"
+        },
         nav: {
             name: "Namen",
             bloodType: "Blutgruppe",
@@ -346,6 +412,10 @@ const translations = {
     ru: {
         title: "Любовь и Судьба",
         tagline: "твоя история любви, написанная в звёздах",
+        badges: {
+            free: "100% Бесплатно",
+            privacy: "Конфиденциальность"
+        },
         nav: {
             name: "Имена",
             bloodType: "Кровь",
@@ -395,6 +465,10 @@ const translations = {
     pt: {
         title: "Amor e Destino",
         tagline: "sua história de amor escrita nas estrelas",
+        badges: {
+            free: "100% Gratuito",
+            privacy: "Privacidade Protegida"
+        },
         nav: {
             name: "Nomes",
             bloodType: "Sangue",
