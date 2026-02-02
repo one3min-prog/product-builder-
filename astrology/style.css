@@ -1603,6 +1603,86 @@ body {
     border: 2px solid var(--card-border);
 }
 
+/* ====== Policy Content Styling ====== */
+.policy-content {
+    padding: 40px;
+    line-height: 1.8;
+}
+
+.policy-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin: 25px 0 12px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.policy-content h3:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.policy-content p {
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.policy-content ul {
+    margin: 12px 0;
+    padding-left: 25px;
+}
+
+.policy-content li {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* ====== Footer Links ====== */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #ccc;
+}
+
+.footer-contact {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 10px 0;
+}
+
+/* ====== Enhanced About Card ====== */
+.about-card strong {
+    color: var(--primary-dark);
+}
+
+.about-card p + p {
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
     .trust-badges {
         gap: 10px;
@@ -1624,5 +1704,13 @@ body {
 
     .trait-vs {
         margin: 10px 0;
+    }
+
+    .policy-content {
+        padding: 25px 20px;
+    }
+
+    .footer-links {
+        gap: 8px;
     }
 }
