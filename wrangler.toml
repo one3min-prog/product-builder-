@@ -1,4 +1,4 @@
-name = "love-tier"
+name = "love"
 main = "worker.js"
 compatibility_date = "2024-09-23"
 
