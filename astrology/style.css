@@ -539,6 +539,13 @@ body {
     }
 }
 
+/* ====== Result Card New ====== */
+.result-card-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /* ====== Story Card - Clean ====== */
 .story-card {
     background: #ffffff;
@@ -1996,5 +2003,113 @@ body {
     .sns-btn svg {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* ====== Result Popup Modal ====== */
+.result-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.result-popup.hidden {
+    display: none;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.popup-content {
+    position: relative;
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.3s ease-out;
+    z-index: 1;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f3f4f6;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.popup-close:hover {
+    background: #ff6b9d;
+    color: white;
+}
+
+.popup-result-card {
+    text-align: center;
+}
+
+/* Popup specific adjustments */
+.popup-content .result-share-card {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.popup-content .temp-header {
+    margin-bottom: 20px;
+}
+
+.popup-content .temp-title {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+.popup-content .sns-share-compact {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #f3f4f6;
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 24px 20px;
+        margin: 10px;
     }
 }

@@ -141,6 +141,41 @@ function toggleNameVisibility() {
     }
 }
 
+// Store pending detail data for popup close
+let pendingDetailData = null;
+
+function showResultPopup(score, name1, name2, shareText, detailData) {
+    pendingDetailData = detailData;
+    const popup = document.getElementById('result-popup');
+    const popupCard = document.getElementById('popup-result-card');
+
+    popupCard.innerHTML = generateResultCardHTML(score, name1, name2, shareText);
+    popup.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Store original names for toggle
+    const namesDisplay = document.getElementById('temp-names-display');
+    if (namesDisplay) {
+        namesDisplay.dataset.original = `${name1} & ${name2}`;
+    }
+}
+
+function closeResultPopup() {
+    const popup = document.getElementById('result-popup');
+    popup.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    // Show detailed result after closing popup
+    if (pendingDetailData) {
+        if (pendingDetailData.type === 'name') {
+            showNameDetailResult(pendingDetailData);
+        } else if (pendingDetailData.type === 'mbti') {
+            showMbtiDetailResult(pendingDetailData);
+        }
+        pendingDetailData = null;
+    }
+}
+
 function copyResultToClipboard() {
     const namesHidden = document.getElementById('hide-names-checkbox')?.checked;
     let text = currentShareText;
@@ -1122,7 +1157,6 @@ function toggleCalcProcess() {
 }
 
 function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
-    const result = document.getElementById('name-result');
     const lang = currentLang === 'ko' ? 'ko' : 'en';
 
     if (score >= 80) triggerConfetti();
@@ -1132,14 +1166,150 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
         ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n\nHeart Scan에서 확인하세요!`
         : `💕 ${name1} & ${name2}: ${score}% compatible!\n\nCheck at Heart Scan!`;
 
-    result.classList.remove('hidden');
-    result.innerHTML = generateResultCardHTML(score, name1, name2, currentShareText);
+    // Prepare detail data for after popup close
+    const detailData = {
+        type: 'name',
+        name1,
+        name2,
+        score,
+        chars,
+        strokes,
+        allSteps,
+        lang
+    };
 
-    // Store original names for toggle
-    const namesDisplay = document.getElementById('temp-names-display');
-    if (namesDisplay) {
-        namesDisplay.dataset.original = `${name1} & ${name2}`;
+    // Show popup first
+    showResultPopup(score, name1, name2, currentShareText, detailData);
+}
+
+function showNameDetailResult(data) {
+    const { name1, name2, score, chars, strokes, allSteps, lang } = data;
+    const result = document.getElementById('name-result');
+    const messages = storyMessages[lang] || storyMessages.en;
+    const pastLife = pastLifeStories[lang === 'ko' ? 'ko' : 'en'];
+    const solutions = badLuckSolutions[lang === 'ko' ? 'ko' : 'en'];
+
+    let level, heartEffect, heartEmojis;
+    if (score >= 90) {
+        level = 'excellent';
+        heartEffect = 'fire-hearts';
+        heartEmojis = '🔥💕🔥💕🔥';
+    } else if (score >= 75) {
+        level = 'good';
+        heartEffect = 'sparkling-hearts';
+        heartEmojis = '✨💖✨💖✨';
+    } else if (score >= 60) {
+        level = 'average';
+        heartEffect = '';
+        heartEmojis = '💕💫💕';
+    } else if (score >= 40) {
+        level = 'challenging';
+        heartEffect = '';
+        heartEmojis = '💪💕💪';
+    } else {
+        level = 'difficult';
+        heartEffect = 'broken-hearts';
+        heartEmojis = '🎢💕🎢';
     }
+
+    const story = messages[level];
+    const today = new Date().toLocaleDateString(currentLang, { month: 'long', day: 'numeric', year: 'numeric' });
+
+    // Generate past life story
+    const pastLifeSeed = (name1.charCodeAt(0) + name2.charCodeAt(0) + score) % pastLife.length;
+    const pastLifeStory = pastLife[pastLifeSeed];
+
+    // Get solution if score is low
+    const solutionSeed = (name1.length * name2.length + score) % solutions.length;
+    const solution = solutions[solutionSeed];
+
+    const calcStepsHTML = generateCalcStepsHTML(chars, strokes, allSteps);
+    const toggleLabel = lang === 'ko' ? '계산 과정 보기' : 'View Calculation';
+    const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
+    const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
+
+    let solutionHTML = '';
+    if (score < 50) {
+        solutionHTML = `
+            <div class="solution-card">
+                <h4>${unlockLabel}</h4>
+                <div class="solution-item">
+                    <span class="solution-title">${solution.title}</span>
+                    <p class="solution-desc">${solution.desc}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    const shareText = lang === 'ko'
+        ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
+        : `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
+
+    result.classList.remove('hidden');
+    result.innerHTML = `
+        <div class="result-card-new">
+            <!-- Result Details Card -->
+            <div class="story-card">
+                <div class="story-header">
+                    <p class="story-names">${name1} & ${name2}</p>
+                    <p class="story-date">${today}</p>
+                </div>
+
+                <div class="score-container">
+                    <div class="score-ring">
+                        <div class="score-inner">
+                            <span class="score-number">${score}</span>
+                            <span class="score-label">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heart-effect ${heartEffect}">${heartEmojis}</div>
+
+                <h3 class="story-verdict">${story.verdict}</h3>
+
+                <!-- Past Life Story -->
+                <div class="past-life-card">
+                    <div class="past-life-header">
+                        <span class="past-life-icon">🏮</span>
+                        <span class="past-life-label">${pastLifeLabel}</span>
+                    </div>
+                    <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                    <p class="past-life-detail">${pastLifeStory.detail}</p>
+                </div>
+
+                <p class="story-message">${story.message}</p>
+
+                <div class="story-advice">
+                    <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
+                    <p class="advice-text">${story.advice}</p>
+                </div>
+
+                ${solutionHTML}
+
+                <!-- Calculation Process Toggle -->
+                <div class="calc-toggle-section">
+                    <div class="calc-toggle-header" onclick="toggleCalcProcess()">
+                        <span class="calc-toggle-title">
+                            <span>🔢</span>
+                            <span>${toggleLabel}</span>
+                        </span>
+                        <span class="calc-toggle-arrow">▼</span>
+                    </div>
+                    <div class="calc-content">
+                        <div class="calc-content-inner">
+                            <div class="calc-steps">
+                                ${calcStepsHTML}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SNS Share Buttons -->
+                ${generateSNSShareHTML({ text: shareText })}
+            </div>
+        </div>
+    `;
 
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
@@ -1444,15 +1614,97 @@ function calculateMbtiCompatibility() {
         ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nHeart Scan에서 확인하세요!`
         : `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nCheck at Heart Scan!`;
 
-    const result = document.getElementById('mbti-result');
-    result.classList.remove('hidden');
-    result.innerHTML = generateResultCardHTML(score, mbti1, mbti2, currentShareText);
+    // Prepare detail data for after popup close
+    const detailData = {
+        type: 'mbti',
+        mbti1,
+        mbti2,
+        score,
+        keyword,
+        compatData,
+        lang,
+        story,
+        pastLifeStory,
+        solution,
+        heartClass,
+        emojis,
+        pastLifeLabel,
+        datePlanLabel,
+        solutionHTML
+    };
 
-    // Store original names for toggle
-    const namesDisplay = document.getElementById('temp-names-display');
-    if (namesDisplay) {
-        namesDisplay.dataset.original = `${mbti1} & ${mbti2}`;
-    }
+    // Show popup first
+    showResultPopup(score, mbti1, mbti2, currentShareText, detailData);
+}
+
+function showMbtiDetailResult(data) {
+    const { mbti1, mbti2, score, keyword, compatData, lang, story, pastLifeStory, solution, heartClass, emojis, pastLifeLabel, solutionHTML } = data;
+    const result = document.getElementById('mbti-result');
+
+    const shareText = lang === 'ko'
+        ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
+        : `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
+
+    result.classList.remove('hidden');
+    result.innerHTML = `
+        <div class="result-card-new">
+            <!-- Result Details Card -->
+            <div class="story-card">
+                <div class="heart-effect ${heartClass}">${emojis[compatData.type] || '💕✨💕'}</div>
+
+                <div class="mbti-keyword">
+                    <span class="keyword-badge">${keyword}</span>
+                </div>
+
+                <div class="score-container">
+                    <div class="score-ring">
+                        <div class="score-inner">
+                            <span class="score-number">${score}</span>
+                            <span class="score-label">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="story-verdict">${story.verdict}</h3>
+
+                <!-- Past Life Story -->
+                <div class="past-life-card">
+                    <div class="past-life-header">
+                        <span class="past-life-icon">🏮</span>
+                        <span class="past-life-label">${pastLifeLabel}</span>
+                    </div>
+                    <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                    <p class="past-life-detail">${pastLifeStory.detail}</p>
+                </div>
+
+                <p class="story-message">${story.message}</p>
+
+                <div class="story-advice">
+                    <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
+                    <p class="advice-text">${story.advice}</p>
+                </div>
+
+                ${solutionHTML}
+
+                <div class="mbti-traits">
+                    <div class="trait-comparison">
+                        <div class="trait-item">
+                            <span class="trait-label">${mbti1}</span>
+                            <span class="trait-desc">${getMbtiNickname(mbti1, lang)}</span>
+                        </div>
+                        <span class="trait-vs">VS</span>
+                        <div class="trait-item">
+                            <span class="trait-label">${mbti2}</span>
+                            <span class="trait-desc">${getMbtiNickname(mbti2, lang)}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SNS Share Buttons -->
+                ${generateSNSShareHTML({ text: shareText })}
+            </div>
+        </div>
+    `;
 
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
