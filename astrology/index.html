@@ -91,10 +91,6 @@
             <span class="nav-icon">💝</span>
             <span data-i18n="nav.name">Name Match</span>
         </button>
-        <button class="nav-btn" data-section="dateRec">
-            <span class="nav-icon">🍽️</span>
-            <span data-i18n="nav.dateRec">Date Planner</span>
-        </button>
         <button class="nav-btn" data-section="mbti">
             <span class="nav-icon">🧠</span>
             <span data-i18n="nav.mbti">MBTI</span>
@@ -150,55 +146,6 @@
             </div>
 
             <div id="name-result" class="result-card hidden"></div>
-        </section>
-
-        <!-- Date Planner Section -->
-        <section id="dateRec" class="section">
-            <div class="section-header">
-                <span class="section-emoji">🍽️</span>
-                <h2 class="section-title" data-i18n="dateRec.title">Date Planner</h2>
-                <p class="section-subtitle" data-i18n="dateRec.subtitle">perfect menu & spot for your love score</p>
-            </div>
-
-            <div class="form-container glass-card">
-                <div class="date-rec-intro">
-                    <div class="date-rec-icon">🎯</div>
-                    <p data-i18n="dateRec.intro">Enter your compatibility score to get personalized date recommendations!</p>
-                    <p class="date-rec-hint" data-i18n="dateRec.hint">💡 Don't know your score? Check Name Match or MBTI first!</p>
-                </div>
-                <div class="input-row">
-                    <div class="form-group">
-                        <label data-i18n="dateRec.yourName">Your Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">👤</span>
-                            <input type="text" id="date-your-name" class="cute-input" placeholder="Your name">
-                        </div>
-                    </div>
-                    <div class="heart-connector">💕</div>
-                    <div class="form-group">
-                        <label data-i18n="dateRec.partnerName">Their Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">💝</span>
-                            <input type="text" id="date-partner-name" class="cute-input" placeholder="Their name">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group centered">
-                    <label data-i18n="dateRec.score">Compatibility Score (1-100)</label>
-                    <div class="input-wrapper score-input-wrapper">
-                        <span class="input-icon">💯</span>
-                        <input type="number" id="date-score" class="cute-input" placeholder="e.g., 85" min="1" max="100">
-                        <span class="score-suffix">%</span>
-                    </div>
-                </div>
-                <button id="get-date-recommendation" class="cute-btn primary-btn">
-                    <span class="btn-icon">🍴</span>
-                    <span data-i18n="dateRec.calculate">Get Date Plan</span>
-                    <span class="btn-icon">📍</span>
-                </button>
-            </div>
-
-            <div id="date-rec-result" class="result-card hidden"></div>
         </section>
 
         <!-- MBTI Compatibility Section -->
