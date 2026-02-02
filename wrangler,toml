@@ -1,8 +1,7 @@
 name = "love-tier"
-compatibility_date = "2024-02-02"
+main = "worker.js"  # <--- 이 부분이 관리자 스크립트를 지정하는 곳입니다.
+compatibility_date = "2024-05-15"
 
-# 여기가 핵심입니다! 
-# 사이트 파일들이 들어있는 폴더 이름("astrology")을 지정해줍니다.
 [assets]
 directory = "./astrology"
 binding = "ASSETS"
