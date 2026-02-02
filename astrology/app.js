@@ -310,220 +310,275 @@ const mbtiDetailedCompatibility = {
 const mbtiStories = {
     en: {
         soulmate: {
-            verdict: "LEGENDARY MATCH! 🔥💕🔥",
-            message: "Stop whatever you're doing. This is the kind of match that romance novels are written about. Your brain waves literally sync when you're together. Scientists would want to study you two.",
-            advice: "Don't overthink it. Some things are just meant to be. Your only job is to not screw this up by being too much in your head."
+            verdict: "A Legendary Match! 🔥💕🔥",
+            message: "This is the kind of match that romance novels are written about. When you're together, your energies sync in remarkable ways. This connection is truly special and rare.",
+            advice: "Please don't overthink this beautiful connection. Some things are simply meant to be. Your role is to nurture this bond with care and presence."
         },
         great: {
             verdict: "Power Couple Alert! ⚡💖",
-            message: "You two are like a well-oiled machine. Where one stumbles, the other catches. It's not perfect, but it's pretty damn close. Other couples look at you and feel inadequate.",
-            advice: "Keep communicating. This match has incredible potential - water it with honesty and watch it grow into something extraordinary."
+            message: "You two complement each other wonderfully. Where one person needs support, the other provides it naturally. This partnership has incredible potential for lasting happiness.",
+            advice: "Please continue communicating openly. This match has remarkable potential - nurture it with honesty and watch it flourish into something extraordinary."
         },
         good: {
-            verdict: "Solid Foundation 🏠✨",
-            message: "This is the 'marry your best friend' kind of match. Not fireworks every day, but a warm fire that keeps burning. You'll still be laughing together at 80.",
-            advice: "Don't chase drama. What you have is rare - genuine compatibility. Appreciate the peace."
+            verdict: "A Solid Foundation 🏠✨",
+            message: "This is the 'marry your best friend' kind of match. While there may not be fireworks every day, there's a warm, steady flame that will keep burning for years to come.",
+            advice: "Please don't chase unnecessary drama. What you have is rare - genuine compatibility. Appreciate the peace and comfort you bring each other."
         },
         moderate: {
-            verdict: "The Interesting Ones 🎭",
-            message: "You'll never be bored, that's for sure. Different perspectives mean different arguments, but also different insights. Growth comes from friction, right?",
-            advice: "Learn their language. They're not wrong, just different. Once you crack their code, things get easier."
+            verdict: "An Interesting Journey 🎭",
+            message: "You'll certainly never be bored together. Different perspectives mean different viewpoints to explore, and growth often comes from understanding these differences.",
+            advice: "Please take time to learn each other's communication styles. Your partner isn't wrong, just different. Once you understand their perspective, things become much easier."
         },
         challenging: {
-            verdict: "Buckle Up, Buttercup 🎢",
-            message: "Look, this isn't going to be easy. You process the world in fundamentally different ways. But some of the greatest love stories were the unlikely ones.",
-            advice: "Patience. So much patience. And therapy wouldn't hurt either. Understand that 'different' doesn't mean 'wrong'."
+            verdict: "A Path of Growth 🎢",
+            message: "This relationship will require effort, as you both process the world quite differently. However, some of the greatest love stories have been the unexpected ones.",
+            advice: "Please be patient with each other. Understanding that 'different' doesn't mean 'wrong' is key. Consider seeking guidance from a relationship counselor if needed."
         },
         explosive: {
             verdict: "Handle With Care ⚠️💣",
-            message: "This is either going to be the most transformative relationship of your life or a complete disaster. There's no middle ground. Your values clash like titans.",
-            advice: "If you're going to do this, establish ground rules EARLY. Respect boundaries religiously. And maybe keep a couples therapist on speed dial."
+            message: "This relationship has the potential to be deeply transformative. Your values may sometimes clash significantly, requiring careful navigation.",
+            advice: "If you choose to pursue this relationship, please establish clear boundaries early. Consider keeping a couples therapist available for guidance."
         },
         chaotic: {
-            verdict: "Beautiful Chaos 🌪️💕",
-            message: "You'll fight like cats and dogs but the makeup sessions will be legendary. Neither of you understands how the other's brain works, and somehow that's... exciting?",
-            advice: "Stop trying to change each other. Seriously. Love the chaos or leave it, but don't try to tame it."
+            verdict: "Beautiful Complexity 🌪️💕",
+            message: "You may have passionate disagreements, but your reconciliations can be equally meaningful. Neither of you fully understands the other's thought process, and that creates a unique dynamic.",
+            advice: "Please don't try to fundamentally change each other. Either embrace this unique dynamic or recognize it may not be right for you."
         },
         toxic: {
-            verdict: "The 'Can't Live With, Can't Live Without' Type 💔🔄💕",
-            message: "Let's be real - this is the relationship your friends worry about. You'll have screaming matches and passionate reconciliations. It's exhausting but addictive.",
-            advice: "Ask yourself honestly: is this passion or just drama? If you're going to stay, both of you need to do serious work on communication. Consider if the highs are worth the lows."
+            verdict: "The Push-Pull Dynamic 💔🔄💕",
+            message: "This relationship may concern those who care about you. There can be intense conflicts followed by passionate reconciliations. It's emotionally demanding but also deeply engaging.",
+            advice: "Please honestly ask yourself: is this passion or just drama? If you choose to stay, both partners need to commit seriously to improving communication."
         },
         difficult: {
-            verdict: "Playing on Hard Mode 🎮",
-            message: "This relationship requires a PhD in emotional intelligence. One of you speaks in feelings, the other in facts. Lost in translation is your daily reality.",
-            advice: "Get a translator (aka therapist). Learn to appreciate that their way isn't wrong, just foreign. It's like learning a new language - frustrating but rewarding."
+            verdict: "Playing on Challenging Mode 🎮",
+            message: "This relationship requires significant emotional intelligence. One partner speaks in feelings while the other communicates through facts, leading to frequent misunderstandings.",
+            advice: "Please consider working with a relationship counselor. Learning to appreciate that your partner's approach isn't wrong, just different, is essential."
         },
         mirror: {
-            verdict: "Looking in the Mirror 🪞",
-            message: "Dating yourself, huh? You'll understand each other perfectly, which is both a blessing and a curse. Who's going to be the responsible one when you're both the same?",
-            advice: "Make sure you don't enable each other's weaknesses. Intentionally seek balance - if you're both dreamers, schedule reality check-ins."
+            verdict: "A Mirror Reflection 🪞",
+            message: "You understand each other perfectly, which is both a blessing and a challenge. The question becomes: who takes on different roles when you're so similar?",
+            advice: "Please be careful not to enable each other's weaknesses. Intentionally seek balance - if you're both dreamers, schedule practical planning sessions together."
         },
         competitive: {
-            verdict: "Game of Thrones Energy 👑⚔️",
-            message: "Two alphas enter, one alpha leaves... just kidding. But seriously, the power dynamics here are INTENSE. You'll either build an empire together or burn it down.",
-            advice: "Take turns leading. Seriously. Your egos need to learn to share. When you compete WITH each other instead of AGAINST, you're unstoppable."
+            verdict: "A Dynamic Power Match 👑⚔️",
+            message: "Two strong personalities together creates intense dynamics. You'll either build something remarkable together or face significant challenges.",
+            advice: "Please take turns leading in different areas. When you compete alongside each other rather than against, you become an unstoppable team."
         },
         chaos: {
-            verdict: "Double Trouble! 🌈🎪",
-            message: "Your combined energy could power a small city. Ideas flying everywhere, adventures starting spontaneously. Someone needs to pay the bills though...",
-            advice: "Assign practical roles deliberately. Your creative synergy is off the charts, but ground it with some structure or you'll float away together."
+            verdict: "Double the Energy! 🌈🎪",
+            message: "Your combined energy is remarkable. Ideas flow freely and adventures begin spontaneously. However, someone does need to handle the practical matters.",
+            advice: "Please deliberately assign practical responsibilities. Your creative synergy is incredible, but grounding it with some structure will help you thrive together."
         },
         fun: {
-            verdict: "Life of the Party x2 🎉🎊",
-            message: "Every day is an adventure, every night could become a story. You're the couple everyone wants to hang out with. Just remember that real life exists too.",
-            advice: "Schedule some boring time. Your relationship needs depth too, not just Instagram-worthy moments."
+            verdict: "Life of the Party Together 🎉🎊",
+            message: "Every day is an adventure, and every evening could become a memorable story. You're the couple everyone wants to spend time with.",
+            advice: "Please remember to schedule some quiet time together. Your relationship needs depth as well as excitement."
         },
         adventure: {
-            verdict: "Adrenaline Junkies United 🏄‍♂️🏔️",
-            message: "You'll have the most exciting life and probably the shortest. Everything is an adventure, including your relationship. Boring is not in your vocabulary.",
-            advice: "Try vulnerability. Thrill-seeking can be a way to avoid deeper connection. Let yourselves be boring with each other sometimes."
+            verdict: "Adventure Partners United 🏄‍♂️🏔️",
+            message: "You'll have an exciting life together. Everything becomes an adventure, including your relationship itself. Routine simply isn't in your vocabulary.",
+            advice: "Please try being vulnerable with each other. Thrill-seeking can sometimes be a way to avoid deeper connection. Allow yourselves quiet moments together."
         },
         peaceful: {
             verdict: "Quiet Understanding 🌸",
-            message: "Words aren't always necessary when you just... get each other. Your relationship is a safe haven from the noisy world. Cozy vibes only.",
-            advice: "Make sure you're actually communicating, not just assuming. Silence is golden but it can also hide issues."
+            message: "Words aren't always necessary when you simply understand each other. Your relationship is a peaceful haven from the busy world.",
+            advice: "Please make sure you're actually communicating, not just assuming. Silence can be golden, but it can also hide important issues."
         },
         independent: {
-            verdict: "Space Respect Supreme 🌌",
-            message: "You both need your alone time, and you both respect that. No clingy behavior here. It's mature, it's healthy, it's... maybe a bit distant?",
-            advice: "Check in emotionally sometimes. Independence is great, but don't become roommates. Keep the romance alive intentionally."
+            verdict: "Mutual Space Respect 🌌",
+            message: "You both need personal time, and you both respect that. There's no clingy behavior here - it's mature and healthy.",
+            advice: "Please check in emotionally with each other regularly. Independence is wonderful, but don't let it create too much distance. Keep the romance alive intentionally."
         },
         stable: {
-            verdict: "Rock Solid ⛰️",
-            message: "This is the relationship equivalent of a diversified retirement portfolio. Safe, reliable, will probably still be there in 50 years. Exciting? Maybe not. But real.",
-            advice: "Inject some spontaneity occasionally. You're so good at routine that you might forget to have fun. Stability is the foundation, not the whole house."
+            verdict: "Rock Solid Foundation ⛰️",
+            message: "This is a safe, reliable relationship that will likely stand the test of time. It may not always be exciting, but it's genuine and lasting.",
+            advice: "Please inject some spontaneity occasionally. You're so skilled at routine that you might forget to have fun together. Stability is your foundation, but remember to build upon it."
         },
         caring: {
-            verdict: "Mutual Care Overload 💝",
-            message: "You both want to take care of each other so much that sometimes you fight about who gets to be the caring one. It's adorable and slightly exhausting.",
-            advice: "Let yourself be taken care of too. Don't turn nurturing into a competition. Accept love as much as you give it."
+            verdict: "Mutual Care and Support 💝",
+            message: "You both want to take care of each other so much that sometimes you debate who gets to be the caregiver. It's endearing and heartwarming.",
+            advice: "Please allow yourself to receive care as well. Don't turn nurturing into a competition. Accept love as generously as you give it."
         },
         idealist: {
-            verdict: "Saving the World Together 🌍💕",
-            message: "You both have big visions and bigger hearts. You'll volunteer together, protest together, and try to make the world better. Just don't forget your own relationship needs attention too.",
-            advice: "Schedule date nights that aren't about changing the world. Your relationship deserves the same care you give to your causes."
+            verdict: "Changing the World Together 🌍💕",
+            message: "You both have big visions and even bigger hearts. You'll volunteer together and work to make the world better.",
+            advice: "Please schedule date nights that are just about the two of you. Your relationship deserves the same care you give to your causes."
         }
     },
     ko: {
         soulmate: {
-            verdict: "전설적인 조합! 🔥💕🔥",
-            message: "하던 거 다 멈춰. 이건 로맨스 소설에나 나오는 궁합이야. 함께 있으면 뇌파가 동기화된다니까. 과학자들이 너희 둘을 연구하고 싶어할 걸.",
-            advice: "너무 생각하지 마. 그냥 운명인 것들도 있어. 네 할 일은 머리 굴리다가 이거 망치지 않는 것뿐이야."
+            verdict: "전설적인 궁합이에요! 🔥💕🔥",
+            message: "이 궁합은 로맨스 소설에서나 볼 수 있는 조합이에요. 함께 있으면 두 분의 에너지가 놀라울 정도로 동기화됩니다. 이런 연결은 정말 특별하고 희귀해요.",
+            advice: "이 아름다운 인연을 너무 깊이 생각하지 마세요. 운명처럼 정해진 것들도 있답니다. 두 분의 역할은 이 소중한 인연을 정성껏 가꾸어 나가는 것이에요."
         },
         great: {
-            verdict: "파워 커플 등장! ⚡💖",
-            message: "너희 둘은 잘 맞물린 톱니바퀴 같아. 한 명이 흔들리면 다른 한 명이 잡아줘. 완벽하진 않지만 꽤 근접해. 다른 커플들이 너희 보고 주눅 들어.",
-            advice: "소통을 계속해. 이 궁합은 엄청난 잠재력이 있어 - 정직함으로 물을 주면 뭔가 대단한 게 자라날 거야."
+            verdict: "파워 커플 등장이에요! ⚡💖",
+            message: "두 분은 서로를 정말 잘 보완해주세요. 한 분이 도움이 필요할 때 다른 분이 자연스럽게 지지해주시네요. 이 관계는 오래도록 행복할 잠재력이 있어요.",
+            advice: "계속해서 솔직하게 소통해주세요. 이 궁합은 정말 대단한 잠재력을 가지고 있어요. 정직함으로 물을 주시면 특별한 무언가로 성장할 거예요."
         },
         good: {
-            verdict: "탄탄한 기반 🏠✨",
-            message: "이건 '베프와 결혼해라' 유형의 궁합이야. 매일 불꽃놀이는 아니지만, 계속 타오르는 따뜻한 불 같아. 80살에도 같이 웃고 있을 거야.",
-            advice: "드라마를 쫓지 마. 네가 가진 건 희귀해 - 진짜 궁합이야. 그 평화를 감사히 여겨."
+            verdict: "탄탄한 기반이에요 🏠✨",
+            message: "이건 '베스트 프렌드와 결혼하세요' 유형의 궁합이에요. 매일 불꽃놀이는 아니지만, 오래도록 타오르는 따뜻하고 안정적인 불과 같아요.",
+            advice: "불필요한 드라마를 쫓지 마세요. 두 분이 가진 것은 희귀한 것이에요 - 진정한 궁합이니까요. 서로에게 주는 평화와 안정을 소중히 여겨주세요."
         },
         moderate: {
-            verdict: "흥미로운 조합 🎭",
-            message: "지루할 일은 없을 거야, 확실해. 다른 관점은 다른 싸움을 의미하지만, 다른 통찰도 의미해. 성장은 마찰에서 오잖아, 그치?",
-            advice: "상대의 언어를 배워. 틀린 게 아니야, 그냥 다를 뿐이야. 상대의 코드를 해독하면 모든 게 쉬워져."
+            verdict: "흥미로운 여정이에요 🎭",
+            message: "함께라면 지루할 일은 없을 거예요. 다른 관점은 탐험할 다른 시각을 의미하고, 성장은 종종 이런 차이를 이해하는 데서 오니까요.",
+            advice: "서로의 소통 방식을 배우는 시간을 가져보세요. 상대방이 틀린 게 아니라 그냥 다른 거예요. 상대방의 관점을 이해하시면 모든 것이 훨씬 쉬워질 거예요."
         },
         challenging: {
-            verdict: "안전벨트 매세요 🎢",
-            message: "봐, 이건 쉽지 않을 거야. 너희는 세상을 근본적으로 다르게 처리해. 하지만 가장 위대한 사랑 이야기 중 일부는 불가능해 보이는 것들이었어.",
-            advice: "인내심. 엄청난 인내심. 그리고 치료도 나쁘지 않아. '다르다'가 '틀리다'를 의미하지 않는다는 걸 이해해."
+            verdict: "성장의 길이에요 🎢",
+            message: "이 관계는 노력이 필요해요. 두 분은 세상을 상당히 다르게 받아들이시거든요. 하지만 가장 위대한 사랑 이야기 중 일부는 예상치 못한 것들이었답니다.",
+            advice: "서로에게 인내심을 가져주세요. '다르다'가 '틀리다'를 의미하지 않는다는 것을 이해하는 것이 중요해요. 필요하시다면 전문 상담사의 도움을 받아보세요."
         },
         explosive: {
-            verdict: "취급 주의! ⚠️💣",
-            message: "이건 네 인생에서 가장 변화를 주는 관계가 되거나 완전한 재앙이 될 거야. 중간은 없어. 가치관이 타이탄처럼 충돌해.",
-            advice: "이걸 하려면 규칙을 일찍 정해. 경계를 종교처럼 존중해. 그리고 커플 상담사 전화번호를 저장해놔."
+            verdict: "취급 주의가 필요해요! ⚠️💣",
+            message: "이 관계는 깊은 변화를 줄 잠재력이 있어요. 두 분의 가치관이 때때로 크게 충돌할 수 있어서 세심한 대처가 필요해요.",
+            advice: "이 관계를 선택하신다면, 일찍 명확한 경계를 세워주세요. 커플 상담사를 미리 알아두시는 것도 좋은 방법이에요."
         },
         chaotic: {
-            verdict: "아름다운 혼돈 🌪️💕",
-            message: "개와 고양이처럼 싸우겠지만 화해는 전설이 될 거야. 서로의 뇌가 어떻게 작동하는지 이해 못 하는데, 그게 어쩐지... 설레지?",
-            advice: "서로를 바꾸려고 하지 마. 진심으로. 혼돈을 사랑하거나 떠나거나, 길들이려고는 하지 마."
+            verdict: "아름다운 복잡함이에요 🌪️💕",
+            message: "열정적인 의견 충돌이 있을 수 있지만, 화해도 그만큼 의미 있을 거예요. 서로의 사고방식을 완전히 이해하지 못하시는데, 그게 독특한 역동성을 만들어내요.",
+            advice: "서로를 근본적으로 바꾸려고 하지 마세요. 이 독특한 역동성을 받아들이시거나, 맞지 않을 수도 있다는 것을 인정해주세요."
         },
         toxic: {
-            verdict: "같이 못 살고, 없이도 못 사는 타입 💔🔄💕",
-            message: "솔직히 말하면 - 이건 친구들이 걱정하는 그 관계야. 소리 지르는 싸움과 열정적인 화해가 반복돼. 지치지만 중독적이야.",
-            advice: "솔직히 자문해봐: 이게 열정이야 아니면 그냥 드라마야? 남을 거면, 둘 다 소통에 진지하게 노력해야 해. 그 높은 순간들이 낮은 순간들을 감당할 가치가 있는지 생각해봐."
+            verdict: "밀고 당기기 역학이에요 💔🔄💕",
+            message: "주변 분들이 이 관계를 걱정하실 수도 있어요. 격렬한 갈등 뒤에 열정적인 화해가 따라올 수 있거든요. 감정적으로 힘들지만 깊이 빠져들게 되는 관계예요.",
+            advice: "스스로에게 솔직하게 물어봐 주세요: 이게 열정인지 그냥 드라마인지요. 남기로 선택하신다면, 두 분 모두 소통 개선에 진지하게 노력하셔야 해요."
         },
         difficult: {
-            verdict: "하드 모드 플레이 중 🎮",
-            message: "이 관계는 감정 지능 박사 학위가 필요해. 한 명은 감정으로 말하고, 다른 한 명은 사실로 말해. 매일이 번역 손실이야.",
-            advice: "통역사(상담사)를 구해. 상대의 방식이 틀린 게 아니라 그냥 외국어라는 걸 배워. 새로운 언어를 배우는 것처럼 - 답답하지만 보람 있어."
+            verdict: "도전적인 모드예요 🎮",
+            message: "이 관계는 상당한 감정 지능이 필요해요. 한 분은 감정으로 말하고 다른 분은 사실로 소통하셔서 오해가 자주 발생할 수 있어요.",
+            advice: "전문 상담사와 함께 상담받아 보시는 것을 고려해주세요. 상대방의 방식이 틀린 게 아니라 그냥 다르다는 것을 이해하는 것이 중요해요."
         },
         mirror: {
-            verdict: "거울 보기 🪞",
-            message: "자기 자신이랑 사귀네? 서로를 완벽하게 이해하는데, 그게 축복이자 저주야. 둘 다 똑같은데 누가 어른 역할을 할 거야?",
-            advice: "서로의 약점을 조장하지 않도록 해. 의도적으로 균형을 찾아 - 둘 다 몽상가면, 현실 체크 시간을 정해."
+            verdict: "거울 같은 반영이에요 🪞",
+            message: "서로를 완벽하게 이해하시는데, 이게 축복이자 도전이에요. 두 분이 너무 비슷할 때 누가 다른 역할을 맡을지가 문제가 될 수 있어요.",
+            advice: "서로의 약점을 조장하지 않도록 주의해주세요. 의도적으로 균형을 찾으세요. 둘 다 몽상가라면 실용적인 계획 시간을 함께 정해보세요."
         },
         competitive: {
-            verdict: "왕좌의 게임 에너지 👑⚔️",
-            message: "두 알파가 들어가고, 한 알파가 나온다... 농담이야. 하지만 진지하게, 여기 파워 다이나믹이 강렬해. 같이 제국을 세우거나 불태울 거야.",
-            advice: "번갈아 리드해. 진심으로. 에고가 나누는 법을 배워야 해. 서로에게 대항하는 대신 서로와 함께 경쟁하면 막을 수 없어."
+            verdict: "역동적인 파워 매치예요 👑⚔️",
+            message: "두 강한 성격이 함께하면 강렬한 역동성이 생겨요. 함께 놀라운 것을 만들어내시거나 상당한 도전에 직면하실 거예요.",
+            advice: "각자 다른 영역에서 번갈아 리드해주세요. 서로에게 대항하기보다 함께 경쟁하시면 막을 수 없는 팀이 되실 거예요."
         },
         chaos: {
-            verdict: "더블 트러블! 🌈🎪",
-            message: "너희 합쳐진 에너지로 작은 도시에 전력을 공급할 수 있어. 아이디어가 사방으로 날아다니고, 모험이 즉흥적으로 시작돼. 근데 청구서는 누가 내?",
-            advice: "실용적인 역할을 의도적으로 배분해. 창의적 시너지는 차트를 뚫지만, 구조로 기반을 다지지 않으면 같이 둥둥 떠다닐 거야."
+            verdict: "에너지가 두 배예요! 🌈🎪",
+            message: "두 분의 합쳐진 에너지는 놀라워요. 아이디어가 자유롭게 흐르고 모험이 즉흥적으로 시작돼요. 하지만 누군가는 실용적인 문제를 처리해야 해요.",
+            advice: "실용적인 책임을 의도적으로 배분해주세요. 두 분의 창의적 시너지는 놀랍지만, 약간의 구조로 기반을 다지시면 함께 번성하실 거예요."
         },
         fun: {
-            verdict: "파티의 생명력 x2 🎉🎊",
-            message: "매일이 모험이고, 매 밤은 이야기가 될 수 있어. 모두가 함께 놀고 싶어하는 커플이야. 근데 현실도 존재한다는 거 기억해.",
-            advice: "지루한 시간을 스케줄링해. 관계에도 깊이가 필요해, 인스타그래머블한 순간만이 아니라."
+            verdict: "함께하는 파티의 주인공이에요 🎉🎊",
+            message: "매일이 모험이고, 매 저녁은 기억에 남는 이야기가 될 수 있어요. 모두가 함께 시간을 보내고 싶어하는 커플이시네요.",
+            advice: "조용한 시간도 함께 보내시는 것을 기억해주세요. 관계에는 설렘만큼 깊이도 필요하답니다."
         },
         adventure: {
-            verdict: "아드레날린 중독자 연합 🏄‍♂️🏔️",
-            message: "가장 신나는 삶과 아마도 가장 짧은 삶을 살 거야. 모든 게 모험이야, 관계를 포함해서. 지루함은 너희 사전에 없어.",
-            advice: "취약함을 시도해봐. 스릴 추구는 더 깊은 연결을 피하는 방법일 수 있어. 가끔 서로에게 지루해도 괜찮아."
+            verdict: "모험 파트너 연합이에요 🏄‍♂️🏔️",
+            message: "함께 신나는 삶을 사실 거예요. 관계 자체를 포함해 모든 것이 모험이 돼요. 일상은 두 분의 사전에 없는 단어네요.",
+            advice: "서로에게 취약한 모습을 보여주세요. 스릴 추구가 때로는 더 깊은 연결을 피하는 방법일 수 있어요. 조용한 순간도 함께 허락해주세요."
         },
         peaceful: {
-            verdict: "조용한 이해 🌸",
-            message: "서로를 그냥... 알아챌 때 말이 항상 필요하진 않아. 너희 관계는 시끄러운 세상으로부터의 안식처야. 아늑한 바이브만.",
-            advice: "실제로 소통하고 있는지 확인해, 그냥 추측하지 말고. 침묵은 금이지만 문제를 숨길 수도 있어."
+            verdict: "조용한 이해예요 🌸",
+            message: "서로를 그냥 이해할 때는 말이 항상 필요하지 않아요. 두 분의 관계는 바쁜 세상에서 평화로운 안식처예요.",
+            advice: "실제로 소통하고 계신지 확인해주세요. 그냥 추측하지 마시고요. 침묵은 황금일 수 있지만, 중요한 문제를 숨길 수도 있어요."
         },
         independent: {
-            verdict: "공간 존중 최고 🌌",
-            message: "둘 다 혼자만의 시간이 필요하고, 둘 다 그걸 존중해. 집착 행동 없음. 성숙하고, 건강하고... 좀 거리가 있을 수도?",
-            advice: "가끔 감정적으로 체크해. 독립은 좋지만, 룸메이트가 되지는 마. 의도적으로 로맨스를 살려."
+            verdict: "서로의 공간을 존중해요 🌌",
+            message: "두 분 모두 개인 시간이 필요하시고, 서로 그것을 존중해주시네요. 집착하는 행동이 없어요 - 성숙하고 건강한 관계예요.",
+            advice: "정기적으로 감정적으로 서로 확인해주세요. 독립은 좋지만, 너무 많은 거리를 만들지 마세요. 의도적으로 로맨스를 살려주세요."
         },
         stable: {
-            verdict: "반석 같은 단단함 ⛰️",
-            message: "이건 분산 투자된 은퇴 포트폴리오 같은 관계야. 안전하고, 믿을 수 있고, 50년 후에도 아마 거기 있을 거야. 신나? 아마 아니지. 하지만 진짜야.",
-            advice: "가끔 즉흥성을 주입해. 루틴에 너무 능숙해서 재미를 잊을 수도 있어. 안정은 기초지, 집 전체가 아니야."
+            verdict: "반석 같은 기반이에요 ⛰️",
+            message: "안전하고 믿을 수 있는 관계로, 시간이 지나도 견딜 거예요. 항상 신나지는 않을 수 있지만, 진실하고 오래가는 관계예요.",
+            advice: "가끔 즉흥성을 주입해주세요. 루틴에 너무 능숙해지시면 함께 즐기는 것을 잊으실 수 있어요. 안정은 기초이지만, 그 위에 계속 쌓아가시는 것을 기억해주세요."
         },
         caring: {
-            verdict: "상호 케어 과부하 💝",
-            message: "둘 다 서로를 돌보고 싶어서 가끔 누가 돌봐주는 사람이 될지 싸워. 귀엽고 약간 지쳐.",
-            advice: "너도 돌봄을 받아. 양육을 경쟁으로 만들지 마. 주는 만큼 받아들여."
+            verdict: "서로를 돌보고 지지해요 💝",
+            message: "두 분 모두 서로를 돌보고 싶어하셔서 가끔 누가 돌봐주는 사람이 될지 토론하시네요. 참 사랑스럽고 따뜻해요.",
+            advice: "자신도 돌봄을 받으시도록 해주세요. 돌봄을 경쟁으로 만들지 마세요. 주시는 만큼 관대하게 사랑을 받아주세요."
         },
         idealist: {
-            verdict: "함께 세상을 구하기 🌍💕",
-            message: "둘 다 큰 비전과 더 큰 마음을 가졌어. 같이 자원봉사하고, 같이 시위하고, 세상을 더 좋게 만들려고 해. 근데 너희 관계도 관심이 필요하다는 거 잊지 마.",
-            advice: "세상을 바꾸는 것이 아닌 데이트 밤을 스케줄링해. 너희 관계도 네가 주는 것만큼의 케어를 받을 자격이 있어."
+            verdict: "함께 세상을 바꿔요 🌍💕",
+            message: "두 분 모두 큰 비전과 더 큰 마음을 가지셨어요. 함께 자원봉사하시고 세상을 더 좋게 만들기 위해 노력하시네요.",
+            advice: "두 분만을 위한 데이트 밤을 계획해주세요. 두 분의 관계도 대의에 쏟으시는 것만큼의 관심을 받을 자격이 있어요."
         }
     }
 };
 
-// ====== Daily Fortune Messages ======
+// ====== Daily Fortune Messages (네이버 스타일 상세 운세) ======
 const dailyFortunes = {
     en: [
-        { emoji: '💘', fortune: "Love is in the air today! Someone might be thinking about you right now. Keep your heart open to unexpected connections." },
-        { emoji: '✨', fortune: "Your romantic energy is magnetic today. That person you've been thinking about? They feel it too. Trust the timing." },
-        { emoji: '🌙', fortune: "Tonight's moon brings deep emotional connections. If you're coupled, expect meaningful conversation. If single, an intriguing stranger may appear." },
-        { emoji: '🦋', fortune: "Transformation in love is coming. Let go of old patterns that no longer serve you. Your heart is ready for something new." },
-        { emoji: '🌸', fortune: "Like cherry blossoms, your love life is about to bloom beautifully. Patience has been your strength - now comes the reward." },
-        { emoji: '💫', fortune: "A chance encounter could change everything today. Be present in every moment - magic loves to hide in ordinary places." },
-        { emoji: '🔥', fortune: "Passion runs high today! Channel this energy into bold romantic gestures. Fortune favors the brave in love." },
-        { emoji: '🌈', fortune: "After recent emotional rain, comes your rainbow. Hope returns to your love life. Better things are coming." },
-        { emoji: '💎', fortune: "You're a diamond, and today someone will see your true value. Don't settle for anyone who doesn't recognize your worth." },
-        { emoji: '🍀', fortune: "Lucky in love today! Take that chance you've been hesitating about. The universe has your back." }
+        {
+            emoji: '💘',
+            overall: "Today, the stars align to bring warmth and connection into your love life. You may find that people are drawn to your positive energy, making it an excellent day for meaningful encounters.",
+            love: "A gentle breeze of romance touches your heart today. If you're single, pay attention to chance meetings - they could be more significant than they appear. For those in relationships, expressing gratitude for your partner will strengthen your bond.",
+            tip: "Wearing something pink or red today may enhance your romantic aura.",
+            warning: "Be careful not to mistake friendliness for romantic interest. Take time to observe before making assumptions."
+        },
+        {
+            emoji: '✨',
+            overall: "Your magnetic energy is particularly strong today. The universe is creating opportunities for you to shine in matters of the heart. Trust your intuition when it comes to love.",
+            love: "That person who's been on your mind? The cosmic energy suggests they may be thinking of you too. This is a favorable day for honest conversations about feelings.",
+            tip: "Make eye contact and smile genuinely - small gestures can create big connections today.",
+            warning: "Don't rush into commitments. While the energy is positive, lasting love requires patient cultivation."
+        },
+        {
+            emoji: '🌙',
+            overall: "The moon's energy tonight brings depth to emotional connections. Conversations may naturally drift toward meaningful topics, revealing new layers in your relationships.",
+            love: "Evening hours are particularly favorable for romance. A quiet dinner or a walk under the stars could lead to memorable moments. Let your guard down and be vulnerable.",
+            tip: "Express your feelings through actions rather than words today.",
+            warning: "Avoid discussing past relationships or bringing up old wounds. Focus on the present moment."
+        },
+        {
+            emoji: '🦋',
+            overall: "A transformative energy surrounds your love life. Old patterns that no longer serve you are ready to dissolve, making room for fresh possibilities and new beginnings.",
+            love: "Your heart is ready for evolution. Whether single or coupled, today invites you to release expectations and embrace love as it naturally wants to unfold.",
+            tip: "Write down what you truly desire in a partner or relationship. Clarity attracts matching energy.",
+            warning: "Change can feel uncomfortable. Don't retreat to old habits just because they're familiar."
+        },
+        {
+            emoji: '🌸',
+            overall: "Like spring flowers awakening, your love life enters a blooming phase. Patience and faith are about to be rewarded with beautiful developments.",
+            love: "Romance unfolds gradually but beautifully today. Don't force anything - let connections develop at their natural pace. Something sweet is growing.",
+            tip: "Spend time in nature today. The peaceful energy will enhance your romantic receptivity.",
+            warning: "Don't compare your love timeline to others. Your journey is uniquely beautiful."
+        }
     ],
     ko: [
-        { emoji: '💘', fortune: "오늘 사랑이 공기 중에 떠다녀요! 누군가가 지금 당신을 생각하고 있을지도 몰라요. 예상치 못한 인연에 마음을 열어두세요." },
-        { emoji: '✨', fortune: "오늘 당신의 로맨틱한 에너지가 자석 같아요. 생각하고 있던 그 사람? 그들도 느끼고 있어요. 타이밍을 믿으세요." },
-        { emoji: '🌙', fortune: "오늘 밤 달이 깊은 감정적 연결을 가져와요. 연인이 있다면 의미 있는 대화를 기대하세요. 솔로라면 흥미로운 낯선 사람이 나타날지도..." },
-        { emoji: '🦋', fortune: "사랑의 변화가 다가오고 있어요. 더 이상 도움이 되지 않는 오래된 패턴을 놓아주세요. 당신의 마음은 새로운 무언가를 맞을 준비가 됐어요." },
-        { emoji: '🌸', fortune: "벚꽃처럼 당신의 연애운이 아름답게 피어나려 해요. 인내가 당신의 강점이었어요 - 이제 보상이 와요." }
+        {
+            emoji: '💘',
+            overall: "오늘은 별들이 당신의 연애운에 따뜻함과 연결을 가져다주는 날이에요. 주변 사람들이 당신의 긍정적인 에너지에 끌리게 되어, 의미 있는 만남을 위한 좋은 날이 될 거예요.",
+            love: "오늘 부드러운 로맨스의 바람이 당신의 마음을 스쳐 지나가요. 솔로시라면 우연한 만남에 주목해주세요 - 보이는 것보다 더 의미 있을 수 있어요. 연인이 계시다면, 상대방에 대한 감사를 표현하시면 유대감이 더욱 깊어질 거예요.",
+            tip: "오늘 분홍색이나 빨간색 계열을 착용하시면 로맨틱한 아우라가 높아질 수 있어요.",
+            warning: "친절함을 로맨틱한 관심으로 착각하지 않도록 주의해주세요. 성급한 판단보다는 충분히 관찰하는 시간을 가져보세요."
+        },
+        {
+            emoji: '✨',
+            overall: "오늘 당신의 자기적인 에너지가 특별히 강해요. 우주가 당신이 사랑의 문제에서 빛날 수 있는 기회를 만들어주고 있어요. 사랑에 관해서는 직감을 믿어주세요.",
+            love: "계속 마음에 두고 계신 그 분이 계시나요? 우주의 에너지는 그 분도 당신을 생각하고 계실 수 있다고 말하고 있어요. 오늘은 감정에 대해 솔직하게 대화하기에 좋은 날이에요.",
+            tip: "눈을 마주치고 진심 어린 미소를 지어보세요 - 오늘은 작은 제스처가 큰 연결을 만들어낼 수 있어요.",
+            warning: "서두르지 마세요. 에너지가 긍정적이지만, 오래가는 사랑은 인내심 있는 노력이 필요해요."
+        },
+        {
+            emoji: '🌙',
+            overall: "오늘 밤 달의 에너지가 감정적인 연결에 깊이를 더해줘요. 대화가 자연스럽게 의미 있는 주제로 흘러가면서, 관계의 새로운 면을 발견하게 될 수 있어요.",
+            love: "저녁 시간이 특히 로맨스에 유리해요. 조용한 저녁 식사나 별빛 아래 산책이 기억에 남는 순간으로 이어질 수 있어요. 마음의 벽을 내리고 솔직해져 보세요.",
+            tip: "오늘은 말보다는 행동으로 감정을 표현해보세요.",
+            warning: "과거 연애 이야기나 오래된 상처를 꺼내는 것은 피해주세요. 현재 순간에 집중해보세요."
+        },
+        {
+            emoji: '🦋',
+            overall: "변화의 에너지가 당신의 연애운을 감싸고 있어요. 더 이상 도움이 되지 않는 오래된 패턴들이 녹아내릴 준비가 되어, 새로운 가능성과 시작을 위한 공간이 생겨나고 있어요.",
+            love: "당신의 마음이 진화할 준비가 되었어요. 솔로든 연인이 있든, 오늘은 기대를 내려놓고 사랑이 자연스럽게 펼쳐지도록 초대하는 날이에요.",
+            tip: "상대방이나 관계에서 진정으로 원하는 것을 적어보세요. 명확함이 맞는 에너지를 끌어당겨요.",
+            warning: "변화가 불편하게 느껴질 수 있어요. 익숙하다는 이유만으로 오래된 습관으로 돌아가지 마세요."
+        },
+        {
+            emoji: '🌸',
+            overall: "봄꽃이 깨어나듯, 당신의 연애운이 만개하는 시기에 접어들고 있어요. 인내와 믿음이 아름다운 발전으로 보답받으려 해요.",
+            love: "오늘 로맨스가 천천히 하지만 아름답게 펼쳐져요. 억지로 밀어붙이지 마시고, 인연이 자연스러운 속도로 발전하도록 해주세요. 달콤한 무언가가 자라나고 있어요.",
+            tip: "오늘은 자연 속에서 시간을 보내보세요. 평화로운 에너지가 로맨틱한 수용성을 높여줄 거예요.",
+            warning: "다른 사람들의 연애 타임라인과 비교하지 마세요. 당신만의 여정은 독특하게 아름다워요."
+        }
     ]
 };
 
@@ -1411,42 +1466,110 @@ function getDailyFortune() {
     const fortune = fortunes[seed % fortunes.length];
 
     const luckyNumber = (seed % 99) + 1;
-    const luckyColors = ['💗 Pink', '💜 Purple', '💙 Blue', '💚 Green', '💛 Yellow', '🧡 Orange', '❤️ Red'];
+    const luckyColors = lang === 'ko'
+        ? ['💗 핑크', '💜 보라', '💙 파랑', '💚 초록', '💛 노랑', '🧡 주황', '❤️ 빨강']
+        : ['💗 Pink', '💜 Purple', '💙 Blue', '💚 Green', '💛 Yellow', '🧡 Orange', '❤️ Red'];
     const luckyColor = luckyColors[seed % luckyColors.length];
+
+    const luckyTimes = lang === 'ko'
+        ? ['🌅 오전 7-9시', '☀️ 오전 11시-오후 1시', '🌤️ 오후 3-5시', '🌙 저녁 7-9시', '✨ 밤 10시-자정']
+        : ['🌅 7-9 AM', '☀️ 11AM-1PM', '🌤️ 3-5 PM', '🌙 7-9 PM', '✨ 10PM-Midnight'];
+    const luckyTime = luckyTimes[seed % luckyTimes.length];
+
+    // Labels
+    const labels = lang === 'ko' ? {
+        title: `${name}님의 오늘의 연애운`,
+        overall: '📋 총운',
+        love: '💕 애정운',
+        tip: '💡 오늘의 연애 팁',
+        warning: '⚠️ 주의사항',
+        luckyNumber: '🔢 행운의 숫자',
+        luckyColor: '🎨 행운의 색',
+        luckyTime: '⏰ 행운의 시간',
+        share: '공유하기'
+    } : {
+        title: `${name}'s Love Fortune`,
+        overall: '📋 Overall Fortune',
+        love: '💕 Love & Romance',
+        tip: '💡 Today\'s Love Tip',
+        warning: '⚠️ Watch Out For',
+        luckyNumber: '🔢 Lucky Number',
+        luckyColor: '🎨 Lucky Color',
+        luckyTime: '⏰ Lucky Time',
+        share: 'Share Fortune'
+    };
 
     const result = document.getElementById('daily-result');
     result.classList.remove('hidden');
     result.innerHTML = `
-        <div class="story-card">
+        <div class="story-card fortune-card">
             <div class="story-header">
-                <p class="story-names">${name}'s Love Fortune</p>
-                <p class="story-date">${new Date().toLocaleDateString(currentLang, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+                <p class="story-names">${labels.title}</p>
+                <p class="story-date">${new Date().toLocaleDateString(currentLang, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</p>
             </div>
 
-            <div class="heart-effect sparkling-hearts" style="font-size: 4rem;">${fortune.emoji}</div>
+            <div class="heart-effect sparkling-hearts" style="font-size: 3.5rem;">${fortune.emoji}</div>
 
-            <p class="story-message">${fortune.fortune}</p>
+            <!-- 총운 -->
+            <div class="fortune-section">
+                <h4 class="fortune-section-title">${labels.overall}</h4>
+                <p class="fortune-section-text">${fortune.overall}</p>
+            </div>
 
-            <div class="story-advice" style="display: flex; justify-content: space-around; text-align: center;">
-                <div>
-                    <p class="advice-title">🔢 Lucky Number</p>
-                    <p class="advice-text" style="font-size: 1.5rem; font-weight: bold;">${luckyNumber}</p>
+            <!-- 애정운 -->
+            <div class="fortune-section love-section">
+                <h4 class="fortune-section-title">${labels.love}</h4>
+                <p class="fortune-section-text">${fortune.love}</p>
+            </div>
+
+            <!-- 오늘의 팁 -->
+            <div class="fortune-tip">
+                <h4 class="fortune-tip-title">${labels.tip}</h4>
+                <p class="fortune-tip-text">${fortune.tip}</p>
+            </div>
+
+            <!-- 주의사항 -->
+            <div class="fortune-warning">
+                <h4 class="fortune-warning-title">${labels.warning}</h4>
+                <p class="fortune-warning-text">${fortune.warning}</p>
+            </div>
+
+            <!-- 행운 요소 -->
+            <div class="fortune-lucky-grid">
+                <div class="lucky-item">
+                    <span class="lucky-label">${labels.luckyNumber}</span>
+                    <span class="lucky-value lucky-number">${luckyNumber}</span>
                 </div>
-                <div>
-                    <p class="advice-title">🎨 Lucky Color</p>
-                    <p class="advice-text">${luckyColor}</p>
+                <div class="lucky-item">
+                    <span class="lucky-label">${labels.luckyColor}</span>
+                    <span class="lucky-value">${luckyColor}</span>
+                </div>
+                <div class="lucky-item">
+                    <span class="lucky-label">${labels.luckyTime}</span>
+                    <span class="lucky-value">${luckyTime}</span>
                 </div>
             </div>
 
             <div class="share-section">
-                <button class="share-btn" onclick="shareDailyFortune('${name}')">
-                    <span>📱</span> Share Fortune
+                <button class="share-btn" onclick="shareDailyFortune('${name}', '${fortune.overall.substring(0, 50).replace(/'/g, "\\'")}...')">
+                    <span>📱</span> ${labels.share}
                 </button>
             </div>
         </div>
     `;
 
     result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function shareDailyFortune(name, summary) {
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    let text;
+    if (lang === 'ko') {
+        text = `🔮 ${name}님의 오늘의 연애운\n"${summary}"\n\nLove & Fate에서 확인하세요!`;
+    } else {
+        text = `🔮 ${name}'s Love Fortune Today\n"${summary}"\n\nCheck at Love & Fate!`;
+    }
+    shareContent(text);
 }
 
 // ====== Share Functions ======
@@ -1462,11 +1585,6 @@ function shareBloodResult(type1, type2) {
 
 function shareMbtiResult(mbti1, mbti2, score, keyword) {
     const text = `🧠 ${mbti1} + ${mbti2}: ${score}% compatible!\n💫 "${keyword}"\n\nFind your match at Love & Fate!`;
-    shareContent(text);
-}
-
-function shareDailyFortune(name) {
-    const text = `🔮 ${name}'s daily love fortune is in! ✨\n\nGet yours at Love & Fate!`;
     shareContent(text);
 }
 

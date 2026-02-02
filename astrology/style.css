@@ -298,50 +298,186 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ====== Section Backgrounds with Depth ====== */
+/* ====== Section Backgrounds with Depth & Neon Glow ====== */
 #name {
-    background: linear-gradient(135deg, rgba(255, 182, 193, 0.15) 0%, rgba(255, 218, 233, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.2) 0%, rgba(255, 218, 233, 0.15) 100%);
     border-radius: 40px;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 107, 157, 0.2);
-    box-shadow: 0 0 30px rgba(255, 107, 157, 0.1), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(255, 107, 157, 0.25);
+    box-shadow:
+        0 0 40px rgba(255, 107, 157, 0.15),
+        0 0 80px rgba(255, 107, 157, 0.08),
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#name::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.3) 0%, transparent 50%, rgba(255, 182, 193, 0.3) 100%);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 #dateRec {
-    background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(250, 112, 154, 0.15) 0%, rgba(254, 225, 64, 0.15) 100%);
     border-radius: 40px;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(250, 112, 154, 0.2);
-    box-shadow: 0 0 30px rgba(250, 112, 154, 0.1), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(250, 112, 154, 0.25);
+    box-shadow:
+        0 0 40px rgba(250, 112, 154, 0.12),
+        0 0 80px rgba(254, 225, 64, 0.08),
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#dateRec::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, rgba(250, 112, 154, 0.3) 0%, transparent 50%, rgba(254, 225, 64, 0.3) 100%);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 #mbti {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.12) 100%);
     border-radius: 40px;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.1), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(168, 85, 247, 0.25);
+    box-shadow:
+        0 0 40px rgba(168, 85, 247, 0.15),
+        0 0 80px rgba(236, 72, 153, 0.08),
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#mbti::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, transparent 50%, rgba(236, 72, 153, 0.3) 100%);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 #daily {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(168, 85, 247, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(168, 85, 247, 0.15) 100%);
     border-radius: 40px;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(59, 130, 246, 0.15);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.08), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    box-shadow:
+        0 0 40px rgba(59, 130, 246, 0.12),
+        0 0 80px rgba(168, 85, 247, 0.08),
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#daily::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, transparent 50%, rgba(168, 85, 247, 0.3) 100%);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 #about {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
     border-radius: 40px;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.15);
-    box-shadow: 0 0 30px rgba(16, 185, 129, 0.08), inset 0 0 60px rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(16, 185, 129, 0.2);
+    box-shadow:
+        0 0 40px rgba(16, 185, 129, 0.12),
+        0 0 80px rgba(59, 130, 246, 0.08),
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, transparent 50%, rgba(59, 130, 246, 0.3) 100%);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Section hover effects */
+#name:hover, #dateRec:hover, #mbti:hover, #daily:hover, #about:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#name:hover {
+    box-shadow:
+        0 0 60px rgba(255, 107, 157, 0.25),
+        0 0 100px rgba(255, 107, 157, 0.12),
+        inset 0 0 60px rgba(255, 255, 255, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+#dateRec:hover {
+    box-shadow:
+        0 0 60px rgba(250, 112, 154, 0.2),
+        0 0 100px rgba(254, 225, 64, 0.12),
+        inset 0 0 60px rgba(255, 255, 255, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+#mbti:hover {
+    box-shadow:
+        0 0 60px rgba(168, 85, 247, 0.25),
+        0 0 100px rgba(236, 72, 153, 0.12),
+        inset 0 0 60px rgba(255, 255, 255, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+#daily:hover {
+    box-shadow:
+        0 0 60px rgba(59, 130, 246, 0.2),
+        0 0 100px rgba(168, 85, 247, 0.12),
+        inset 0 0 60px rgba(255, 255, 255, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+#about:hover {
+    box-shadow:
+        0 0 60px rgba(16, 185, 129, 0.2),
+        0 0 100px rgba(59, 130, 246, 0.12),
+        inset 0 0 60px rgba(255, 255, 255, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.08);
 }
 
 /* ====== Section Header ====== */
@@ -1387,6 +1523,148 @@ body {
 /* ====== Date Result Card ====== */
 .date-result-card .past-life-card {
     margin-top: 25px;
+}
+
+/* ====== Daily Fortune Styles (네이버 스타일) ====== */
+.fortune-card {
+    text-align: left;
+}
+
+.fortune-card .story-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fortune-card .heart-effect {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.fortune-section {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+}
+
+.fortune-section.love-section {
+    border-left-color: #e91e63;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+.fortune-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fortune-section-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    text-align: justify;
+    word-break: keep-all;
+}
+
+.fortune-tip {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.fortune-tip-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #059669;
+    margin-bottom: 10px;
+}
+
+.fortune-tip-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #065f46;
+}
+
+.fortune-warning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.fortune-warning-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+}
+
+.fortune-warning-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #92400e;
+}
+
+.fortune-lucky-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.lucky-item {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border-radius: 16px;
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.lucky-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.lucky-value {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+}
+
+.lucky-value.lucky-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent-purple);
+}
+
+@media (max-width: 480px) {
+    .fortune-lucky-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lucky-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+    }
+
+    .lucky-label {
+        margin-bottom: 0;
+    }
 }
 
 /* ====== MBTI Keyword Badge ====== */
