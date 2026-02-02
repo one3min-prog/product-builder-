@@ -1,7 +1,7 @@
 
 const translations = {
     en: {
-        title: "Love & Fate",
+        title: "Heart Scan",
         tagline: "your love story written in the stars",
         badges: {
             free: "100% Free",
@@ -63,10 +63,10 @@ const translations = {
             advice: "Love Tip"
         },
         about: {
-            title: "About Love & Fate",
+            title: "About Heart Scan",
             subtitle: "learn more about us",
-            introTitle: "What is Love & Fate?",
-            introText: "Love & Fate is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.",
+            introTitle: "What is Heart Scan?",
+            introText: "Heart Scan is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.",
             privacyTitle: "Privacy First",
             privacyText: "Your privacy is our top priority. We do not store any personal information you enter. All calculations are performed in your browser and are never sent to our servers. Your secrets are safe with you.",
             featuresTitle: "Our Features",
@@ -86,7 +86,7 @@ const translations = {
         }
     },
     ko: {
-        title: "사랑과 운명",
+        title: "Heart Scan",
         tagline: "별들이 쓴 당신의 러브 스토리",
         badges: {
             free: "100% 무료",
@@ -148,10 +148,10 @@ const translations = {
             advice: "연애 팁"
         },
         about: {
-            title: "사랑과 운명 소개",
+            title: "Heart Scan 소개",
             subtitle: "우리에 대해 알아보세요",
-            introTitle: "사랑과 운명이란?",
-            introText: "사랑과 운명은 관계 역학을 이해하기 위한 당신의 개인 가이드입니다. 이름, 혈액형, MBTI 성격 유형에 기반한 궁합 분석을 통해 더 깊은 연결을 발견하도록 도와드립니다.",
+            introTitle: "Heart Scan이란?",
+            introText: "Heart Scan은 관계 역학을 이해하기 위한 당신의 개인 가이드입니다. 이름, 혈액형, MBTI 성격 유형에 기반한 궁합 분석을 통해 더 깊은 연결을 발견하도록 도와드립니다.",
             privacyTitle: "개인정보 보호",
             privacyText: "당신의 개인정보 보호가 우리의 최우선 과제입니다. 입력하신 개인정보는 저장하지 않습니다. 모든 계산은 브라우저에서 수행되며 서버로 전송되지 않습니다. 비밀은 안전합니다.",
             featuresTitle: "주요 기능",

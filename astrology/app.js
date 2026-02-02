@@ -1025,16 +1025,20 @@ function goToDatePlanner(score, name1, name2) {
     document.getElementById('date-your-name').value = name1;
     document.getElementById('date-partner-name').value = name2;
     document.getElementById('date-score').value = score;
-    document.getElementById('dateRec').scrollIntoView({ behavior: 'smooth' });
+    // Auto-trigger the date recommendation
+    setTimeout(() => {
+        getDateRecommendation();
+        document.getElementById('date-rec-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
 }
 
 function shareNameResult(name1, name2, score, pastLife) {
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     let text;
     if (lang === 'ko') {
-        text = `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLife}"\n\nLove & Fate에서 확인하세요!`;
+        text = `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLife}"\n\nHeart Scan에서 확인하세요!`;
     } else {
-        text = `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLife}"\n\nCheck at Love & Fate!`;
+        text = `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLife}"\n\nCheck at Heart Scan!`;
     }
     shareContent(text);
 }
@@ -1200,9 +1204,9 @@ function shareDateResult(name1, name2, score, menu, pastLife) {
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     let text;
     if (lang === 'ko') {
-        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 전생: "${pastLife}"\n🍽️ 오늘의 데이트: ${menu}\n\nLove & Fate에서 확인하세요!`;
+        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 전생: "${pastLife}"\n🍽️ 오늘의 데이트: ${menu}\n\nHeart Scan에서 확인하세요!`;
     } else {
-        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 Past Life: "${pastLife}"\n🍽️ Today's Date: ${menu}\n\nCheck at Love & Fate!`;
+        text = `💕 ${name1} & ${name2} (${score}%)\n🏮 Past Life: "${pastLife}"\n🍽️ Today's Date: ${menu}\n\nCheck at Heart Scan!`;
     }
     shareContent(text);
 }
@@ -1396,9 +1400,9 @@ function shareMbtiResultFull(mbti1, mbti2, score, keyword, pastLife) {
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     let text;
     if (lang === 'ko') {
-        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLife}"\n\nLove & Fate에서 확인하세요!`;
+        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLife}"\n\nHeart Scan에서 확인하세요!`;
     } else {
-        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 Past Life: "${pastLife}"\n\nCheck at Love & Fate!`;
+        text = `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 Past Life: "${pastLife}"\n\nCheck at Heart Scan!`;
     }
     shareContent(text);
 }
@@ -1565,32 +1569,32 @@ function shareDailyFortune(name, summary) {
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     let text;
     if (lang === 'ko') {
-        text = `🔮 ${name}님의 오늘의 연애운\n"${summary}"\n\nLove & Fate에서 확인하세요!`;
+        text = `🔮 ${name}님의 오늘의 연애운\n"${summary}"\n\nHeart Scan에서 확인하세요!`;
     } else {
-        text = `🔮 ${name}'s Love Fortune Today\n"${summary}"\n\nCheck at Love & Fate!`;
+        text = `🔮 ${name}'s Love Fortune Today\n"${summary}"\n\nCheck at Heart Scan!`;
     }
     shareContent(text);
 }
 
 // ====== Share Functions ======
 function shareResult(name1, name2, score) {
-    const text = `💕 ${name1} & ${name2}: ${score}% compatible! ✨\n\nFind your love compatibility at Love & Fate!`;
+    const text = `💕 ${name1} & ${name2}: ${score}% compatible! ✨\n\nFind your love compatibility at Heart Scan!`;
     shareContent(text);
 }
 
 function shareBloodResult(type1, type2) {
-    const text = `🩸 Blood Type ${type1} + ${type2} compatibility revealed! 💉\n\nDiscover yours at Love & Fate!`;
+    const text = `🩸 Blood Type ${type1} + ${type2} compatibility revealed! 💉\n\nDiscover yours at Heart Scan!`;
     shareContent(text);
 }
 
 function shareMbtiResult(mbti1, mbti2, score, keyword) {
-    const text = `🧠 ${mbti1} + ${mbti2}: ${score}% compatible!\n💫 "${keyword}"\n\nFind your match at Love & Fate!`;
+    const text = `🧠 ${mbti1} + ${mbti2}: ${score}% compatible!\n💫 "${keyword}"\n\nFind your match at Heart Scan!`;
     shareContent(text);
 }
 
 function shareContent(text) {
     if (navigator.share) {
-        navigator.share({ title: 'Love & Fate', text: text, url: window.location.href });
+        navigator.share({ title: 'Heart Scan', text: text, url: window.location.href });
     } else {
         navigator.clipboard.writeText(text + '\n' + window.location.href);
         showToast('Copied to clipboard! 📋');
