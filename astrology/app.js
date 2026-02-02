@@ -1556,13 +1556,39 @@ function calculateMbtiCompatibility() {
 
     const compatData = getMbtiCompatibilityType(mbti1, mbti2);
     const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const keyword = lang === 'ko' ? compatData.keyword : compatData.en_keyword;
+    const score = compatData.score;
+
+    if (score >= 85) triggerConfetti();
+
+    // Set share text globally for clipboard
+    currentShareText = lang === 'ko'
+        ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nHeart Scan에서 확인하세요!`
+        : `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nCheck at Heart Scan!`;
+
+    // Prepare detail data for after popup close
+    const detailData = {
+        type: 'mbti',
+        mbti1,
+        mbti2,
+        score,
+        keyword,
+        compatData,
+        lang
+    };
+
+    // Show popup first
+    showResultPopup(score, mbti1, mbti2, currentShareText, detailData);
+}
+
+function showMbtiDetailResult(data) {
+    const { mbti1, mbti2, score, keyword, compatData, lang } = data;
+    const result = document.getElementById('mbti-result');
+
     const stories = mbtiStories[lang] || mbtiStories.en;
     const story = stories[compatData.type] || stories.moderate || stories.good;
     const pastLife = pastLifeStories[lang] || pastLifeStories.en;
     const solutions = badLuckSolutions[lang] || badLuckSolutions.en;
-
-    const keyword = lang === 'ko' ? compatData.keyword : compatData.en_keyword;
-    const score = compatData.score;
 
     // Generate past life based on MBTI
     const pastLifeSeed = (mbti1.charCodeAt(0) + mbti2.charCodeAt(2) + score) % pastLife.length;
@@ -1585,7 +1611,6 @@ function calculateMbtiCompatibility() {
     let heartClass = '';
     if (score >= 85) {
         heartClass = 'fire-hearts';
-        triggerConfetti();
     } else if (score >= 70) {
         heartClass = 'sparkling-hearts';
     } else if (score < 45) {
@@ -1594,7 +1619,6 @@ function calculateMbtiCompatibility() {
 
     const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
     const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
-    const datePlanLabel = lang === 'ko' ? '🍽️ 데이트 플래너에서 오늘의 메뉴 추천받기' : '🍽️ Get menu recommendation at Date Planner';
 
     let solutionHTML = '';
     if (score < 50) {
@@ -1608,38 +1632,6 @@ function calculateMbtiCompatibility() {
             </div>
         `;
     }
-
-    // Set share text globally for clipboard
-    currentShareText = lang === 'ko'
-        ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nHeart Scan에서 확인하세요!`
-        : `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n\nCheck at Heart Scan!`;
-
-    // Prepare detail data for after popup close
-    const detailData = {
-        type: 'mbti',
-        mbti1,
-        mbti2,
-        score,
-        keyword,
-        compatData,
-        lang,
-        story,
-        pastLifeStory,
-        solution,
-        heartClass,
-        emojis,
-        pastLifeLabel,
-        datePlanLabel,
-        solutionHTML
-    };
-
-    // Show popup first
-    showResultPopup(score, mbti1, mbti2, currentShareText, detailData);
-}
-
-function showMbtiDetailResult(data) {
-    const { mbti1, mbti2, score, keyword, compatData, lang, story, pastLifeStory, solution, heartClass, emojis, pastLifeLabel, solutionHTML } = data;
-    const result = document.getElementById('mbti-result');
 
     const shareText = lang === 'ko'
         ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
