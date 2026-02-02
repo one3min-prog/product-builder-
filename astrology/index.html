@@ -1,316 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love & Fate - Compatibility Oracle</title>
+    <title>Love Tier - 러브티어</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
-    <!-- Floating Hearts Background -->
-    <div class="floating-hearts" id="floating-hearts"></div>
 
-    <!-- Language Selector (Clean Dropdown) -->
     <div class="language-dropdown">
         <button class="lang-toggle" id="lang-toggle">
-            <span class="globe-icon">🌐</span>
-            <span class="current-lang" id="current-lang">English</span>
-            <span class="arrow">▼</span>
+            <i class="ri-global-line"></i>
+            <span id="current-lang">English</span>
+            <i class="ri-arrow-down-s-line arrow"></i>
         </button>
         <div class="lang-menu hidden" id="lang-menu">
             <button class="lang-option" data-lang="en">🇺🇸 English</button>
             <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
-            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
-            <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
-            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
-            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
-            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
-            <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
-            <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
         </div>
     </div>
 
-    <!-- Header -->
     <header class="header">
         <div class="logo">
-            <div class="logo-hearts">
-                <span class="heart h1">💕</span>
-                <span class="heart h2">✨</span>
-                <span class="heart h3">💫</span>
-            </div>
-            <h1 data-i18n="title">Love & Fate</h1>
+            <i class="ri-heart-pulse-line main-icon"></i>
         </div>
-        <p class="tagline" data-i18n="tagline">your love story written in the stars</p>
-
-        <!-- Trust Badges -->
-        <div class="trust-badges">
-            <div class="badge">
-                <span class="badge-icon">✨</span>
-                <span data-i18n="badges.free">100% Free</span>
-            </div>
-            <div class="badge">
-                <span class="badge-icon">🔒</span>
-                <span data-i18n="badges.privacy">Privacy Protected</span>
-            </div>
-        </div>
+        <h1 data-i18n="title">Love Tier</h1>
+        <p class="tagline" data-i18n="tagline">Check your love tier instantly</p>
     </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav-container">
         <button class="nav-btn active" data-section="name">
-            <span class="nav-icon">💝</span>
+            <i class="ri-user-heart-line"></i>
             <span data-i18n="nav.name">Name Match</span>
         </button>
-        <button class="nav-btn" data-section="dateRec">
-            <span class="nav-icon">🍽️</span>
-            <span data-i18n="nav.dateRec">Date Planner</span>
-        </button>
         <button class="nav-btn" data-section="mbti">
-            <span class="nav-icon">🧠</span>
+            <i class="ri-puzzle-line"></i>
             <span data-i18n="nav.mbti">MBTI</span>
         </button>
         <button class="nav-btn" data-section="daily">
-            <span class="nav-icon">🔮</span>
-            <span data-i18n="nav.daily">Daily Love</span>
-        </button>
-        <button class="nav-btn" data-section="about">
-            <span class="nav-icon">💌</span>
-            <span data-i18n="nav.about">About</span>
+            <i class="ri-calendar-check-line"></i>
+            <span data-i18n="nav.daily">Daily Fortune</span>
         </button>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-
-        <!-- Name Compatibility Section -->
-        <section id="name" class="section active">
-            <div class="section-header">
-                <span class="section-emoji">💘</span>
-                <h2 class="section-title" data-i18n="name.title">Name Compatibility</h2>
-                <p class="section-subtitle" data-i18n="name.subtitle">discover the magic between your names</p>
-            </div>
-
-            <div class="form-container glass-card">
-                <div class="input-row">
-                    <div class="form-group">
-                        <label data-i18n="name.yourName">Your Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">👤</span>
-                            <input type="text" id="your-name" class="cute-input" placeholder="e.g., Sofia">
-                        </div>
-                    </div>
-                    <div class="heart-connector">💕</div>
-                    <div class="form-group">
-                        <label data-i18n="name.partnerName">Their Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">💝</span>
-                            <input type="text" id="partner-name" class="cute-input" placeholder="e.g., Alex">
-                        </div>
-                    </div>
+    <main class="content-wrapper">
+        
+        <section id="name-section" class="active-section">
+            <div class="card input-card">
+                <h2 data-i18n="name.title">Name Compatibility</h2>
+                <div class="input-group">
+                    <label data-i18n="name.yourName">Your Name</label>
+                    <input type="text" id="your-name" placeholder="Name">
                 </div>
-                <button id="calculate-name-compatibility" class="cute-btn primary-btn">
-                    <span class="btn-icon">✨</span>
-                    <span data-i18n="name.calculate">Check Our Fate</span>
-                    <span class="btn-icon">✨</span>
+                <div class="input-group">
+                    <label data-i18n="name.partnerName">Partner's Name</label>
+                    <input type="text" id="partner-name" placeholder="Name">
+                </div>
+                <button class="action-btn primary-btn" id="calc-name-btn">
+                    <i class="ri-magic-line"></i> <span data-i18n="name.calculate">Check Tier</span>
                 </button>
             </div>
-
-            <div id="name-result" class="result-card hidden"></div>
         </section>
 
-        <!-- Date Planner Section -->
-        <section id="dateRec" class="section">
-            <div class="section-header">
-                <span class="section-emoji">🍽️</span>
-                <h2 class="section-title" data-i18n="dateRec.title">Date Planner</h2>
-                <p class="section-subtitle" data-i18n="dateRec.subtitle">perfect menu & spot for your love score</p>
-            </div>
-
-            <div class="form-container glass-card">
-                <div class="date-rec-intro">
-                    <div class="date-rec-icon">🎯</div>
-                    <p data-i18n="dateRec.intro">Enter your compatibility score to get personalized date recommendations!</p>
-                    <p class="date-rec-hint" data-i18n="dateRec.hint">💡 Don't know your score? Check Name Match or MBTI first!</p>
-                </div>
-                <div class="input-row">
-                    <div class="form-group">
-                        <label data-i18n="dateRec.yourName">Your Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">👤</span>
-                            <input type="text" id="date-your-name" class="cute-input" placeholder="Your name">
-                        </div>
-                    </div>
-                    <div class="heart-connector">💕</div>
-                    <div class="form-group">
-                        <label data-i18n="dateRec.partnerName">Their Name</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">💝</span>
-                            <input type="text" id="date-partner-name" class="cute-input" placeholder="Their name">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group centered">
-                    <label data-i18n="dateRec.score">Compatibility Score (1-100)</label>
-                    <div class="input-wrapper score-input-wrapper">
-                        <span class="input-icon">💯</span>
-                        <input type="number" id="date-score" class="cute-input" placeholder="e.g., 85" min="1" max="100">
-                        <span class="score-suffix">%</span>
-                    </div>
-                </div>
-                <button id="get-date-recommendation" class="cute-btn primary-btn">
-                    <span class="btn-icon">🍴</span>
-                    <span data-i18n="dateRec.calculate">Get Date Plan</span>
-                    <span class="btn-icon">📍</span>
-                </button>
-            </div>
-
-            <div id="date-rec-result" class="result-card hidden"></div>
-        </section>
-
-        <!-- MBTI Compatibility Section -->
-        <section id="mbti" class="section">
-            <div class="section-header">
-                <span class="section-emoji">🧠</span>
-                <h2 class="section-title" data-i18n="mbti.title">MBTI Compatibility</h2>
-                <p class="section-subtitle" data-i18n="mbti.subtitle">how do your personalities dance together?</p>
-            </div>
-
-            <div class="form-container glass-card">
-                <div class="input-row">
-                    <div class="form-group">
-                        <label data-i18n="mbti.yourMbti">Your MBTI</label>
-                        <select id="your-mbti" class="cute-select">
-                            <option value="">Select 🎭</option>
-                            <option value="INTJ">INTJ</option>
-                            <option value="INTP">INTP</option>
-                            <option value="ENTJ">ENTJ</option>
-                            <option value="ENTP">ENTP</option>
-                            <option value="INFJ">INFJ</option>
-                            <option value="INFP">INFP</option>
-                            <option value="ENFJ">ENFJ</option>
-                            <option value="ENFP">ENFP</option>
-                            <option value="ISTJ">ISTJ</option>
-                            <option value="ISFJ">ISFJ</option>
-                            <option value="ESTJ">ESTJ</option>
-                            <option value="ESFJ">ESFJ</option>
-                            <option value="ISTP">ISTP</option>
-                            <option value="ISFP">ISFP</option>
-                            <option value="ESTP">ESTP</option>
-                            <option value="ESFP">ESFP</option>
+        <section id="mbti-section" class="hidden-section">
+            <div class="card input-card">
+                <h2 data-i18n="mbti.title">MBTI Match</h2>
+                <div class="input-group">
+                    <label data-i18n="mbti.yourMbti">Your MBTI</label>
+                    <select id="your-mbti">
                         </select>
-                    </div>
-                    <div class="heart-connector">🧩</div>
-                    <div class="form-group">
-                        <label data-i18n="mbti.partnerMbti">Their MBTI</label>
-                        <select id="partner-mbti" class="cute-select">
-                            <option value="">Select 🎭</option>
-                            <option value="INTJ">INTJ</option>
-                            <option value="INTP">INTP</option>
-                            <option value="ENTJ">ENTJ</option>
-                            <option value="ENTP">ENTP</option>
-                            <option value="INFJ">INFJ</option>
-                            <option value="INFP">INFP</option>
-                            <option value="ENFJ">ENFJ</option>
-                            <option value="ENFP">ENFP</option>
-                            <option value="ISTJ">ISTJ</option>
-                            <option value="ISFJ">ISFJ</option>
-                            <option value="ESTJ">ESTJ</option>
-                            <option value="ESFJ">ESFJ</option>
-                            <option value="ISTP">ISTP</option>
-                            <option value="ISFP">ISFP</option>
-                            <option value="ESTP">ESTP</option>
-                            <option value="ESFP">ESFP</option>
+                </div>
+                <div class="input-group">
+                    <label data-i18n="mbti.partnerMbti">Partner's MBTI</label>
+                    <select id="partner-mbti">
                         </select>
-                    </div>
                 </div>
-                <button id="calculate-mbti-compatibility" class="cute-btn primary-btn">
-                    <span class="btn-icon">🧬</span>
-                    <span data-i18n="mbti.calculate">Match Personalities</span>
-                    <span class="btn-icon">💫</span>
+                <button class="action-btn primary-btn" id="calc-mbti-btn">
+                    <i class="ri-search-eye-line"></i> <span data-i18n="mbti.calculate">Check Compatibility</span>
                 </button>
             </div>
-
-            <div id="mbti-result" class="result-card hidden"></div>
         </section>
 
-        <!-- Daily Love Fortune Section -->
-        <section id="daily" class="section">
-            <div class="section-header">
-                <span class="section-emoji">🔮</span>
-                <h2 class="section-title" data-i18n="daily.title">Daily Love Fortune</h2>
-                <p class="section-subtitle" data-i18n="daily.subtitle">what does the universe have planned for your heart?</p>
-            </div>
-
-            <div class="form-container glass-card">
-                <div class="daily-intro">
-                    <div class="crystal-ball">🔮</div>
-                    <p data-i18n="daily.intro">Enter your name to receive your personalized love fortune for today</p>
+        <section id="daily-section" class="hidden-section">
+            <div class="card input-card">
+                <h2 data-i18n="daily.title">Daily Love Fortune</h2>
+                <div class="input-group">
+                    <label data-i18n="daily.intro">Your Name</label>
+                    <input type="text" id="daily-name" placeholder="Name">
                 </div>
-                <div class="form-group centered">
-                    <div class="input-wrapper large">
-                        <span class="input-icon">✨</span>
-                        <input type="text" id="daily-name" class="cute-input" placeholder="Your name">
-                    </div>
+                <div class="input-group">
+                    <label data-i18n="daily.birthday">Birthday</label>
+                    <input type="date" id="daily-birth">
                 </div>
-                <button id="get-daily-fortune" class="cute-btn primary-btn">
-                    <span class="btn-icon">🌟</span>
-                    <span data-i18n="daily.calculate">Reveal My Fortune</span>
-                    <span class="btn-icon">🌟</span>
+                <button class="action-btn primary-btn" id="calc-daily-btn">
+                    <i class="ri-star-smile-line"></i> <span data-i18n="daily.calculate">Reveal Fortune</span>
                 </button>
             </div>
-
-            <div id="daily-result" class="result-card hidden"></div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="section-header">
-                <span class="section-emoji">💌</span>
-                <h2 class="section-title" data-i18n="about.title">About Love & Fate</h2>
-                <p class="section-subtitle" data-i18n="about.subtitle">learn more about us</p>
+        <div id="result-overlay" class="hidden">
+            <div class="result-card-container" id="capture-target">
+                <div class="result-header">
+                    <span class="brand-name">LOVE TIER</span>
+                    <span class="date-stamp" id="today-date">2026.02.02</span>
+                </div>
+                
+                <div class="result-body">
+                    <div class="names-display">
+                        <span id="res-name-1">Name 1</span>
+                        <i class="ri-close-line x-mark"></i>
+                        <span id="res-name-2">Name 2</span>
+                    </div>
+
+                    <div class="score-circle">
+                        <div class="score-text"><span id="res-score">0</span>%</div>
+                        <div class="tier-badge" id="res-tier">TIER ?</div>
+                    </div>
+
+                    <p class="verdict-text" id="res-verdict">Waiting for data...</p>
+                    <p class="detail-text" id="res-text">Detailed analysis text goes here.</p>
+
+                    <div id="date-rec-area" class="date-rec-box hidden">
+                        <h4 class="rec-title"><i class="ri-map-pin-heart-line"></i> Recommended Date</h4>
+                        <div class="rec-content">
+                            <span class="rec-badge" id="rec-spot-type">Place</span>
+                            <p class="rec-menu" id="rec-menu">Menu</p>
+                            <p class="rec-reason" id="rec-reason">Reason</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-footer">
+                    <p>love.tier.app</p>
+                    <div class="barcode">|| ||| || |||| ||</div>
+                </div>
             </div>
 
-            <div class="about-container">
-                <div class="about-card glass-card">
-                    <div class="about-icon">💖</div>
-                    <h3 data-i18n="about.introTitle">What is Love & Fate?</h3>
-                    <p data-i18n="about.introText">Love & Fate is your personal guide to understanding relationship dynamics. We offer compatibility readings based on names, blood types, and MBTI personality types to help you discover deeper connections.</p>
+            <div class="result-actions">
+                <button class="action-btn secondary-btn" id="show-date-btn">
+                    <i class="ri-restaurant-2-line"></i> <span data-i18n="result.showDate">Date Course</span>
+                </button>
+                <div class="share-row">
+                    <button class="action-btn share-btn" id="capture-btn">
+                        <i class="ri-download-line"></i> <span data-i18n="result.save">Save Card</span>
+                    </button>
+                    <button class="action-btn share-btn highlight" id="share-btn">
+                        <i class="ri-share-forward-line"></i> <span data-i18n="result.share">Share</span>
+                    </button>
                 </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">🛡️</div>
-                    <h3 data-i18n="about.privacyTitle">Privacy First</h3>
-                    <p data-i18n="about.privacyText">Your privacy is our top priority. We do not store any personal information you enter. All calculations are performed in your browser and are never sent to our servers. Your secrets are safe with you.</p>
-                </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">✨</div>
-                    <h3 data-i18n="about.featuresTitle">Our Features</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="about.feature1">Name Compatibility - Discover the hidden energies between two names</li>
-                        <li data-i18n="about.feature2">Blood Type Love - Explore love secrets based on blood types</li>
-                        <li data-i18n="about.feature3">MBTI Match - Uncover relationship potential based on personalities</li>
-                        <li data-i18n="about.feature4">Daily Fortune - Get your personalized love horoscope</li>
-                    </ul>
-                </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">⚠️</div>
-                    <h3 data-i18n="about.disclaimerTitle">Disclaimer</h3>
-                    <p data-i18n="about.disclaimerText">This site is for entertainment purposes only. Compatibility scores are not scientifically proven and should not be used to make life decisions. Enjoy the journey of discovery!</p>
-                </div>
+                <button class="close-btn" id="close-result"><i class="ri-close-circle-line"></i> Close</button>
             </div>
-        </section>
+        </div>
 
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-tagline">made with 💕 for dreamers & lovers</p>
-            <p class="footer-disclaimer" data-i18n="footer.disclaimer">for entertainment purposes only</p>
-            <p class="copyright">© 2024 Love & Fate</p>
-        </div>
+        <p class="copyright">© 2026 Love Tier. All rights reserved.</p>
     </footer>
 
     <script src="translations.js"></script>
