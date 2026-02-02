@@ -3,6 +3,175 @@
 let currentLang = 'en';
 let currentSection = 'name';
 
+// ====== Temperature Visualization Helper ======
+function getTemperatureData(score) {
+    if (score >= 90) {
+        return {
+            level: 'hot',
+            color: '#ff4757',
+            gradient: 'linear-gradient(to top, #ff6b6b, #ff4757, #ff3838)',
+            emoji: '🔥',
+            labelKo: '불타는 사랑',
+            labelEn: 'Burning Love'
+        };
+    } else if (score >= 75) {
+        return {
+            level: 'warm',
+            color: '#ff6b9d',
+            gradient: 'linear-gradient(to top, #ff9a9e, #ff6b9d, #ff5e87)',
+            emoji: '💕',
+            labelKo: '따뜻한 사랑',
+            labelEn: 'Warm Love'
+        };
+    } else if (score >= 60) {
+        return {
+            level: 'mild',
+            color: '#ffa502',
+            gradient: 'linear-gradient(to top, #ffd93d, #ffa502, #ff9500)',
+            emoji: '✨',
+            labelKo: '설레는 관계',
+            labelEn: 'Exciting Bond'
+        };
+    } else if (score >= 40) {
+        return {
+            level: 'cool',
+            color: '#3498db',
+            gradient: 'linear-gradient(to top, #74b9ff, #3498db, #2980b9)',
+            emoji: '💫',
+            labelKo: '성장하는 인연',
+            labelEn: 'Growing Bond'
+        };
+    } else {
+        return {
+            level: 'cold',
+            color: '#a29bfe',
+            gradient: 'linear-gradient(to top, #dfe6e9, #a29bfe, #6c5ce7)',
+            emoji: '❄️',
+            labelKo: '도전적인 관계',
+            labelEn: 'Challenging'
+        };
+    }
+}
+
+function generateTemperatureHTML(score, name1, name2) {
+    const temp = getTemperatureData(score);
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const tempLabel = lang === 'ko' ? temp.labelKo : temp.labelEn;
+    const tempTitle = lang === 'ko' ? '궁합 온도' : 'Love Temperature';
+
+    return `
+        <div class="temp-card">
+            <div class="temp-header">
+                <span class="temp-title">${tempTitle}</span>
+            </div>
+            <div class="temp-body">
+                <div class="temp-gauge">
+                    <div class="temp-thermometer">
+                        <div class="temp-fill" style="height: ${score}%; background: ${temp.gradient};"></div>
+                        <div class="temp-bulb" style="background: ${temp.color};"></div>
+                    </div>
+                    <div class="temp-scale">
+                        <span>100°</span>
+                        <span>75°</span>
+                        <span>50°</span>
+                        <span>25°</span>
+                        <span>0°</span>
+                    </div>
+                </div>
+                <div class="temp-info">
+                    <div class="temp-score" style="color: ${temp.color};">
+                        <span class="temp-emoji">${temp.emoji}</span>
+                        <span class="temp-number">${score}°</span>
+                    </div>
+                    <div class="temp-level" style="background: ${temp.color};">${tempLabel}</div>
+                    <div class="temp-names">${name1} & ${name2}</div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ====== SNS Share Buttons Helper ======
+function generateSNSShareHTML(shareData) {
+    const { text, url } = shareData;
+    const encodedText = encodeURIComponent(text);
+    const encodedUrl = encodeURIComponent(url || window.location.href);
+    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const shareLabel = lang === 'ko' ? '결과 공유하기' : 'Share Your Result';
+
+    return `
+        <div class="sns-share-section">
+            <p class="sns-share-title">${shareLabel}</p>
+            <div class="sns-share-buttons">
+                <button class="sns-btn sns-twitter" onclick="shareSNS('twitter', '${encodedText}', '${encodedUrl}')" title="Twitter/X">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </button>
+                <button class="sns-btn sns-facebook" onclick="shareSNS('facebook', '${encodedText}', '${encodedUrl}')" title="Facebook">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </button>
+                <button class="sns-btn sns-threads" onclick="shareSNS('threads', '${encodedText}', '${encodedUrl}')" title="Threads">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.17.408-2.306 1.334-3.203.678-.658 1.578-1.143 2.678-1.445-.056-.592-.1-1.204-.1-1.828 0-.313.008-.62.026-.924-1.109.213-2.017.65-2.647 1.27-.708.697-1.074 1.576-1.029 2.471.047.92.473 1.73 1.2 2.283.594.454 1.435.692 2.428.688 1.076-.046 1.91-.428 2.48-1.137.466-.581.764-1.397.886-2.432.007-.065.012-.13.016-.195-.28-.088-.553-.19-.816-.306-.84-.371-1.527-.9-1.978-1.521-.568-.78-.833-1.746-.766-2.79.067-1.03.525-1.974 1.29-2.658.955-.854 2.266-1.308 3.784-1.313.18-.001.36.006.539.018 1.607.109 2.985.707 3.987 1.73 1.05 1.073 1.635 2.545 1.693 4.258.032.953-.084 1.976-.346 3.033.778.448 1.425 1.022 1.919 1.704.784 1.085 1.118 2.39 1.024 3.998-.109 1.858-.894 3.54-2.268 4.862-1.707 1.64-4.036 2.503-6.938 2.563h-.18z"/>
+                    </svg>
+                </button>
+                <button class="sns-btn sns-reddit" onclick="shareSNS('reddit', '${encodedText}', '${encodedUrl}')" title="Reddit">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                    </svg>
+                </button>
+                <button class="sns-btn sns-line" onclick="shareSNS('line', '${encodedText}', '${encodedUrl}')" title="LINE">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                    </svg>
+                </button>
+                <button class="sns-btn sns-copy" onclick="copyToClipboard('${text.replace(/'/g, "\\'")}')" title="Copy">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+function shareSNS(platform, encodedText, encodedUrl) {
+    const text = decodeURIComponent(encodedText);
+    const url = decodeURIComponent(encodedUrl);
+    let shareUrl = '';
+
+    switch(platform) {
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
+            break;
+        case 'threads':
+            shareUrl = `https://www.threads.net/intent/post?text=${encodedText}`;
+            break;
+        case 'reddit':
+            shareUrl = `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
+            break;
+        case 'line':
+            shareUrl = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
+            break;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text + '\n\n' + window.location.href).then(() => {
+        showToast(currentLang === 'ko' ? '클립보드에 복사되었습니다!' : 'Copied to clipboard!');
+    });
+}
+
 // ====== Language Data ======
 const availableLangs = ['en', 'ko', 'ja', 'zh', 'es', 'fr', 'de', 'ru', 'pt'];
 const langNames = {
@@ -948,73 +1117,70 @@ function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
         `;
     }
 
+    const shareText = lang === 'ko'
+        ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
+        : `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
+
     result.innerHTML = `
-        <div class="story-card">
-            <div class="story-header">
-                <p class="story-names">${name1} & ${name2}</p>
-                <p class="story-date">${today}</p>
-            </div>
+        <div class="result-card-new">
+            <!-- Temperature Card -->
+            ${generateTemperatureHTML(score, name1, name2)}
 
-            <div class="score-container">
-                <div class="score-ring">
-                    <div class="score-inner">
-                        <span class="score-number">${score}</span>
-                        <span class="score-label">%</span>
+            <!-- Result Details Card -->
+            <div class="story-card">
+                <div class="story-header">
+                    <p class="story-date">${today}</p>
+                </div>
+
+                <div class="heart-effect ${heartEffect}">${heartEmojis}</div>
+
+                <h3 class="story-verdict">${story.verdict}</h3>
+
+                <!-- Past Life Story -->
+                <div class="past-life-card">
+                    <div class="past-life-header">
+                        <span class="past-life-icon">🏮</span>
+                        <span class="past-life-label">${pastLifeLabel}</span>
                     </div>
+                    <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                    <p class="past-life-detail">${pastLifeStory.detail}</p>
                 </div>
-            </div>
 
-            <div class="heart-effect ${heartEffect}">${heartEmojis}</div>
+                <p class="story-message">${story.message}</p>
 
-            <h3 class="story-verdict">${story.verdict}</h3>
-
-            <!-- Past Life Story -->
-            <div class="past-life-card">
-                <div class="past-life-header">
-                    <span class="past-life-icon">🏮</span>
-                    <span class="past-life-label">${pastLifeLabel}</span>
+                <div class="story-advice">
+                    <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
+                    <p class="advice-text">${story.advice}</p>
                 </div>
-                <p class="past-life-relation">"${pastLifeStory.relation}"</p>
-                <p class="past-life-detail">${pastLifeStory.detail}</p>
-            </div>
 
-            <p class="story-message">${story.message}</p>
+                ${solutionHTML}
 
-            <div class="story-advice">
-                <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
-                <p class="advice-text">${story.advice}</p>
-            </div>
-
-            ${solutionHTML}
-
-            <!-- Date Planner CTA -->
-            <div class="date-planner-cta" onclick="goToDatePlanner(${score}, '${name1}', '${name2}')">
-                <span>${datePlanLabel}</span>
-                <span class="cta-arrow">→</span>
-            </div>
-
-            <!-- Calculation Process Toggle -->
-            <div class="calc-toggle-section">
-                <div class="calc-toggle-header" onclick="toggleCalcProcess()">
-                    <span class="calc-toggle-title">
-                        <span>🔢</span>
-                        <span>${toggleLabel}</span>
-                    </span>
-                    <span class="calc-toggle-arrow">▼</span>
+                <!-- Date Planner CTA -->
+                <div class="date-planner-cta" onclick="goToDatePlanner(${score}, '${name1.replace(/'/g, "\\'")}', '${name2.replace(/'/g, "\\'")}')">
+                    <span>${datePlanLabel}</span>
+                    <span class="cta-arrow">→</span>
                 </div>
-                <div class="calc-content">
-                    <div class="calc-content-inner">
-                        <div class="calc-steps">
-                            ${calcStepsHTML}
+
+                <!-- Calculation Process Toggle -->
+                <div class="calc-toggle-section">
+                    <div class="calc-toggle-header" onclick="toggleCalcProcess()">
+                        <span class="calc-toggle-title">
+                            <span>🔢</span>
+                            <span>${toggleLabel}</span>
+                        </span>
+                        <span class="calc-toggle-arrow">▼</span>
+                    </div>
+                    <div class="calc-content">
+                        <div class="calc-content-inner">
+                            <div class="calc-steps">
+                                ${calcStepsHTML}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="share-section">
-                <button class="share-btn" onclick="shareNameResult('${name1}', '${name2}', ${score}, '${pastLifeStory.relation.replace(/'/g, "\\'")}')">
-                    <span>📱</span> Share Result
-                </button>
+                <!-- SNS Share Buttons -->
+                ${generateSNSShareHTML({ text: shareText })}
             </div>
         </div>
     `;
@@ -1317,74 +1483,68 @@ function calculateMbtiCompatibility() {
         `;
     }
 
+    const shareText = lang === 'ko'
+        ? `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
+        : `🧠 ${mbti1} + ${mbti2}: ${score}%\n💫 "${keyword}"\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
+
     const result = document.getElementById('mbti-result');
     result.classList.remove('hidden');
     result.innerHTML = `
-        <div class="story-card">
-            <div class="story-header">
-                <p class="story-names">${mbti1} 🧩 ${mbti2}</p>
-            </div>
+        <div class="result-card-new">
+            <!-- Temperature Card -->
+            ${generateTemperatureHTML(score, mbti1, mbti2)}
 
-            <div class="score-container">
-                <div class="score-ring">
-                    <div class="score-inner">
-                        <span class="score-number">${score}</span>
-                        <span class="score-label">%</span>
+            <!-- Result Details Card -->
+            <div class="story-card">
+                <div class="heart-effect ${heartClass}">${emojis[compatData.type] || '💕✨💕'}</div>
+
+                <div class="mbti-keyword">
+                    <span class="keyword-badge">${keyword}</span>
+                </div>
+
+                <h3 class="story-verdict">${story.verdict}</h3>
+
+                <!-- Past Life Story -->
+                <div class="past-life-card">
+                    <div class="past-life-header">
+                        <span class="past-life-icon">🏮</span>
+                        <span class="past-life-label">${pastLifeLabel}</span>
+                    </div>
+                    <p class="past-life-relation">"${pastLifeStory.relation}"</p>
+                    <p class="past-life-detail">${pastLifeStory.detail}</p>
+                </div>
+
+                <p class="story-message">${story.message}</p>
+
+                <div class="story-advice">
+                    <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
+                    <p class="advice-text">${story.advice}</p>
+                </div>
+
+                ${solutionHTML}
+
+                <div class="mbti-traits">
+                    <div class="trait-comparison">
+                        <div class="trait-item">
+                            <span class="trait-label">${mbti1}</span>
+                            <span class="trait-desc">${getMbtiNickname(mbti1, lang)}</span>
+                        </div>
+                        <span class="trait-vs">VS</span>
+                        <div class="trait-item">
+                            <span class="trait-label">${mbti2}</span>
+                            <span class="trait-desc">${getMbtiNickname(mbti2, lang)}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="heart-effect ${heartClass}">${emojis[compatData.type] || '💕✨💕'}</div>
-
-            <div class="mbti-keyword">
-                <span class="keyword-badge">${keyword}</span>
-            </div>
-
-            <h3 class="story-verdict">${story.verdict}</h3>
-
-            <!-- Past Life Story -->
-            <div class="past-life-card">
-                <div class="past-life-header">
-                    <span class="past-life-icon">🏮</span>
-                    <span class="past-life-label">${pastLifeLabel}</span>
+                <!-- Date Planner CTA -->
+                <div class="date-planner-cta" onclick="goToDatePlannerMbti(${score})">
+                    <span>${datePlanLabel}</span>
+                    <span class="cta-arrow">→</span>
                 </div>
-                <p class="past-life-relation">"${pastLifeStory.relation}"</p>
-                <p class="past-life-detail">${pastLifeStory.detail}</p>
-            </div>
 
-            <p class="story-message">${story.message}</p>
-
-            <div class="story-advice">
-                <p class="advice-title">💡 ${t('result.advice') || 'Love Tip'}</p>
-                <p class="advice-text">${story.advice}</p>
-            </div>
-
-            ${solutionHTML}
-
-            <div class="mbti-traits">
-                <div class="trait-comparison">
-                    <div class="trait-item">
-                        <span class="trait-label">${mbti1}</span>
-                        <span class="trait-desc">${getMbtiNickname(mbti1, lang)}</span>
-                    </div>
-                    <span class="trait-vs">VS</span>
-                    <div class="trait-item">
-                        <span class="trait-label">${mbti2}</span>
-                        <span class="trait-desc">${getMbtiNickname(mbti2, lang)}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Date Planner CTA -->
-            <div class="date-planner-cta" onclick="goToDatePlannerMbti(${score})">
-                <span>${datePlanLabel}</span>
-                <span class="cta-arrow">→</span>
-            </div>
-
-            <div class="share-section">
-                <button class="share-btn" onclick="shareMbtiResultFull('${mbti1}', '${mbti2}', ${score}, '${keyword.replace(/'/g, "\\'")}', '${pastLifeStory.relation.replace(/'/g, "\\'")}')">
-                    <span>📱</span> Share Result
-                </button>
+                <!-- SNS Share Buttons -->
+                ${generateSNSShareHTML({ text: shareText })}
             </div>
         </div>
     `;
