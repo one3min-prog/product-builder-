@@ -1787,7 +1787,13 @@ function getMbtiNickname(mbti, lang) {
 
 // ====== Daily Fortune ======
 function initDailyFortune() {
-    document.getElementById('get-daily-fortune').addEventListener('click', getDailyFortune);
+    const btn = document.getElementById('get-daily-fortune');
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            getDailyFortune();
+        });
+    }
 }
 
 function getDailyFortune() {
@@ -1815,7 +1821,7 @@ function getDailyFortune() {
         return;
     }
 
-    const birthday = `${birthYear}-${birthMonth.padStart ? birthMonth.padStart(2, '0') : String(birthMonth).padStart(2, '0')}-${birthDay.padStart ? birthDay.padStart(2, '0') : String(birthDay).padStart(2, '0')}`;
+    const birthday = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     const fortunes = dailyFortunes[lang] || dailyFortunes.en;
