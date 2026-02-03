@@ -1487,6 +1487,109 @@ body {
     }
 }
 
+/* ====== Enhanced Fortune Card Styles ====== */
+.fortune-card-enhanced {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.95) 100%);
+}
+
+.love-section-main {
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.08) 0%, rgba(255, 107, 157, 0.08) 100%);
+    border-left: 5px solid #e91e63;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.fortune-text-large {
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.fortune-tip-enhanced {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(52, 211, 153, 0.08) 100%);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 20px;
+    padding: 22px;
+}
+
+.fortune-warning-enhanced {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(251, 191, 36, 0.08) 100%);
+    border: 2px solid rgba(245, 158, 11, 0.4);
+    border-radius: 20px;
+    padding: 22px;
+}
+
+.fortune-share-section {
+    background: var(--gradient-sunset);
+    border-radius: 24px;
+    padding: 25px 20px;
+    text-align: center;
+    margin-top: 25px;
+    box-shadow: 0 8px 30px rgba(250, 112, 154, 0.35);
+}
+
+.fortune-share-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fortune-share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.fortune-sns-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.fortune-sns-btn:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.fortune-sns-btn.sns-twitter {
+    background: #000;
+    color: white;
+}
+
+.fortune-sns-btn.sns-facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.fortune-sns-btn.sns-threads {
+    background: #000;
+    color: white;
+}
+
+.fortune-sns-btn.sns-line {
+    background: #00b900;
+    color: white;
+}
+
+.fortune-sns-btn.sns-copy {
+    background: white;
+    color: var(--primary-dark);
+}
+
+.fortune-sns-btn.sns-copy:hover {
+    background: #f8f8f8;
+}
+
 /* ====== MBTI Keyword Badge ====== */
 .mbti-keyword {
     margin: 15px 0;
