@@ -86,6 +86,15 @@ function generateResultCardHTML(score, name1, name2, shareText) {
                 </div>
             </div>
 
+            <!-- Hide Names Toggle -->
+            <div class="hide-names-toggle">
+                <label class="toggle-label">
+                    <input type="checkbox" id="hide-names-checkbox" onchange="toggleNameVisibility('${name1}', '${name2}')">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">${lang === 'ko' ? '이름 가리기' : 'Hide Names'}</span>
+                </label>
+            </div>
+
             <!-- SNS Share Section -->
             <div class="sns-share-compact">
                 <p class="sns-share-title">${shareLabel}</p>
@@ -120,15 +129,16 @@ function generateResultCardHTML(score, name1, name2, shareText) {
 // Store current share text for clipboard
 let currentShareText = '';
 
-function toggleNameVisibility() {
+function toggleNameVisibility(name1, name2) {
     const checkbox = document.getElementById('hide-names-checkbox');
     const namesDisplay = document.getElementById('temp-names-display');
     if (checkbox && namesDisplay) {
         if (checkbox.checked) {
+            namesDisplay.dataset.original = `${name1} & ${name2}`;
             namesDisplay.textContent = '??? & ???';
             namesDisplay.classList.add('names-hidden');
         } else {
-            namesDisplay.textContent = namesDisplay.dataset.original || namesDisplay.textContent;
+            namesDisplay.textContent = namesDisplay.dataset.original || `${name1} & ${name2}`;
             namesDisplay.classList.remove('names-hidden');
         }
     }
@@ -1833,19 +1843,19 @@ function getDailyFortune() {
             <div class="fortune-share-section">
                 <p class="fortune-share-title">${labels.share}</p>
                 <div class="fortune-share-buttons">
-                    <button class="fortune-sns-btn sns-twitter" onclick="shareSNS('twitter', '${encodedText}', '${encodedUrl}')" title="X">
+                    <button class="fortune-sns-btn sns-twitter" onclick="shareFortuneToSNS('twitter')" title="X">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </button>
-                    <button class="fortune-sns-btn sns-instagram" onclick="shareSNS('instagram', '${encodedText}', '${encodedUrl}')" title="Instagram">
+                    <button class="fortune-sns-btn sns-instagram" onclick="shareFortuneToSNS('instagram')" title="Instagram">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     </button>
-                    <button class="fortune-sns-btn sns-facebook" onclick="shareSNS('facebook', '${encodedText}', '${encodedUrl}')" title="Facebook">
+                    <button class="fortune-sns-btn sns-facebook" onclick="shareFortuneToSNS('facebook')" title="Facebook">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </button>
-                    <button class="fortune-sns-btn sns-threads" onclick="shareSNS('threads', '${encodedText}', '${encodedUrl}')" title="Threads">
+                    <button class="fortune-sns-btn sns-threads" onclick="shareFortuneToSNS('threads')" title="Threads">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.17.408-2.306 1.334-3.203.678-.658 1.578-1.143 2.678-1.445-.056-.592-.1-1.204-.1-1.828 0-.313.008-.62.026-.924-1.109.213-2.017.65-2.647 1.27-.708.697-1.074 1.576-1.029 2.471.047.92.473 1.73 1.2 2.283.594.454 1.435.692 2.428.688 1.076-.046 1.91-.428 2.48-1.137.466-.581.764-1.397.886-2.432.007-.065.012-.13.016-.195-.28-.088-.553-.19-.816-.306-.84-.371-1.527-.9-1.978-1.521-.568-.78-.833-1.746-.766-2.79.067-1.03.525-1.974 1.29-2.658.955-.854 2.266-1.308 3.784-1.313.18-.001.36.006.539.018 1.607.109 2.985.707 3.987 1.73 1.05 1.073 1.635 2.545 1.693 4.258.032.953-.084 1.976-.346 3.033.778.448 1.425 1.022 1.919 1.704.784 1.085 1.118 2.39 1.024 3.998-.109 1.858-.894 3.54-2.268 4.862-1.707 1.64-4.036 2.503-6.938 2.563h-.18z"/></svg>
                     </button>
-                    <button class="fortune-sns-btn sns-line" onclick="shareSNS('line', '${encodedText}', '${encodedUrl}')" title="LINE">
+                    <button class="fortune-sns-btn sns-line" onclick="shareFortuneToSNS('line')" title="LINE">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     </button>
                     <button class="fortune-sns-btn sns-copy" onclick="copyResultToClipboard()" title="Copy">
@@ -1868,6 +1878,41 @@ function shareDailyFortune(name, summary) {
         text = `🔮 ${name}'s Love Fortune Today\n"${summary}"\n\nCheck at Heart Scan!`;
     }
     shareContent(text);
+}
+
+// Fortune-specific share function using currentShareText
+function shareFortuneToSNS(platform) {
+    const text = currentShareText;
+    const url = window.location.href;
+    const encodedText = encodeURIComponent(text);
+    const encodedUrl = encodeURIComponent(url);
+
+    let shareUrl = '';
+
+    switch(platform) {
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
+            break;
+        case 'threads':
+            shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
+            break;
+        case 'line':
+            shareUrl = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
+            break;
+        case 'instagram':
+            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
+                window.open('https://www.instagram.com/', '_blank');
+            });
+            return;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
 }
 
 // ====== Share Functions ======
