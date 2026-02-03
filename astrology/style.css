@@ -1566,6 +1566,11 @@ body {
     color: white;
 }
 
+.fortune-sns-btn.sns-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
 .fortune-sns-btn.sns-facebook {
     background: #1877f2;
     color: white;
@@ -2043,6 +2048,10 @@ body {
 
 .sns-twitter {
     background: #000000;
+}
+
+.sns-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .sns-facebook {
