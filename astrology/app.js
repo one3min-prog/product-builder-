@@ -82,14 +82,14 @@ function generateResultCardHTML(score, name1, name2, shareText) {
                         <span class="temp-number">${score}°</span>
                     </div>
                     <div class="temp-level" style="background: ${temp.color};">${tempLabel}</div>
-                    <div class="temp-names" id="temp-names-display">${name1} & ${name2}</div>
+                    <div class="temp-names" id="temp-names-display" data-name1="${name1.replace(/"/g, '&quot;')}" data-name2="${name2.replace(/"/g, '&quot;')}">${name1} & ${name2}</div>
                 </div>
             </div>
 
             <!-- Hide Names Toggle -->
             <div class="hide-names-toggle">
                 <label class="toggle-label">
-                    <input type="checkbox" id="hide-names-checkbox" onchange="toggleNameVisibility('${name1}', '${name2}')">
+                    <input type="checkbox" id="hide-names-checkbox" onchange="togglePopupNameVisibility()">
                     <span class="toggle-slider"></span>
                     <span class="toggle-text">${lang === 'ko' ? '이름 가리기' : 'Hide Names'}</span>
                 </label>
@@ -129,16 +129,17 @@ function generateResultCardHTML(score, name1, name2, shareText) {
 // Store current share text for clipboard
 let currentShareText = '';
 
-function toggleNameVisibility(name1, name2) {
+function togglePopupNameVisibility() {
     const checkbox = document.getElementById('hide-names-checkbox');
     const namesDisplay = document.getElementById('temp-names-display');
     if (checkbox && namesDisplay) {
+        const name1 = namesDisplay.dataset.name1;
+        const name2 = namesDisplay.dataset.name2;
         if (checkbox.checked) {
-            namesDisplay.dataset.original = `${name1} & ${name2}`;
             namesDisplay.textContent = '??? & ???';
             namesDisplay.classList.add('names-hidden');
         } else {
-            namesDisplay.textContent = namesDisplay.dataset.original || `${name1} & ${name2}`;
+            namesDisplay.textContent = `${name1} & ${name2}`;
             namesDisplay.classList.remove('names-hidden');
         }
     }
