@@ -1895,6 +1895,79 @@ function shareContent(text) {
     }
 }
 
+// ====== Header Share Service Functions ======
+function shareService(platform) {
+    const lang = localStorage.getItem('selectedLanguage') || 'en';
+    const shareTexts = {
+        en: "Is it fate? Find out your love compatibility FREE! 💘 2M+ couples already know their destiny...",
+        ko: "운명일까? 무료로 연애 궁합 알아보세요! 💘 200만 커플이 이미 확인했어요...",
+        ja: "運命かも？無料で相性診断！💘 200万組が既に確認済み...",
+        zh: "是命中注定吗？免费测试爱情配对！💘 200万+情侣已验证...",
+        es: "¿Es el destino? ¡Descubre tu compatibilidad GRATIS! 💘 2M+ parejas ya lo saben...",
+        fr: "Est-ce le destin? Découvrez votre compatibilité GRATUITEMENT! 💘 2M+ couples ont déjà vérifié...",
+        de: "Ist es Schicksal? Finde deine Kompatibilität KOSTENLOS! 💘 2M+ Paare wissen es schon...",
+        ru: "Это судьба? Узнай совместимость БЕСПЛАТНО! 💘 2М+ пар уже проверили...",
+        pt: "É destino? Descubra sua compatibilidade GRÁTIS! 💘 2M+ casais já descobriram..."
+    };
+
+    const text = shareTexts[lang] || shareTexts.en;
+    const url = window.location.href;
+    const encodedText = encodeURIComponent(text);
+    const encodedUrl = encodeURIComponent(url);
+
+    let shareUrl = '';
+
+    switch(platform) {
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
+            break;
+        case 'threads':
+            shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
+            break;
+        case 'line':
+            shareUrl = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
+            break;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+function copyServiceLink() {
+    const lang = localStorage.getItem('selectedLanguage') || 'en';
+    const shareTexts = {
+        en: "Is it fate? Find out your love compatibility FREE! 💘",
+        ko: "운명일까? 무료로 연애 궁합 알아보세요! 💘",
+        ja: "運命かも？無料で相性診断！💘",
+        zh: "是命中注定吗？免费测试！💘",
+        es: "¿Es el destino? ¡Descubre tu compatibilidad GRATIS! 💘",
+        fr: "Est-ce le destin? Découvrez GRATUITEMENT! 💘",
+        de: "Ist es Schicksal? Teste KOSTENLOS! 💘",
+        ru: "Это судьба? Узнай БЕСПЛАТНО! 💘",
+        pt: "É destino? Descubra GRÁTIS! 💘"
+    };
+
+    const text = (shareTexts[lang] || shareTexts.en) + '\n' + window.location.href;
+
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.header-copy-btn');
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+
+        const toastMsg = lang === 'ko' ? '링크가 복사되었습니다! 📋' : 'Link copied! 📋';
+        showToast(toastMsg);
+
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+        }, 2000);
+    });
+}
+
 // ====== UI Effects ======
 function showToast(message) {
     const existing = document.querySelector('.toast');

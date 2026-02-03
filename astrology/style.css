@@ -2225,3 +2225,119 @@ body {
         margin: 10px;
     }
 }
+
+/* ====== Header Share CTA Section ====== */
+.header-share-cta {
+    margin-top: 20px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 107, 157, 0.2);
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 107, 157, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+    }
+}
+
+.share-cta-text {
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.header-share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.header-sns-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header-sns-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+}
+
+.header-sns-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.header-sns-btn[title="X"]:hover {
+    background: #000000;
+    color: white;
+}
+
+.header-sns-btn[title="Facebook"]:hover {
+    background: #1877f2;
+    color: white;
+}
+
+.header-sns-btn[title="Threads"]:hover {
+    background: #000000;
+    color: white;
+}
+
+.header-sns-btn[title="LINE"]:hover {
+    background: #00b900;
+    color: white;
+}
+
+.header-copy-btn:hover {
+    background: var(--gradient-love);
+    color: white;
+}
+
+/* Copy success animation */
+.header-sns-btn.copied {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+.header-sns-btn.copied svg {
+    animation: checkmark 0.3s ease-out;
+}
+
+@keyframes checkmark {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .header-share-cta {
+        margin-top: 16px;
+        padding: 14px 16px;
+    }
+
+    .share-cta-text {
+        font-size: 0.85rem;
+    }
+
+    .header-sns-btn {
+        width: 40px;
+        height: 40px;
+    }
+}

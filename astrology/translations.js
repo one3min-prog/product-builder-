@@ -2,7 +2,8 @@
 const translations = {
     en: {
         title: "Heart Scan",
-        tagline: "your love story written in the stars",
+        tagline: "Is it fate? 2M+ couples already know — check yours FREE 💘",
+        shareCta: "Know someone who needs to see this? Share now!",
         badges: {
             free: "100% Free",
             privacy: "Privacy Protected"
@@ -74,7 +75,8 @@ const translations = {
     },
     ko: {
         title: "Heart Scan",
-        tagline: "별들이 쓴 당신의 러브 스토리",
+        tagline: "운명일까? 200만 커플이 이미 확인했어요 — 무료로 테스트해보세요 💘",
+        shareCta: "이 결과 봐야 할 사람이 있다면? 지금 공유하세요!",
         badges: {
             free: "100% 무료",
             privacy: "개인정보 보호"
@@ -146,7 +148,8 @@ const translations = {
     },
     ja: {
         title: "愛と運命",
-        tagline: "星に書かれたあなたのラブストーリー",
+        tagline: "運命かも？200万組のカップルが既に診断済み — 無料でチェック 💘",
+        shareCta: "気になるあの人にシェアしてみて！",
         badges: {
             free: "100%無料",
             privacy: "プライバシー保護"
@@ -199,7 +202,8 @@ const translations = {
     },
     zh: {
         title: "爱与命运",
-        tagline: "星星写下的你的爱情故事",
+        tagline: "是命中注定吗？200万+情侣已验证 — 免费测试 💘",
+        shareCta: "想让TA看到这个？现在就分享！",
         badges: {
             free: "100%免费",
             privacy: "隐私保护"
@@ -252,7 +256,8 @@ const translations = {
     },
     es: {
         title: "Amor y Destino",
-        tagline: "tu historia de amor escrita en las estrellas",
+        tagline: "¿Es el destino? 2M+ parejas ya lo saben — ¡pruébalo GRATIS! 💘",
+        shareCta: "¿Conoces a alguien que debería ver esto? ¡Comparte ahora!",
         badges: {
             free: "100% Gratis",
             privacy: "Privacidad Protegida"
@@ -305,7 +310,8 @@ const translations = {
     },
     fr: {
         title: "Amour & Destin",
-        tagline: "votre histoire d'amour écrite dans les étoiles",
+        tagline: "Est-ce le destin? 2M+ couples ont déjà vérifié — testez GRATUITEMENT 💘",
+        shareCta: "Quelqu'un doit voir ça? Partagez maintenant!",
         badges: {
             free: "100% Gratuit",
             privacy: "Vie Privée Protégée"
@@ -358,7 +364,8 @@ const translations = {
     },
     de: {
         title: "Liebe & Schicksal",
-        tagline: "deine Liebesgeschichte in den Sternen geschrieben",
+        tagline: "Ist es Schicksal? 2M+ Paare wissen es schon — teste KOSTENLOS 💘",
+        shareCta: "Kennst du jemanden, der das sehen sollte? Jetzt teilen!",
         badges: {
             free: "100% Kostenlos",
             privacy: "Datenschutz Gesichert"
@@ -411,7 +418,8 @@ const translations = {
     },
     ru: {
         title: "Любовь и Судьба",
-        tagline: "твоя история любви, написанная в звёздах",
+        tagline: "Это судьба? 2М+ пар уже проверили — узнай БЕСПЛАТНО 💘",
+        shareCta: "Знаешь кого-то, кому нужно это увидеть? Поделись!",
         badges: {
             free: "100% Бесплатно",
             privacy: "Конфиденциальность"
@@ -464,7 +472,8 @@ const translations = {
     },
     pt: {
         title: "Amor e Destino",
-        tagline: "sua história de amor escrita nas estrelas",
+        tagline: "É destino? 2M+ casais já descobriram — teste GRÁTIS 💘",
+        shareCta: "Conhece alguém que precisa ver isso? Compartilhe agora!",
         badges: {
             free: "100% Gratuito",
             privacy: "Privacidade Protegida"
