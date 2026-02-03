@@ -171,6 +171,8 @@ function closeResultPopup() {
             showNameDetailResult(pendingDetailData);
         } else if (pendingDetailData.type === 'mbti') {
             showMbtiDetailResult(pendingDetailData);
+        } else if (pendingDetailData.type === 'daily') {
+            showDailyDetailResult(pendingDetailData);
         }
         pendingDetailData = null;
     }
@@ -1774,6 +1776,37 @@ function getDailyFortune() {
         : ['🌅 7-9 AM', '☀️ 11AM-1PM', '🌤️ 3-5 PM', '🌙 7-9 PM', '✨ 10PM-Midnight'];
     const luckyTime = luckyTimes[seed % luckyTimes.length];
 
+    // Calculate fortune score (70-95 based on seed)
+    const fortuneScore = 70 + (seed % 26);
+
+    if (fortuneScore >= 85) triggerConfetti();
+
+    // Set share text globally
+    const dateStr = new Date().toLocaleDateString(currentLang, { month: 'long', day: 'numeric' });
+    currentShareText = lang === 'ko'
+        ? `🔮 ${name}님의 오늘의 연애운 (${dateStr})\n💫 행운지수: ${fortuneScore}%\n🔢 행운의 숫자: ${luckyNumber}\n\nHeart Scan에서 확인하세요!`
+        : `🔮 ${name}'s Love Fortune (${dateStr})\n💫 Fortune Score: ${fortuneScore}%\n🔢 Lucky Number: ${luckyNumber}\n\nCheck at Heart Scan!`;
+
+    // Prepare detail data for after popup close
+    const detailData = {
+        type: 'daily',
+        name,
+        fortune,
+        luckyNumber,
+        luckyColor,
+        luckyTime,
+        fortuneScore,
+        lang
+    };
+
+    // Show popup first
+    showResultPopup(fortuneScore, name, dateStr, currentShareText, detailData);
+}
+
+function showDailyDetailResult(data) {
+    const { name, fortune, luckyNumber, luckyColor, luckyTime, fortuneScore, lang } = data;
+    const result = document.getElementById('daily-result');
+
     // Labels
     const labels = lang === 'ko' ? {
         title: `${name}님의 오늘의 연애운`,
@@ -1797,7 +1830,8 @@ function getDailyFortune() {
         share: 'Share Fortune'
     };
 
-    const result = document.getElementById('daily-result');
+    let heartEffect = fortuneScore >= 85 ? 'sparkling-hearts' : '';
+
     result.classList.remove('hidden');
     result.innerHTML = `
         <div class="story-card fortune-card">
@@ -1806,7 +1840,7 @@ function getDailyFortune() {
                 <p class="story-date">${new Date().toLocaleDateString(currentLang, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</p>
             </div>
 
-            <div class="heart-effect sparkling-hearts" style="font-size: 3.5rem;">${fortune.emoji}</div>
+            <div class="heart-effect ${heartEffect}" style="font-size: 3.5rem;">${fortune.emoji}</div>
 
             <!-- 총운 -->
             <div class="fortune-section">
@@ -1849,7 +1883,7 @@ function getDailyFortune() {
             </div>
 
             <div class="share-section">
-                <button class="share-btn" onclick="shareDailyFortune('${name}', '${fortune.overall.substring(0, 50).replace(/'/g, "\\'")}...')">
+                <button class="share-btn" onclick="shareDailyFortune('${name.replace(/'/g, "\\'")}', '${fortune.overall.substring(0, 50).replace(/'/g, "\\'")}...')">
                     <span>📱</span> ${labels.share}
                 </button>
             </div>
@@ -1928,7 +1962,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initLanguageSelector();
     initNameCompatibility();
-    initDateRecommendation();
     initMbtiCompatibility();
     initDailyFortune();
     createFloatingHearts();
