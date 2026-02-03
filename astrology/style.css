@@ -2399,7 +2399,118 @@ body {
     font-weight: 500;
 }
 
-.temp-names.names-hidden {
+.temp-names.names-hidden,
+.story-names.names-hidden {
     font-style: italic;
     color: #9ca3af;
+}
+
+/* Inline Hide Names Toggle for Detail Result */
+.hide-names-toggle-inline {
+    margin-top: 8px;
+}
+
+.toggle-label-small {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    justify-content: center;
+}
+
+.toggle-label-small input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider-small {
+    width: 36px;
+    height: 20px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle-slider-small::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-label-small input:checked + .toggle-slider-small {
+    background: var(--gradient-love);
+}
+
+.toggle-label-small input:checked + .toggle-slider-small::after {
+    transform: translateX(16px);
+}
+
+.toggle-text-small {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Birthday Input Fields */
+.birthday-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.birth-input {
+    width: 70px !important;
+    text-align: center;
+    padding: 12px 8px !important;
+}
+
+.birth-input:first-of-type {
+    width: 90px !important;
+}
+
+.date-separator {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Remove spinner arrows for number inputs */
+.birth-input::-webkit-outer-spin-button,
+.birth-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.birth-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 480px) {
+    .birthday-inputs {
+        gap: 4px;
+    }
+
+    .birth-input {
+        width: 55px !important;
+        padding: 10px 4px !important;
+        font-size: 0.9rem;
+    }
+
+    .birth-input:first-of-type {
+        width: 70px !important;
+    }
+
+    .date-separator {
+        font-size: 1rem;
+    }
 }

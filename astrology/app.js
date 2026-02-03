@@ -144,6 +144,22 @@ function toggleNameVisibility(name1, name2) {
     }
 }
 
+function toggleDetailNameVisibility() {
+    const checkbox = document.getElementById('detail-hide-names-checkbox');
+    const namesDisplay = document.getElementById('detail-names-display');
+    if (checkbox && namesDisplay) {
+        const name1 = namesDisplay.dataset.name1;
+        const name2 = namesDisplay.dataset.name2;
+        if (checkbox.checked) {
+            namesDisplay.textContent = '??? & ???';
+            namesDisplay.classList.add('names-hidden');
+        } else {
+            namesDisplay.textContent = `${name1} & ${name2}`;
+            namesDisplay.classList.remove('names-hidden');
+        }
+    }
+}
+
 // Store pending detail data for popup close
 let pendingDetailData = null;
 
@@ -1260,14 +1276,24 @@ function showNameDetailResult(data) {
         ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
         : `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
 
+    const hideNamesLabel = lang === 'ko' ? '이름 가리기' : 'Hide Names';
+
     result.classList.remove('hidden');
     result.innerHTML = `
         <div class="result-card-new">
             <!-- Result Details Card -->
             <div class="story-card">
                 <div class="story-header">
-                    <p class="story-names">${name1} & ${name2}</p>
+                    <p class="story-names" id="detail-names-display" data-name1="${name1}" data-name2="${name2}">${name1} & ${name2}</p>
                     <p class="story-date">${today}</p>
+                    <!-- Hide Names Toggle -->
+                    <div class="hide-names-toggle-inline">
+                        <label class="toggle-label-small">
+                            <input type="checkbox" id="detail-hide-names-checkbox" onchange="toggleDetailNameVisibility()">
+                            <span class="toggle-slider-small"></span>
+                            <span class="toggle-text-small">${hideNamesLabel}</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="score-container">
@@ -1765,16 +1791,30 @@ function initDailyFortune() {
 
 function getDailyFortune() {
     const name = document.getElementById('daily-name').value.trim();
-    const birthday = document.getElementById('daily-birthday').value;
+    const birthYear = document.getElementById('daily-birth-year').value;
+    const birthMonth = document.getElementById('daily-birth-month').value;
+    const birthDay = document.getElementById('daily-birth-day').value;
 
     if (!name) {
         showToast(t('daily.alert') || 'Please enter your name 🔮');
         return;
     }
-    if (!birthday) {
+    if (!birthYear || !birthMonth || !birthDay) {
         showToast(currentLang === 'ko' ? '생일을 입력해주세요 🎂' : 'Please enter your birthday 🎂');
         return;
     }
+
+    // Validate date
+    const year = parseInt(birthYear);
+    const month = parseInt(birthMonth);
+    const day = parseInt(birthDay);
+
+    if (year < 1900 || year > 2025 || month < 1 || month > 12 || day < 1 || day > 31) {
+        showToast(currentLang === 'ko' ? '올바른 생일을 입력해주세요' : 'Please enter a valid birthday');
+        return;
+    }
+
+    const birthday = `${birthYear}-${birthMonth.padStart ? birthMonth.padStart(2, '0') : String(birthMonth).padStart(2, '0')}-${birthDay.padStart ? birthDay.padStart(2, '0') : String(birthDay).padStart(2, '0')}`;
 
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     const fortunes = dailyFortunes[lang] || dailyFortunes.en;
@@ -1787,20 +1827,74 @@ function getDailyFortune() {
 
     triggerConfetti();
 
-    // Labels
-    const labels = lang === 'ko' ? {
-        title: `${name}님의 오늘의 연애운`,
-        love: '💕 애정운',
-        tip: '💡 오늘의 연애 팁',
-        warning: '⚠️ 주의사항',
-        share: '결과 공유하기'
-    } : {
-        title: `${name}'s Love Fortune`,
-        love: '💕 Love & Romance',
-        tip: '💡 Today\'s Love Tip',
-        warning: '⚠️ Watch Out For',
-        share: 'Share My Fortune'
+    // Labels based on currentLang (not just ko/en)
+    const fortuneLabels = {
+        ko: {
+            title: `${name}님의 오늘의 연애운`,
+            love: '💕 애정운',
+            tip: '💡 오늘의 연애 팁',
+            warning: '⚠️ 주의사항',
+            share: '결과 공유하기'
+        },
+        ja: {
+            title: `${name}さんの今日の恋愛運`,
+            love: '💕 恋愛運',
+            tip: '💡 今日の恋愛アドバイス',
+            warning: '⚠️ 注意点',
+            share: '結果をシェア'
+        },
+        zh: {
+            title: `${name}的今日爱情运势`,
+            love: '💕 爱情运',
+            tip: '💡 今日恋爱贴士',
+            warning: '⚠️ 注意事项',
+            share: '分享结果'
+        },
+        es: {
+            title: `Fortuna de amor de ${name}`,
+            love: '💕 Amor y Romance',
+            tip: '💡 Consejo del día',
+            warning: '⚠️ Ten cuidado',
+            share: 'Compartir'
+        },
+        fr: {
+            title: `Fortune d'amour de ${name}`,
+            love: '💕 Amour et Romance',
+            tip: '💡 Conseil du jour',
+            warning: '⚠️ Attention',
+            share: 'Partager'
+        },
+        de: {
+            title: `${name}s Liebeshoroskop`,
+            love: '💕 Liebe & Romantik',
+            tip: '💡 Tipp des Tages',
+            warning: '⚠️ Vorsicht',
+            share: 'Teilen'
+        },
+        ru: {
+            title: `Любовный гороскоп ${name}`,
+            love: '💕 Любовь и Романтика',
+            tip: '💡 Совет дня',
+            warning: '⚠️ Будь осторожен',
+            share: 'Поделиться'
+        },
+        pt: {
+            title: `Fortuna do amor de ${name}`,
+            love: '💕 Amor e Romance',
+            tip: '💡 Dica do dia',
+            warning: '⚠️ Cuidado',
+            share: 'Compartilhar'
+        },
+        en: {
+            title: `${name}'s Love Fortune`,
+            love: '💕 Love & Romance',
+            tip: '💡 Today\'s Love Tip',
+            warning: '⚠️ Watch Out For',
+            share: 'Share My Fortune'
+        }
     };
+
+    const labels = fortuneLabels[currentLang] || fortuneLabels.en;
 
     // Set share text globally
     currentShareText = lang === 'ko'

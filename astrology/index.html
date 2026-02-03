@@ -256,9 +256,13 @@
                     </div>
                 </div>
                 <div class="form-group centered">
-                    <div class="input-wrapper large">
+                    <div class="birthday-inputs">
                         <span class="input-icon">🎂</span>
-                        <input type="date" id="daily-birthday" class="cute-input">
+                        <input type="number" id="daily-birth-year" class="cute-input birth-input" placeholder="YYYY" min="1900" max="2025" maxlength="4">
+                        <span class="date-separator">/</span>
+                        <input type="number" id="daily-birth-month" class="cute-input birth-input" placeholder="MM" min="1" max="12" maxlength="2">
+                        <span class="date-separator">/</span>
+                        <input type="number" id="daily-birth-day" class="cute-input birth-input" placeholder="DD" min="1" max="31" maxlength="2">
                     </div>
                 </div>
                 <button id="get-daily-fortune" class="cute-btn primary-btn">
