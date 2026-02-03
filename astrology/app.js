@@ -2144,6 +2144,9 @@ function triggerConfetti() {
 
 // ====== Initialize ======
 document.addEventListener('DOMContentLoaded', () => {
+    // Set dark mode as default
+    document.body.classList.add('dark-mode');
+
     initNavigation();
     initLanguageSelector();
     initNameCompatibility();
