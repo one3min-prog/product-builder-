@@ -2,7 +2,7 @@
 const translations = {
     en: {
         title: "Heart Scan",
-        tagline: "Is it fate? 2M+ couples already know — check yours FREE 💘",
+        tagline: "What are the chances with your soulmate? Find out now!",
         shareCta: "Know someone who needs to see this? Share now!",
         badges: {
             free: "100% Free",
@@ -17,7 +17,6 @@ const translations = {
         },
         name: {
             title: "Name Compatibility",
-            subtitle: "discover the magic between your names",
             yourName: "Your Name",
             partnerName: "Their Name",
             calculate: "Check Our Fate",
@@ -34,7 +33,6 @@ const translations = {
         },
         mbti: {
             title: "MBTI Compatibility",
-            subtitle: "how do your personalities dance together?",
             yourMbti: "Your MBTI",
             partnerMbti: "Their MBTI",
             calculate: "Match Personalities",
@@ -42,7 +40,6 @@ const translations = {
         },
         daily: {
             title: "Daily Love Fortune",
-            subtitle: "what does the universe have planned for your heart?",
             intro: "Enter your name to receive your personalized love fortune for today",
             calculate: "Reveal My Fortune",
             alert: "Please enter your name"
@@ -52,7 +49,6 @@ const translations = {
         },
         about: {
             title: "About Heart Scan",
-            subtitle: "Your trusted love compatibility guide since 2024",
             whatTitle: "What is Heart Scan?",
             whatText1: "Heart Scan is a comprehensive love compatibility platform designed to help you understand relationship dynamics through various compatibility methods. Our service combines traditional name compatibility calculations, modern MBTI personality matching, and personalized daily love fortunes to provide you with unique insights into your relationships.",
             whatText2: "Founded in 2024, Heart Scan has helped thousands of users discover meaningful connections and gain deeper understanding of their romantic relationships. Our algorithms are carefully designed to provide entertaining yet thoughtful compatibility readings.",
@@ -62,8 +58,7 @@ const translations = {
             featuresTitle: "Our Features",
             feature1: "<strong>Name Compatibility</strong> - Our unique algorithm analyzes the stroke counts and character combinations of names to calculate compatibility scores, based on traditional Eastern numerology methods.",
             feature2: "<strong>MBTI Compatibility</strong> - Explore how your personality type matches with your partner's using the Myers-Briggs Type Indicator framework, with detailed analysis of 256 possible combinations.",
-            feature3: "<strong>Date Planner</strong> - Get personalized restaurant and date spot recommendations based on your compatibility score, perfect for planning your next romantic outing.",
-            feature4: "<strong>Daily Love Fortune</strong> - Receive daily personalized love horoscopes with lucky colors, numbers, and relationship advice tailored just for you.",
+            feature3: "<strong>Daily Love Fortune</strong> - Receive daily personalized love horoscopes with lucky colors, numbers, and relationship advice tailored just for you.",
             privacyTitle: "Privacy & Security",
             privacyText: "Your privacy is our top priority. Heart Scan operates with a strict no-data-collection policy:",
             privacy1: "All calculations are performed locally in your browser",
@@ -79,7 +74,6 @@ const translations = {
         },
         faq: {
             title: "Frequently Asked Questions",
-            subtitle: "Everything you need to know about Heart Scan",
             q1Title: "How does the name compatibility calculation work?",
             q1Text: "Our name compatibility algorithm is based on traditional Korean and East Asian numerology principles. For Korean/Chinese/Japanese names, we count the stroke numbers of each character and apply a reduction algorithm. For Western names, we convert letters to numerical values using a proven phonetic mapping system. The final score represents the harmonious energy between two names.",
             q2Title: "How accurate is MBTI compatibility?",
@@ -92,10 +86,8 @@ const translations = {
             q5Text: "Yes! Heart Scan is fully responsive and works perfectly on smartphones, tablets, and desktop computers. No app download required - just visit our website from any modern browser.",
             q6Title: "How is the daily fortune generated?",
             q6Text: "Your daily love fortune is generated using a combination of your name's numerical value and the current date. This creates a unique fortune for each person each day. The fortunes include love advice, lucky colors, lucky numbers, and specific guidance for your romantic life.",
-            q7Title: "How does the Date Planner work?",
-            q7Text: "The Date Planner recommends restaurants and date spots based on your compatibility score. Higher scores suggest more romantic, celebratory venues, while lower scores recommend casual, conversation-friendly spots that help build connection. Each recommendation includes the reason behind the suggestion.",
-            q8Title: "How can I contact Heart Scan?",
-            q8Text: "For questions, feedback, or suggestions, please email us at <strong>contact@heartscan.com</strong>. We value user feedback and continuously work to improve our service based on your suggestions."
+            q7Title: "How can I contact Heart Scan?",
+            q7Text: "For questions, feedback, or suggestions, please email us at <strong>contact@heartscan.com</strong>. We value user feedback and continuously work to improve our service based on your suggestions."
         },
         calc: {
             viewProcess: "View Calculation Process",
@@ -107,7 +99,7 @@ const translations = {
     },
     ko: {
         title: "Heart Scan",
-        tagline: "운명일까? 200만 커플이 이미 확인했어요 — 무료로 테스트해보세요 💘",
+        tagline: "운명의 상대와 잘 될 가능성은? 지금 바로 확인하세요!",
         shareCta: "이 결과 봐야 할 사람이 있다면? 지금 공유하세요!",
         badges: {
             free: "100% 무료",
@@ -122,7 +114,6 @@ const translations = {
         },
         name: {
             title: "이름 궁합",
-            subtitle: "두 이름 사이의 마법을 발견하세요",
             yourName: "내 이름",
             partnerName: "상대 이름",
             calculate: "운명 확인하기",
@@ -139,7 +130,6 @@ const translations = {
         },
         mbti: {
             title: "MBTI 궁합",
-            subtitle: "두 성격은 어떻게 춤출까요?",
             yourMbti: "내 MBTI",
             partnerMbti: "상대 MBTI",
             calculate: "성격 매칭하기",
@@ -147,7 +137,6 @@ const translations = {
         },
         daily: {
             title: "오늘의 연애운",
-            subtitle: "우주는 당신의 마음을 위해 무엇을 계획했을까요?",
             intro: "오늘의 맞춤형 연애 운세를 받으려면 이름을 입력하세요",
             calculate: "운세 보기",
             alert: "이름을 입력해주세요"
@@ -157,7 +146,6 @@ const translations = {
         },
         about: {
             title: "Heart Scan 소개",
-            subtitle: "2024년부터 사랑받는 연애 궁합 가이드",
             whatTitle: "Heart Scan이란?",
             whatText1: "Heart Scan은 다양한 궁합 분석 방법을 통해 관계 역학을 이해할 수 있도록 설계된 종합 연애 궁합 플랫폼입니다. 전통적인 이름 궁합 계산, 현대적인 MBTI 성격 매칭, 맞춤형 오늘의 연애운을 결합하여 당신의 관계에 대한 특별한 인사이트를 제공합니다.",
             whatText2: "2024년에 설립된 Heart Scan은 수천 명의 사용자가 의미 있는 연결을 발견하고 로맨틱한 관계를 더 깊이 이해하도록 도왔습니다. 우리의 알고리즘은 재미있으면서도 사려 깊은 궁합 분석을 제공하도록 세심하게 설계되었습니다.",
@@ -167,8 +155,7 @@ const translations = {
             featuresTitle: "주요 기능",
             feature1: "<strong>이름 궁합</strong> - 전통적인 동양 수비학 방법을 기반으로 이름의 획수와 문자 조합을 분석하여 궁합 점수를 계산하는 고유한 알고리즘입니다.",
             feature2: "<strong>MBTI 궁합</strong> - 256가지 가능한 조합에 대한 상세한 분석과 함께 Myers-Briggs 유형 지표 프레임워크를 사용하여 당신의 성격 유형이 파트너와 어떻게 맞는지 탐색하세요.",
-            feature3: "<strong>데이트 플래너</strong> - 궁합 점수를 기반으로 맞춤형 레스토랑 및 데이트 장소 추천을 받아보세요. 다음 로맨틱한 외출을 계획하기에 완벽합니다.",
-            feature4: "<strong>오늘의 연애운</strong> - 행운의 색상, 숫자, 그리고 당신만을 위한 맞춤형 연애 조언과 함께 매일 개인화된 연애 운세를 받아보세요.",
+            feature3: "<strong>오늘의 연애운</strong> - 행운의 색상, 숫자, 그리고 당신만을 위한 맞춤형 연애 조언과 함께 매일 개인화된 연애 운세를 받아보세요.",
             privacyTitle: "개인정보 보호 및 보안",
             privacyText: "당신의 개인정보 보호가 우리의 최우선 과제입니다. Heart Scan은 엄격한 데이터 비수집 정책으로 운영됩니다:",
             privacy1: "모든 계산은 브라우저에서 로컬로 수행됩니다",
@@ -184,7 +171,6 @@ const translations = {
         },
         faq: {
             title: "자주 묻는 질문",
-            subtitle: "Heart Scan에 대해 알아야 할 모든 것",
             q1Title: "이름 궁합 계산은 어떻게 작동하나요?",
             q1Text: "이름 궁합 알고리즘은 전통적인 한국 및 동아시아 수비학 원리에 기반합니다. 한국어/중국어/일본어 이름의 경우, 각 문자의 획수를 세고 축소 알고리즘을 적용합니다. 서양식 이름의 경우, 검증된 음성 매핑 시스템을 사용하여 문자를 숫자 값으로 변환합니다. 최종 점수는 두 이름 사이의 조화로운 에너지를 나타냅니다.",
             q2Title: "MBTI 궁합은 얼마나 정확한가요?",
