@@ -91,10 +91,8 @@ const translations = {
             q5Text: "Yes! Heart Scan is fully responsive and works perfectly on smartphones, tablets, and desktop computers. No app download required - just visit our website from any modern browser.",
             q6Title: "How is the daily fortune generated?",
             q6Text: "Your daily love fortune is generated using a combination of your name's numerical value and the current date. This creates a unique fortune for each person each day. The fortunes include love advice, lucky colors, lucky numbers, and specific guidance for your romantic life.",
-            q7Title: "How does the Date Planner work?",
-            q7Text: "The Date Planner recommends restaurants and date spots based on your compatibility score. Higher scores suggest more romantic, celebratory venues, while lower scores recommend casual, conversation-friendly spots that help build connection. Each recommendation includes the reason behind the suggestion.",
-            q8Title: "How can I contact Heart Scan?",
-            q8Text: "For questions, feedback, or suggestions, please email us at <strong>contact@heartscan.com</strong>. We value user feedback and continuously work to improve our service based on your suggestions."
+            q7Title: "How can I contact Heart Scan?",
+            q7Text: "For questions, feedback, or suggestions, please email us at <strong>contact@heartscan.com</strong>. We value user feedback and continuously work to improve our service based on your suggestions."
         },
         calc: {
             viewProcess: "View Calculation Process",
@@ -115,7 +113,7 @@ const translations = {
         nav: {
             name: "이름 궁합",
             mbti: "MBTI",
-            daily: "오늘의 운세",
+            daily: "오늘의 애정운",
             about: "소개",
             faq: "FAQ"
         },
@@ -193,12 +191,10 @@ const translations = {
             q4Text: "물론입니다. 우리는 개인정보 보호를 중요하게 생각합니다. 모든 궁합 계산은 웹 브라우저에서 직접 수행됩니다 - 당신의 데이터는 기기를 떠나지 않습니다. 이름, 결과 또는 개인 정보를 저장하지 않습니다. 완전한 안심으로 Heart Scan을 사용할 수 있습니다.",
             q5Title: "모바일에서 Heart Scan을 사용할 수 있나요?",
             q5Text: "네! Heart Scan은 완전히 반응형이며 스마트폰, 태블릿, 데스크톱 컴퓨터에서 완벽하게 작동합니다. 앱 다운로드가 필요 없습니다 - 최신 브라우저에서 웹사이트를 방문하기만 하면 됩니다.",
-            q6Title: "오늘의 운세는 어떻게 생성되나요?",
+            q6Title: "오늘의 애정운은 어떻게 생성되나요?",
             q6Text: "오늘의 연애운은 이름의 숫자 값과 현재 날짜의 조합을 사용하여 생성됩니다. 이것은 매일 각 사람에게 고유한 운세를 만듭니다. 운세에는 연애 조언, 행운의 색상, 행운의 숫자, 연애 생활에 대한 구체적인 안내가 포함됩니다.",
-            q7Title: "데이트 플래너는 어떻게 작동하나요?",
-            q7Text: "데이트 플래너는 궁합 점수를 기반으로 레스토랑과 데이트 장소를 추천합니다. 높은 점수는 더 로맨틱하고 축하하는 분위기의 장소를 제안하고, 낮은 점수는 연결을 구축하는 데 도움이 되는 캐주얼하고 대화하기 좋은 장소를 추천합니다. 각 추천에는 제안 이유가 포함됩니다.",
-            q8Title: "Heart Scan에 어떻게 연락할 수 있나요?",
-            q8Text: "질문, 피드백 또는 제안이 있으시면 <strong>contact@heartscan.com</strong>으로 이메일을 보내주세요. 우리는 사용자 피드백을 소중히 여기며 제안을 바탕으로 서비스를 지속적으로 개선합니다."
+            q7Title: "Heart Scan에 어떻게 연락할 수 있나요?",
+            q7Text: "질문, 피드백 또는 제안이 있으시면 <strong>contact@heartscan.com</strong>으로 이메일을 보내주세요. 우리는 사용자 피드백을 소중히 여기며 제안을 바탕으로 서비스를 지속적으로 개선합니다."
         },
         calc: {
             viewProcess: "계산 과정 보기",
@@ -299,10 +295,8 @@ const translations = {
             q5Text: "はい！Heart Scanは完全にレスポンシブで、スマートフォン、タブレット、デスクトップで完璧に動作します。",
             q6Title: "毎日の運勢はどのように生成されますか？",
             q6Text: "毎日の恋愛運は、名前の数値と現在の日付の組み合わせを使用して生成されます。",
-            q7Title: "デートプランナーはどのように機能しますか？",
-            q7Text: "デートプランナーは相性スコアに基づいてレストランとデートスポットを推薦します。",
-            q8Title: "Heart Scanにどのように連絡できますか？",
-            q8Text: "ご質問、フィードバック、ご提案は<strong>contact@heartscan.com</strong>までメールでお送りください。"
+            q7Title: "Heart Scanにどのように連絡できますか？",
+            q7Text: "ご質問、フィードバック、ご提案は<strong>contact@heartscan.com</strong>までメールでお送りください。"
         },
         footer: {
             disclaimer: "娯楽目的のみ"
@@ -399,10 +393,8 @@ const translations = {
             q5Text: "是的！Heart Scan完全响应式，在智能手机、平板电脑和台式电脑上都能完美运行。",
             q6Title: "每日运势是如何生成的？",
             q6Text: "每日爱情运势使用姓名的数值和当前日期的组合生成。",
-            q7Title: "约会规划如何工作？",
-            q7Text: "约会规划根据配对分数推荐餐厅和约会地点。",
-            q8Title: "如何联系Heart Scan？",
-            q8Text: "如有问题、反馈或建议，请发送电子邮件至<strong>contact@heartscan.com</strong>。"
+            q7Title: "如何联系Heart Scan？",
+            q7Text: "如有问题、反馈或建议，请发送电子邮件至<strong>contact@heartscan.com</strong>。"
         },
         footer: {
             disclaimer: "仅供娱乐"
@@ -499,10 +491,8 @@ const translations = {
             q5Text: "¡Sí! Heart Scan funciona perfectamente en todos los dispositivos.",
             q6Title: "¿Cómo se genera la fortuna diaria?",
             q6Text: "Usando la combinación de tu nombre y la fecha actual.",
-            q7Title: "¿Cómo funciona el planificador?",
-            q7Text: "Recomienda lugares basados en tu puntuación de compatibilidad.",
-            q8Title: "¿Cómo contactar?",
-            q8Text: "Email: <strong>contact@heartscan.com</strong>"
+            q7Title: "¿Cómo contactar?",
+            q7Text: "Email: <strong>contact@heartscan.com</strong>"
         },
         footer: {
             disclaimer: "solo para entretenimiento"
@@ -599,10 +589,8 @@ const translations = {
             q5Text: "Oui! Heart Scan fonctionne parfaitement sur tous les appareils.",
             q6Title: "Comment la fortune est-elle générée?",
             q6Text: "En utilisant la combinaison de votre nom et de la date actuelle.",
-            q7Title: "Comment fonctionne le planificateur?",
-            q7Text: "Il recommande des lieux basés sur votre score.",
-            q8Title: "Comment contacter?",
-            q8Text: "Email: <strong>contact@heartscan.com</strong>"
+            q7Title: "Comment contacter?",
+            q7Text: "Email: <strong>contact@heartscan.com</strong>"
         },
         footer: {
             disclaimer: "à des fins de divertissement uniquement"
@@ -699,10 +687,8 @@ const translations = {
             q5Text: "Ja! Heart Scan funktioniert auf allen Geräten.",
             q6Title: "Wie wird das Horoskop erstellt?",
             q6Text: "Durch Kombination von Name und aktuellem Datum.",
-            q7Title: "Wie funktioniert der Planer?",
-            q7Text: "Er empfiehlt Orte basierend auf deinem Score.",
-            q8Title: "Kontakt?",
-            q8Text: "Email: <strong>contact@heartscan.com</strong>"
+            q7Title: "Kontakt?",
+            q7Text: "Email: <strong>contact@heartscan.com</strong>"
         },
         footer: {
             disclaimer: "nur zur Unterhaltung"
@@ -799,10 +785,8 @@ const translations = {
             q5Text: "Да! Heart Scan работает на всех устройствах.",
             q6Title: "Как генерируется гороскоп?",
             q6Text: "Используя комбинацию имени и текущей даты.",
-            q7Title: "Как работает планировщик?",
-            q7Text: "Рекомендует места на основе вашего счёта.",
-            q8Title: "Контакт?",
-            q8Text: "Email: <strong>contact@heartscan.com</strong>"
+            q7Title: "Контакт?",
+            q7Text: "Email: <strong>contact@heartscan.com</strong>"
         },
         footer: {
             disclaimer: "только для развлечения"
@@ -899,10 +883,8 @@ const translations = {
             q5Text: "Sim! Heart Scan funciona em todos os dispositivos.",
             q6Title: "Como a fortuna é gerada?",
             q6Text: "Usando a combinação do seu nome e data atual.",
-            q7Title: "Como funciona o planejador?",
-            q7Text: "Recomenda lugares baseados na sua pontuação.",
-            q8Title: "Contato?",
-            q8Text: "Email: <strong>contact@heartscan.com</strong>"
+            q7Title: "Contato?",
+            q7Text: "Email: <strong>contact@heartscan.com</strong>"
         },
         footer: {
             disclaimer: "apenas para entretenimento"
