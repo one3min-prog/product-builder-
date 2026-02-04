@@ -17,7 +17,7 @@ const translations = {
         },
         name: {
             title: "Name Compatibility",
-            subtitle: "discover the magic between your names",
+            subtitle: "",
             yourName: "Your Name",
             partnerName: "Their Name",
             calculate: "Check Our Fate",
@@ -34,7 +34,7 @@ const translations = {
         },
         mbti: {
             title: "MBTI Compatibility",
-            subtitle: "how do your personalities dance together?",
+            subtitle: "",
             yourMbti: "Your MBTI",
             partnerMbti: "Their MBTI",
             calculate: "Match Personalities",
@@ -42,7 +42,7 @@ const translations = {
         },
         daily: {
             title: "Daily Love Fortune",
-            subtitle: "what does the universe have planned for your heart?",
+            subtitle: "",
             intro: "Enter your name and birthday to receive your personalized love fortune",
             calculate: "Reveal My Fortune",
             alert: "Please enter your name"
@@ -52,7 +52,7 @@ const translations = {
         },
         about: {
             title: "About Heart Scan",
-            subtitle: "Your trusted love compatibility guide since 2024",
+            subtitle: "",
             whatTitle: "What is Heart Scan?",
             whatText1: "Heart Scan is a comprehensive love compatibility platform designed to help you understand relationship dynamics through various compatibility methods. Our service combines traditional name compatibility calculations, modern MBTI personality matching, and personalized daily love fortunes to provide you with unique insights into your relationships.",
             whatText2: "Founded in 2024, Heart Scan has helped thousands of users discover meaningful connections and gain deeper understanding of their romantic relationships. Our algorithms are carefully designed to provide entertaining yet thoughtful compatibility readings.",
@@ -119,7 +119,7 @@ const translations = {
         },
         name: {
             title: "이름 궁합",
-            subtitle: "두 이름 사이의 마법을 발견하세요",
+            subtitle: "",
             yourName: "내 이름",
             partnerName: "상대 이름",
             calculate: "운명 확인하기",
@@ -136,7 +136,7 @@ const translations = {
         },
         mbti: {
             title: "MBTI 궁합",
-            subtitle: "두 성격은 어떻게 춤출까요?",
+            subtitle: "",
             yourMbti: "내 MBTI",
             partnerMbti: "상대 MBTI",
             calculate: "성격 매칭하기",
@@ -144,7 +144,7 @@ const translations = {
         },
         daily: {
             title: "오늘의 연애운",
-            subtitle: "우주는 당신의 마음을 위해 무엇을 계획했을까요?",
+            subtitle: "",
             intro: "이름과 생년월일을 입력하면 오늘의 맞춤형 연애 운세를 받을 수 있어요",
             calculate: "운세 보기",
             alert: "이름을 입력해주세요"
@@ -154,7 +154,7 @@ const translations = {
         },
         about: {
             title: "Heart Scan 소개",
-            subtitle: "2024년부터 사랑받는 연애 궁합 가이드",
+            subtitle: "",
             whatTitle: "Heart Scan이란?",
             whatText1: "Heart Scan은 다양한 궁합 분석 방법을 통해 관계 역학을 이해할 수 있도록 설계된 종합 연애 궁합 플랫폼입니다. 전통적인 이름 궁합 계산, 현대적인 MBTI 성격 매칭, 맞춤형 오늘의 연애운을 결합하여 당신의 관계에 대한 특별한 인사이트를 제공합니다.",
             whatText2: "2024년에 설립된 Heart Scan은 수천 명의 사용자가 의미 있는 연결을 발견하고 로맨틱한 관계를 더 깊이 이해하도록 도왔습니다. 우리의 알고리즘은 재미있으면서도 사려 깊은 궁합 분석을 제공하도록 세심하게 설계되었습니다.",
@@ -221,7 +221,7 @@ const translations = {
         },
         name: {
             title: "名前の相性",
-            subtitle: "二人の名前の間の魔法を発見",
+            subtitle: "",
             yourName: "あなたの名前",
             partnerName: "相手の名前",
             calculate: "運命を確認",
@@ -238,7 +238,7 @@ const translations = {
         },
         mbti: {
             title: "MBTI相性",
-            subtitle: "二人の性格はどう踊る？",
+            subtitle: "",
             yourMbti: "あなたのMBTI",
             partnerMbti: "相手のMBTI",
             calculate: "性格をマッチ",
@@ -246,7 +246,7 @@ const translations = {
         },
         daily: {
             title: "今日の恋愛運",
-            subtitle: "宇宙はあなたの心に何を計画している？",
+            subtitle: "",
             intro: "名前と生年月日を入力して、今日の恋愛運を確認しましょう",
             calculate: "運勢を見る",
             alert: "名前を入力してください"
@@ -256,7 +256,7 @@ const translations = {
         },
         about: {
             title: "Heart Scanについて",
-            subtitle: "2024年から信頼される恋愛相性ガイド",
+            subtitle: "",
             whatTitle: "Heart Scanとは？",
             whatText1: "Heart Scanは、様々な相性分析方法を通じて関係性のダイナミクスを理解できるよう設計された総合的な恋愛相性プラットフォームです。",
             whatText2: "2024年に設立されたHeart Scanは、数千人のユーザーが意味のあるつながりを発見し、恋愛関係をより深く理解するのを支援してきました。",
@@ -319,7 +319,7 @@ const translations = {
         },
         name: {
             title: "姓名配对",
-            subtitle: "发现两个名字之间的魔力",
+            subtitle: "",
             yourName: "你的名字",
             partnerName: "对方的名字",
             calculate: "查看缘分",
@@ -336,7 +336,7 @@ const translations = {
         },
         mbti: {
             title: "MBTI配对",
-            subtitle: "两个性格如何共舞？",
+            subtitle: "",
             yourMbti: "你的MBTI",
             partnerMbti: "对方的MBTI",
             calculate: "匹配性格",
@@ -344,7 +344,7 @@ const translations = {
         },
         daily: {
             title: "今日爱情运势",
-            subtitle: "宇宙为你的心计划了什么？",
+            subtitle: "",
             intro: "输入你的名字和生日，获取今天的个性化爱情运势",
             calculate: "揭示运势",
             alert: "请输入你的名字"
@@ -354,7 +354,7 @@ const translations = {
         },
         about: {
             title: "关于Heart Scan",
-            subtitle: "自2024年以来值得信赖的爱情配对指南",
+            subtitle: "",
             whatTitle: "什么是Heart Scan？",
             whatText1: "Heart Scan是一个综合性的爱情配对平台，旨在通过各种配对方法帮助您了解关系动态。",
             whatText2: "Heart Scan成立于2024年，已帮助数千用户发现有意义的联系并更深入地了解他们的浪漫关系。",
@@ -417,7 +417,7 @@ const translations = {
         },
         name: {
             title: "Compatibilidad de Nombres",
-            subtitle: "descubre la magia entre vuestros nombres",
+            subtitle: "",
             yourName: "Tu Nombre",
             partnerName: "Su Nombre",
             calculate: "Ver Destino",
@@ -434,7 +434,7 @@ const translations = {
         },
         mbti: {
             title: "Compatibilidad MBTI",
-            subtitle: "¿cómo bailan juntas vuestras personalidades?",
+            subtitle: "",
             yourMbti: "Tu MBTI",
             partnerMbti: "Su MBTI",
             calculate: "Emparejar",
@@ -442,7 +442,7 @@ const translations = {
         },
         daily: {
             title: "Fortuna del Amor Diaria",
-            subtitle: "¿qué tiene planeado el universo para tu corazón?",
+            subtitle: "",
             intro: "Ingresa tu nombre y fecha de nacimiento para recibir tu fortuna de amor personalizada",
             calculate: "Revelar Fortuna",
             alert: "Por favor ingresa tu nombre"
@@ -452,7 +452,7 @@ const translations = {
         },
         about: {
             title: "Sobre Heart Scan",
-            subtitle: "Tu guía de compatibilidad amorosa desde 2024",
+            subtitle: "",
             whatTitle: "¿Qué es Heart Scan?",
             whatText1: "Heart Scan es una plataforma integral de compatibilidad amorosa diseñada para ayudarte a entender la dinámica de las relaciones.",
             whatText2: "Fundado en 2024, Heart Scan ha ayudado a miles de usuarios a descubrir conexiones significativas.",
@@ -515,7 +515,7 @@ const translations = {
         },
         name: {
             title: "Compatibilité des Prénoms",
-            subtitle: "découvrez la magie entre vos prénoms",
+            subtitle: "",
             yourName: "Votre Prénom",
             partnerName: "Son Prénom",
             calculate: "Voir le Destin",
@@ -532,7 +532,7 @@ const translations = {
         },
         mbti: {
             title: "Compatibilité MBTI",
-            subtitle: "comment vos personnalités dansent-elles ensemble?",
+            subtitle: "",
             yourMbti: "Votre MBTI",
             partnerMbti: "Son MBTI",
             calculate: "Matcher",
@@ -540,7 +540,7 @@ const translations = {
         },
         daily: {
             title: "Fortune d'Amour Quotidienne",
-            subtitle: "que prévoit l'univers pour votre cœur?",
+            subtitle: "",
             intro: "Entrez votre prénom et date de naissance pour recevoir votre fortune d'amour personnalisée",
             calculate: "Révéler ma Fortune",
             alert: "Veuillez entrer votre prénom"
@@ -550,7 +550,7 @@ const translations = {
         },
         about: {
             title: "À propos de Heart Scan",
-            subtitle: "Votre guide de compatibilité amoureuse depuis 2024",
+            subtitle: "",
             whatTitle: "Qu'est-ce que Heart Scan?",
             whatText1: "Heart Scan est une plateforme complète de compatibilité amoureuse.",
             whatText2: "Fondé en 2024, Heart Scan a aidé des milliers d'utilisateurs.",
@@ -613,7 +613,7 @@ const translations = {
         },
         name: {
             title: "Namenskompatibilität",
-            subtitle: "entdecke die Magie zwischen euren Namen",
+            subtitle: "",
             yourName: "Dein Name",
             partnerName: "Sein/Ihr Name",
             calculate: "Schicksal prüfen",
@@ -630,7 +630,7 @@ const translations = {
         },
         mbti: {
             title: "MBTI-Kompatibilität",
-            subtitle: "wie tanzen eure Persönlichkeiten zusammen?",
+            subtitle: "",
             yourMbti: "Dein MBTI",
             partnerMbti: "Sein/Ihr MBTI",
             calculate: "Matchen",
@@ -638,7 +638,7 @@ const translations = {
         },
         daily: {
             title: "Tägliches Liebeshoroskop",
-            subtitle: "was hat das Universum für dein Herz geplant?",
+            subtitle: "",
             intro: "Gib deinen Namen und Geburtstag ein, um dein persönliches Liebeshoroskop zu erhalten",
             calculate: "Horoskop enthüllen",
             alert: "Bitte gib deinen Namen ein"
@@ -648,7 +648,7 @@ const translations = {
         },
         about: {
             title: "Über Heart Scan",
-            subtitle: "Dein Liebeskompatibilitäts-Guide seit 2024",
+            subtitle: "",
             whatTitle: "Was ist Heart Scan?",
             whatText1: "Heart Scan ist eine umfassende Liebeskompatibilitätsplattform.",
             whatText2: "Gegründet 2024, hat Heart Scan tausenden Nutzern geholfen.",
@@ -711,7 +711,7 @@ const translations = {
         },
         name: {
             title: "Совместимость Имён",
-            subtitle: "открой магию между вашими именами",
+            subtitle: "",
             yourName: "Твоё Имя",
             partnerName: "Его/Её Имя",
             calculate: "Проверить Судьбу",
@@ -728,7 +728,7 @@ const translations = {
         },
         mbti: {
             title: "Совместимость MBTI",
-            subtitle: "как танцуют вместе ваши личности?",
+            subtitle: "",
             yourMbti: "Твой MBTI",
             partnerMbti: "Его/Её MBTI",
             calculate: "Сопоставить",
@@ -736,7 +736,7 @@ const translations = {
         },
         daily: {
             title: "Ежедневный Любовный Гороскоп",
-            subtitle: "что вселенная запланировала для твоего сердца?",
+            subtitle: "",
             intro: "Введи своё имя и дату рождения, чтобы получить персональный любовный гороскоп",
             calculate: "Раскрыть Гороскоп",
             alert: "Пожалуйста, введите ваше имя"
@@ -746,7 +746,7 @@ const translations = {
         },
         about: {
             title: "О Heart Scan",
-            subtitle: "Твой гид по совместимости с 2024",
+            subtitle: "",
             whatTitle: "Что такое Heart Scan?",
             whatText1: "Heart Scan - комплексная платформа совместимости в любви.",
             whatText2: "Основан в 2024, помог тысячам пользователей.",
@@ -809,7 +809,7 @@ const translations = {
         },
         name: {
             title: "Compatibilidade de Nomes",
-            subtitle: "descubra a magia entre os nomes",
+            subtitle: "",
             yourName: "Seu Nome",
             partnerName: "Nome Dele(a)",
             calculate: "Ver Destino",
@@ -826,7 +826,7 @@ const translations = {
         },
         mbti: {
             title: "Compatibilidade MBTI",
-            subtitle: "como suas personalidades dançam juntas?",
+            subtitle: "",
             yourMbti: "Seu MBTI",
             partnerMbti: "MBTI Dele(a)",
             calculate: "Combinar",
@@ -834,7 +834,7 @@ const translations = {
         },
         daily: {
             title: "Fortuna do Amor Diária",
-            subtitle: "o que o universo planejou para seu coração?",
+            subtitle: "",
             intro: "Digite seu nome e data de nascimento para receber sua fortuna do amor personalizada",
             calculate: "Revelar Fortuna",
             alert: "Por favor, insira seu nome"
@@ -844,7 +844,7 @@ const translations = {
         },
         about: {
             title: "Sobre Heart Scan",
-            subtitle: "Seu guia de compatibilidade desde 2024",
+            subtitle: "",
             whatTitle: "O que é Heart Scan?",
             whatText1: "Heart Scan é uma plataforma completa de compatibilidade amorosa.",
             whatText2: "Fundado em 2024, ajudou milhares de usuários.",
