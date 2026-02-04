@@ -433,61 +433,440 @@ const dateMenusEn = {
     ]
 };
 
-// ====== Funny Compatibility Comments ======
-const funnyComments = {
-    disaster: { // 0-20
-        summary: "도망쳐 (Run)",
-        comments: [
-            "두 분 사이에 흐르는 건 사랑이 아니라 살기입니다.",
-            "이 정도면 이름 지어주신 부모님들끼리 합의 하에 원수로 정하신 수준.",
-            "길에서 마주쳐도 모른 척하는 것이 서로의 수명을 연장하는 길입니다."
-        ],
-        tags: ["#방어막필수", "#개인주의", "#심해어궁합"]
+// ====== Funny Compatibility Comments (Multilingual) ======
+const funnyCommentsData = {
+    ko: {
+        disaster: {
+            summary: "도망쳐 (Run)",
+            comments: [
+                "두 분 사이에 흐르는 건 사랑이 아니라 살기입니다.",
+                "이 정도면 이름 지어주신 부모님들끼리 합의 하에 원수로 정하신 수준.",
+                "길에서 마주쳐도 모른 척하는 것이 서로의 수명을 연장하는 길입니다."
+            ],
+            tags: ["#방어막필수", "#개인주의", "#심해어궁합"]
+        },
+        bad: {
+            summary: "적당한 거리두기 권장",
+            comments: [
+                "서로의 MBTI가 '남남'이 아닐지 의심해 볼 필요가 있습니다.",
+                "가끔 연락은 하되, 같이 여행 가는 모험은 하지 마세요. 싸움 납니다.",
+                "이름 조합이 마치 '민트초코와 라면' 같습니다. 각자는 좋은데 합치면 재앙입니다."
+            ],
+            tags: ["#스쳐가는인연", "#무미건조", "#불협화음"]
+        },
+        meh: {
+            summary: "노력하면 됨 (근데 노력을 많이 해야 함)",
+            comments: [
+                "나쁘지는 않은데, 서로를 이해하려면 법정 스님의 '무소유' 정신이 필요합니다.",
+                "한 명의 부처와 한 명의 보살이 만난다면 유지가 가능합니다.",
+                "운명이라기보다는 '생존'에 가까운 조합이네요. 화이팅."
+            ],
+            tags: ["#인내심테스트", "#참을인세번", "#고진감래"]
+        },
+        good: {
+            summary: "평범하게 잘 살 확률 80%",
+            comments: [
+                "드디어 사람다운 궁합이 나왔습니다. 어디 가서 이름 궁합 봤다고 자랑해도 됩니다.",
+                "가끔 싸우긴 하겠지만, 치킨 한 마리에 화해할 수 있는 쿨한 사이.",
+                "서로의 단점이 보이지만 \"그래, 나 아니면 누가 거두냐\" 하며 살게 됩니다."
+            ],
+            tags: ["#무난함의미학", "#치킨메이트", "#평화유지군"]
+        },
+        perfect: {
+            summary: "그냥 오늘 당장 혼인신고 하세요",
+            comments: [
+                "이름 조합이 너무 완벽해서 배가 아플 정도입니다. 서버 오류인지 의심했습니다.",
+                "둘이 같이 있으면 로또를 사보세요. 당첨은 안 돼도 둘이 있어서 행복하겠죠. (시니컬)",
+                "천생연분이라는 단어는 이럴 때 쓰라고 만든 겁니다. 부러우면 지는 건데 이미 졌네요."
+            ],
+            tags: ["#전설의포켓몬", "#닭살주의", "#재수없을정도로잘맞음"]
+        }
     },
-    bad: { // 21-40
-        summary: "적당한 거리두기 권장",
-        comments: [
-            "서로의 MBTI가 '남남'이 아닐지 의심해 볼 필요가 있습니다.",
-            "가끔 연락은 하되, 같이 여행 가는 모험은 하지 마세요. 싸움 납니다.",
-            "이름 조합이 마치 '민트초코와 라면' 같습니다. 각자는 좋은데 합치면 재앙입니다."
-        ],
-        tags: ["#스쳐가는인연", "#무미건조", "#불협화음"]
+    en: {
+        disaster: {
+            summary: "RUN! 🏃",
+            comments: [
+                "What flows between you two isn't love—it's murderous intent.",
+                "Your parents must have agreed to make you sworn enemies when naming you.",
+                "Pretending not to know each other on the street will extend both your lifespans."
+            ],
+            tags: ["#ShieldRequired", "#StayAway", "#DeepSeaMismatch"]
+        },
+        bad: {
+            summary: "Keep Your Distance",
+            comments: [
+                "Your MBTIs might as well be 'Stranger' and 'Stranger'.",
+                "Occasional texts are fine, but never travel together. You'll fight.",
+                "Your names together are like mint chocolate and ramen. Great separately, disaster combined."
+            ],
+            tags: ["#PassingAcquaintance", "#Meh", "#Discord"]
+        },
+        meh: {
+            summary: "It Works (With LOTS of Effort)",
+            comments: [
+                "Not bad, but understanding each other requires monk-level patience.",
+                "This could work if one of you becomes Buddha and the other becomes a saint.",
+                "Less 'destiny' and more 'survival mode'. Good luck!"
+            ],
+            tags: ["#PatienceTest", "#DeepBreaths", "#EventualSuccess"]
+        },
+        good: {
+            summary: "80% Chance of Normal Happiness",
+            comments: [
+                "Finally, a human-worthy match! Feel free to brag about this compatibility score.",
+                "You'll fight sometimes, but a bucket of fried chicken will fix everything.",
+                "You see each other's flaws but think 'Well, if not me, who else?' and stay."
+            ],
+            tags: ["#PeacefulVibes", "#ChickenMates", "#Peacekeepers"]
+        },
+        perfect: {
+            summary: "Just Get Married TODAY",
+            comments: [
+                "This name combo is so perfect it's almost annoying. We checked for server errors.",
+                "Buy a lottery ticket together. You won't win, but you'll be happy anyway. (cynical)",
+                "The term 'soulmates' was invented for moments like this. We're jealous. We lost."
+            ],
+            tags: ["#LegendaryMatch", "#Cringe", "#AnnoyinglyPerfect"]
+        }
     },
-    meh: { // 41-60
-        summary: "노력하면 됨 (근데 노력을 많이 해야 함)",
-        comments: [
-            "나쁘지는 않은데, 서로를 이해하려면 법정 스님의 '무소유' 정신이 필요합니다.",
-            "한 명의 부처와 한 명의 보살이 만난다면 유지가 가능합니다.",
-            "운명이라기보다는 '생존'에 가까운 조합이네요. 화이팅."
-        ],
-        tags: ["#인내심테스트", "#참을인세번", "#고진감래"]
+    ja: {
+        disaster: {
+            summary: "逃げて！🏃",
+            comments: [
+                "二人の間に流れているのは愛ではなく殺気です。",
+                "名前をつけた両親同士が敵対関係を結んだレベルです。",
+                "道で会っても知らないふりをするのがお互いの寿命を延ばす道です。"
+            ],
+            tags: ["#防御必須", "#個人主義", "#深海魚相性"]
+        },
+        bad: {
+            summary: "適度な距離を保って",
+            comments: [
+                "お互いのMBTIが「他人」ではないか疑う必要があります。",
+                "たまに連絡はいいですが、一緒に旅行は避けてください。喧嘩になります。",
+                "名前の組み合わせがミントチョコとラーメンのよう。別々は良いけど合わせると災害。"
+            ],
+            tags: ["#すれ違う縁", "#無味乾燥", "#不協和音"]
+        },
+        meh: {
+            summary: "努力すれば何とかなる（でも相当努力が必要）",
+            comments: [
+                "悪くはないけど、お互いを理解するには仏の心が必要です。",
+                "一人が仏陀、もう一人が菩薩になれば維持可能です。",
+                "運命というより「サバイバル」に近い組み合わせですね。頑張って！"
+            ],
+            tags: ["#忍耐テスト", "#我慢我慢", "#苦あれば楽あり"]
+        },
+        good: {
+            summary: "普通に幸せになれる確率80%",
+            comments: [
+                "やっと人間らしい相性が出ました。自慢しても大丈夫です。",
+                "たまに喧嘩するけど、チキン一羽で仲直りできるクールな関係。",
+                "お互いの欠点が見えるけど「まあ私じゃなきゃ誰が？」と思って一緒にいます。"
+            ],
+            tags: ["#無難の美学", "#チキンメイト", "#平和維持軍"]
+        },
+        perfect: {
+            summary: "今日すぐ婚姻届を出して",
+            comments: [
+                "名前の組み合わせが完璧すぎてお腹が痛いレベル。サーバーエラーかと疑いました。",
+                "二人で宝くじを買ってみて。当たらなくても二人でいるから幸せでしょう。（皮肉）",
+                "「運命の人」という言葉はこういう時のために作られました。羨ましい、負けました。"
+            ],
+            tags: ["#伝説のポケモン", "#鳥肌注意", "#ムカつくほど相性良い"]
+        }
     },
-    good: { // 61-80
-        summary: "평범하게 잘 살 확률 80%",
-        comments: [
-            "드디어 사람다운 궁합이 나왔습니다. 어디 가서 이름 궁합 봤다고 자랑해도 됩니다.",
-            "가끔 싸우긴 하겠지만, 치킨 한 마리에 화해할 수 있는 쿨한 사이.",
-            "서로의 단점이 보이지만 \"그래, 나 아니면 누가 거두냐\" 하며 살게 됩니다."
-        ],
-        tags: ["#무난함의미학", "#치킨메이트", "#평화유지군"]
+    zh: {
+        disaster: {
+            summary: "快跑！🏃",
+            comments: [
+                "你们之间流动的不是爱情，而是杀气。",
+                "这程度就像双方父母商量好让你们成为仇人一样。",
+                "在路上遇到也装作不认识是延长彼此寿命的方法。"
+            ],
+            tags: ["#防护罩必备", "#个人主义", "#深海鱼缘分"]
+        },
+        bad: {
+            summary: "保持适当距离",
+            comments: [
+                "需要怀疑你们的MBTI是不是都是「陌生人」。",
+                "偶尔联系可以，但千万别一起旅行。会吵架的。",
+                "名字组合就像薄荷巧克力和拉面。单独都好，合在一起就是灾难。"
+            ],
+            tags: ["#擦肩而过", "#平淡无味", "#不和谐"]
+        },
+        meh: {
+            summary: "努力的话可以（但要非常努力）",
+            comments: [
+                "不算差，但要理解对方需要佛祖般的耐心。",
+                "如果一个人成佛，另一个成菩萨，还能维持。",
+                "与其说是命运，不如说是「生存」。加油！"
+            ],
+            tags: ["#耐心测试", "#忍字三遍", "#苦尽甘来"]
+        },
+        good: {
+            summary: "正常幸福概率80%",
+            comments: [
+                "终于出现了像样的缘分！可以出去炫耀了。",
+                "偶尔会吵架，但一只炸鸡就能和好的酷关系。",
+                "能看到对方的缺点，但会想「除了我谁要」然后继续在一起。"
+            ],
+            tags: ["#平凡之美", "#炸鸡伴侣", "#和平维护者"]
+        },
+        perfect: {
+            summary: "今天就去登记结婚吧",
+            comments: [
+                "名字组合完美得让人肚子疼。怀疑是不是服务器出错了。",
+                "两个人一起买彩票吧。中不中奖无所谓，反正有彼此就幸福。（讽刺）",
+                "「天生一对」这个词就是为这种时刻创造的。羡慕，我输了。"
+            ],
+            tags: ["#传说级神兽", "#鸡皮疙瘩", "#气人的般配"]
+        }
     },
-    perfect: { // 81-100
-        summary: "그냥 오늘 당장 혼인신고 하세요",
-        comments: [
-            "이름 조합이 너무 완벽해서 배가 아플 정도입니다. 서버 오류인지 의심했습니다.",
-            "둘이 같이 있으면 로또를 사보세요. 당첨은 안 돼도 둘이 있어서 행복하겠죠. (시니컬)",
-            "천생연분이라는 단어는 이럴 때 쓰라고 만든 겁니다. 부러우면 지는 건데 이미 졌네요."
-        ],
-        tags: ["#전설의포켓몬", "#닭살주의", "#재수없을정도로잘맞음"]
+    es: {
+        disaster: {
+            summary: "¡HUYE! 🏃",
+            comments: [
+                "Lo que fluye entre ustedes no es amor, es instinto asesino.",
+                "Parece que sus padres acordaron hacerlos enemigos al nombrarlos.",
+                "Fingir no conocerse en la calle extenderá la vida de ambos."
+            ],
+            tags: ["#EscudoRequerido", "#Individualismo", "#IncompatibilidadTotal"]
+        },
+        bad: {
+            summary: "Mantén la Distancia",
+            comments: [
+                "Sus MBTIs podrían ser 'Desconocido' y 'Desconocido'.",
+                "Mensajes ocasionales están bien, pero nunca viajen juntos. Habrá pelea.",
+                "Sus nombres juntos son como chocolate con menta y ramen. Buenos solos, desastre juntos."
+            ],
+            tags: ["#ConocidoPasajero", "#SinSabor", "#Discordia"]
+        },
+        meh: {
+            summary: "Funciona (Con MUCHO Esfuerzo)",
+            comments: [
+                "No está mal, pero entenderse requiere paciencia de monje.",
+                "Funcionaría si uno se convierte en Buda y el otro en santo.",
+                "Menos 'destino' y más 'modo supervivencia'. ¡Suerte!"
+            ],
+            tags: ["#PruebaDePaciencia", "#RespiraHondo", "#ÉxitoEventual"]
+        },
+        good: {
+            summary: "80% de Probabilidad de Felicidad Normal",
+            comments: [
+                "¡Por fin una compatibilidad decente! Pueden presumir de esto.",
+                "Pelearán a veces, pero un pollo frito lo arregla todo.",
+                "Ven los defectos del otro pero piensan 'Si no soy yo, ¿quién?' y se quedan."
+            ],
+            tags: ["#VibrasTranquilas", "#CompañerosDePollo", "#Pacificadores"]
+        },
+        perfect: {
+            summary: "Cásense HOY",
+            comments: [
+                "Esta combinación es tan perfecta que molesta. Verificamos errores del servidor.",
+                "Compren lotería juntos. No ganarán, pero serán felices de todos modos. (cínico)",
+                "El término 'almas gemelas' se inventó para esto. Estamos celosos. Perdimos."
+            ],
+            tags: ["#ParejaDeLeyenda", "#Cursi", "#MolestamentePerfectos"]
+        }
+    },
+    fr: {
+        disaster: {
+            summary: "FUYEZ ! 🏃",
+            comments: [
+                "Ce qui coule entre vous n'est pas de l'amour, c'est de l'hostilité.",
+                "On dirait que vos parents se sont mis d'accord pour faire de vous des ennemis.",
+                "Faire semblant de ne pas se connaître dans la rue prolongera vos vies."
+            ],
+            tags: ["#BouclierRequis", "#Individualisme", "#IncompatibilitéTotale"]
+        },
+        bad: {
+            summary: "Gardez Vos Distances",
+            comments: [
+                "Vos MBTIs pourraient bien être 'Étranger' et 'Étranger'.",
+                "Des messages occasionnels, OK, mais ne voyagez jamais ensemble. Ça finira en dispute.",
+                "Vos noms ensemble sont comme chocolat menthe et ramen. Bien séparés, désastre ensemble."
+            ],
+            tags: ["#ConnaissancePassagère", "#SansSaveur", "#Discorde"]
+        },
+        meh: {
+            summary: "Ça Marche (Avec BEAUCOUP d'Efforts)",
+            comments: [
+                "Pas mal, mais se comprendre demande une patience de moine.",
+                "Ça marcherait si l'un devient Bouddha et l'autre un saint.",
+                "Moins 'destin' et plus 'mode survie'. Bonne chance !"
+            ],
+            tags: ["#TestDePatience", "#RespirezProfond", "#SuccèsÉventuel"]
+        },
+        good: {
+            summary: "80% de Chances de Bonheur Normal",
+            comments: [
+                "Enfin une compatibilité décente ! Vous pouvez vous en vanter.",
+                "Vous vous disputerez parfois, mais un poulet frit arrangera tout.",
+                "Vous voyez les défauts de l'autre mais pensez 'Si ce n'est pas moi, qui ?' et restez."
+            ],
+            tags: ["#VibesTranquilles", "#CopainsDePoulet", "#Pacificateurs"]
+        },
+        perfect: {
+            summary: "Mariez-vous AUJOURD'HUI",
+            comments: [
+                "Cette combinaison est si parfaite que c'en est agaçant. On a vérifié les erreurs serveur.",
+                "Achetez un billet de loterie ensemble. Vous ne gagnerez pas, mais vous serez heureux quand même. (cynique)",
+                "Le terme 'âmes sœurs' a été inventé pour ça. On est jaloux. On a perdu."
+            ],
+            tags: ["#CoupleDeLegende", "#Guimauve", "#ParfaitementAgaçant"]
+        }
+    },
+    de: {
+        disaster: {
+            summary: "LAUF! 🏃",
+            comments: [
+                "Was zwischen euch fließt, ist keine Liebe – es ist Mordlust.",
+                "Eure Eltern müssen vereinbart haben, euch zu Feinden zu machen.",
+                "Auf der Straße so tun, als würdet ihr euch nicht kennen, verlängert beider Leben."
+            ],
+            tags: ["#SchildErforderlich", "#Individualismus", "#TotaleInkompatibilität"]
+        },
+        bad: {
+            summary: "Halte Abstand",
+            comments: [
+                "Eure MBTIs könnten genauso gut 'Fremder' und 'Fremder' sein.",
+                "Gelegentliche Nachrichten sind OK, aber reist nie zusammen. Es gibt Streit.",
+                "Eure Namen zusammen sind wie Minzschokolade und Ramen. Einzeln gut, zusammen Katastrophe."
+            ],
+            tags: ["#FlüchtigeBekanntschaft", "#Geschmacklos", "#Zwietracht"]
+        },
+        meh: {
+            summary: "Es Funktioniert (Mit VIEL Mühe)",
+            comments: [
+                "Nicht schlecht, aber sich zu verstehen erfordert Mönchsgeduld.",
+                "Es würde funktionieren, wenn einer Buddha und der andere ein Heiliger wird.",
+                "Weniger 'Schicksal' und mehr 'Überlebensmodus'. Viel Glück!"
+            ],
+            tags: ["#Geduldsprobe", "#TiefDurchatmen", "#EventuellerErfolg"]
+        },
+        good: {
+            summary: "80% Chance auf Normales Glück",
+            comments: [
+                "Endlich eine ordentliche Kompatibilität! Ihr könnt damit angeben.",
+                "Ihr werdet manchmal streiten, aber Brathähnchen macht alles wieder gut.",
+                "Ihr seht die Fehler des anderen, denkt aber 'Wenn nicht ich, wer dann?' und bleibt."
+            ],
+            tags: ["#EntspannteVibes", "#HähnchenKumpels", "#Friedensstifter"]
+        },
+        perfect: {
+            summary: "Heiratet HEUTE",
+            comments: [
+                "Diese Kombination ist so perfekt, dass es nervt. Wir haben auf Serverfehler geprüft.",
+                "Kauft zusammen ein Lotterielos. Ihr gewinnt nicht, aber ihr seid trotzdem glücklich. (zynisch)",
+                "Der Begriff 'Seelenverwandte' wurde dafür erfunden. Wir sind neidisch. Wir haben verloren."
+            ],
+            tags: ["#LegendäresPaar", "#Kitschig", "#NervendPerfekt"]
+        }
+    },
+    ru: {
+        disaster: {
+            summary: "БЕГИ! 🏃",
+            comments: [
+                "То, что течёт между вами — это не любовь, а убийственные намерения.",
+                "Похоже, ваши родители договорились сделать вас врагами.",
+                "Притворяться незнакомыми на улице продлит жизнь обоим."
+            ],
+            tags: ["#ЩитОбязателен", "#Индивидуализм", "#ПолнаяНесовместимость"]
+        },
+        bad: {
+            summary: "Держите Дистанцию",
+            comments: [
+                "Ваши MBTI могут быть 'Незнакомец' и 'Незнакомец'.",
+                "Иногда писать можно, но никогда не путешествуйте вместе. Будет ссора.",
+                "Ваши имена вместе как мятный шоколад и рамен. По отдельности хорошо, вместе — катастрофа."
+            ],
+            tags: ["#МимолётноеЗнакомство", "#Безвкусно", "#Раздор"]
+        },
+        meh: {
+            summary: "Работает (При БОЛЬШИХ Усилиях)",
+            comments: [
+                "Неплохо, но чтобы понять друг друга нужно терпение монаха.",
+                "Сработает, если один станет Буддой, а другой — святым.",
+                "Меньше 'судьба' и больше 'режим выживания'. Удачи!"
+            ],
+            tags: ["#ТестНаТерпение", "#ГлубокийВдох", "#ВозможныйУспех"]
+        },
+        good: {
+            summary: "80% Шанс на Обычное Счастье",
+            comments: [
+                "Наконец-то приличная совместимость! Можете хвастаться.",
+                "Иногда будете ссориться, но курочка всё исправит.",
+                "Видите недостатки друг друга, но думаете 'Если не я, то кто?' и остаётесь."
+            ],
+            tags: ["#СпокойныеВибрации", "#КурочкаДрузья", "#Миротворцы"]
+        },
+        perfect: {
+            summary: "Женитесь СЕГОДНЯ",
+            comments: [
+                "Эта комбинация настолько идеальна, что раздражает. Мы проверили на ошибки сервера.",
+                "Купите лотерейный билет вместе. Не выиграете, но будете счастливы. (цинично)",
+                "Термин 'родственные души' был придуман для этого. Мы завидуем. Мы проиграли."
+            ],
+            tags: ["#ЛегендарнаяПара", "#Сладко", "#РаздражающеИдеально"]
+        }
+    },
+    pt: {
+        disaster: {
+            summary: "FUJA! 🏃",
+            comments: [
+                "O que flui entre vocês não é amor — é intenção assassina.",
+                "Parece que seus pais combinaram de fazer vocês inimigos.",
+                "Fingir não se conhecer na rua vai prolongar a vida de ambos."
+            ],
+            tags: ["#EscudoNecessário", "#Individualismo", "#IncompatibilidadeTotal"]
+        },
+        bad: {
+            summary: "Mantenha Distância",
+            comments: [
+                "Seus MBTIs podem muito bem ser 'Estranho' e 'Estranho'.",
+                "Mensagens ocasionais tudo bem, mas nunca viajem juntos. Vai ter briga.",
+                "Seus nomes juntos são como chocolate com menta e ramen. Bons separados, desastre juntos."
+            ],
+            tags: ["#ConhecidoPassageiro", "#SemGosto", "#Discórdia"]
+        },
+        meh: {
+            summary: "Funciona (Com MUITO Esforço)",
+            comments: [
+                "Não é ruim, mas se entender requer paciência de monge.",
+                "Funcionaria se um virar Buda e o outro um santo.",
+                "Menos 'destino' e mais 'modo sobrevivência'. Boa sorte!"
+            ],
+            tags: ["#TesteDePaciência", "#RespireFundo", "#SucessoEventual"]
+        },
+        good: {
+            summary: "80% de Chance de Felicidade Normal",
+            comments: [
+                "Finalmente uma compatibilidade decente! Podem se gabar disso.",
+                "Vão brigar às vezes, mas um frango frito resolve tudo.",
+                "Veem os defeitos um do outro mas pensam 'Se não eu, quem?' e ficam."
+            ],
+            tags: ["#VibesTranquilas", "#AmigosDoFrango", "#Pacificadores"]
+        },
+        perfect: {
+            summary: "Casem HOJE",
+            comments: [
+                "Essa combinação é tão perfeita que irrita. Verificamos erros no servidor.",
+                "Comprem loteria juntos. Não vão ganhar, mas serão felizes de qualquer forma. (cínico)",
+                "O termo 'almas gêmeas' foi inventado para isso. Estamos com inveja. Perdemos."
+            ],
+            tags: ["#CasalLendário", "#Cafona", "#IrritantementePerfeitos"]
+        }
     }
 };
 
-function getFunnyComment(score) {
-    if (score <= 20) return funnyComments.disaster;
-    if (score <= 40) return funnyComments.bad;
-    if (score <= 60) return funnyComments.meh;
-    if (score <= 80) return funnyComments.good;
-    return funnyComments.perfect;
+function getFunnyComment(score, lang) {
+    const comments = funnyCommentsData[lang] || funnyCommentsData.en;
+    if (score <= 20) return comments.disaster;
+    if (score <= 40) return comments.bad;
+    if (score <= 60) return comments.meh;
+    if (score <= 80) return comments.good;
+    return comments.perfect;
 }
 
 // ====== Past Life Stories ======
@@ -1305,8 +1684,8 @@ function showNameDetailResult(data) {
     const story = messages[level];
     const today = new Date().toLocaleDateString(currentLang, { month: 'long', day: 'numeric', year: 'numeric' });
 
-    // Get funny comment based on score
-    const funnyComment = getFunnyComment(score);
+    // Get funny comment based on score and language
+    const funnyComment = getFunnyComment(score, lang);
     const commentIndex = (name1.charCodeAt(0) + name2.charCodeAt(0)) % funnyComment.comments.length;
 
     // Get solution if score is low
