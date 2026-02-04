@@ -2279,7 +2279,7 @@ body {
 .popup-content .sns-share-compact {
     margin-top: 24px;
     padding-top: 20px;
-    border-top: 1px solid #f3f4f6;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 480px) {
@@ -2409,9 +2409,12 @@ body {
 .hide-names-toggle {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 16px 0;
-    padding-top: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 12px 16px;
+    background: rgba(55, 55, 75, 0.8);
+    border-radius: 12px;
+    border-top: none;
 }
 
 .toggle-label {
@@ -2429,7 +2432,7 @@ body {
 .toggle-slider {
     width: 44px;
     height: 24px;
-    background: #e5e7eb;
+    background: #4a4a5a;
     border-radius: 12px;
     position: relative;
     transition: all 0.3s ease;
@@ -2440,12 +2443,12 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: white;
+    background: #9ca3af;
     border-radius: 50%;
     top: 2px;
     left: 2px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-label input:checked + .toggle-slider {
@@ -2453,12 +2456,13 @@ body {
 }
 
 .toggle-label input:checked + .toggle-slider::after {
+    background: white;
     transform: translateX(20px);
 }
 
 .toggle-text {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #9ca3af;
     font-weight: 500;
 }
 
