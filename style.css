@@ -2255,8 +2255,8 @@ body {
     color: white;
 }
 
-.header-sns-btn[title="LINE"]:hover {
-    background: #00b900;
+.header-sns-btn[title="TikTok"]:hover {
+    background: #000000;
     color: white;
 }
 
