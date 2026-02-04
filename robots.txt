@@ -1,33 +1,144 @@
 # robots.txt for Heart Scan
 # https://heartsscan.org/
+# Last updated: February 2025
 
+# Default rules for all bots
 User-agent: *
 Allow: /
+Disallow: /firebase-debug.log
+Disallow: /*.log$
 
 # Sitemap location
 Sitemap: https://heartsscan.org/sitemap.xml
 
-# Crawl-delay (optional, for polite crawling)
+# Crawl-delay for polite crawling
 Crawl-delay: 1
 
-# Block unnecessary files
-Disallow: /firebase-debug.log
-
-# Allow all major search engine bots
+# Google
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Bingbot
+User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-Video
+Allow: /
+
+# Google AdsBot (for AdSense)
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: MSNBot
+Allow: /
+
+# Naver (Korean search engine)
+User-agent: Yeti
+Allow: /
+Crawl-delay: 1
+
+# Yahoo
 User-agent: Slurp
 Allow: /
 
+# DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
 
+# Baidu (Chinese search engine)
 User-agent: Baiduspider
 Allow: /
 
+# Yandex (Russian search engine)
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 2
+
+# Sogou (Chinese search engine)
+User-agent: Sogou
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Discord
+User-agent: Discordbot
+Allow: /
+
+# Kakao (Korean)
+User-agent: kakaotalk-scrap
+Allow: /
+
+# LINE
+User-agent: Line
+Allow: /
+
+# AI Crawlers (for GEO - Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Host directive
+Host: https://heartsscan.org
