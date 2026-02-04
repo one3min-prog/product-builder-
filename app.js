@@ -54,13 +54,16 @@ function getTemperatureData(score) {
 
 function generateResultCardHTML(score, name1, name2, shareText, resultType = 'name') {
     const temp = getTemperatureData(score);
-    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const lang = currentLang;
     const tempLabel = lang === 'ko' ? temp.labelKo : temp.labelEn;
     const tempTitle = lang === 'ko' ? '궁합 온도' : 'Love Temperature';
     const shareLabel = lang === 'ko' ? '결과 공유하기' : 'Share Result';
 
     const encodedText = encodeURIComponent(shareText);
     const encodedUrl = encodeURIComponent(window.location.href);
+
+    // Get funny comment for popup (only for name compatibility)
+    const funnyComment = resultType === 'name' ? getFunnyComment(score, lang) : null;
 
     // Only show hide names toggle for name compatibility (not MBTI)
     const hideNamesToggleHTML = resultType === 'name' ? `
@@ -71,6 +74,16 @@ function generateResultCardHTML(score, name1, name2, shareText, resultType = 'na
                     <span class="toggle-slider"></span>
                     <span class="toggle-text">${lang === 'ko' ? '이름 가리기' : 'Hide Names'}</span>
                 </label>
+            </div>` : '';
+
+    // Funny comment section for popup (name compatibility only)
+    const funnyCommentHTML = funnyComment ? `
+            <!-- Funny Comment in Popup -->
+            <div class="popup-funny-section">
+                <p class="popup-funny-summary">📢 "${funnyComment.summary}"</p>
+                <div class="popup-funny-tags">
+                    ${funnyComment.tags.map(tag => `<span class="popup-tag">${tag}</span>`).join('')}
+                </div>
             </div>` : '';
 
     return `
@@ -95,6 +108,8 @@ function generateResultCardHTML(score, name1, name2, shareText, resultType = 'na
                     <div class="temp-names" id="temp-names-display" data-name1="${name1.replace(/"/g, '&quot;')}" data-name2="${name2.replace(/"/g, '&quot;')}">${name1} & ${name2}</div>
                 </div>
             </div>
+
+            ${funnyCommentHTML}
 
             ${hideNamesToggleHTML}
 

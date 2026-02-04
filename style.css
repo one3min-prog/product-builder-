@@ -1196,6 +1196,46 @@ body {
     line-height: 1.5;
 }
 
+/* ====== Popup Funny Section ====== */
+.popup-funny-section {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.popup-funny-summary {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.popup-funny-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.popup-tag {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+[data-theme="light"] .popup-funny-summary {
+    color: #7c3aed;
+}
+
 /* ====== Funny Comment Card ====== */
 .funny-comment-card {
     background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
