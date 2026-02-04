@@ -1626,7 +1626,7 @@ function toggleCalcProcess() {
 }
 
 function displayNameResult(name1, name2, score, chars, strokes, allSteps) {
-    const lang = currentLang === 'ko' ? 'ko' : 'en';
+    const lang = currentLang;
 
     if (score >= 80) triggerConfetti();
 
@@ -1655,8 +1655,8 @@ function showNameDetailResult(data) {
     const { name1, name2, score, chars, strokes, allSteps, lang } = data;
     const result = document.getElementById('name-result');
     const messages = storyMessages[lang] || storyMessages.en;
-    const pastLife = pastLifeStories[lang === 'ko' ? 'ko' : 'en'];
-    const solutions = badLuckSolutions[lang === 'ko' ? 'ko' : 'en'];
+    const pastLife = pastLifeStories[lang] || pastLifeStories.en;
+    const solutions = badLuckSolutions[lang] || badLuckSolutions.en;
 
     let level, heartEffect, heartEmojis;
     if (score >= 90) {
