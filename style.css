@@ -900,12 +900,12 @@ body {
     }
 
     .nav {
-        gap: 8px;
+        gap: 6px;
     }
 
     .nav-btn {
-        padding: 10px 15px;
-        font-size: 0.8rem;
+        padding: 8px 10px;
+        font-size: 0.75rem;
     }
 
     .nav-btn span:last-child {
@@ -913,7 +913,7 @@ body {
     }
 
     .nav-icon {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .input-row {
