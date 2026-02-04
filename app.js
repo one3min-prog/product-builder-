@@ -257,6 +257,7 @@ function generateSNSShareHTML(shareData) {
 }
 
 function shareSNS(platform, encodedText, encodedUrl) {
+    console.log('shareSNS called with:', platform);
     const text = decodeURIComponent(encodedText);
     const url = decodeURIComponent(encodedUrl);
     let shareUrl = '';
@@ -273,28 +274,20 @@ function shareSNS(platform, encodedText, encodedUrl) {
             break;
         case 'tiktok':
             // TikTok doesn't support direct URL sharing, copy to clipboard and open TikTok
+            window.open('https://www.tiktok.com/', '_blank');
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
                     showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
-                    window.open('https://www.tiktok.com/', '_blank');
-                }).catch(() => {
-                    window.open('https://www.tiktok.com/', '_blank');
                 });
-            } else {
-                window.open('https://www.tiktok.com/', '_blank');
             }
             return;
         case 'instagram':
             // Instagram doesn't support direct URL sharing, copy to clipboard and open Instagram
+            window.open('https://www.instagram.com/', '_blank');
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
                     showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
-                    window.open('https://www.instagram.com/', '_blank');
-                }).catch(() => {
-                    window.open('https://www.instagram.com/', '_blank');
                 });
-            } else {
-                window.open('https://www.instagram.com/', '_blank');
             }
             return;
     }
@@ -1990,6 +1983,7 @@ function shareDailyFortune(name, summary) {
 
 // Fortune-specific share function using currentShareText
 function shareFortuneToSNS(platform) {
+    console.log('shareFortuneToSNS called with:', platform);
     const text = currentShareText;
     const url = window.location.href;
     const encodedText = encodeURIComponent(text);
@@ -2005,27 +1999,19 @@ function shareFortuneToSNS(platform) {
             shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
             break;
         case 'tiktok':
+            window.open('https://www.tiktok.com/', '_blank');
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
                     showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
-                    window.open('https://www.tiktok.com/', '_blank');
-                }).catch(() => {
-                    window.open('https://www.tiktok.com/', '_blank');
                 });
-            } else {
-                window.open('https://www.tiktok.com/', '_blank');
             }
             return;
         case 'instagram':
+            window.open('https://www.instagram.com/', '_blank');
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
                     showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
-                    window.open('https://www.instagram.com/', '_blank');
-                }).catch(() => {
-                    window.open('https://www.instagram.com/', '_blank');
                 });
-            } else {
-                window.open('https://www.instagram.com/', '_blank');
             }
             return;
     }
@@ -2062,6 +2048,7 @@ function shareContent(text) {
 
 // ====== Header Share Service Functions ======
 function shareService(platform) {
+    console.log('shareService called with:', platform);
     const lang = localStorage.getItem('selectedLanguage') || 'en';
     const shareTexts = {
         en: "Is it fate? Find out your love compatibility FREE! 💘 2M+ couples already know their destiny...",
@@ -2111,6 +2098,7 @@ function shareService(platform) {
             shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
             break;
         case 'tiktok':
+            window.open('https://www.tiktok.com/', '_blank');
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text + ' ' + url).then(() => {
                     const messages = {
@@ -2124,13 +2112,8 @@ function shareService(platform) {
                         ru: 'Ссылка скопирована! Поделитесь в TikTok 🎵',
                         pt: 'Link copiado! Compartilhe no TikTok 🎵'
                     };
-                    alert(messages[lang] || messages.en);
-                    window.open('https://www.tiktok.com/', '_blank');
-                }).catch(() => {
-                    window.open('https://www.tiktok.com/', '_blank');
+                    showToast(messages[lang] || messages.en);
                 });
-            } else {
-                window.open('https://www.tiktok.com/', '_blank');
             }
             return;
     }
