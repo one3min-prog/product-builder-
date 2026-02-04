@@ -433,6 +433,63 @@ const dateMenusEn = {
     ]
 };
 
+// ====== Funny Compatibility Comments ======
+const funnyComments = {
+    disaster: { // 0-20
+        summary: "도망쳐 (Run)",
+        comments: [
+            "두 분 사이에 흐르는 건 사랑이 아니라 살기입니다.",
+            "이 정도면 이름 지어주신 부모님들끼리 합의 하에 원수로 정하신 수준.",
+            "길에서 마주쳐도 모른 척하는 것이 서로의 수명을 연장하는 길입니다."
+        ],
+        tags: ["#방어막필수", "#개인주의", "#심해어궁합"]
+    },
+    bad: { // 21-40
+        summary: "적당한 거리두기 권장",
+        comments: [
+            "서로의 MBTI가 '남남'이 아닐지 의심해 볼 필요가 있습니다.",
+            "가끔 연락은 하되, 같이 여행 가는 모험은 하지 마세요. 싸움 납니다.",
+            "이름 조합이 마치 '민트초코와 라면' 같습니다. 각자는 좋은데 합치면 재앙입니다."
+        ],
+        tags: ["#스쳐가는인연", "#무미건조", "#불협화음"]
+    },
+    meh: { // 41-60
+        summary: "노력하면 됨 (근데 노력을 많이 해야 함)",
+        comments: [
+            "나쁘지는 않은데, 서로를 이해하려면 법정 스님의 '무소유' 정신이 필요합니다.",
+            "한 명의 부처와 한 명의 보살이 만난다면 유지가 가능합니다.",
+            "운명이라기보다는 '생존'에 가까운 조합이네요. 화이팅."
+        ],
+        tags: ["#인내심테스트", "#참을인세번", "#고진감래"]
+    },
+    good: { // 61-80
+        summary: "평범하게 잘 살 확률 80%",
+        comments: [
+            "드디어 사람다운 궁합이 나왔습니다. 어디 가서 이름 궁합 봤다고 자랑해도 됩니다.",
+            "가끔 싸우긴 하겠지만, 치킨 한 마리에 화해할 수 있는 쿨한 사이.",
+            "서로의 단점이 보이지만 \"그래, 나 아니면 누가 거두냐\" 하며 살게 됩니다."
+        ],
+        tags: ["#무난함의미학", "#치킨메이트", "#평화유지군"]
+    },
+    perfect: { // 81-100
+        summary: "그냥 오늘 당장 혼인신고 하세요",
+        comments: [
+            "이름 조합이 너무 완벽해서 배가 아플 정도입니다. 서버 오류인지 의심했습니다.",
+            "둘이 같이 있으면 로또를 사보세요. 당첨은 안 돼도 둘이 있어서 행복하겠죠. (시니컬)",
+            "천생연분이라는 단어는 이럴 때 쓰라고 만든 겁니다. 부러우면 지는 건데 이미 졌네요."
+        ],
+        tags: ["#전설의포켓몬", "#닭살주의", "#재수없을정도로잘맞음"]
+    }
+};
+
+function getFunnyComment(score) {
+    if (score <= 20) return funnyComments.disaster;
+    if (score <= 40) return funnyComments.bad;
+    if (score <= 60) return funnyComments.meh;
+    if (score <= 80) return funnyComments.good;
+    return funnyComments.perfect;
+}
+
 // ====== Past Life Stories ======
 const pastLifeStories = {
     ko: [
@@ -1248,9 +1305,9 @@ function showNameDetailResult(data) {
     const story = messages[level];
     const today = new Date().toLocaleDateString(currentLang, { month: 'long', day: 'numeric', year: 'numeric' });
 
-    // Generate past life story
-    const pastLifeSeed = (name1.charCodeAt(0) + name2.charCodeAt(0) + score) % pastLife.length;
-    const pastLifeStory = pastLife[pastLifeSeed];
+    // Get funny comment based on score
+    const funnyComment = getFunnyComment(score);
+    const commentIndex = (name1.charCodeAt(0) + name2.charCodeAt(0)) % funnyComment.comments.length;
 
     // Get solution if score is low
     const solutionSeed = (name1.length * name2.length + score) % solutions.length;
@@ -1258,7 +1315,6 @@ function showNameDetailResult(data) {
 
     const calcStepsHTML = generateCalcStepsHTML(chars, strokes, allSteps);
     const toggleLabel = lang === 'ko' ? '계산 과정 보기' : 'View Calculation';
-    const pastLifeLabel = lang === 'ko' ? '전생의 인연' : 'Past Life Connection';
     const unlockLabel = lang === 'ko' ? '🔓 운명 해제 비법' : '🔓 Destiny Unlock Secret';
 
     let solutionHTML = '';
@@ -1275,8 +1331,8 @@ function showNameDetailResult(data) {
     }
 
     const shareText = lang === 'ko'
-        ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n🏮 전생: "${pastLifeStory.relation}"\n\nHeart Scan에서 확인하세요!`
-        : `💕 ${name1} & ${name2}: ${score}% compatible!\n🏮 Past Life: "${pastLifeStory.relation}"\n\nCheck at Heart Scan!`;
+        ? `💕 ${name1} & ${name2}: ${score}% 궁합!\n📢 "${funnyComment.summary}"\n${funnyComment.tags.join(' ')}\n\nHeart Scan에서 확인하세요!`
+        : `💕 ${name1} & ${name2}: ${score}% compatible!\n📢 "${funnyComment.summary}"\n${funnyComment.tags.join(' ')}\n\nCheck at Heart Scan!`;
 
     const hideNamesLabel = lang === 'ko' ? '이름 가리기' : 'Hide Names';
 
@@ -1311,14 +1367,16 @@ function showNameDetailResult(data) {
 
                 <h3 class="story-verdict">${story.verdict}</h3>
 
-                <!-- Past Life Story -->
-                <div class="past-life-card">
-                    <div class="past-life-header">
-                        <span class="past-life-icon">🏮</span>
-                        <span class="past-life-label">${pastLifeLabel}</span>
+                <!-- Funny Comment Section -->
+                <div class="funny-comment-card">
+                    <div class="funny-summary">
+                        <span class="summary-icon">📢</span>
+                        <span class="summary-text">"${funnyComment.summary}"</span>
                     </div>
-                    <p class="past-life-relation">"${pastLifeStory.relation}"</p>
-                    <p class="past-life-detail">${pastLifeStory.detail}</p>
+                    <p class="funny-detail">${funnyComment.comments[commentIndex]}</p>
+                    <div class="funny-tags">
+                        ${funnyComment.tags.map(tag => `<span class="funny-tag">${tag}</span>`).join('')}
+                    </div>
                 </div>
 
                 <p class="story-message">${story.message}</p>

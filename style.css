@@ -1196,6 +1196,74 @@ body {
     line-height: 1.5;
 }
 
+/* ====== Funny Comment Card ====== */
+.funny-comment-card {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+    border: 2px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.funny-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-icon {
+    font-size: 1.5rem;
+}
+
+.summary-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.funny-detail {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.funny-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.funny-tag {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+[data-theme="light"] .funny-comment-card {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+}
+
+[data-theme="light"] .summary-text {
+    color: #7c3aed;
+}
+
+[data-theme="light"] .funny-detail {
+    color: #4b5563;
+}
+
 /* ====== Solution Card ====== */
 .solution-card {
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
