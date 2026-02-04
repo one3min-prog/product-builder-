@@ -53,7 +53,7 @@ function getTemperatureData(score) {
     }
 }
 
-function generateResultCardHTML(score, name1, name2, shareText) {
+function generateResultCardHTML(score, name1, name2, shareText, resultType = 'name') {
     const temp = getTemperatureData(score);
     const lang = currentLang === 'ko' ? 'ko' : 'en';
     const tempLabel = lang === 'ko' ? temp.labelKo : temp.labelEn;
@@ -62,6 +62,17 @@ function generateResultCardHTML(score, name1, name2, shareText) {
 
     const encodedText = encodeURIComponent(shareText);
     const encodedUrl = encodeURIComponent(window.location.href);
+
+    // Only show hide names toggle for name compatibility (not MBTI)
+    const hideNamesToggleHTML = resultType === 'name' ? `
+            <!-- Hide Names Toggle -->
+            <div class="hide-names-toggle">
+                <label class="toggle-label">
+                    <input type="checkbox" id="hide-names-checkbox" onchange="togglePopupNameVisibility()">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">${lang === 'ko' ? '이름 가리기' : 'Hide Names'}</span>
+                </label>
+            </div>` : '';
 
     return `
         <div class="result-share-card">
@@ -86,14 +97,7 @@ function generateResultCardHTML(score, name1, name2, shareText) {
                 </div>
             </div>
 
-            <!-- Hide Names Toggle -->
-            <div class="hide-names-toggle">
-                <label class="toggle-label">
-                    <input type="checkbox" id="hide-names-checkbox" onchange="togglePopupNameVisibility()">
-                    <span class="toggle-slider"></span>
-                    <span class="toggle-text">${lang === 'ko' ? '이름 가리기' : 'Hide Names'}</span>
-                </label>
-            </div>
+            ${hideNamesToggleHTML}
 
             <!-- SNS Share Section -->
             <div class="sns-share-compact">
@@ -169,7 +173,8 @@ function showResultPopup(score, name1, name2, shareText, detailData) {
     const popup = document.getElementById('result-popup');
     const popupCard = document.getElementById('popup-result-card');
 
-    popupCard.innerHTML = generateResultCardHTML(score, name1, name2, shareText);
+    const resultType = detailData?.type || 'name';
+    popupCard.innerHTML = generateResultCardHTML(score, name1, name2, shareText, resultType);
     popup.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
@@ -2070,6 +2075,27 @@ function shareService(platform) {
         case 'facebook':
             shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
             break;
+        case 'instagram':
+            // Instagram doesn't support direct URL sharing, copy link and open Instagram
+            navigator.clipboard.writeText(text + ' ' + url).then(() => {
+                const messages = {
+                    en: 'Link copied! Share it on Instagram 📸',
+                    ko: '링크가 복사되었습니다! 인스타그램에서 공유하세요 📸',
+                    ja: 'リンクをコピーしました！Instagramで共有 📸',
+                    zh: '链接已复制！在Instagram分享 📸',
+                    es: '¡Enlace copiado! Compártelo en Instagram 📸',
+                    fr: 'Lien copié! Partagez sur Instagram 📸',
+                    de: 'Link kopiert! Auf Instagram teilen 📸',
+                    ru: 'Ссылка скопирована! Поделитесь в Instagram 📸',
+                    pt: 'Link copiado! Compartilhe no Instagram 📸'
+                };
+                alert(messages[lang] || messages.en);
+                window.open('https://www.instagram.com/', '_blank');
+            });
+            return;
+        case 'reddit':
+            shareUrl = `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedText}`;
+            break;
         case 'threads':
             shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
             break;
@@ -2142,6 +2168,41 @@ function triggerConfetti() {
     }
 }
 
+// ====== Birthday Auto-Focus ======
+function initBirthdayAutoFocus() {
+    const yearInput = document.getElementById('daily-birth-year');
+    const monthInput = document.getElementById('daily-birth-month');
+    const dayInput = document.getElementById('daily-birth-day');
+
+    if (yearInput && monthInput && dayInput) {
+        // Year: move to month after 4 digits
+        yearInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value.length >= 4) {
+                e.target.value = value.slice(0, 4);
+                monthInput.focus();
+            }
+        });
+
+        // Month: move to day after 2 digits
+        monthInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value.length >= 2) {
+                e.target.value = value.slice(0, 2);
+                dayInput.focus();
+            }
+        });
+
+        // Day: limit to 2 digits
+        dayInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value.length > 2) {
+                e.target.value = value.slice(0, 2);
+            }
+        });
+    }
+}
+
 // ====== Initialize ======
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
@@ -2149,6 +2210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNameCompatibility();
     initMbtiCompatibility();
     initDailyFortune();
+    initBirthdayAutoFocus();
     createFloatingHearts();
 
     // Always default to English
