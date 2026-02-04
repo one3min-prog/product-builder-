@@ -1,0 +1,15 @@
+# URL Canonicalization - Redirect all variations to primary URL
+# For Cloudflare Pages
+
+# Redirect www to non-www
+https://www.heartsscan.org/* https://heartsscan.org/:splat 301
+
+# Redirect trailing slashes (except root)
+https://heartsscan.org/*/ https://heartsscan.org/:splat 301
+
+# Redirect old domain to new domain
+https://heart-scan.gta4372.workers.dev/* https://heartsscan.org/:splat 301
+https://product-builder-pip.pages.dev/* https://heartsscan.org/:splat 301
+
+# Handle SPA routing - serve index.html for all routes
+/* /index.html 200

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Heart Scan</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://heartsscan.org/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .heart {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        h1 {
+            font-size: 120px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ff9bc0;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #a855f7 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+        .links a.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ff6b9d;
+        }
+        .suggestions {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .suggestions h3 {
+            color: #ff9bc0;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .suggestions ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .suggestions a {
+            color: #ff6b9d;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: rgba(255, 107, 157, 0.1);
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .suggestions a:hover {
+            background: rgba(255, 107, 157, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">💔</div>
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Oops! The page you're looking for seems to have wandered off. But don't worry, your love story doesn't end here!</p>
+
+        <div class="links">
+            <a href="/">
+                <span>💕</span> Go to Homepage
+            </a>
+            <a href="/#name" class="secondary">
+                <span>💝</span> Try Name Match
+            </a>
+        </div>
+
+        <div class="suggestions">
+            <h3>Or try one of these:</h3>
+            <ul>
+                <li><a href="/#name">Name Compatibility</a></li>
+                <li><a href="/#mbti">MBTI Match</a></li>
+                <li><a href="/#daily">Daily Fortune</a></li>
+                <li><a href="/#faq">FAQ</a></li>
+                <li><a href="/#about">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "name": "Heart Scan - Love Compatibility Test",
+    "short_name": "Heart Scan",
+    "description": "Free love compatibility test with name matching, MBTI analysis, and daily fortune",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#ff6b9d",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": ["lifestyle", "entertainment"],
+    "lang": "en",
+    "dir": "ltr"
+}
