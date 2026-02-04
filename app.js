@@ -273,17 +273,29 @@ function shareSNS(platform, encodedText, encodedUrl) {
             break;
         case 'tiktok':
             // TikTok doesn't support direct URL sharing, copy to clipboard and open TikTok
-            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                    showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
+                    window.open('https://www.tiktok.com/', '_blank');
+                }).catch(() => {
+                    window.open('https://www.tiktok.com/', '_blank');
+                });
+            } else {
                 window.open('https://www.tiktok.com/', '_blank');
-            });
+            }
             return;
         case 'instagram':
             // Instagram doesn't support direct URL sharing, copy to clipboard and open Instagram
-            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                    showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
+                    window.open('https://www.instagram.com/', '_blank');
+                }).catch(() => {
+                    window.open('https://www.instagram.com/', '_blank');
+                });
+            } else {
                 window.open('https://www.instagram.com/', '_blank');
-            });
+            }
             return;
     }
 
@@ -1993,16 +2005,28 @@ function shareFortuneToSNS(platform) {
             shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
             break;
         case 'tiktok':
-            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                    showToast(currentLang === 'ko' ? '클립보드에 복사됨! 틱톡에 붙여넣기 하세요' : 'Copied! Paste it on TikTok');
+                    window.open('https://www.tiktok.com/', '_blank');
+                }).catch(() => {
+                    window.open('https://www.tiktok.com/', '_blank');
+                });
+            } else {
                 window.open('https://www.tiktok.com/', '_blank');
-            });
+            }
             return;
         case 'instagram':
-            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                    showToast(currentLang === 'ko' ? '클립보드에 복사됨! 인스타그램에 붙여넣기 하세요' : 'Copied! Paste it on Instagram');
+                    window.open('https://www.instagram.com/', '_blank');
+                }).catch(() => {
+                    window.open('https://www.instagram.com/', '_blank');
+                });
+            } else {
                 window.open('https://www.instagram.com/', '_blank');
-            });
+            }
             return;
     }
 
@@ -2087,21 +2111,27 @@ function shareService(platform) {
             shareUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedUrl}`;
             break;
         case 'tiktok':
-            navigator.clipboard.writeText(text + ' ' + url).then(() => {
-                const messages = {
-                    en: 'Link copied! Share it on TikTok 🎵',
-                    ko: '링크가 복사되었습니다! 틱톡에서 공유하세요 🎵',
-                    ja: 'リンクをコピーしました！TikTokで共有 🎵',
-                    zh: '链接已复制！在TikTok分享 🎵',
-                    es: '¡Enlace copiado! Compártelo en TikTok 🎵',
-                    fr: 'Lien copié! Partagez sur TikTok 🎵',
-                    de: 'Link kopiert! Auf TikTok teilen 🎵',
-                    ru: 'Ссылка скопирована! Поделитесь в TikTok 🎵',
-                    pt: 'Link copiado! Compartilhe no TikTok 🎵'
-                };
-                alert(messages[lang] || messages.en);
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text + ' ' + url).then(() => {
+                    const messages = {
+                        en: 'Link copied! Share it on TikTok 🎵',
+                        ko: '링크가 복사되었습니다! 틱톡에서 공유하세요 🎵',
+                        ja: 'リンクをコピーしました！TikTokで共有 🎵',
+                        zh: '链接已复制！在TikTok分享 🎵',
+                        es: '¡Enlace copiado! Compártelo en TikTok 🎵',
+                        fr: 'Lien copié! Partagez sur TikTok 🎵',
+                        de: 'Link kopiert! Auf TikTok teilen 🎵',
+                        ru: 'Ссылка скопирована! Поделитесь в TikTok 🎵',
+                        pt: 'Link copiado! Compartilhe no TikTok 🎵'
+                    };
+                    alert(messages[lang] || messages.en);
+                    window.open('https://www.tiktok.com/', '_blank');
+                }).catch(() => {
+                    window.open('https://www.tiktok.com/', '_blank');
+                });
+            } else {
                 window.open('https://www.tiktok.com/', '_blank');
-            });
+            }
             return;
     }
 
