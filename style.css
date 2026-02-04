@@ -1720,13 +1720,13 @@ body {
     color: white;
 }
 
-.fortune-sns-btn.sns-copy {
-    background: white;
-    color: var(--primary-dark);
+.fortune-sns-btn.sns-capture {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
 
-.fortune-sns-btn.sns-copy:hover {
-    background: #f8f8f8;
+.fortune-sns-btn.sns-capture:hover {
+    background: linear-gradient(135deg, #5a6fd6, #6a4190);
 }
 
 /* ====== MBTI Keyword Badge ====== */
@@ -2142,8 +2142,8 @@ body {
     background: #000;
 }
 
-.sns-copy {
-    background: #6c757d;
+.sns-capture {
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 .sns-btn svg {

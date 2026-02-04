@@ -134,8 +134,8 @@ function generateResultCardHTML(score, name1, name2, shareText, resultType = 'na
                     <button class="sns-btn sns-reddit" onclick="shareSNS('reddit', '${encodedText}', '${encodedUrl}')" title="Reddit">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
                     </button>
-                    <button class="sns-btn sns-copy" onclick="copyResultToClipboard()" title="Copy">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <button class="sns-btn sns-capture" onclick="capturePopupResult()" title="Capture">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                     </button>
                 </div>
             </div>
@@ -225,6 +225,61 @@ function copyResultToClipboard() {
     });
 }
 
+// ====== Capture Screenshot Function ======
+function captureResult(targetSelector) {
+    const target = document.querySelector(targetSelector);
+    if (!target) {
+        showToast(currentLang === 'ko' ? '캡쳐할 영역을 찾을 수 없습니다' : 'Cannot find area to capture');
+        return;
+    }
+
+    showToast(currentLang === 'ko' ? '캡쳐 중...' : 'Capturing...');
+
+    html2canvas(target, {
+        backgroundColor: '#1a1a2e',
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+    }).then(canvas => {
+        canvas.toBlob(blob => {
+            if (navigator.clipboard && navigator.clipboard.write) {
+                navigator.clipboard.write([
+                    new ClipboardItem({ 'image/png': blob })
+                ]).then(() => {
+                    showToast(currentLang === 'ko' ? '이미지가 클립보드에 복사되었습니다!' : 'Image copied to clipboard!');
+                }).catch(() => {
+                    downloadCapture(canvas);
+                });
+            } else {
+                downloadCapture(canvas);
+            }
+        }, 'image/png');
+    }).catch(err => {
+        console.error('Capture failed:', err);
+        showToast(currentLang === 'ko' ? '캡쳐 실패' : 'Capture failed');
+    });
+}
+
+function downloadCapture(canvas) {
+    const link = document.createElement('a');
+    link.download = 'heartscan-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast(currentLang === 'ko' ? '이미지가 저장되었습니다!' : 'Image saved!');
+}
+
+function capturePopupResult() {
+    captureResult('.result-share-card');
+}
+
+function captureDetailResult() {
+    captureResult('.name-result-details');
+}
+
+function captureFortuneResult() {
+    captureResult('.fortune-result-card');
+}
+
 // ====== SNS Share Buttons Helper ======
 function generateSNSShareHTML(shareData) {
     const { text, url } = shareData;
@@ -262,9 +317,10 @@ function generateSNSShareHTML(shareData) {
                         <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
                     </svg>
                 </button>
-                <button class="sns-btn sns-copy" onclick="copyToClipboard('${text.replace(/'/g, "\\'")}')" title="Copy">
+                <button class="sns-btn sns-capture" onclick="captureDetailResult()" title="Capture">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/>
+                        <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
                     </svg>
                 </button>
             </div>
@@ -2411,8 +2467,8 @@ function getDailyFortune() {
                     <button class="fortune-sns-btn sns-threads" onclick="shareFortuneToSNS('threads')" title="Threads">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.17.408-2.306 1.334-3.203.678-.658 1.578-1.143 2.678-1.445-.056-.592-.1-1.204-.1-1.828 0-.313.008-.62.026-.924-1.109.213-2.017.65-2.647 1.27-.708.697-1.074 1.576-1.029 2.471.047.92.473 1.73 1.2 2.283.594.454 1.435.692 2.428.688 1.076-.046 1.91-.428 2.48-1.137.466-.581.764-1.397.886-2.432.007-.065.012-.13.016-.195-.28-.088-.553-.19-.816-.306-.84-.371-1.527-.9-1.978-1.521-.568-.78-.833-1.746-.766-2.79.067-1.03.525-1.974 1.29-2.658.955-.854 2.266-1.308 3.784-1.313.18-.001.36.006.539.018 1.607.109 2.985.707 3.987 1.73 1.05 1.073 1.635 2.545 1.693 4.258.032.953-.084 1.976-.346 3.033.778.448 1.425 1.022 1.919 1.704.784 1.085 1.118 2.39 1.024 3.998-.109 1.858-.894 3.54-2.268 4.862-1.707 1.64-4.036 2.503-6.938 2.563h-.18z"/></svg>
                     </button>
-                    <button class="fortune-sns-btn sns-copy" onclick="copyResultToClipboard()" title="Copy">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <button class="fortune-sns-btn sns-capture" onclick="captureFortuneResult()" title="Capture">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                     </button>
                 </div>
             </div>
