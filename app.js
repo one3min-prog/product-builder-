@@ -55,7 +55,6 @@ function getTemperatureData(score) {
 function generateResultCardHTML(score, name1, name2, shareText, resultType = 'name') {
     const temp = getTemperatureData(score);
     const lang = currentLang;
-    const tempLabel = lang === 'ko' ? temp.labelKo : temp.labelEn;
     const tempTitle = lang === 'ko' ? '궁합 온도' : 'Love Temperature';
     const shareLabel = lang === 'ko' ? '결과 공유하기' : 'Share Result';
 
@@ -77,13 +76,16 @@ function generateResultCardHTML(score, name1, name2, shareText, resultType = 'na
             </div>` : '';
 
     // Funny comment section for popup (name compatibility only)
+    // Hashtags go in place of temp-level, summary stays in popup-funny-section
+    const funnyTagsHTML = funnyComment ? `
+                    <div class="popup-funny-tags-inline">
+                        ${funnyComment.tags.map(tag => `<span class="popup-tag">${tag}</span>`).join('')}
+                    </div>` : '';
+
     const funnyCommentHTML = funnyComment ? `
             <!-- Funny Comment in Popup -->
             <div class="popup-funny-section">
                 <p class="popup-funny-summary">📢 "${funnyComment.summary}"</p>
-                <div class="popup-funny-tags">
-                    ${funnyComment.tags.map(tag => `<span class="popup-tag">${tag}</span>`).join('')}
-                </div>
             </div>` : '';
 
     return `
@@ -104,7 +106,7 @@ function generateResultCardHTML(score, name1, name2, shareText, resultType = 'na
                         <span class="temp-emoji">${temp.emoji}</span>
                         <span class="temp-number">${score}°</span>
                     </div>
-                    <div class="temp-level" style="background: ${temp.color};">${tempLabel}</div>
+                    ${funnyTagsHTML}
                     <div class="temp-names" id="temp-names-display" data-name1="${name1.replace(/"/g, '&quot;')}" data-name2="${name2.replace(/"/g, '&quot;')}">${name1} & ${name2}</div>
                 </div>
             </div>
@@ -452,7 +454,7 @@ const dateMenusEn = {
 const funnyCommentsData = {
     ko: {
         disaster: {
-            summary: "도망쳐 (Run)",
+            summary: "도망쳐! 🏃",
             comments: [
                 "두 분 사이에 흐르는 건 사랑이 아니라 살기입니다.",
                 "이 정도면 이름 지어주신 부모님들끼리 합의 하에 원수로 정하신 수준.",
