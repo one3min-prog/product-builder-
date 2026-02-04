@@ -1,5 +1,3 @@
-alert('app.js loaded!');
-
 // ====== App State ======
 let currentLang = 'en';
 let currentSection = 'name';
@@ -258,7 +256,6 @@ function generateSNSShareHTML(shareData) {
 }
 
 function shareSNS(platform, encodedText, encodedUrl) {
-    console.log('shareSNS called with:', platform);
     const text = decodeURIComponent(encodedText);
     const url = decodeURIComponent(encodedUrl);
     let shareUrl = '';
@@ -1984,7 +1981,6 @@ function shareDailyFortune(name, summary) {
 
 // Fortune-specific share function using currentShareText
 function shareFortuneToSNS(platform) {
-    console.log('shareFortuneToSNS called with:', platform);
     const text = currentShareText;
     const url = window.location.href;
     const encodedText = encodeURIComponent(text);
@@ -2049,7 +2045,6 @@ function shareContent(text) {
 
 // ====== Header Share Service Functions ======
 function shareService(platform) {
-    alert('shareService called: ' + platform);
     const lang = localStorage.getItem('selectedLanguage') || 'en';
     const shareTexts = {
         en: "Is it fate? Find out your love compatibility FREE! 💘 2M+ couples already know their destiny...",
