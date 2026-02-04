@@ -2,7 +2,7 @@
 const translations = {
     en: {
         title: "Heart Scan",
-        tagline: "Will things work out with your crush? Find out now for free!",
+        tagline: "Will things work out with your crush..? Find out now for free!",
         shareCta: "Know someone who needs to see this? Share now!",
         badges: {
             free: "100% Free",
@@ -104,7 +104,7 @@ const translations = {
     },
     ko: {
         title: "Heart Scan",
-        tagline: "좋아하는 사람과 잘 될까? 지금 무료로 확인해보세요!",
+        tagline: "좋아하는 사람과 잘 될 가능성은..? 지금 무료로 확인해보세요!",
         shareCta: "이 결과 봐야 할 사람이 있다면? 지금 공유하세요!",
         badges: {
             free: "100% 무료",
@@ -206,7 +206,7 @@ const translations = {
     },
     ja: {
         title: "愛と運命",
-        tagline: "好きな人とうまくいく？今すぐ無料でチェック！",
+        tagline: "好きな人とうまくいく..？今すぐ無料でチェック！",
         shareCta: "気になるあの人にシェアしてみて！",
         badges: {
             free: "100%無料",
@@ -304,7 +304,7 @@ const translations = {
     },
     zh: {
         title: "爱与命运",
-        tagline: "和喜欢的人会有结果吗？现在免费测试！",
+        tagline: "和喜欢的人会有结果吗..？现在免费测试！",
         shareCta: "想让TA看到这个？现在就分享！",
         badges: {
             free: "100%免费",
@@ -402,7 +402,7 @@ const translations = {
     },
     es: {
         title: "Amor y Destino",
-        tagline: "¿Funcionará con tu crush? ¡Descúbrelo gratis ahora!",
+        tagline: "¿Funcionará con tu crush..? ¡Descúbrelo gratis ahora!",
         shareCta: "¿Conoces a alguien que debería ver esto? ¡Comparte ahora!",
         badges: {
             free: "100% Gratis",
@@ -500,7 +500,7 @@ const translations = {
     },
     fr: {
         title: "Amour & Destin",
-        tagline: "Ça marchera avec votre crush ? Découvrez-le gratuitement !",
+        tagline: "Ça marchera avec votre crush..? Découvrez-le gratuitement !",
         shareCta: "Quelqu'un doit voir ça? Partagez maintenant!",
         badges: {
             free: "100% Gratuit",
@@ -598,7 +598,7 @@ const translations = {
     },
     de: {
         title: "Liebe & Schicksal",
-        tagline: "Wird es mit deinem Schwarm klappen? Jetzt kostenlos testen!",
+        tagline: "Wird es mit deinem Schwarm klappen..? Jetzt kostenlos testen!",
         shareCta: "Kennst du jemanden, der das sehen sollte? Jetzt teilen!",
         badges: {
             free: "100% Kostenlos",
@@ -696,7 +696,7 @@ const translations = {
     },
     ru: {
         title: "Любовь и Судьба",
-        tagline: "Получится ли с тем, кто тебе нравится? Узнай бесплатно!",
+        tagline: "Получится ли с тем, кто тебе нравится..? Узнай бесплатно!",
         shareCta: "Знаешь кого-то, кому нужно это увидеть? Поделись!",
         badges: {
             free: "100% Бесплатно",
@@ -794,7 +794,7 @@ const translations = {
     },
     pt: {
         title: "Amor e Destino",
-        tagline: "Vai dar certo com seu crush? Descubra agora de graça!",
+        tagline: "Vai dar certo com seu crush..? Descubra agora de graça!",
         shareCta: "Conhece alguém que precisa ver isso? Compartilhe agora!",
         badges: {
             free: "100% Gratuito",
