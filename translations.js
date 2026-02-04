@@ -2,7 +2,7 @@
 const translations = {
     en: {
         title: "Heart Scan",
-        tagline: "Is it fate? 2M+ couples already know — check yours FREE 💘",
+        tagline: "Will it work out with your crush? Find out right now!",
         shareCta: "Know someone who needs to see this? Share now!",
         badges: {
             free: "100% Free",
@@ -104,7 +104,7 @@ const translations = {
     },
     ko: {
         title: "Heart Scan",
-        tagline: "운명일까? 200만 커플이 이미 확인했어요 — 무료로 테스트해보세요 💘",
+        tagline: "좋아하는 상대와 잘 될 가능성은..? 지금 바로 확인해보세요!",
         shareCta: "이 결과 봐야 할 사람이 있다면? 지금 공유하세요!",
         badges: {
             free: "100% 무료",
@@ -206,7 +206,7 @@ const translations = {
     },
     ja: {
         title: "愛と運命",
-        tagline: "運命かも？200万組のカップルが既に診断済み — 無料でチェック 💘",
+        tagline: "好きな人とうまくいく可能性は..？今すぐチェック！",
         shareCta: "気になるあの人にシェアしてみて！",
         badges: {
             free: "100%無料",
@@ -304,7 +304,7 @@ const translations = {
     },
     zh: {
         title: "爱与命运",
-        tagline: "是命中注定吗？200万+情侣已验证 — 免费测试 💘",
+        tagline: "喜欢的人和我有可能吗..？现在就来确认吧！",
         shareCta: "想让TA看到这个？现在就分享！",
         badges: {
             free: "100%免费",
@@ -402,7 +402,7 @@ const translations = {
     },
     es: {
         title: "Amor y Destino",
-        tagline: "¿Es el destino? 2M+ parejas ya lo saben — ¡pruébalo GRATIS! 💘",
+        tagline: "¿Funcionará con quien te gusta? ¡Descúbrelo ahora!",
         shareCta: "¿Conoces a alguien que debería ver esto? ¡Comparte ahora!",
         badges: {
             free: "100% Gratis",
@@ -500,7 +500,7 @@ const translations = {
     },
     fr: {
         title: "Amour & Destin",
-        tagline: "Est-ce le destin? 2M+ couples ont déjà vérifié — testez GRATUITEMENT 💘",
+        tagline: "Ça marchera avec votre crush ? Découvrez-le maintenant !",
         shareCta: "Quelqu'un doit voir ça? Partagez maintenant!",
         badges: {
             free: "100% Gratuit",
@@ -598,7 +598,7 @@ const translations = {
     },
     de: {
         title: "Liebe & Schicksal",
-        tagline: "Ist es Schicksal? 2M+ Paare wissen es schon — teste KOSTENLOS 💘",
+        tagline: "Wird es mit deinem Schwarm klappen? Jetzt herausfinden!",
         shareCta: "Kennst du jemanden, der das sehen sollte? Jetzt teilen!",
         badges: {
             free: "100% Kostenlos",
@@ -696,7 +696,7 @@ const translations = {
     },
     ru: {
         title: "Любовь и Судьба",
-        tagline: "Это судьба? 2М+ пар уже проверили — узнай БЕСПЛАТНО 💘",
+        tagline: "Получится ли с тем, кто тебе нравится? Узнай прямо сейчас!",
         shareCta: "Знаешь кого-то, кому нужно это увидеть? Поделись!",
         badges: {
             free: "100% Бесплатно",
@@ -794,7 +794,7 @@ const translations = {
     },
     pt: {
         title: "Amor e Destino",
-        tagline: "É destino? 2M+ casais já descobriram — teste GRÁTIS 💘",
+        tagline: "Vai dar certo com quem você gosta? Descubra agora!",
         shareCta: "Conhece alguém que precisa ver isso? Compartilhe agora!",
         badges: {
             free: "100% Gratuito",
