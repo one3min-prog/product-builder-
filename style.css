@@ -1599,8 +1599,8 @@ body {
     color: white;
 }
 
-.fortune-sns-btn.sns-line {
-    background: #00b900;
+.fortune-sns-btn.sns-tiktok {
+    background: #000;
     color: white;
 }
 
@@ -2022,8 +2022,8 @@ body {
     background: #ff4500;
 }
 
-.sns-line {
-    background: #00b900;
+.sns-tiktok {
+    background: #000;
 }
 
 .sns-copy {
