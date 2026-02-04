@@ -43,7 +43,7 @@ const translations = {
         daily: {
             title: "Daily Love Fortune",
             subtitle: "what does the universe have planned for your heart?",
-            intro: "Enter your name to receive your personalized love fortune for today",
+            intro: "Enter your name and birthday to receive your personalized love fortune",
             calculate: "Reveal My Fortune",
             alert: "Please enter your name"
         },
@@ -148,7 +148,7 @@ const translations = {
         daily: {
             title: "오늘의 연애운",
             subtitle: "우주는 당신의 마음을 위해 무엇을 계획했을까요?",
-            intro: "오늘의 맞춤형 연애 운세를 받으려면 이름을 입력하세요",
+            intro: "이름과 생년월일을 입력하면 오늘의 맞춤형 연애 운세를 받을 수 있어요",
             calculate: "운세 보기",
             alert: "이름을 입력해주세요"
         },
@@ -253,7 +253,7 @@ const translations = {
         daily: {
             title: "今日の恋愛運",
             subtitle: "宇宙はあなたの心に何を計画している？",
-            intro: "今日のパーソナライズされた恋愛運を受け取るには名前を入力",
+            intro: "名前と生年月日を入力して、今日の恋愛運を確認しましょう",
             calculate: "運勢を見る",
             alert: "名前を入力してください"
         },
@@ -354,7 +354,7 @@ const translations = {
         daily: {
             title: "今日爱情运势",
             subtitle: "宇宙为你的心计划了什么？",
-            intro: "输入你的名字，获取今天的个性化爱情运势",
+            intro: "输入你的名字和生日，获取今天的个性化爱情运势",
             calculate: "揭示运势",
             alert: "请输入你的名字"
         },
@@ -455,7 +455,7 @@ const translations = {
         daily: {
             title: "Fortuna del Amor Diaria",
             subtitle: "¿qué tiene planeado el universo para tu corazón?",
-            intro: "Ingresa tu nombre para recibir tu fortuna de amor personalizada",
+            intro: "Ingresa tu nombre y fecha de nacimiento para recibir tu fortuna de amor personalizada",
             calculate: "Revelar Fortuna",
             alert: "Por favor ingresa tu nombre"
         },
@@ -556,7 +556,7 @@ const translations = {
         daily: {
             title: "Fortune d'Amour Quotidienne",
             subtitle: "que prévoit l'univers pour votre cœur?",
-            intro: "Entrez votre prénom pour recevoir votre fortune d'amour personnalisée",
+            intro: "Entrez votre prénom et date de naissance pour recevoir votre fortune d'amour personnalisée",
             calculate: "Révéler ma Fortune",
             alert: "Veuillez entrer votre prénom"
         },
@@ -657,7 +657,7 @@ const translations = {
         daily: {
             title: "Tägliches Liebeshoroskop",
             subtitle: "was hat das Universum für dein Herz geplant?",
-            intro: "Gib deinen Namen ein, um dein persönliches Liebeshoroskop zu erhalten",
+            intro: "Gib deinen Namen und Geburtstag ein, um dein persönliches Liebeshoroskop zu erhalten",
             calculate: "Horoskop enthüllen",
             alert: "Bitte gib deinen Namen ein"
         },
@@ -758,7 +758,7 @@ const translations = {
         daily: {
             title: "Ежедневный Любовный Гороскоп",
             subtitle: "что вселенная запланировала для твоего сердца?",
-            intro: "Введи своё имя, чтобы получить персональный любовный гороскоп",
+            intro: "Введи своё имя и дату рождения, чтобы получить персональный любовный гороскоп",
             calculate: "Раскрыть Гороскоп",
             alert: "Пожалуйста, введите ваше имя"
         },
@@ -859,7 +859,7 @@ const translations = {
         daily: {
             title: "Fortuna do Amor Diária",
             subtitle: "o que o universo planejou para seu coração?",
-            intro: "Digite seu nome para receber sua fortuna do amor personalizada",
+            intro: "Digite seu nome e data de nascimento para receber sua fortuna do amor personalizada",
             calculate: "Revelar Fortuna",
             alert: "Por favor, insira seu nome"
         },
