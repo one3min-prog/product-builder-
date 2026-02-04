@@ -1,3 +1,4 @@
+alert('app.js loaded!');
 
 // ====== App State ======
 let currentLang = 'en';
