@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b9d"/>
+      <stop offset="50%" style="stop-color:#ff9bc0"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative hearts -->
+  <g opacity="0.15">
+    <text x="100" y="120" font-size="60" fill="#ff6b9d">💕</text>
+    <text x="1050" y="150" font-size="50" fill="#ff9bc0">✨</text>
+    <text x="150" y="520" font-size="45" fill="#a855f7">💫</text>
+    <text x="1000" y="550" font-size="55" fill="#ff6b9d">💝</text>
+    <text x="550" y="80" font-size="40" fill="#ff9bc0">💖</text>
+    <text x="80" y="350" font-size="35" fill="#a855f7">🌟</text>
+    <text x="1100" y="350" font-size="35" fill="#ff6b9d">💗</text>
+  </g>
+
+  <!-- Main Heart Icon -->
+  <g transform="translate(600, 200)" filter="url(#glow)">
+    <path d="M0 60 C-60 10 -100 -30 -70 -60 C-45 -85 0 -70 0 -40 C0 -70 45 -85 70 -60 C100 -30 60 10 0 60Z"
+          fill="url(#heartGrad)" transform="scale(1.5)"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="url(#textGrad)" filter="url(#shadow)">Heart Scan</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" opacity="0.9">Free Love Compatibility Test</text>
+
+  <!-- Features -->
+  <g font-family="Arial, sans-serif" font-size="20" fill="#ff9bc0">
+    <text x="600" y="490" text-anchor="middle">💝 Name Match  •  🧠 MBTI  •  🔮 Daily Fortune</text>
+  </g>
+
+  <!-- CTA -->
+  <g transform="translate(600, 550)">
+    <rect x="-140" y="-25" width="280" height="50" rx="25" fill="url(#heartGrad)" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">2M+ Couples Trust Us</text>
+  </g>
+
+  <!-- URL -->
+  <text x="600" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#888">heartsscan.org</text>
+</svg>
