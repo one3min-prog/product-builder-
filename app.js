@@ -2048,7 +2048,7 @@ function shareContent(text) {
 
 // ====== Header Share Service Functions ======
 function shareService(platform) {
-    console.log('shareService called with:', platform);
+    alert('shareService called: ' + platform);
     const lang = localStorage.getItem('selectedLanguage') || 'en';
     const shareTexts = {
         en: "Is it fate? Find out your love compatibility FREE! 💘 2M+ couples already know their destiny...",
