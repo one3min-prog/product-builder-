@@ -300,6 +300,15 @@ body {
     font-size: 1.2rem;
 }
 
+/* Nav link (for blog link) */
+a.nav-btn {
+    text-decoration: none;
+}
+
+a.nav-btn:hover {
+    color: var(--primary);
+}
+
 /* ====== Main Content ====== */
 .main-content {
     max-width: 800px;

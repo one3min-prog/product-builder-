@@ -174,4 +174,133 @@
         <priority>0.4</priority>
     </url>
 
+    <!-- Blog Index -->
+    <url>
+        <loc>https://heartsscan.org/blog/</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Articles -->
+    <url>
+        <loc>https://heartsscan.org/blog/mbti-compatibility-guide.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/name-compatibility-history.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/healthy-relationship-tips.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/understanding-personality-types.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/love-languages-guide.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/first-date-tips.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/long-distance-relationship-guide.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/relationship-red-flags.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/communication-in-relationships.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/moving-on-after-breakup.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/love-vs-obsession.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/when-to-say-i-love-you.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/introvert-extrovert-relationships.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/signs-they-like-you.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/blog/dating-app-tips.html</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Guides -->
+    <url>
+        <loc>https://heartsscan.org/guides/mbti/</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://heartsscan.org/guides/compatibility/</loc>
+        <lastmod>2025-02-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
 </urlset>

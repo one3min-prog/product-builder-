@@ -12,6 +12,7 @@ const translations = {
             name: "Name Match",
             mbti: "MBTI",
             daily: "Daily Love",
+            blog: "Blog",
             about: "About",
             faq: "FAQ"
         },
@@ -114,6 +115,7 @@ const translations = {
             name: "이름 궁합",
             mbti: "MBTI",
             daily: "오늘의 애정운",
+            blog: "블로그",
             about: "소개",
             faq: "FAQ"
         },
@@ -217,6 +219,7 @@ const translations = {
             bloodType: "血液型",
             mbti: "MBTI",
             daily: "今日の運勢",
+            blog: "ブログ",
             about: "について"
         },
         name: {
@@ -315,6 +318,7 @@ const translations = {
             bloodType: "血型",
             mbti: "MBTI",
             daily: "今日运势",
+            blog: "博客",
             about: "关于"
         },
         name: {
@@ -413,6 +417,7 @@ const translations = {
             bloodType: "Sangre",
             mbti: "MBTI",
             daily: "Diario",
+            blog: "Blog",
             about: "Acerca"
         },
         name: {
@@ -511,6 +516,7 @@ const translations = {
             bloodType: "Sang",
             mbti: "MBTI",
             daily: "Quotidien",
+            blog: "Blog",
             about: "À propos"
         },
         name: {
@@ -609,6 +615,7 @@ const translations = {
             bloodType: "Blutgruppe",
             mbti: "MBTI",
             daily: "Täglich",
+            blog: "Blog",
             about: "Über"
         },
         name: {
@@ -707,6 +714,7 @@ const translations = {
             bloodType: "Кровь",
             mbti: "MBTI",
             daily: "Ежедневно",
+            blog: "Блог",
             about: "О нас"
         },
         name: {
@@ -805,6 +813,7 @@ const translations = {
             bloodType: "Sangue",
             mbti: "MBTI",
             daily: "Diário",
+            blog: "Blog",
             about: "Sobre"
         },
         name: {
