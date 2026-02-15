@@ -6,7 +6,7 @@
     <!-- Main Page - English (Default) -->
     <url>
         <loc>https://heartsscan.org/</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -33,7 +33,7 @@
     <!-- Korean Version -->
     <url>
         <loc>https://heartsscan.org/?lang=ko</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -44,7 +44,7 @@
     <!-- Japanese Version -->
     <url>
         <loc>https://heartsscan.org/?lang=ja</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -55,7 +55,7 @@
     <!-- Chinese Version -->
     <url>
         <loc>https://heartsscan.org/?lang=zh</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -66,7 +66,7 @@
     <!-- Spanish Version -->
     <url>
         <loc>https://heartsscan.org/?lang=es</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -77,7 +77,7 @@
     <!-- French Version -->
     <url>
         <loc>https://heartsscan.org/?lang=fr</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -88,7 +88,7 @@
     <!-- German Version -->
     <url>
         <loc>https://heartsscan.org/?lang=de</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -99,7 +99,7 @@
     <!-- Russian Version -->
     <url>
         <loc>https://heartsscan.org/?lang=ru</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -110,7 +110,7 @@
     <!-- Portuguese Version -->
     <url>
         <loc>https://heartsscan.org/?lang=pt</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://heartsscan.org/"/>
@@ -118,66 +118,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://heartsscan.org/"/>
     </url>
 
-    <!-- Section Pages - Name Compatibility -->
-    <url>
-        <loc>https://heartsscan.org/#name</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- Section Pages - MBTI Compatibility -->
-    <url>
-        <loc>https://heartsscan.org/#mbti</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- Section Pages - Daily Love Fortune -->
-    <url>
-        <loc>https://heartsscan.org/#daily</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- Section Pages - About -->
-    <url>
-        <loc>https://heartsscan.org/#about</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Section Pages - FAQ -->
-    <url>
-        <loc>https://heartsscan.org/#faq</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Section Pages - Privacy Policy -->
-    <url>
-        <loc>https://heartsscan.org/#privacy</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.4</priority>
-    </url>
-
-    <!-- Section Pages - Terms of Service -->
-    <url>
-        <loc>https://heartsscan.org/#terms</loc>
-        <lastmod>2025-02-04</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.4</priority>
-    </url>
-
     <!-- Blog Index -->
     <url>
         <loc>https://heartsscan.org/blog/</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -185,105 +129,105 @@
     <!-- Blog Articles -->
     <url>
         <loc>https://heartsscan.org/blog/mbti-compatibility-guide.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/name-compatibility-history.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/healthy-relationship-tips.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/understanding-personality-types.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/love-languages-guide.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/first-date-tips.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/long-distance-relationship-guide.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/relationship-red-flags.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/communication-in-relationships.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/moving-on-after-breakup.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/love-vs-obsession.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/when-to-say-i-love-you.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/introvert-extrovert-relationships.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/signs-they-like-you.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/blog/dating-app-tips.html</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -291,14 +235,14 @@
     <!-- Guides -->
     <url>
         <loc>https://heartsscan.org/guides/mbti/</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
         <loc>https://heartsscan.org/guides/compatibility/</loc>
-        <lastmod>2025-02-04</lastmod>
+        <lastmod>2026-02-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
